@@ -1,0 +1,3 @@
+# .gitignore
+/transcripts/
+/transcript_alignment/__pycache__
