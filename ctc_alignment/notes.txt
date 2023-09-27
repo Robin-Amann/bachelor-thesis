@@ -1,0 +1,7 @@
+1. Estimate the frame-wise label probability from audio waveform
+2. Generate the trellis matrix which represents the probability of labels aligned at time step.
+   - trellis : (Transcript x Time) Matrix
+3. Find the most likely path from the trellis matrix.
+   - backtacking
+   - merge labels
+   - merge words
