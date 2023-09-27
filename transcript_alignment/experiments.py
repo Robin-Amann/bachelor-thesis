@@ -1,7 +1,6 @@
+x = 2
 
-def f(a) :
-    a = [3]
+def f() :
+    print(x)
 
-x = [1,2]
-f(x)
-print(x)
+f()

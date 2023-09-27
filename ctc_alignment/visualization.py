@@ -1,10 +1,11 @@
 import matplotlib
 import matplotlib.pyplot as plt
 
+width = 12.0
+height = 4.8
 
 def plot_framewise_label_probability(labels, emission) :
-    matplotlib.rcParams["figure.figsize"] = [16.0, 4.8]
-    print(labels)
+    matplotlib.rcParams["figure.figsize"] = [width, height]
     plt.imshow(emission.T)
     plt.colorbar()
     plt.title("Frame-wise class probability")
@@ -14,7 +15,7 @@ def plot_framewise_label_probability(labels, emission) :
 
 
 def plot_trellis(trellis) :
-    matplotlib.rcParams["figure.figsize"] = [16.0, 4.8]
+    matplotlib.rcParams["figure.figsize"] = [width, height]
     plt.imshow(trellis[1:, 1:].T, origin="lower")
     plt.annotate("- Inf", (trellis.size(1) / 5, trellis.size(1) / 1.5))
     plt.colorbar()
@@ -22,6 +23,7 @@ def plot_trellis(trellis) :
 
 
 def plot_trellis_with_path(trellis, path):
+    matplotlib.rcParams["figure.figsize"] = [width, height]
     # To plot trellis with path, we take advantage of 'nan' value
     trellis_with_path = trellis.clone()
     for _, p in enumerate(path):
@@ -32,6 +34,7 @@ def plot_trellis_with_path(trellis, path):
     
 
 def plot_trellis_with_segments(trellis, segments, transcript, path):
+    matplotlib.rcParams["figure.figsize"] = [width, height]
     # To plot trellis with path, we take advantage of 'nan' value
     trellis_with_path = trellis.clone()
     for i, seg in enumerate(segments):
@@ -74,6 +77,7 @@ def plot_trellis_with_segments(trellis, segments, transcript, path):
     
                                                     #waveform[0]
 def plot_alignments(trellis, segments, word_segments, waveform, bundle):
+    matplotlib.rcParams["figure.figsize"] = [width / 2, height / 2]
     trellis_with_path = trellis.clone()
     for i, seg in enumerate(segments):
         if seg.label != "|":

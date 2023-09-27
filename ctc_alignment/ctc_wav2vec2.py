@@ -98,7 +98,7 @@ class Segment:
         return self.end - self.start
 
 
-def merge_repeats(path):
+def merge_repeats(path, transcript):
     i1, i2 = 0, 0
     segments = []
     while i1 < len(path):
