@@ -6,8 +6,8 @@ import postprocessing as post
 if __name__ == "__main__":
     
     # read files
-    machine_transcript_messy = pre.read_file("D:\\Bachelorarbeit-Code\\transcript_alignment\\transcripts\\audioclient.txt")
-    hand_transcript_messy = pre.read_file("D:\\Bachelorarbeit-Code\\transcript_alignment\\transcripts\\callFriend.cha")
+    machine_transcript_messy = pre.read_file("transcript_alignment\\transcripts\\audioclient.txt")
+    hand_transcript_messy = pre.read_file("transcript_alignment\\transcripts\\callFriend.cha")
     
     # cleanup
     hand_trimmed, hand_clean = pre.process(
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     hand_snips, machine_snips, same_snips = align.align(6, hand_snips, machine_snips, same_snips)
     post.write_to_file("transcript_alignment\\alignment\\result1.txt", hand_snips, machine_snips)
     
-    align.align(3, hand_snips, machine_snips, same_snips)    
+    hand_snips, machine_snips, same_snips = align.align(3, hand_snips, machine_snips, same_snips)    
     post.write_to_file("transcript_alignment\\alignment\\result2.txt", hand_snips, machine_snips)
     
     hand_trimmed_snips = post.process(hand_snips, hand_trimmed)
