@@ -6,8 +6,24 @@ import visualization as visual
 # Preparation
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.random.manual_seed(0)                             # results are reproducable
-SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
-transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
+# SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
+# transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
+
+SPEECH_FILE = "ctc_alignment\\data\\audio.wav"
+transcript = ""
+with open("ctc_alignment\\data\\audioclient_transcript.txt", "r", encoding="utf8") as file :
+    transcript = file.read()
+transcript = transcript.replace("<Noise>", " ")
+transcript = transcript.replace("<laugh>", " ")
+transcript = transcript.upper()
+# remove unwanted chars
+unwanted_chars = set(".,\t\n")
+for c in unwanted_chars :
+    transcript = ''.join([i for i in transcript if i != c])
+    # remove multiple spaces
+transcript = '|'.join(transcript.split())
+
+print(transcript)
 
 # Estimate the frame-wise label probability from audio waveform
 bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H    # Wav2Vec2 model
@@ -35,4 +51,4 @@ word_segments = ctc.merge_words(segments)               # [ [word, propability, 
 
 # visual.plot_trellis_with_path(trellis, path)
 # visual.plot_trellis_with_segments(trellis, segments, transcript, path)
-# visual.plot_alignments(trellis, segments, word_segments, waveform[0], bundle)
+visual.plot_alignments(trellis, segments, word_segments, waveform[0], bundle)
