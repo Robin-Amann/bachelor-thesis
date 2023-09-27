@@ -1,0 +1,1004 @@
+asr:0: OUTPUT 0.87-2.07: You Don't Want to Be
+asr:0: OUTPUT 2.07-3.12: 
+asr:0: OUTPUT 3.12-5.07:  Recorded, Oh, I Don't Care All Right, So
+asr:0: OUTPUT 5.07-6.93:  Uh, This Is for the University of
+asr:0: OUTPUT 6.93-8.64:  Pennsylvania, Uh, and
+asr:0: OUTPUT 8.64-10.23:  We've Got Thirty Minutes to Talk
+asr:0: OUTPUT 10.23-11.70: 
+asr:0: OUTPUT 11.70-13.23:  Talk,
+asr:0: OUTPUT 13.23-14.88: 
+asr:0: OUTPUT 14.88-16.50:  Oh Okay Yeah, We've Got to Talk Thirty Minutes
+asr:0: OUTPUT 16.50-18.03:  All Right, Well <Noise> Uh,
+asr:0: OUTPUT 18.03-19.56:  I'm here, I'm here for that time, Huh,
+asr:0: OUTPUT 19.56-21.33:  I Say, I Know, I'm traveling with a pro here. 
+asr:0: OUTPUT 21.33-22.92: Okay. 
+asr:0: OUTPUT 23.46-26.40: Now I Don't Know What to Do Here. 
+asr:0: OUTPUT 26.40-28.38: I guess we just talk. 
+asr:0: OUTPUT 28.44-30.96: Uh. 
+asr:0: OUTPUT 31.56-33.45: Say. 
+asr:0: OUTPUT 36.21-37.80: Uh. 
+asr:0: OUTPUT 44.04-45.12: 
+asr:0: OUTPUT 45.12-46.65: I
+asr:0: OUTPUT 46.65-48.24: 
+asr:0: OUTPUT 48.24-49.77:  got to read the instructions <laugh>. 
+asr:0: OUTPUT 49.77-51.24: <Noise>
+asr:0: OUTPUT 51.24-53.34:  
+asr:0: OUTPUT 53.88-55.29: How soon we just
+asr:0: OUTPUT 55.29-57.03:  talked
+asr:0: OUTPUT 57.03-58.80: 
+asr:0: OUTPUT 58.80-60.45:  yes, sir, uh, so how you
+asr:0: OUTPUT 60.45-61.98:  doing, oh pretty good, how you making
+asr:0: OUTPUT 61.98-63.45:  it, oh okay, the dog's
+asr:0: OUTPUT 63.45-65.04:  acting up a little bit there for a while, but
+asr:0: OUTPUT 65.04-66.57:  uh, we seem to straighten that
+asr:0: OUTPUT 66.57-68.10:  out to what I
+asr:0: OUTPUT 68.10-69.63:  say my back was acting up for a little
+asr:0: OUTPUT 69.63-71.25:  bit there. Well, it seemed to straig
+asr:0: OUTPUT 71.25-72.84:  straighten that out, or
+asr:0: OUTPUT 72.84-74.37:  at least we're heading that
+asr:0: OUTPUT 74.37-75.84:  direction. You know, I still have a little
+asr:0: OUTPUT 75.84-77.43:  tinge, uh,
+asr:0: OUTPUT 77.43-79.08:  under
+asr:0: OUTPUT 79.08-80.61:  my. I call them uh, floating
+asr:0: OUTPUT 80.61-82.20:  ribs um-hum
+asr:0: OUTPUT 82.20-83.73:  uh from that uh
+asr:0: OUTPUT 83.73-85.26: 
+asr:0: OUTPUT 85.26-86.79:  soup, where that soup belt went in, but uh,
+asr:0: OUTPUT 86.79-88.26:  I guess it'll
+asr:0: OUTPUT 88.26-89.79: 
+asr:0: OUTPUT 89.79-92.16:  heal. Eventually it's uh. 
+asr:0: OUTPUT 92.16-93.63: 
+asr:0: OUTPUT 93.63-96.27: Just One of Those Things That Uh. 
+asr:0: OUTPUT 96.27-97.53: Can't do anything about
+asr:0: OUTPUT 97.53-99.12:  it, don't show up on the
+asr:0: OUTPUT 99.12-100.65: 
+asr:0: OUTPUT 100.65-102.24: 
+asr:0: OUTPUT 102.24-103.77: 
+asr:0: OUTPUT 103.77-105.36:  X-rays, so I guess it's too bad. Uh, well,
+asr:0: OUTPUT 105.36-106.95:  all the X-rays going to show you is is
+asr:0: OUTPUT 106.95-108.48:  the, the I mean,
+asr:0: OUTPUT 108.48-111.18:  it won't show you any of the, any of the soft. 
+asr:0: OUTPUT 111.30-113.01: No
+asr:0: OUTPUT 113.01-114.54:  I I I've Got to Go into the
+asr:0: OUTPUT 114.54-116.13:  Doctor
+asr:0: OUTPUT 116.13-118.65:  on Uh Wednesday. 
+asr:0: OUTPUT 118.83-120.00: 
+asr:0: OUTPUT 120.00-121.59: Uh and Uh Wednesday Week
+asr:0: OUTPUT 121.59-123.06:  and Uh
+asr:0: OUTPUT 123.06-124.59: 
+asr:0: OUTPUT 124.59-126.06:  Uh, I'm
+asr:0: OUTPUT 126.06-127.59:  going to ask him what's underneath there <laugh>
+asr:0: OUTPUT 127.59-129.06:  because
+asr:0: OUTPUT 129.06-130.59:  Uh, it's
+asr:0: OUTPUT 130.59-132.18: 
+asr:0: OUTPUT 132.18-134.13:  Uh, it could be something. 
+asr:0: OUTPUT 134.16-135.30: That's
+asr:0: OUTPUT 135.30-136.89:  easy to
+asr:0: OUTPUT 136.89-138.42:  uh rupture something that could
+asr:0: OUTPUT 138.42-140.01:  be something that
+asr:0: OUTPUT 140.01-141.54:  there wasn't even being
+asr:0: OUTPUT 141.54-143.19:  anything to worry about
+asr:0: OUTPUT 143.19-144.99:  um-hum
+asr:0: OUTPUT 144.99-146.88:  uh no i uh
+asr:0: OUTPUT 146.88-147.90:  i uh
+asr:0: OUTPUT 147.90-149.79:  just uh saw this
+asr:0: OUTPUT 149.79-151.77:  uh
+asr:0: OUTPUT 151.77-153.75: 
+asr:0: OUTPUT 153.75-154.77:  art of this ad in the
+asr:0: OUTPUT 154.77-155.82:  Coleman
+asr:0: OUTPUT 155.82-156.93:  Tribune
+asr:0: OUTPUT 156.93-157.98:  and
+asr:0: OUTPUT 157.98-159.03:  uh
+asr:0: OUTPUT 159.03-160.98:  that's interesting i uh
+asr:0: OUTPUT 160.98-162.84:  i
+asr:0: OUTPUT 162.84-164.55:  called the number and
+asr:0: OUTPUT 164.55-166.14:  then
+asr:0: OUTPUT 166.14-167.67:  I thought oh well they won't
+asr:0: OUTPUT 167.67-169.32:  think
+asr:0: OUTPUT 169.32-171.12:  anything about me so later I got this letter they
+asr:0: OUTPUT 171.12-173.01:  wanted me to do
+asr:0: OUTPUT 173.01-174.93:  it they wanted
+asr:0: OUTPUT 174.93-177.66:  a a natural. 
+asr:0: OUTPUT 177.66-179.10: Uh
+asr:0: OUTPUT 179.10-180.18:  english speaking
+asr:0: OUTPUT 180.18-181.20: 
+asr:0: OUTPUT 181.20-184.68:  Southern, so they got two of them. 
+asr:0: OUTPUT 184.71-186.33: Well. 
+asr:0: OUTPUT 186.63-187.74: 
+asr:0: OUTPUT 187.74-190.23: , I don't, I don't know how natural we are, but. 
+asr:0: OUTPUT 190.23-191.82: 
+asr:0: OUTPUT 191.82-193.41: 
+asr:0: OUTPUT 193.41-195.81: <Noise> Here we are, here we are, uh. 
+asr:0: OUTPUT 195.93-197.37: 
+asr:0: OUTPUT 197.37-198.90: 
+asr:0: OUTPUT 198.90-200.49: <Noise> Uh, you knew we bought 
+asr:0: OUTPUT 200.49-202.08: another car. I
+asr:0: OUTPUT 202.08-203.67:  didn't yeah yeah. You mentioned you had a Ford Taurus.
+asr:0: OUTPUT 203.67-205.26: 
+asr:0: OUTPUT 205.26-208.11:  Oh yeah, your mother loves it. She won't let me drive it though. 
+asr:0: OUTPUT 208.35-209.37: 
+asr:0: OUTPUT 209.37-211.08: She says
+asr:0: OUTPUT 211.08-212.73:  I have her ex
+asr:0: OUTPUT 212.73-214.32:  well. George, you
+asr:0: OUTPUT 214.32-216.00:  have to admit statistics would bear out in this
+asr:0: OUTPUT 216.00-217.77:  in this position <laugh>
+asr:0: OUTPUT 217.77-219.66: 
+asr:0: OUTPUT 219.66-220.68:  <laugh>. Well, I mean, just because I turned
+asr:0: OUTPUT 220.68-221.70: 
+asr:0: OUTPUT 221.70-223.68:  <noise>
+asr:0: OUTPUT 223.68-225.51:  left in into the side of
+asr:0: OUTPUT 225.51-227.25:  a pickup, I have no reason to worry about me.
+asr:0: OUTPUT 227.25-228.84: 
+asr:0: OUTPUT 228.84-230.31:  Well, maybe she's worried about the rest of
+asr:0: OUTPUT 230.31-231.84:  them.
+asr:0: OUTPUT 231.84-233.79:  George, yeah, that could be. 
+asr:0: OUTPUT 233.79-235.35: Hi. 
+asr:0: OUTPUT 235.53-238.23: <human>. 
+asr:0: OUTPUT 238.23-239.37: The only 
+asr:0: OUTPUT 239.37-240.90: thing I worry about is that if I had another
+asr:0: OUTPUT 240.90-242.43: 
+asr:0: OUTPUT 242.43-243.96:  wreck, they might cancel my
+asr:0: OUTPUT 243.96-245.55:  insurance well. I think that's the best thing
+asr:0: OUTPUT 245.55-247.08:  possibility, although
+asr:0: OUTPUT 247.08-248.67:  uh sometime
+asr:0: OUTPUT 248.67-251.40:  ago, I go uh. 
+asr:0: OUTPUT 251.79-253.32: 
+asr:0: OUTPUT 253.32-254.85: 
+asr:0: OUTPUT 254.85-256.38: Sent me a letter stating that 
+asr:0: OUTPUT 256.38-257.91: they could not cancel my insurance for any reason
+asr:0: OUTPUT 257.91-259.38:  except
+asr:0: OUTPUT 259.38-260.91:  the UH
+asr:0: OUTPUT 260.91-263.01:  non payment of premiums. 
+asr:0: OUTPUT 263.28-266.40: Well. 
+asr:0: OUTPUT 266.40-267.99: I
+asr:0: OUTPUT 267.99-269.52:  know I
+asr:0: OUTPUT 269.52-271.11:  found out another thing too. Caco is a little
+asr:0: OUTPUT 271.11-272.64:  higher than some of the other companies
+asr:0: OUTPUT 272.64-274.11:  now right
+asr:0: OUTPUT 274.11-275.70:  here because
+asr:0: OUTPUT 275.70-277.23:  Coleman
+asr:0: OUTPUT 277.23-278.82:  is in the
+asr:0: OUTPUT 278.82-280.50:  same district as
+asr:0: OUTPUT 280.50-282.03: 
+asr:0: OUTPUT 282.03-283.62:  Birmingham and Birmingham
+asr:0: OUTPUT 283.62-286.56:  is uh a. 
+asr:0: OUTPUT 286.56-288.27: Right
+asr:0: OUTPUT 288.27-289.80:  prone to
+asr:0: OUTPUT 289.80-291.33:  city, so
+asr:0: OUTPUT 291.33-292.86:  we have to pay for the wrecks down in Birmingham.
+asr:0: OUTPUT 292.86-294.33:  Well, George, you
+asr:0: OUTPUT 294.33-295.92:  George,
+asr:0: OUTPUT 295.92-297.57:  you don't even want to know what Savannah is
+asr:0: OUTPUT 297.57-300.09:  <laugh>. Don't even want to Know. 
+asr:0: OUTPUT 300.09-301.35: 
+asr:0: OUTPUT 301.35-303.42: Oh well. 
+asr:0: OUTPUT 303.42-304.62: The uh
+asr:0: OUTPUT 304.62-306.15: 
+asr:0: OUTPUT 306.15-309.12:  thing that uh. 
+asr:0: OUTPUT 309.90-311.49: Gets me though i thought
+asr:0: OUTPUT 311.49-314.22:  well i'll change insurance companies. 
+asr:0: OUTPUT 314.25-315.33: 
+asr:0: OUTPUT 315.33-316.86: And then
+asr:0: OUTPUT 316.86-318.33:  I, I called
+asr:0: OUTPUT 318.33-319.86:  around, and
+asr:0: OUTPUT 319.86-321.33:  these people gave me
+asr:0: OUTPUT 321.33-322.86:  uh
+asr:0: OUTPUT 322.86-324.51:  premiums about twice
+asr:0: OUTPUT 324.51-327.45:  what I expected. 
+asr:0: OUTPUT 327.45-328.83: And what guy
+asr:0: OUTPUT 328.83-330.84:  coats charging me so. 
+asr:0: OUTPUT 330.84-331.95: 
+asr:0: OUTPUT 331.95-333.48: One uh lady
+asr:0: OUTPUT 333.48-335.01:  uh took
+asr:0: OUTPUT 335.01-336.48:  pity on me
+asr:0: OUTPUT 336.48-338.07:  and she says look
+asr:0: OUTPUT 338.07-339.60: 
+asr:0: OUTPUT 339.60-342.30:  since after you pass uh after you're seventy or older. 
+asr:0: OUTPUT 342.30-343.38: 
+asr:0: OUTPUT 343.38-344.85: Says
+asr:0: OUTPUT 344.85-346.38:  stay with the company you're with because nobody
+asr:0: OUTPUT 346.38-348.30:  else is going to want you. 
+asr:0: OUTPUT 348.69-351.06: Well. 
+asr:0: OUTPUT 351.06-352.65: 
+asr:0: OUTPUT 352.65-354.18: 
+asr:0: OUTPUT 354.18-355.65: That's getting 
+asr:0: OUTPUT 355.65-357.18: down right personally, yeah, but that
+asr:0: OUTPUT 357.18-358.71:  that's the truth. Uh, I, I could see from the
+asr:0: OUTPUT 358.71-360.24:  answers
+asr:0: OUTPUT 360.24-361.71:  I was getting that. Uh,
+asr:0: OUTPUT 361.71-363.24:  you can't change
+asr:0: OUTPUT 363.24-366.06:  companies after you're seventy. 
+asr:0: OUTPUT 367.83-369.51: <Noise>. 
+asr:0: OUTPUT 370.44-371.88: 
+asr:0: OUTPUT 371.88-373.50: 
+asr:0: OUTPUT 373.50-375.21: And uh, I got a letter from my
+asr:0: OUTPUT 375.21-377.04:  uh
+asr:0: OUTPUT 377.04-379.02:  first cousin that uh,
+asr:0: OUTPUT 379.02-380.91:  Fort Worth, uh,
+asr:0: OUTPUT 380.91-382.89:  you don't know
+asr:0: OUTPUT 382.89-383.91:  her, but uh, I've heard you speak of
+asr:0: OUTPUT 383.91-384.99:  her, Marie
+asr:0: OUTPUT 384.99-386.01:  uh,
+asr:0: OUTPUT 386.01-387.03: 
+asr:0: OUTPUT 387.03-388.92:  uh, and uh. In the letter she
+asr:0: OUTPUT 388.92-390.69:  says uh,
+asr:0: OUTPUT 390.69-392.37:  well, you
+asr:0: OUTPUT 392.37-393.90:  uh, so well, you know how old I
+asr:0: OUTPUT 393.90-395.37:  am
+asr:0: OUTPUT 395.37-396.84:  <laugh>. She is too much older than
+asr:0: OUTPUT 396.84-398.37:  I
+asr:0: OUTPUT 398.37-401.01:  am <laugh >, so the. 
+asr:0: OUTPUT 401.01-403.02: <human>. 
+asr:0: OUTPUT 403.14-404.49: She would like
+asr:0: OUTPUT 404.49-405.96:  for us to get together
+asr:0: OUTPUT 405.96-407.91:  somewhere. 
+asr:0: OUTPUT 407.91-409.71: But uh. 
+asr:0: OUTPUT 410.61-412.83: She's. 
+asr:0: OUTPUT 412.83-415.20: Uh. 
+asr:0: OUTPUT 415.23-416.55: 
+asr:0: OUTPUT 416.55-419.58: Well, she's talked about her and her younger sister. 
+asr:0: OUTPUT 419.58-421.14: 
+asr:0: OUTPUT 421.14-422.61: Coming over here but
+asr:0: OUTPUT 422.61-424.14:  uh what
+asr:0: OUTPUT 424.14-425.61:  she don't realize is that things over here are
+asr:0: OUTPUT 425.61-427.14:  changing uh
+asr:0: OUTPUT 427.14-429.51:  if we've met in the elbow. 
+asr:0: OUTPUT 429.78-432.30: There's only two people. 
+asr:0: OUTPUT 432.30-434.64: That uh she could. 
+asr:0: OUTPUT 434.88-437.22: Uh care about seeing. 
+asr:0: OUTPUT 437.22-438.27: 
+asr:0: OUTPUT 438.27-439.80: One of them is Uh
+asr:0: OUTPUT 439.80-441.45: , Marion Brunson. 
+asr:0: OUTPUT 441.45-443.19: Who uh. 
+asr:0: OUTPUT 443.22-444.39: 
+asr:0: OUTPUT 444.39-445.92: Yes, it probably judge, but
+asr:0: OUTPUT 445.92-447.39:  he's,
+asr:0: OUTPUT 447.39-448.86: 
+asr:0: OUTPUT 448.86-451.14:  he's, uh, a third cousin. I think second cousin. 
+asr:0: OUTPUT 451.14-452.73: Uh
+asr:0: OUTPUT 452.73-454.32:  see his mother. 
+asr:0: OUTPUT 454.38-455.73: 
+asr:0: OUTPUT 455.73-457.20: And my mother were first
+asr:0: OUTPUT 457.20-459.57:  cussing, so that might be us. 
+asr:0: OUTPUT 459.57-460.98: Second cousins
+asr:0: OUTPUT 460.98-463.77:  with him i guess. 
+asr:0: OUTPUT 463.77-464.79: 
+asr:0: OUTPUT 464.79-466.38: Yeah, I didn't tell 
+asr:0: OUTPUT 466.38-467.91: whether you talked to Peggy or not.
+asr:0: OUTPUT 467.91-469.53:  Peggy, Peggy, has a
+asr:0: OUTPUT 469.53-471.18:  different way of doing that. That's why I just
+asr:0: OUTPUT 471.18-472.71:  say they're cousins now leave it
+asr:0: OUTPUT 472.71-474.18:  alone <laugh>
+asr:0: OUTPUT 474.18-477.24:  I, I wouldn't, uh. 
+asr:0: OUTPUT 477.24-478.71: But
+asr:0: OUTPUT 478.71-480.24: 
+asr:0: OUTPUT 480.24-481.77: 
+asr:0: OUTPUT 481.77-483.24:  uh he,
+asr:0: OUTPUT 483.24-484.77:  he asked for Marie-Anne Sue's,
+asr:0: OUTPUT 484.77-486.30: 
+asr:0: OUTPUT 486.30-487.77:  uh Sue's, uh Marie's sister, uh and uh
+asr:0: OUTPUT 487.77-489.30:  asked for their
+asr:0: OUTPUT 489.30-490.77:  uh
+asr:0: OUTPUT 490.77-492.24: 
+asr:0: OUTPUT 492.24-494.85:  address, and uh i uh. 
+asr:0: OUTPUT 494.85-496.14: Send
+asr:0: OUTPUT 496.14-497.61:  it to him, but uh
+asr:0: OUTPUT 497.61-499.14: 
+asr:0: OUTPUT 499.14-500.61:  uh, Marie, don't say anything about him writing, so
+asr:0: OUTPUT 500.61-503.28:  you must not have gotten around to it. 
+asr:0: OUTPUT 503.28-504.36: 
+asr:0: OUTPUT 504.36-505.83: Well, that could be had too many
+asr:0: OUTPUT 505.83-507.30:  cases in court or
+asr:0: OUTPUT 507.30-508.83:  something
+asr:0: OUTPUT 508.83-510.42: . Uh <laugh> Well, do are you interested
+asr:0: OUTPUT 510.42-512.82:  in going there? Or is that not a practical thing? 
+asr:0: OUTPUT 512.82-514.14: 
+asr:0: OUTPUT 514.14-515.67: Uh no
+asr:0: OUTPUT 515.67-517.14: , uh well, I
+asr:0: OUTPUT 517.14-518.67:  would be interested in going, you mean going out
+asr:0: OUTPUT 518.67-520.26:  to uh, Fort
+asr:0: OUTPUT 520.26-522.15:  Worth or wherever. 
+asr:0: OUTPUT 522.15-524.19: <human>. 
+asr:0: OUTPUT 524.19-525.60: Well,
+asr:0: OUTPUT 525.60-527.07:  I no really, I don't because
+asr:0: OUTPUT 527.07-528.66: 
+asr:0: OUTPUT 528.66-530.19:  they don't as I say Marron,
+asr:0: OUTPUT 530.19-531.66:  who's
+asr:0: OUTPUT 531.66-533.19:  a second cousin and
+asr:0: OUTPUT 533.19-534.75:  uh, then my
+asr:0: OUTPUT 534.75-536.58:  aunt Ruth. 
+asr:0: OUTPUT 536.58-537.81: Which
+asr:0: OUTPUT 537.81-539.34:  I saw last fall
+asr:0: OUTPUT 539.34-540.87:  uh-huh, and
+asr:0: OUTPUT 540.87-542.34:  those two are the only
+asr:0: OUTPUT 542.34-545.04:  two people I know of in Elba. 
+asr:0: OUTPUT 545.04-546.84: That uh. 
+asr:0: OUTPUT 547.08-548.52: Or as they say down there,
+asr:0: OUTPUT 548.52-550.05: 
+asr:0: OUTPUT 550.05-551.58: 
+asr:0: OUTPUT 551.58-553.44:  Albert Uh is Uh. 
+asr:0: OUTPUT 554.73-556.11: There there's just
+asr:0: OUTPUT 556.11-558.51:  nobody else left down there. 
+asr:0: OUTPUT 558.93-559.95: That she
+asr:0: OUTPUT 559.95-561.48:  would be interested in um-hum,
+asr:0: OUTPUT 561.48-563.13:  or I guess that I
+asr:0: OUTPUT 563.13-564.75:  would be interested in
+asr:0: OUTPUT 564.75-566.19:  too for that
+asr:0: OUTPUT 566.19-567.87:  matter, uh, so. 
+asr:0: OUTPUT 568.32-571.11: I can't see. 
+asr:0: OUTPUT 571.35-573.69: We uh. 
+asr:0: OUTPUT 573.87-575.40: We drove around
+asr:0: OUTPUT 575.40-578.22:  to pictures of all the tombstones. 
+asr:0: OUTPUT 578.22-579.99: <laugh>
+asr:0: OUTPUT 579.99-581.46: 
+asr:0: OUTPUT 581.46-582.99:  were these
+asr:0: OUTPUT 582.99-584.64:  tombstones you had some knowledge of, or
+asr:0: OUTPUT 584.64-586.23:  they yeah yeah they were
+asr:0: OUTPUT 586.23-587.76: 
+asr:0: OUTPUT 587.76-589.29: 
+asr:0: OUTPUT 589.29-590.94: 
+asr:0: OUTPUT 590.94-592.74:  um okay uh my great-grandfather and great-grandmothers and my
+asr:0: OUTPUT 592.74-594.63:  grandfathers and grandmothers
+asr:0: OUTPUT 594.63-595.65:  and uh
+asr:0: OUTPUT 595.65-597.54:  my mothers and uh
+asr:0: OUTPUT 597.54-599.34:  my uh
+asr:0: OUTPUT 599.34-600.99:  my
+asr:0: OUTPUT 600.99-602.58:  father and
+asr:0: OUTPUT 602.58-604.44:  I mean my great. 
+asr:0: OUTPUT 604.44-605.58: 
+asr:0: OUTPUT 605.58-607.11: Grandfather and My Great Grandmother
+asr:0: OUTPUT 607.11-609.12:  But Uh. 
+asr:0: OUTPUT 609.12-610.17: 
+asr:0: OUTPUT 610.17-612.60: The Crazy Thing Happened. 
+asr:0: OUTPUT 612.60-613.95: I don't know anything about
+asr:0: OUTPUT 613.95-615.96:  it but uh. 
+asr:0: OUTPUT 615.96-617.07: When I Went Over to See
+asr:0: OUTPUT 617.07-618.66:  About the
+asr:0: OUTPUT 618.66-620.61:  Dubos, Uh. 
+asr:0: OUTPUT 621.33-622.50: 
+asr:0: OUTPUT 622.50-624.03: 
+asr:0: OUTPUT 624.03-625.50: 
+asr:0: OUTPUT 625.50-627.03: Lot, you know, 
+asr:0: OUTPUT 627.03-628.50: that cemetery was organized so far back in the past
+asr:0: OUTPUT 628.50-630.81:  until. 
+asr:0: OUTPUT 631.17-632.34: They didn't even
+asr:0: OUTPUT 632.34-635.04:  sell the lot, so they just gave them away. 
+asr:0: OUTPUT 635.04-637.38: Huh and Uh. 
+asr:0: OUTPUT 637.56-639.09: But
+asr:0: OUTPUT 639.09-641.01:  it's, it's got a oh. 
+asr:0: OUTPUT 641.01-642.09: Little
+asr:0: OUTPUT 642.09-643.62:  Wall Around It and It's Got
+asr:0: OUTPUT 643.62-645.42:  Dubo's Written on It. 
+asr:0: OUTPUT 645.45-647.46: But uh. 
+asr:0: OUTPUT 647.88-648.93: 
+asr:0: OUTPUT 648.93-650.52: The uh, i know this one
+asr:0: OUTPUT 650.52-652.05:  person
+asr:0: OUTPUT 652.05-653.52:  buried in there
+asr:0: OUTPUT 653.52-654.99:  other than my grandmother and
+asr:0: OUTPUT 654.99-656.46:  grandfather uh
+asr:0: OUTPUT 656.46-657.99: 
+asr:0: OUTPUT 657.99-660.60:  uh, who was one of my aunts. 
+asr:0: OUTPUT 660.66-661.86: 
+asr:0: OUTPUT 661.86-664.83: Uh, Divorced Husbands or Something. 
+asr:0: OUTPUT 664.83-666.51: 
+asr:0: OUTPUT 666.51-668.10: Nobody liked him. In other words, I don't
+asr:0: OUTPUT 668.10-669.78:  know
+asr:0: OUTPUT 669.78-671.31:  they're <human>. They let him be buried there,
+asr:0: OUTPUT 671.31-672.84:  but they weren't too sorry to see
+asr:0: OUTPUT 672.84-674.31:  him after that.
+asr:0: OUTPUT 674.31-675.90:  He was buried there for for the sound of
+asr:0: OUTPUT 675.90-677.43: 
+asr:0: OUTPUT 677.43-678.96:  the body. Oh, oh,
+asr:0: OUTPUT 678.96-680.55:  oh, oh, but uh, I went up there and
+asr:0: OUTPUT 680.55-682.08:  I
+asr:0: OUTPUT 682.08-683.55:  talking to Josh, who's
+asr:0: OUTPUT 683.55-685.14:  in charge of
+asr:0: OUTPUT 685.14-686.67: 
+asr:0: OUTPUT 686.67-689.13:  cemetery, and he took me over there and says look, says. 
+asr:0: OUTPUT 689.16-691.98: This uh. 
+asr:0: OUTPUT 691.98-693.51: Grave here has been broken
+asr:0: OUTPUT 693.51-695.97:  into here on the cone. 
+asr:0: OUTPUT 696.42-698.04: 
+asr:0: OUTPUT 698.04-699.90: I says where'd that grave come from. 
+asr:0: OUTPUT 700.32-701.91: Because
+asr:0: OUTPUT 701.91-703.44:  I don't know <laugh>
+asr:0: OUTPUT 703.44-705.00:  you said, but do you
+asr:0: OUTPUT 705.00-707.70:  want to pay for having it been that? 
+asr:0: OUTPUT 707.91-709.59: I
+asr:0: OUTPUT 709.59-711.12:  said no, I don't
+asr:0: OUTPUT 711.12-712.59:  want to have a place for
+asr:0: OUTPUT 712.59-714.12:  having it mentioned. I, I
+asr:0: OUTPUT 714.12-715.65:  want to know who gave them permission to be
+asr:0: OUTPUT 715.65-717.18:  buried there <laugh>
+asr:0: OUTPUT 717.18-718.71: . I
+asr:0: OUTPUT 718.71-720.18:  don't think this was
+asr:0: OUTPUT 720.18-721.71:  why
+asr:0: OUTPUT 721.71-724.47:  you wanted to hear George I. I have no idea. 
+asr:0: OUTPUT 724.50-727.05: Uh, where what? 
+asr:0: OUTPUT 728.16-729.30: They
+asr:0: OUTPUT 729.30-731.58:  buried it uh. 
+asr:0: OUTPUT 732.24-734.16: It uh. 
+asr:0: OUTPUT 735.63-737.01: It's
+asr:0: OUTPUT 737.01-738.48: 
+asr:0: OUTPUT 738.48-740.01: 
+asr:0: OUTPUT 740.01-741.48:  <noise>
+asr:0: OUTPUT 741.48-743.01:  uh, and then uh, we, we were having trouble finding
+asr:0: OUTPUT 743.01-744.84:  Mother's Grave. 
+asr:0: OUTPUT 744.84-746.07: So he
+asr:0: OUTPUT 746.07-747.60:  called up
+asr:0: OUTPUT 747.60-749.94:  a funeral home that Berger. 
+asr:0: OUTPUT 749.94-752.43: And ask her. 
+asr:0: OUTPUT 752.43-753.87: Ask
+asr:0: OUTPUT 753.87-755.46:  them, uh, where the
+asr:0: OUTPUT 755.46-756.99:  grave was, and
+asr:0: OUTPUT 756.99-758.52:  the guy says,
+asr:0: OUTPUT 758.52-760.05:  'Cause we just
+asr:0: OUTPUT 760.05-761.58:  put them in the ground, we don't.
+asr:0: OUTPUT 761.58-763.11:  We don't
+asr:0: OUTPUT 763.11-765.33:  keep track of where they are. 
+asr:0: OUTPUT 766.20-767.70: 
+asr:0: OUTPUT 767.70-769.23: So well, you know, it
+asr:0: OUTPUT 769.23-770.76:  was hard keeping up with her when she was living.
+asr:0: OUTPUT 770.76-772.29: 
+asr:0: OUTPUT 772.29-773.82: 
+asr:0: OUTPUT 773.82-775.35:  I, I didn't really anticipate this, this problem <laugh>
+asr:0: OUTPUT 775.35-776.82: 
+asr:0: OUTPUT 776.82-778.35:  <laugh>. We finally found her, oh
+asr:0: OUTPUT 778.35-779.88:  okay,
+asr:0: OUTPUT 779.88-781.41:  uh, probably in with the wrong crowd
+asr:0: OUTPUT 781.41-782.94:  again. Wasn't she no,
+asr:0: OUTPUT 782.94-784.41:  no,
+asr:0: OUTPUT 784.41-786.03:  no? She was with her mother and
+asr:0: OUTPUT 786.03-787.56: 
+asr:0: OUTPUT 787.56-789.03: 
+asr:0: OUTPUT 789.03-790.56:  father and great-grandmother and
+asr:0: OUTPUT 790.56-792.63:  great-grandfathers, and all that now what's where, where exactly is this <noise>. 
+asr:0: OUTPUT 793.50-796.14: Uh, are you still online? 
+asr:0: OUTPUT 796.77-798.21: Hello oh
+asr:0: OUTPUT 798.21-799.74:  hey there
+asr:0: OUTPUT 799.74-801.21:  uh <laugh>
+asr:0: OUTPUT 801.21-802.80:  Well we cut off, I think we were
+asr:0: OUTPUT 802.80-804.33:  uh, I think they ran
+asr:0: OUTPUT 804.33-805.80:  out of tape maybe well now
+asr:0: OUTPUT 805.80-807.39:  they're supposed to
+asr:0: OUTPUT 807.39-808.92:  let us uh give us a
+asr:0: OUTPUT 808.92-810.39:  warning when we're like thirty minutes
+asr:0: OUTPUT 810.39-811.86:  is up that may have been
+asr:0: OUTPUT 811.86-813.45:  it but I, I,
+asr:0: OUTPUT 813.45-815.10:  I, they should say
+asr:0: OUTPUT 815.10-816.63:  you thirty minutes is just
+asr:0: OUTPUT 816.63-818.10:  about up but uh
+asr:0: OUTPUT 818.10-820.53:  in any case uh. 
+asr:0: OUTPUT 820.53-821.88: This
+asr:0: OUTPUT 821.88-823.71:  is there at alba okay. 
+asr:0: OUTPUT 823.71-824.88: 
+asr:0: OUTPUT 824.88-826.41: And
+asr:0: OUTPUT 826.41-827.94:  uh, maybe some of these days
+asr:0: OUTPUT 827.94-829.50:  we'll, we'll go
+asr:0: OUTPUT 829.50-831.09:  down
+asr:0: OUTPUT 831.09-832.56:  and I'll show you all these kinfolk she
+asr:0: OUTPUT 832.56-835.62:  didn't know about, uh. 
+asr:0: OUTPUT 835.62-837.93: But uh. 
+asr:0: OUTPUT 838.47-840.21: I
+asr:0: OUTPUT 840.21-843.18:  haven't even been out to Daddy's grave since his funeral, yeah. 
+asr:0: OUTPUT 843.18-844.86: I i
+asr:0: OUTPUT 844.86-846.39:  i just
+asr:0: OUTPUT 846.39-849.03:  you mean they're they're gone what now. 
+asr:0: OUTPUT 849.03-850.26: I Say to Me
+asr:0: OUTPUT 850.26-851.73:  They're Gone Yeah
+asr:0: OUTPUT 851.73-853.26:  and Uh
+asr:0: OUTPUT 853.26-854.73: 
+asr:0: OUTPUT 854.73-856.32: 
+asr:0: OUTPUT 856.32-857.85:  Uh, It's You Put Uh Uh
+asr:0: OUTPUT 857.85-860.04:  Marker On It. 
+asr:0: OUTPUT 860.04-861.87: That's it. 
+asr:0: OUTPUT 862.41-864.06: It doesn't
+asr:0: OUTPUT 864.06-865.59: 
+asr:0: OUTPUT 865.59-867.18:  doesn't, uh, he won't know that I visited him, and
+asr:0: OUTPUT 867.18-868.71:  uh,
+asr:0: OUTPUT 868.71-870.33:  or anything else so. 
+asr:0: OUTPUT 872.01-874.65: Maybe i'm weird that way. 
+asr:0: OUTPUT 874.65-876.42: 
+asr:0: OUTPUT 876.42-877.95: Well, it may be genetic, George <laugh>
+asr:0: OUTPUT 877.95-879.42: 
+asr:0: OUTPUT 879.42-880.95:  uh
+asr:0: OUTPUT 880.95-882.48:  <laugh>
+asr:0: OUTPUT 882.48-884.01:  your your
+asr:0: OUTPUT 884.01-887.07:  granddaughter's getting worried over here oh. 
+asr:0: OUTPUT 887.07-888.60: Did you tell her we were
+asr:0: OUTPUT 888.60-890.07:  running
+asr:0: OUTPUT 890.07-892.74:  a a scientific experiment? No. 
+asr:0: OUTPUT 892.74-893.91: Yeah
+asr:0: OUTPUT 893.91-895.44: , I, I given her 
+asr:0: OUTPUT 895.44-897.00: her past history with science fairs. I'm not sure
+asr:0: OUTPUT 897.00-898.53:  she'd, she'd be, she'd
+asr:0: OUTPUT 898.53-900.12:  be too enthralled with
+asr:0: OUTPUT 900.12-901.65: 
+asr:0: OUTPUT 901.65-904.62:  that. Oh, I guess that, uh. 
+asr:0: OUTPUT 904.68-906.12: They they felt
+asr:0: OUTPUT 906.12-907.65:  that my
+asr:0: OUTPUT 907.65-909.12:  accent
+asr:0: OUTPUT 909.12-910.65:  and voice and all was
+asr:0: OUTPUT 910.65-912.12:  good for uh
+asr:0: OUTPUT 912.12-913.65:  a
+asr:0: OUTPUT 913.65-915.30:  natural
+asr:0: OUTPUT 915.30-917.73:  English speaking. 
+asr:0: OUTPUT 917.73-919.95: Uh cylinder. 
+asr:0: OUTPUT 919.95-921.36: Well uh
+asr:0: OUTPUT 921.36-922.89:  uh
+asr:0: OUTPUT 922.89-924.42:  we may set research back considerably in this
+asr:0: OUTPUT 924.42-925.89:  little <noise> temp
+asr:0: OUTPUT 925.89-927.42:  here <laugh> i i
+asr:0: OUTPUT 927.42-930.15:  i just don't know uh. 
+asr:0: OUTPUT 930.15-932.07: Well. 
+asr:0: OUTPUT 932.94-934.29: I could put
+asr:0: OUTPUT 934.29-935.76:  some
+asr:0: OUTPUT 935.76-937.23:  yawls and things like that
+asr:0: OUTPUT 937.23-938.76:  in it, but that that's that's
+asr:0: OUTPUT 938.76-940.23: 
+asr:0: OUTPUT 940.23-941.97:  trite, uh,. 
+asr:0: OUTPUT 942.12-943.17: <laugh>
+asr:0: OUTPUT 943.17-944.64: 
+asr:0: OUTPUT 944.64-946.11:  she's looking at a picture
+asr:0: OUTPUT 946.11-948.78:  here george that's that's oh uh uh just inverted it. 
+asr:0: OUTPUT 948.78-949.95: Oh uh uh
+asr:0: OUTPUT 949.95-951.48: 
+asr:0: OUTPUT 951.48-953.16:  uh they uh. 
+asr:0: OUTPUT 955.89-957.99: Thing that uh. 
+asr:0: OUTPUT 958.47-960.27: We uh. 
+asr:0: OUTPUT 960.66-962.07: 
+asr:0: OUTPUT 962.07-963.60: I, I, I hadn't thought 
+asr:0: OUTPUT 963.60-965.13: about the fact that you never have been through that
+asr:0: OUTPUT 965.13-967.14:  symmetry. I had you know haven't. 
+asr:0: OUTPUT 967.53-969.03: 
+asr:0: OUTPUT 969.03-970.56: Well let's see
+asr:0: OUTPUT 970.56-972.03: 
+asr:0: OUTPUT 972.03-973.56:  you weren't there when mother was
+asr:0: OUTPUT 973.56-975.18:  dead, you know. 
+asr:0: OUTPUT 975.18-976.62: Uh,
+asr:0: OUTPUT 976.62-978.15:  I was overseas. I think when that
+asr:0: OUTPUT 978.15-979.68:  happened,
+asr:0: OUTPUT 979.68-981.15:  you
+asr:0: OUTPUT 981.15-984.00:  know, I think you were too. You were in Uh, Luzon. 
+asr:0: OUTPUT 984.00-985.68: 
+asr:0: OUTPUT 985.68-987.15: Oh, 
+asr:0: OUTPUT 987.15-988.68: I'll lose on yeah,
+asr:0: OUTPUT 988.68-990.27:  uh just about ended up in uh, Brazil. 
+asr:0: OUTPUT 990.78-993.39: Uh for the for the holidays. 
+asr:0: OUTPUT 993.39-994.68: Oh
+asr:0: OUTPUT 994.68-996.15: 
+asr:0: OUTPUT 996.15-997.68: Oh what I got down in Brazil, 
+asr:0: OUTPUT 997.68-999.27: well all these commercial guys that that would just
+asr:0: OUTPUT 999.27-1000.80:  love for me to come work for
+asr:0: OUTPUT 1000.80-1002.33:  him. And and uh things don't
+asr:0: OUTPUT 1002.33-1003.80:  turn out well here. I may just
+asr:0: OUTPUT 1003.80-1006.23:  do it anyway. Um. 
+asr:0: OUTPUT 1006.89-1008.33: He uh
+asr:0: OUTPUT 1008.33-1009.86:  had a had had a
+asr:0: OUTPUT 1009.86-1011.39:  it's just short people
+asr:0: OUTPUT 1011.39-1012.86:  he's got all these sales
+asr:0: OUTPUT 1012.86-1014.39:  and and he he can't get
+asr:0: OUTPUT 1014.39-1017.27:  down there to uh to see about them. 
+asr:0: OUTPUT 1017.27-1018.92: And
+asr:0: OUTPUT 1018.92-1021.92:  uh, they had a big uh sale they wanted to do. 
+asr:0: OUTPUT 1022.97-1025.85: In brazil: eighty machines. 
+asr:0: OUTPUT 1026.18-1027.56: 
+asr:0: OUTPUT 1027.56-1029.09: Uh, around oh three thousand dollars
+asr:0: OUTPUT 1029.09-1030.62:  at clip, and
+asr:0: OUTPUT 1030.62-1032.66:  uh. 
+asr:0: OUTPUT 1032.66-1034.37: Uh <noise> 
+asr:0: OUTPUT 1034.37-1035.96: I happen to be there at a meeting he he
+asr:0: OUTPUT 1035.96-1037.49:  invited me to and and
+asr:0: OUTPUT 1037.49-1039.29:  uh I said. 
+asr:0: OUTPUT 1039.29-1040.55: Could
+asr:0: OUTPUT 1040.55-1042.86:  I cover it? Suddenly the wheels started turning. 
+asr:0: OUTPUT 1042.86-1044.45: The actually
+asr:0: OUTPUT 1044.45-1045.98:  I would have gone, but we couldn't get the
+asr:0: OUTPUT 1045.98-1047.51:  Brazilian embassy
+asr:0: OUTPUT 1047.51-1048.98:  to, uh, to get off their their
+asr:0: OUTPUT 1048.98-1050.51:  quick cooling, their heels and
+asr:0: OUTPUT 1050.51-1052.10:  process my
+asr:0: OUTPUT 1052.10-1053.63:  paperwork <noise> uh-huh because I had to be there
+asr:0: OUTPUT 1053.63-1055.16:  today.
+asr:0: OUTPUT 1055.16-1056.63:  You already had all th
+asr:0: OUTPUT 1056.63-1058.16:  all these
+asr:0: OUTPUT 1058.16-1060.47:  shots and all all you needed. Oh yeah, oh yeah, a visa. 
+asr:0: OUTPUT 1060.47-1063.02: That's Right and Uh. 
+asr:0: OUTPUT 1063.38-1065.21: They uh. 
+asr:0: OUTPUT 1065.96-1067.31: 
+asr:0: OUTPUT 1067.31-1068.90: Well,
+asr:0: OUTPUT 1068.90-1070.43:  uh, they Latin Americans are noted for being
+asr:0: OUTPUT 1070.43-1072.41:  slow about things like that. 
+asr:0: OUTPUT 1072.89-1074.18: Well, 
+asr:0: OUTPUT 1074.18-1075.65: they made it, they made it real clear at the
+asr:0: OUTPUT 1075.65-1077.18:  embassy, says
+asr:0: OUTPUT 1077.18-1078.65:  uh, says you don't
+asr:0: OUTPUT 1078.65-1080.18:  understand we're not like American
+asr:0: OUTPUT 1080.18-1081.71: 
+asr:0: OUTPUT 1081.71-1083.42:  business, uh um we uh. 
+asr:0: OUTPUT 1083.42-1084.77: We process things
+asr:0: OUTPUT 1084.77-1086.30:  at our own
+asr:0: OUTPUT 1086.30-1088.04:  speed <laugh>. 
+asr:0: OUTPUT 1088.04-1089.36: So uh
+asr:0: OUTPUT 1089.36-1091.97: , what these were uh,. 
+asr:0: OUTPUT 1092.36-1093.89: 
+asr:0: OUTPUT 1093.89-1095.36: 
+asr:0: OUTPUT 1095.36-1098.39: Insects aside dispersing machines. 
+asr:0: OUTPUT 1098.39-1099.95: 
+asr:0: OUTPUT 1099.95-1101.48: Uh, this guy
+asr:0: OUTPUT 1101.48-1103.94: 's come up with an interesting concept. He's, he's basically, uh. 
+asr:0: OUTPUT 1103.94-1105.56: UM. 
+asr:0: OUTPUT 1105.56-1107.96: What he's doing is he uh? 
+asr:0: OUTPUT 1109.13-1111.44: Has has made them. 
+asr:0: OUTPUT 1111.47-1113.27: Super simple. 
+asr:0: OUTPUT 1113.81-1115.07: Uh
+asr:0: OUTPUT 1115.07-1117.95:  everybody else is going with the real complex stuff. 
+asr:0: OUTPUT 1117.95-1119.00: 
+asr:0: OUTPUT 1119.00-1120.95: And all kinds of uh. 
+asr:0: OUTPUT 1121.01-1122.75: All 
+asr:0: OUTPUT 1122.75-1124.34: kinds of uh uh you know real fancy
+asr:0: OUTPUT 1124.34-1125.87:  gadgets, and what he did was basically take
+asr:0: OUTPUT 1125.87-1127.34:  a
+asr:0: OUTPUT 1127.34-1128.93:  gasoline engine, a a uh Briggs and
+asr:0: OUTPUT 1128.93-1130.46:  Stratton engine that you can pick up anywhere.
+asr:0: OUTPUT 1130.46-1131.93:  In fact, they're, they're
+asr:0: OUTPUT 1131.93-1133.55:  cheaper there than they are here. 
+asr:0: OUTPUT 1133.61-1135.29: Uh. 
+asr:0: OUTPUT 1135.29-1136.82: And uh. 
+asr:0: OUTPUT 1137.12-1138.89: Put a
+asr:0: OUTPUT 1138.89-1140.48:  UH smog device on it. 
+asr:0: OUTPUT 1140.78-1141.95: 
+asr:0: OUTPUT 1141.95-1143.60: So that 
+asr:0: OUTPUT 1143.60-1145.49: it's powering this smog device, which is a blower yeah. 
+asr:0: OUTPUT 1145.49-1147.29: The
+asr:0: OUTPUT 1147.29-1148.31:  crazy thing about it is to meet
+asr:0: OUTPUT 1148.31-1150.20:  all the pollution standards. What you've had
+asr:0: OUTPUT 1150.20-1152.00:  to do is come up with a very efficient
+asr:0: OUTPUT 1152.00-1153.65:  blower to force
+asr:0: OUTPUT 1153.65-1155.36:  extra air into the exhaust. 
+asr:0: OUTPUT 1155.99-1157.49: And
+asr:0: OUTPUT 1157.49-1158.96:  I don't know if that really um uh changes
+asr:0: OUTPUT 1158.96-1160.49:  the composition of the
+asr:0: OUTPUT 1160.49-1162.77:  exhaust or just changes the percentage. 
+asr:0: OUTPUT 1162.89-1164.30: Probably some of
+asr:0: OUTPUT 1164.30-1165.83: 
+asr:0: OUTPUT 1165.83-1167.30:  both well it was about like when Uh
+asr:0: OUTPUT 1167.30-1168.77:  Montana had to get rid
+asr:0: OUTPUT 1168.77-1170.36:  of the
+asr:0: OUTPUT 1170.36-1171.89:  <human> that they Uh
+asr:0: OUTPUT 1171.89-1174.68:  just Uh. 
+asr:0: OUTPUT 1176.00-1177.20: Heated
+asr:0: OUTPUT 1177.20-1178.73: 
+asr:0: OUTPUT 1178.73-1180.26:  them to super hot, and then
+asr:0: OUTPUT 1180.26-1181.85:  it became
+asr:0: OUTPUT 1181.85-1183.38:  colorless, and they let it
+asr:0: OUTPUT 1183.38-1184.85:  out
+asr:0: OUTPUT 1184.85-1186.38:  the stack <laugh>. But
+asr:0: OUTPUT 1186.38-1188.00:  they don't see, won't hurt us, uh-huh,
+asr:0: OUTPUT 1188.00-1189.53:  and then then
+asr:0: OUTPUT 1189.53-1192.32:  they took all sorts of pictures, took them to <human>. 
+asr:0: OUTPUT 1193.31-1195.50: But uh. 
+asr:0: OUTPUT 1197.24-1199.07: A uh. 
+asr:0: OUTPUT 1201.92-1203.30: I don't
+asr:0: OUTPUT 1203.30-1204.89: 
+asr:0: OUTPUT 1204.89-1206.42:  don't, I'm uh, have we been talking thirty minutes?
+asr:0: OUTPUT 1206.42-1207.95:  Yeah, I don't think
+asr:0: OUTPUT 1207.95-1209.42:  so okay,
+asr:0: OUTPUT 1209.42-1212.42:  uh, well, let's talk about Christmas a minute. 
+asr:0: OUTPUT 1212.42-1213.95: All
+asr:0: OUTPUT 1213.95-1215.42:  right, uh, because Peggy was sick and I was having
+asr:0: OUTPUT 1215.42-1218.18:  back problems, we really hadn't made plans, but. 
+asr:0: OUTPUT 1218.18-1219.29: 
+asr:0: OUTPUT 1219.29-1220.82: Uh, we'll, we'll kind of see how things go
+asr:0: OUTPUT 1220.82-1223.64:  here. It may be the other side of Christmas before we come see you. 
+asr:0: OUTPUT 1223.64-1225.29: But
+asr:0: OUTPUT 1225.29-1226.82:  I've got uh uh the Friday before and the Monday
+asr:0: OUTPUT 1226.82-1228.92:  after off, and I'd hate to. 
+asr:0: OUTPUT 1228.92-1230.69: Hate to Lose That. 
+asr:0: OUTPUT 1231.05-1232.07: 
+asr:0: OUTPUT 1232.07-1233.54: 
+asr:0: OUTPUT 1233.54-1235.07: 
+asr:0: OUTPUT 1235.07-1237.11: There's Saturday Before the Friday Before the Friday Before. 
+asr:0: OUTPUT 1237.11-1239.03: Well let's see. 
+asr:0: OUTPUT 1239.33-1240.35: 
+asr:0: OUTPUT 1240.35-1241.82: Christmas
+asr:0: OUTPUT 1241.82-1243.35:  is going to come on Monday so you'll have
+asr:0: OUTPUT 1243.35-1244.88:  uh twenty
+asr:0: OUTPUT 1244.88-1246.41:  second twenty third
+asr:0: OUTPUT 1246.41-1247.94:  twenty fourth and twenty
+asr:0: OUTPUT 1247.94-1250.85:  third yeah I think so uh-huh. 
+asr:0: OUTPUT 1250.85-1252.86: And then what? 
+asr:0: OUTPUT 1252.86-1254.90: Uh. 
+asr:0: OUTPUT 1256.16-1257.51: 
+asr:0: OUTPUT 1257.51-1258.98: 
+asr:0: OUTPUT 1258.98-1260.57: Anyway,
+asr:0: OUTPUT 1260.57-1262.10:  uh, come on anyway, well yeah,
+asr:0: OUTPUT 1262.10-1263.57:  we'll I. I'll have to
+asr:0: OUTPUT 1263.57-1265.10:  get with Peggy and see what she wants to do.
+asr:0: OUTPUT 1265.10-1267.59:  That's be all right and you, you know how we are, we're. 
+asr:0: OUTPUT 1268.46-1270.56: Adjustible. 
+asr:0: OUTPUT 1270.56-1272.51: Uh but uh. 
+asr:0: OUTPUT 1272.75-1274.61: They uh. 
+asr:0: OUTPUT 1274.61-1275.69: I got another
+asr:0: OUTPUT 1275.69-1277.31: 
+asr:0: OUTPUT 1277.31-1279.20:  saliva gland that stopped up. 
+asr:0: OUTPUT 1280.07-1281.09: So
+asr:0: OUTPUT 1281.09-1282.56:  I Got to Go in Wednesday
+asr:0: OUTPUT 1282.56-1285.05:  and Let Uh. 
+asr:0: OUTPUT 1285.05-1286.43: 
+asr:0: OUTPUT 1286.43-1287.96: Doctor Morgan
+asr:0: OUTPUT 1287.96-1289.91:  look at it and mash on it and. 
+asr:0: OUTPUT 1289.91-1291.02: Oh boy
+asr:0: OUTPUT 1291.02-1292.55: 
+asr:0: OUTPUT 1292.55-1294.08:  boy,
+asr:0: OUTPUT 1294.08-1295.67:  oh, it
+asr:0: OUTPUT 1295.67-1297.38:  don't hurt it, it gets bigger when I eat
+asr:0: OUTPUT 1297.38-1299.18:  something sweeter, you
+asr:0: OUTPUT 1299.18-1300.83:  know, and it shrinks when
+asr:0: OUTPUT 1300.83-1303.53:  I'm not eating anything. 
+asr:0: OUTPUT 1304.10-1305.42: 
+asr:0: OUTPUT 1305.42-1306.95: It
+asr:0: OUTPUT 1306.95-1308.96:  It Gets When I'm Eating Stuff the Sweet. 
+asr:0: OUTPUT 1311.03-1312.26: Uh, it's about
+asr:0: OUTPUT 1312.26-1314.21:  uh. 
+asr:0: OUTPUT 1316.22-1317.54: 
+asr:0: OUTPUT 1317.54-1319.07: Uh, it's about the size of
+asr:0: OUTPUT 1319.07-1320.66:  a a
+asr:0: OUTPUT 1320.66-1323.03:  uh, what makes that noise? 
+asr:0: OUTPUT 1323.03-1324.53: I don't know
+asr:0: OUTPUT 1324.53-1326.06: 
+asr:0: OUTPUT 1326.06-1327.80:  uh, it's uh. 
+asr:0: OUTPUT 1327.80-1329.06: It's
+asr:0: OUTPUT 1329.06-1330.53: 
+asr:0: OUTPUT 1330.53-1333.41:  about the size of a a ping pong ball, but oh my. 
+asr:0: OUTPUT 1333.68-1335.12: When
+asr:0: OUTPUT 1335.12-1336.65:  it, when it, it's down,
+asr:0: OUTPUT 1336.65-1338.84:  it's, it's, uh, it's. 
+asr:0: OUTPUT 1338.84-1340.46: That size of marble
+asr:0: OUTPUT 1340.46-1342.29:  maybe. 
+asr:0: OUTPUT 1342.29-1343.61: Oh! 
+asr:0: OUTPUT 1344.03-1345.05: You
+asr:0: OUTPUT 1345.05-1346.58:  know, she had
+asr:0: OUTPUT 1346.58-1348.41:  to take one else on the other side. 
+asr:0: OUTPUT 1348.41-1349.58: 
+asr:0: OUTPUT 1349.58-1351.05: And
+asr:0: OUTPUT 1351.05-1352.64:  uh, what kind of got me concerned about
+asr:0: OUTPUT 1352.64-1354.29:  it was that uh,. 
+asr:0: OUTPUT 1354.29-1355.97: She uh. 
+asr:0: OUTPUT 1357.53-1359.36: Oh! 
+asr:0: OUTPUT 1359.45-1361.01: Did a
+asr:0: OUTPUT 1361.01-1362.48:  needle biopsy on it
+asr:0: OUTPUT 1362.48-1364.01:  first <laugh>
+asr:0: OUTPUT 1364.01-1365.60:  and the bopsy came back
+asr:0: OUTPUT 1365.60-1367.67:  malignant? 
+asr:0: OUTPUT 1367.73-1369.35: Uh, at least they had
+asr:0: OUTPUT 1369.35-1370.94:  found some
+asr:0: OUTPUT 1370.94-1372.56:  malignant cells in it. 
+asr:0: OUTPUT 1372.92-1374.03: 
+asr:0: OUTPUT 1374.03-1375.56: And then when she took it
+asr:0: OUTPUT 1375.56-1377.03:  out and had a
+asr:0: OUTPUT 1377.03-1379.97:  bobsy run on it, they couldn't find any molecular sales. 
+asr:0: OUTPUT 1380.39-1381.56: 
+asr:0: OUTPUT 1381.56-1383.09: But now this one's
+asr:0: OUTPUT 1383.09-1384.56:  spoiling up <laugh>
+asr:0: OUTPUT 1384.56-1386.15: 
+asr:0: OUTPUT 1386.15-1387.74:  uh, it makes you think about
+asr:0: OUTPUT 1387.74-1389.27:  things like that anyway.
+asr:0: OUTPUT 1389.27-1390.80: 
+asr:0: OUTPUT 1390.80-1392.27:  Well yeah, I think I would
+asr:0: OUTPUT 1392.27-1394.16:  too, but uh,. 
+asr:0: OUTPUT 1394.28-1395.93: Well uh. 
+asr:0: OUTPUT 1398.27-1400.46: Just uh. 
+asr:0: OUTPUT 1400.64-1401.99: Take it as it comes
+asr:0: OUTPUT 1401.99-1403.52: 
+asr:0: OUTPUT 1403.52-1405.11:  well,
+asr:0: OUTPUT 1405.11-1407.06:  not like you got a lot of options huh yeah. 
+asr:0: OUTPUT 1407.15-1409.19: Uh. 
+asr:0: OUTPUT 1410.36-1411.98: 
+asr:0: OUTPUT 1411.98-1413.87: No, I, I really don't have a lot of options. 
+asr:0: OUTPUT 1414.35-1416.36: Uh but. 
+asr:0: OUTPUT 1416.36-1419.27: That's uh. 
+asr:0: OUTPUT 1421.04-1422.69: It's
+asr:0: OUTPUT 1422.69-1424.88:  It's Probably Going to Have to Come Out Anyway. 
+asr:0: OUTPUT 1425.09-1427.85: Whether It's malignant or not. 
+asr:0: OUTPUT 1427.94-1429.50: 
+asr:0: OUTPUT 1429.50-1431.03: Looks like eventually you'd run out, 
+asr:0: OUTPUT 1431.03-1433.16: but I guess there so many in there anyway that. 
+asr:0: OUTPUT 1433.19-1434.93: You don't really. 
+asr:0: OUTPUT 1435.08-1436.67: Notice it. 
+asr:0: OUTPUT 1436.73-1437.96: 
+asr:0: OUTPUT 1437.96-1440.51: I ask her the same question. 
+asr:0: OUTPUT 1440.51-1441.86: I says
+asr:0: OUTPUT 1441.86-1443.39:  am
+asr:0: OUTPUT 1443.39-1444.86:  I going to run out of saliva glands. She
+asr:0: OUTPUT 1444.86-1446.39:  says oh no,
+asr:0: OUTPUT 1446.39-1449.21:  it says you got so many you never run out of them. 
+asr:0: OUTPUT 1449.69-1451.82: But uh. 
+asr:0: OUTPUT 1452.18-1453.92: I think uh
+asr:0: OUTPUT 1453.92-1456.53:  since she removed that one. 
+asr:0: OUTPUT 1456.53-1459.17: That i do have more dry mouth. 
+asr:0: OUTPUT 1459.71-1460.85: I did before
+asr:0: OUTPUT 1460.85-1462.38:  yeah
+asr:0: OUTPUT 1462.38-1463.91: 
+asr:0: OUTPUT 1463.91-1465.80:  uh, i don't know whether it's. 
+asr:0: OUTPUT 1465.80-1466.91: 
+asr:0: OUTPUT 1466.91-1468.38: The
+asr:0: OUTPUT 1468.38-1470.06:  Uh, the Mild Imagination, or What But Uh. 
+asr:0: OUTPUT 1470.42-1472.55: It uh. 
+asr:0: OUTPUT 1473.57-1475.73: That way. 
+asr:0: OUTPUT 1475.97-1477.86: Uh. 
+asr:0: OUTPUT 1479.18-1480.44: Well you
+asr:0: OUTPUT 1480.44-1482.06: 
+asr:0: OUTPUT 1482.06-1483.59:  you, uh, you
+asr:0: OUTPUT 1483.59-1485.06:  in Peggy
+asr:0: OUTPUT 1485.06-1487.19:  Going to Talk Over Christmas and uh, Let Us Know Yeah. 
+asr:0: OUTPUT 1487.19-1489.53: How's Mama Doing by the Way? 
+asr:0: OUTPUT 1489.53-1491.99: Oh, She's Just a Millionth of Her. 
+asr:0: OUTPUT 1492.05-1493.55: Oh oh
+asr:0: OUTPUT 1493.55-1496.31:  <laugh> uh. 
+asr:0: OUTPUT 1496.31-1497.36: 
+asr:0: OUTPUT 1497.36-1498.89: She
+asr:0: OUTPUT 1498.89-1500.78:  She's Still Going to Rehab. 
+asr:0: OUTPUT 1500.78-1501.95: 
+asr:0: OUTPUT 1501.95-1503.48: And
+asr:0: OUTPUT 1503.48-1505.01:  she, she's getting kind of fed up
+asr:0: OUTPUT 1505.01-1506.48:  because she
+asr:0: OUTPUT 1506.48-1508.01:  has to do all
+asr:0: OUTPUT 1508.01-1509.63:  this running around for. 
+asr:0: OUTPUT 1509.63-1511.43: Uh asshole. 
+asr:0: OUTPUT 1511.43-1512.48: And now that
+asr:0: OUTPUT 1512.48-1514.07:  she won't let me
+asr:0: OUTPUT 1514.07-1515.60:  drive, she has to
+asr:0: OUTPUT 1515.60-1517.97:  all the runner around for me. 
+asr:0: OUTPUT 1518.72-1520.73: And uh. 
+asr:0: OUTPUT 1521.06-1522.44: 
+asr:0: OUTPUT 1522.44-1524.00: It, it's just about get to 
+asr:0: OUTPUT 1524.00-1526.85: her. I kind of wondered if things wouldn't come down this way. 
+asr:0: OUTPUT 1528.68-1530.06: And
+asr:0: OUTPUT 1530.06-1531.59:  I tell you that
+asr:0: OUTPUT 1531.59-1533.18: 
+asr:0: OUTPUT 1533.18-1535.55:  Ethel is a a a still on uh <noise>. 
+asr:0: OUTPUT 1535.55-1536.93: The
+asr:0: OUTPUT 1536.93-1539.30:  Business of Uh Getting Uh. 
+asr:0: OUTPUT 1540.41-1541.46: Things
+asr:0: OUTPUT 1541.46-1543.08:  organized uh. 
+asr:0: OUTPUT 1543.26-1545.42: You Have a Ask Her. 
+asr:0: OUTPUT 1545.42-1546.77: If she needs anything
+asr:0: OUTPUT 1546.77-1548.30:  and she said no, I don't need
+asr:0: OUTPUT 1548.30-1549.77:  a
+asr:0: OUTPUT 1549.77-1551.30:  thing about the time you get back
+asr:0: OUTPUT 1551.30-1553.61:  from the the uh store. 
+asr:0: OUTPUT 1553.61-1556.52: She said, Oh, I need some so-and-so. 
+asr:0: OUTPUT 1557.78-1558.95: 
+asr:0: OUTPUT 1558.95-1560.42: Uh we
+asr:0: OUTPUT 1560.42-1561.98:  she originally. 
+asr:0: OUTPUT 1561.98-1563.54: Uh about
+asr:0: OUTPUT 1563.54-1566.21:  all the drugs over here from. 
+asr:0: OUTPUT 1566.21-1567.23: 
+asr:0: OUTPUT 1567.23-1569.45: The Apothecary and Uh. 
+asr:0: OUTPUT 1569.84-1570.95: 
+asr:0: OUTPUT 1570.95-1572.48: 
+asr:0: OUTPUT 1572.48-1574.91: Cobbins and we buy them from the little one up. 
+asr:0: OUTPUT 1574.91-1577.01: Road here which uh. 
+asr:0: OUTPUT 1577.01-1578.42: 
+asr:0: OUTPUT 1578.42-1579.95: Gives us good service and gives us a little
+asr:0: OUTPUT 1579.95-1581.42:  bit of price
+asr:0: OUTPUT 1581.42-1584.18:  than the popcorn did and uh. 
+asr:0: OUTPUT 1585.32-1586.70: But
+asr:0: OUTPUT 1586.70-1588.86:  we, we, it took us about a year. 
+asr:0: OUTPUT 1588.86-1590.48: To convince her
+asr:0: OUTPUT 1590.48-1591.95:  that she was
+asr:0: OUTPUT 1591.95-1594.38:  causing Jeanette a lot of trouble,. 
+asr:0: OUTPUT 1594.38-1595.82: By using two
+asr:0: OUTPUT 1595.82-1597.29:  drugstores, yeah,
+asr:0: OUTPUT 1597.29-1598.88:  particularly because the
+asr:0: OUTPUT 1598.88-1600.41:  one downtown
+asr:0: OUTPUT 1600.41-1603.05:  you had to, uh,. 
+asr:0: OUTPUT 1603.65-1604.82: 
+asr:0: OUTPUT 1604.82-1606.29: 
+asr:0: OUTPUT 1606.29-1607.76: Trouble parking because it it wasn't that
+asr:0: OUTPUT 1607.76-1609.86:  many parker places down. 
+asr:0: OUTPUT 1610.88-1612.35: But she
+asr:0: OUTPUT 1612.35-1614.00:  finally just. 
+asr:0: OUTPUT 1614.00-1615.35: 
+asr:0: OUTPUT 1615.35-1617.03: Agreed to Come Over Here. 
+asr:0: OUTPUT 1617.03-1618.35: Well, there's another reason you
+asr:0: OUTPUT 1618.35-1620.81:  want to use just one drug store. 
+asr:0: OUTPUT 1620.81-1622.07: That's so that uh
+asr:0: OUTPUT 1622.07-1623.60: , that that
+asr:0: OUTPUT 1623.60-1626.30:  pharmacist at least has a chance to look at everything you're taking. 
+asr:0: OUTPUT 1626.69-1628.19: Sometimes
+asr:0: OUTPUT 1628.19-1629.66:  Doctor A doesn't know what Doctor B doesn't
+asr:0: OUTPUT 1629.66-1631.19:  know know what
+asr:0: OUTPUT 1631.19-1633.29:  E, D, and F are giving you. 
+asr:0: OUTPUT 1633.29-1634.94: 
+asr:0: OUTPUT 1634.94-1636.41: Well, I try to limit my
+asr:0: OUTPUT 1636.41-1638.03:  doctors to two. 
+asr:0: OUTPUT 1638.03-1640.67: That's probably wise, uh. 
+asr:0: OUTPUT 1640.67-1641.75: And uh
+asr:0: OUTPUT 1641.75-1643.19:  <laugh>
+asr:0: OUTPUT 1643.19-1644.66: 
+asr:0: OUTPUT 1644.66-1646.19:  it's amusing
+asr:0: OUTPUT 1646.19-1649.04:  land, uh Dr. Morgan is a lady. 
+asr:0: OUTPUT 1649.25-1650.66: 
+asr:0: OUTPUT 1650.66-1652.94: Um-Hum and Uh She Uh. 
+asr:0: OUTPUT 1655.25-1658.07: Older and Uh. 
+asr:0: OUTPUT 1658.52-1659.75: 
+asr:0: OUTPUT 1659.75-1661.22: The uh she's uh. 
+asr:0: OUTPUT 1661.61-1663.35: A head surgeon
+asr:0: OUTPUT 1663.35-1664.88: 
+asr:0: OUTPUT 1664.88-1666.35:  surgeon, uh, because he does all
+asr:0: OUTPUT 1666.35-1667.94:  sorts of
+asr:0: OUTPUT 1667.94-1669.50:  operations on your head, now
+asr:0: OUTPUT 1669.50-1670.94: 
+asr:0: OUTPUT 1670.94-1672.50:  um-hum, and uh, she's good at
+asr:0: OUTPUT 1672.50-1673.94:  it, but uh, she
+asr:0: OUTPUT 1673.94-1676.67:  knows nothing about medicine too, of course. 
+asr:0: OUTPUT 1676.67-1677.81: 
+asr:0: OUTPUT 1677.81-1680.66: And doctor uh. 
+asr:0: OUTPUT 1680.66-1681.68: 
+asr:0: OUTPUT 1681.68-1683.21: 
+asr:0: OUTPUT 1683.21-1684.80: Holland, who is my internal medicine doctor? 
+asr:0: OUTPUT 1685.07-1686.21: 
+asr:0: OUTPUT 1686.21-1688.88: She'll give me a prescription and. 
+asr:0: OUTPUT 1689.90-1691.52: 
+asr:0: OUTPUT 1691.52-1692.99: In the Meantime I'll Have to Go
+asr:0: OUTPUT 1692.99-1694.94:  to Uh. 
+asr:0: OUTPUT 1694.94-1696.89: Doctor uh. 
+asr:0: OUTPUT 1696.89-1698.21: Morgan
+asr:0: OUTPUT 1698.21-1700.19:  for some unrelated. 
+asr:0: OUTPUT 1700.40-1702.29: Ailment. 
+asr:0: OUTPUT 1702.29-1704.24: And uh. 
+asr:0: OUTPUT 1704.36-1705.68: Doctor
+asr:0: OUTPUT 1705.68-1707.15:  Morgan says did he give
+asr:0: OUTPUT 1707.15-1708.68:  you
+asr:0: OUTPUT 1708.68-1710.15:  that <laugh>
+asr:0: OUTPUT 1710.15-1711.68:  so he'd ruin
+asr:0: OUTPUT 1711.68-1713.15:  your liver with that so
+asr:0: OUTPUT 1713.15-1714.98:  here take this <laugh>. 
+asr:0: OUTPUT 1715.40-1716.81: 
+asr:0: OUTPUT 1716.81-1718.34: Course: Uh, I didn't tell her that
+asr:0: OUTPUT 1718.34-1720.53:  I had already finished Doctor. 
+asr:0: OUTPUT 1720.53-1723.44: The Holland prescription, so. 
+asr:0: OUTPUT 1723.44-1725.09: Uh, it was
+asr:0: OUTPUT 1725.09-1727.10:  something for. 
+asr:0: OUTPUT 1727.10-1728.48: Uh. 
+asr:0: OUTPUT 1728.48-1730.88: Eastern mouth. 
+asr:0: OUTPUT 1732.02-1734.21: But uh uh. 
+asr:0: OUTPUT 1734.21-1735.68: Thing she gave me was some
+asr:0: OUTPUT 1735.68-1737.15: 
+asr:0: OUTPUT 1737.15-1738.62: 
+asr:0: OUTPUT 1738.62-1740.09:  lodgings,
+asr:0: OUTPUT 1740.09-1741.56:  lodgings. How do you say that <laugh> lodgings, lodge
+asr:0: OUTPUT 1741.56-1743.69:  adjutants? Yeah, uh. 
+asr:0: OUTPUT 1744.02-1745.79: And: 
+asr:0: OUTPUT 1745.85-1748.07: They uh. 
+asr:0: OUTPUT 1748.07-1749.09: I
+asr:0: OUTPUT 1749.09-1750.56:  kept 'em and
+asr:0: OUTPUT 1750.56-1752.72:  used 'em every time I felt like I might be. 
+asr:0: OUTPUT 1752.72-1754.91: Got a Little Infection. 
+asr:0: OUTPUT 1755.06-1756.56: But uh,
+asr:0: OUTPUT 1756.56-1758.18:  I didn't need them because. 
+asr:0: OUTPUT 1758.18-1759.56: It already
+asr:0: OUTPUT 1759.56-1761.09:  fixed me up but
+asr:0: OUTPUT 1761.09-1762.56:  it's not very
+asr:0: OUTPUT 1762.56-1764.03:  often that you see
+asr:0: OUTPUT 1764.03-1765.50:  one doctor change and
+asr:0: OUTPUT 1765.50-1767.48:  the other doctor's prescripts. 
+asr:0: OUTPUT 1768.95-1771.80: Uh and Uh. 
+asr:0: OUTPUT 1771.80-1772.88: Well when
+asr:0: OUTPUT 1772.88-1774.41:  I, I was going to see
+asr:0: OUTPUT 1774.41-1776.21:  Doctor Morgan. 
+asr:0: OUTPUT 1776.27-1777.50: When
+asr:0: OUTPUT 1777.50-1778.94:  I had to use
+asr:0: OUTPUT 1778.94-1780.89:  these uh general practitioners,. 
+asr:0: OUTPUT 1780.98-1783.23: Um-Hum and Uh. 
+asr:0: OUTPUT 1783.50-1784.94: So
+asr:0: OUTPUT 1784.94-1786.50:  I
+asr:0: OUTPUT 1786.50-1788.30:  told Dr. Morgan I sure would like to. 
+asr:0: OUTPUT 1788.30-1789.50: Getting the
+asr:0: OUTPUT 1789.50-1791.90:  internal medicine doctor and they are these: 
+asr:0: OUTPUT 1792.11-1793.19: 
+asr:0: OUTPUT 1793.19-1794.75: 
+asr:0: OUTPUT 1794.75-1796.28: Scarce as hen's teeth around
+asr:0: OUTPUT 1796.28-1797.93:  here, well, that's odd, so uh,. 
