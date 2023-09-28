@@ -1,5 +1,6 @@
 import matplotlib
 import matplotlib.pyplot as plt
+import numpy as np
 
 width = 12.0
 height = 4.8
@@ -74,47 +75,22 @@ def plot_trellis_with_segments(trellis, segments, transcript, path):
     ax2.set_ylim(-0.1, 1.1)
     plt.tight_layout()
     plt.show()
-    
-                                                    #waveform[0]
-def plot_alignments(trellis, segments, word_segments, waveform, bundle):
-    matplotlib.rcParams["figure.figsize"] = [width / 2, height / 2]
-    trellis_with_path = trellis.clone()
-    for i, seg in enumerate(segments):
-        if seg.label != "|":
-            trellis_with_path[seg.start + 1 : seg.end + 1, i + 1] = float("nan")
 
-    fig, [ax1, ax2] = plt.subplots(2, 1, figsize=(16, 9.5))
 
-    ax1.imshow(trellis_with_path[1:, 1:].T, origin="lower")
-    ax1.set_xticks([])
-    ax1.set_yticks([])
-
-    for word in word_segments:
-        ax1.axvline(word.start - 0.5)
-        ax1.axvline(word.end - 0.5)
-
-    for i, seg in enumerate(segments):
-        if seg.label != "|":
-            ax1.annotate(seg.label, (seg.start, i + 0.3))
-            ax1.annotate(f"{seg.score:.2f}", (seg.start, i + 4), fontsize=8)
-
-    # The original waveform
+def plot_alignments(trellis, word_segments, waveform, sample_size):
+    matplotlib.rcParams["figure.figsize"] = [2*width, height]
     ratio = waveform.size(0) / (trellis.size(0) - 1)
-    ax2.plot(waveform)
+    plt.plot(waveform)
     for word in word_segments:
         x0 = ratio * word.start
         x1 = ratio * word.end
-        ax2.axvspan(x0, x1, alpha=0.1, color="red")
-        ax2.annotate(f"{word.score:.2f}", (x0, 0.8))
-
-    for seg in segments:
-        if seg.label != "|":
-            ax2.annotate(seg.label, (seg.start * ratio, 0.9))
-    xticks = ax2.get_xticks()
-    plt.xticks(xticks, xticks / bundle.sample_rate)
-    ax2.set_xlabel("time [second]")
-    ax2.set_yticks([])
-    ax2.set_ylim(-1.0, 1.0)
-    ax2.set_xlim(0, waveform.size(-1))
+        plt.axvspan(x0, x1, alpha=0.1, color="red")
+        plt.annotate(f"{word.score:.2f}", (x0, 0.8))
+        plt.annotate(word.label, (word.start * ratio, 0.9))
+    plt.xlabel("time [second]")
+    plt.yticks([])
+    plt.ylim(-1.0, 1.0)
+    plt.xlim(0, waveform.size(-1))
+    plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.1)
     plt.show()
     
