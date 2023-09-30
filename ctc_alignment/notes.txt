@@ -5,3 +5,8 @@
    - backtacking
    - merge labels
    - merge words
+
+
+- CTC for long chunks of audio does not work very well
+- keep sample rate of 16 kHz in mind
+- second speaker speaks relly quite. this does confuse CTC because it does not pick it up as speech.

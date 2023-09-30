@@ -1,8 +1,9 @@
 import re
 
 def process(transcript, start, end, patterns, trim_chars, clean_chars, remove_space_before, remove_space_after) :
+
+# trim
     # trim beginning and end
-    
     start_index = 0
     if start != "" :
         start_index = transcript.index(start)
@@ -10,38 +11,38 @@ def process(transcript, start, end, patterns, trim_chars, clean_chars, remove_sp
     if end != "" :
         end_index = transcript.index(end)
     trimmed = transcript[start_index : end_index]
-
+    
     # remove patterns
     for pattern in patterns :
         trimmed = re.sub(pattern, ' ', trimmed)
 
-    # remove unwanted characters
-        # search for all unwanted characters
-    unwanted_chars_str = trimmed
-    chars = trim_chars + clean_chars
-    for c in chars :
-        unwanted_chars_str = ''.join([i for i in unwanted_chars_str if i != c])
-    unwanted_chars = set(unwanted_chars_str)
-        # remove unwanted chars
-    for c in unwanted_chars :
-        trimmed = ''.join([i for i in trimmed if i != c])
-        # remove multiple spaces
+    # remove characters
+    chars = set(trimmed)
+    wanted = set(trim_chars + clean_chars)
+    unwanted = chars - wanted
+    for c in unwanted :
+        trimmed = re.sub(c, '', trimmed)
+
+# spaces
+    # remove multiple spaces
     trimmed = ' '.join(trimmed.split())
 
     # remove space before special character
     for sub in remove_space_after :
         trimmed = trimmed.replace(sub + " ", sub)
+    
     # remove space after special character
     for sub in remove_space_before :
         trimmed = trimmed.replace(" " + sub, sub)
 
+# clean
     # lower
     clean = trimmed.lower()
        
     # remove unwanted characters
-    unwanted_chars = set(trim_chars)
-    for c in unwanted_chars :
-        clean = ''.join([i for i in clean if i != c])
+    unwanted = set(trim_chars)
+    for c in unwanted :
+        clean = re.sub(c, '', clean)
 
     return trimmed, clean
 
