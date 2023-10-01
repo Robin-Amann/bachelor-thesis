@@ -1,0 +1,31 @@
+10 s:
+
+THEY :           0.01 	0.01
+MIGHT :          0.00	0.00
+CANCEL :         0.76	0.76
+MY :             0.86	0.86
+INSURANCE :      0.79	0.79
+WELL :           0.58
+I :              0.00
+THINK :          0.51
+THAT'S :         0.20
+THE :            0.67
+BEST :           0.20
+THING :          0.01
+POSSIBILITY :    0.59
+ALTHOUGH :       0.60	0.70
+UH :             0.00	0.00
+SOMETIME :       0.28	0.85
+AGO :            0.83	1.00
+I :              0.00	0.00
+GO :             0.88	0.01
+UH :             0.60	0.00
+
+
+4 s:
+ALTHOUGH :       0.67
+UH :             0.83
+SOMETIME :       0.92
+AGO :            0.92
+I :              0.00
+GO :             0.00

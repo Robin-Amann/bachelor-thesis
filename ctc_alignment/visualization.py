@@ -85,8 +85,8 @@ def plot_alignments(trellis, word_segments, waveform, sample_size):
         x0 = ratio * word.start
         x1 = ratio * word.end
         plt.axvspan(x0, x1, alpha=0.1, color="red")
-        plt.annotate(f"{word.score:.2f}", (x0, 0.8))
-        plt.annotate(word.label, (word.start * ratio, 0.9))
+#        plt.annotate(f"{word.score:.2f}", (x0, 0.8))
+        plt.annotate(word.label, (x0, 0.9))
     plt.xlabel("time [second]")
     plt.yticks([])
     plt.ylim(-1.0, 1.0)
