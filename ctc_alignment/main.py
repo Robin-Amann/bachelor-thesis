@@ -12,8 +12,8 @@ transcript = ""
 SPEECH_FILE = ""
 
 # Example 1
-# SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
-# transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
+SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
+transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
 
 # Example 2
 # SPEECH_FILE = "ctc_alignment\\data\\audio.wav"
@@ -31,10 +31,10 @@ SPEECH_FILE = ""
 # transcript = '|'.join(transcript.split())
 
 # Example 3
-SPEECH_FILE = "ctc_alignment\\data\\4s.wav"
+# SPEECH_FILE = "ctc_alignment\\data\\4s.wav"
 # transcript = "THEY|MIGHT|CANCEL|MY|INSURANCE|WELL|I|THINK|THAT'S|A|DISTINCT|POSSIBILITY|ALTHOUGH|AH|AH|SOME|TIME|AGO|GEICO|AH"    # Hand
 # transcript = "THEY|MIGHT|CANCEL|MY|INSURANCE|WELL|I|THINK|THAT'S|THE|BEST|THING|POSSIBILITY|ALTHOUGH|UH|SOMETIME|AGO|I|GO|UH"     # Machine
-transcript = "ALTHOUGH|UH|SOMETIME|AGO|I|GO"     # Machine
+# transcript = "ALTHOUGH|UH|SOMETIME|AGO|I|GO"     # Machine
 
 # Estimate the frame-wise label probability from audio waveform
 bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                # Wav2Vec2 model
@@ -57,7 +57,7 @@ emission = emissions[0].cpu().detach()                              # tensor( [ 
 tokens = ctc.get_tokens(transcript, labels)                         # label indices over transcript : [7, 1, ..., 2, 6, 3] 
 trellis = ctc.generate_alignment_probability(tokens, emission)                            # --> [170, 46] (timeframes+1 x transcript+1)
 
-# visual.plot_trellis(trellis)
+visual.plot_trellis(trellis)
 
 # Find the most likely path
 path = ctc.backtrack(trellis, emission, tokens)
