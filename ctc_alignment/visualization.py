@@ -1,11 +1,10 @@
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
 
 width = 12.0
 height = 4.8
 
-def plot_framewise_label_probability(labels, emission) :
+def plot_framewise_label_probability(emission) :
     matplotlib.rcParams["figure.figsize"] = [width, height]
     plt.imshow(emission.T)
     plt.colorbar()
@@ -78,7 +77,7 @@ def plot_trellis_with_segments(trellis, segments, transcript, path):
 
 
 def plot_alignments(trellis, word_segments, waveform, sample_size):
-    matplotlib.rcParams["figure.figsize"] = [2*width, height]
+    matplotlib.rcParams["figure.figsize"] = [width, height]
     ratio = waveform.size(0) / (trellis.size(0) - 1)
     plt.plot(waveform)
     for word in word_segments:
@@ -91,6 +90,6 @@ def plot_alignments(trellis, word_segments, waveform, sample_size):
     plt.yticks([])
     plt.ylim(-1.0, 1.0)
     plt.xlim(0, waveform.size(-1))
-    plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.1)
+   # plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.1)
     plt.show()
     

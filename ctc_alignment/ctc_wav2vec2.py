@@ -2,6 +2,11 @@ import torch
 from dataclasses import dataclass
 import IPython
 
+def get_tokens(transcript, labels) :
+    dictionary = {c: i for i, c in enumerate(labels)}
+    tokens = [dictionary[c] for c in transcript]
+    return tokens
+
 
 def get_trellis(emission, tokens, blank_id=0):
     num_frame = emission.size(0)
@@ -12,7 +17,8 @@ def get_trellis(emission, tokens, blank_id=0):
     # The extra dim for time axis is for simplification of the code.
     trellis = torch.empty((num_frame + 1, num_tokens + 1))
     trellis[0, 0] = 0
-    trellis[1:, 0] = torch.cumsum(emission[:, 0], 0)
+#    trellis[1:, 0] = torch.cumsum(emission[:, 0], 0)
+    trellis[1:, 0] = emission[:, 0]                                             # ignore starting audio
     trellis[0, -num_tokens:] = -float("inf")
     trellis[-num_tokens:, 0] = float("inf")
 
@@ -23,19 +29,6 @@ def get_trellis(emission, tokens, blank_id=0):
             # Score for changing to the next token
             trellis[t, :-1] + emission[t, tokens],
         )
-    return trellis
-
-
-def get_tokens(transcript, labels) :
-    dictionary = {c: i for i, c in enumerate(labels)}
-    tokens = [dictionary[c] for c in transcript]
-    return tokens
-
-
-# Generate alignment probability (trellis)
-def generate_alignment_probability(tokens, emission) :
-    trellis = get_trellis(emission, tokens)
-
     return trellis
 
 
@@ -79,7 +72,7 @@ def backtrack(trellis, emission, tokens, blank_id=0):
                 break
     else:
         raise ValueError("Failed to align")
-    return path[::-1]
+    return path[::-1]   # in reverse order
 
 
 # Merge the labels
@@ -104,7 +97,7 @@ def merge_repeats(path, transcript):
     while i1 < len(path):
         while i2 < len(path) and path[i1].token_index == path[i2].token_index:
             i2 += 1
-        score = sum(path[k].score for k in range(i1, i2)) / (i2 - i1)
+        score = sum(path[k].score for k in range(i1, i2)) / (i2 - i1) # score is average
         segments.append(
             Segment(
                 transcript[path[i1].token_index],
@@ -126,7 +119,7 @@ def merge_words(segments, separator="|"):
             if i1 != i2:
                 segs = segments[i1:i2]
                 word = "".join([seg.label for seg in segs])
-                score = sum(seg.score * seg.length for seg in segs) / sum(seg.length for seg in segs)
+                score = sum(seg.score * seg.length for seg in segs) / sum(seg.length for seg in segs)  # score is average
                 words.append(Segment(word, segments[i1].start, segments[i2 - 1].end, score))
             i1 = i2 + 1
             i2 = i1
