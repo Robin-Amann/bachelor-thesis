@@ -12,14 +12,14 @@ transcript = ""
 SPEECH_FILE = ""
 
 # Example 1
-# SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
-# transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
+SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
+transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
 # transcript = "AT|THIS|MOMENT"
 
 # Example 10 sec
-SPEECH_FILE = "ctc_alignment\\data\\10\\10s.wav"
+# SPEECH_FILE = "ctc_alignment\\data\\10\\10s.wav"
 # transcript = "THEY|MIGHT|CANCEL|MY|INSURANCE|WELL|I|THINK|THAT'S|A|DISTINCT|POSSIBILITY|ALTHOUGH|AH|AH|SOME|TIME|AGO|GEICO|AH"    # Hand
-transcript = "THEY|MIGHT|CANCEL|MY|INSURANCE|WELL|I|THINK|THAT'S|THE|BEST|THING|POSSIBILITY|ALTHOUGH|UH|SOMETIME|AGO|I|GO|UH"     # Machine
+# transcript = "THEY|MIGHT|CANCEL|MY|INSURANCE|WELL|I|THINK|THAT'S|THE|BEST|THING|POSSIBILITY|ALTHOUGH|UH|SOMETIME|AGO|I|GO|UH"     # Machine
 
 # Example 4 sec
 # SPEECH_FILE = "ctc_alignment\\data\\4\\4s.wav"
@@ -54,6 +54,7 @@ visual.plot_trellis(trellis)
 
 # Find the most likely path
 path = ctc.backtrack(trellis, emission, tokens)
+print(path)
 y = [trellis[p.time_index, p.token_index].item() for p in path]
 x = list(range(len(y)))
 plt.plot(x, y)

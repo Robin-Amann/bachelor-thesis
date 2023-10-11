@@ -76,7 +76,7 @@ def plot_trellis_with_segments(trellis, segments, transcript, path):
     plt.show()
 
 
-def plot_alignments(trellis, word_segments, waveform, sample_size):
+def plot_alignments(trellis, word_segments, waveform):
     matplotlib.rcParams["figure.figsize"] = [width, height]
     ratio = waveform.size(0) / (trellis.size(0) - 1)
     plt.plot(waveform)
