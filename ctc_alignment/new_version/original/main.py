@@ -14,6 +14,7 @@ SPEECH_FILE = ""
 # Example 1
 SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
 transcript = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
+transcript = "CURIOSITY"
 # transcript = "AT|THIS|MOMENT"
 
 # Example 10 sec
@@ -54,7 +55,8 @@ visual.plot_trellis(trellis)
 
 # Find the most likely path
 path = ctc.backtrack(trellis, emission, tokens)
-print(path)
+visual.plot_trellis_with_path(trellis, path)
+
 y = [trellis[p.time_index, p.token_index].item() for p in path]
 x = list(range(len(y)))
 plt.plot(x, y)
@@ -67,6 +69,6 @@ for word in word_segments :
     print(word.label, ":", " " * (13 - len(word.label)), f"{word.score:.2f}")
 
 
-# visual.plot_trellis_with_path(trellis, path)
+visual.plot_trellis_with_path(trellis, path)
 # visual.plot_trellis_with_segments(trellis, segments, transcript, path)
 visual.plot_alignments(trellis, word_segments, waveform[0], bundle.sample_rate)

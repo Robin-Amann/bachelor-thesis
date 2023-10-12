@@ -1,33 +1,27 @@
+import matplotlib.pyplot as plt 
 import torch
 
-# trellis = torch.empty((10, 5))
-# trellis[:, :] = 0
-# trellis[1:, 0] = 1
-# trellis[0, -4:] = -float("inf")
-# trellis[-4:, 0] = float("inf")
-# t= 0
-# trellis[t + 1, 1:] = 2
+probabilities = [-float("inf"), -1.7811e+01, -1.7745e+01, -1.7745e+01, -1.7728e+01, -1.7137e+01, -1.7132e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.7079e+01, -1.4917e+01, -1.2519e+01, -2.1338e-05, -1.5435e-02, -1.5465e-02, -1.8864e+00, -1.1601e+01, -1.2099e+01, -1.4079e+01, -1.4079e+01, -1.4449e+01, -1.4463e+01, -1.3445e+01, -1.3523e+01, -1.4818e+01, -1.7557e+01, -2.4865e+01, -2.7153e+01, -1.9285e+01, -1.9285e+01, -8.7901e+00, -1.2113e+01, -1.4900e+01, -1.5734e+01, -2.9827e+01, -2.9831e+01]
+max_index = probabilities.index(max(probabilities))
+max_probability = probabilities[max_index]
 
-# print(trellis)
-
-# a = [i for i in range(10) ]
-# print(a[[1,3,2]])
+indices = list(range(len(probabilities)))
+j = len(indices) - 2
+while j >= 0 :
+    if probabilities[indices[j]] == probabilities[indices[j+1]] :
+        indices = indices[:j] + indices[j+1:]
+    j -= 1
 
 
-slope = 1.5
-peaks = []
-i = len(peaks) - 1
-while i > 0 :
-    index_a = i
-    index_b = i-1
-    height_a = peaks[index_a]
-    height_b = peaks[index_b]
-    
-    if height_b < height_a :
-        if ( height_a - height_b) / ( index_a - index_b ) > slope :
-            peaks = peaks[:i-1] + peaks[i:]     # remove i-1
-            i -= 1
-    else :
-        if ( height_b - height_a) / ( index_a - index_b ) > slope :
-            peaks = peaks[:i] + peaks[i+1:]     # remove i
-    
+j = len(indices) - 2
+while j > 0 :
+    if probabilities[indices[j-1]] < probabilities[indices[j]] and probabilities[indices[j]] < probabilities[indices[j+1]] :
+        indices = indices[:j] + indices[j+1:]
+    if probabilities[indices[j-1]] > probabilities[indices[j]] and probabilities[indices[j]] > probabilities[indices[j+1]] :
+        indices = indices[:j] + indices[j+1:]
+    j -= 1
+
+x = [i for i in range(len(probabilities))]
+y1 = probabilities
+y2 = [probabilities[i] for i in indices]
+print(y2[1::2])
