@@ -2,7 +2,7 @@ import torch
 import torchaudio
 import os
 
-def load(file_path, sample_rate) :
+def load_audio(file_path, sample_rate) :
     if not os.path.isfile(file_path) :
         return []
     
@@ -13,3 +13,10 @@ def load(file_path, sample_rate) :
             new_freq=sample_rate, 
             waveform=waveform)
         return waveform
+    
+    
+def read_file(path) :
+    content = ""
+    with open(path, "r", encoding="utf8") as file :
+        content = file.read()
+    return content

@@ -1,7 +1,6 @@
 import re
 
 def process(transcript, start, end, patterns, trim_chars, clean_chars, remove_space_before, remove_space_after) :
-
 # trim
     # trim beginning and end
     start_index = 0
@@ -22,7 +21,6 @@ def process(transcript, start, end, patterns, trim_chars, clean_chars, remove_sp
     unwanted = chars - wanted
     for c in unwanted :
         trimmed = re.sub(c, '', trimmed)
-
 # spaces
     # remove multiple spaces
     trimmed = ' '.join(trimmed.split())
@@ -34,7 +32,6 @@ def process(transcript, start, end, patterns, trim_chars, clean_chars, remove_sp
     # remove space after special character
     for sub in remove_space_before :
         trimmed = trimmed.replace(" " + sub, sub)
-
 # clean
     # lower
     clean = trimmed.lower()
