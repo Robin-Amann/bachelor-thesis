@@ -58,6 +58,11 @@ def ctc(emission, transcript, labels) :
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
         return [], float("inf") 
     path = ctc_original.backtrack(trellis, emission, tokens)
+    # x = list(range(len(path)))
+    # y = [trellis[p.time_index, p.token_index] for p in path]
+    # plt.plot(x, y)
+    # plt.legend([transcript])
+    # plt.show()
     segments = ctc_original.merge_repeats(path, transcript)
     words = ctc_original.merge_words(segments)
     # Get Score
@@ -179,9 +184,26 @@ def alignment(labels, emission, transcript, offset) :
         return words
          
     emission_one, emission_two, emission_words = divide_emissions(emission, trellis[i], labels, transcript[i])
-    print(emission_words)
-    words_one = alignment(labels, emission_one, transcript[: i], offset)
-    words_two = alignment(labels, emission_two, transcript[i+1:], offset + emission_words[-1].end)
+    
+    words_one = []
+    if len(transcript[: i]) > 0 :
+        temp_transcript = "|".join(transcript[: i])
+        temp_words_one, score_one = ctc(emission_one, temp_transcript, labels)
+        print(temp_transcript, score_one)
+        if score_one <= 4 :
+            words_one = temp_words_one
+        else :
+            words_one = alignment(labels, emission_one, transcript[: i], offset)
+    words_two = []
+    if len(transcript[i+1:]) > 0 :
+        temp_transcript = "|".join(transcript[i+1:])
+        temp_words_two, score_two = ctc(emission_two, temp_transcript, labels)
+        print(temp_transcript, score_two)
+        if score_two <= 4 :
+            words_two = temp_words_two
+            offset_alignment_inplace(words_two, offset+ emission_words[-1].end)
+        else :
+            words_two = alignment(labels, emission_two, transcript[i+1:], offset+ emission_words[-1].end)
     
     offset_alignment_inplace(emission_words, offset)
     return words_one + emission_words + words_two
@@ -191,7 +213,7 @@ def full_alignment(audio_file, transcript) :
     labels, emission, waveform = get_metadata(audio_file)
     words, score = ctc(emission, transcript, labels)
     print(score)
-    if score <= 3 :
+    if score <= 4 :
         trellis, _ = get_trellis(emission, transcript, labels)
         visual.plot_alignments(trellis, words, waveform[0])
         return words
