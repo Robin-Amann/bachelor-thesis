@@ -1,6 +1,7 @@
 import torch
 from . import base
 from .base import Segment
+from . import visualization as visual
 
 SCORE_LIMIT = 4
 
@@ -11,6 +12,7 @@ def get_peak(trellis) :
     slope = 1.5   
     distance = 3
     probabilities = torch.clone(trellis[:, -1])
+#    visual.plot_alignment_probabilities(probabilities, "")
     max_index = torch.argmax(probabilities).item()
     max_probability = probabilities[max_index].item()
 
@@ -129,20 +131,33 @@ def alignment(labels, emission, transcript, offset) :
 
 def transform_result(ratio, words) :
     result = []
+    decimals = 3
     for w in words :
-        result.append((w.label, int(w.start * ratio), int(w.end * ratio), w.score))
+        result.append( {
+            "transcript": w.label, 
+            "start": int(w.start * ratio), 
+            "end": int(w.end * ratio), 
+            "score": int(w.score * 10**decimals) / (10**decimals) 
+            } )
     return result
     
 def full_alignment(waveform, transcript, device) :
     # return list of transcript and indices to audio (transcript, start, end)
-
     labels, emission = base.get_emission(waveform, device)
     words, score, trellis_width = base.ctc(emission, transcript, labels)
     ratio = waveform[0].size(0) / trellis_width
+    print(score)
     if score <= SCORE_LIMIT :
         return transform_result(ratio, words)
     
     transcript = transcript.split("|")
     words = alignment(labels, emission, transcript, 0)
     transcript = "|".join(transcript)
+    return transform_result(ratio, words)
+
+
+def base_ctc(waveform, transcript, device) :
+    labels, emission = base.get_emission(waveform, device)
+    words, _, trellis_width = base.ctc(emission, transcript, labels)
+    ratio = waveform[0].size(0) / trellis_width
     return transform_result(ratio, words)

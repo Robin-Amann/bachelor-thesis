@@ -37,6 +37,7 @@ speech_timestamps = get_speech_timestamps(wav, model, sampling_rate=SAMPLING_RAT
 print(type(speech_timestamps[0]))
 pprint(speech_timestamps)
 
+print(wav)
 plot_speech_samples(wav, speech_timestamps, SAMPLING_RATE)
 
 # merge all speech chunks to one audio

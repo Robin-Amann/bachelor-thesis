@@ -1,6 +1,7 @@
 import torch
 import torchaudio
 from dataclasses import dataclass
+from . import visualization as visual
 
 def get_emission(waveform, device) :
     bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
@@ -136,6 +137,7 @@ def merge_words(segments, separator="|"):
 
 def ctc(emission, transcript, labels) :
     trellis, tokens = get_trellis(emission, transcript, labels)
+    visual.plot_trellis(trellis)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
         return [], float("inf") 
@@ -143,6 +145,7 @@ def ctc(emission, transcript, labels) :
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)
     score = - torch.max(trellis[:, -1]).item() / len(transcript)
+    # visual.plot_trellis_path_probabilities(trellis, path)
     return words, score, trellis.size(0)
 
 
