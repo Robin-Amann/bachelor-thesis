@@ -6,6 +6,7 @@ import voice_activation_detection.voice_detection_silero_vad as voice_activation
 import transcription_model.whisper as whisper
 import visualization.visualize as visual
 import prediction_model.audio_utils as audio
+import prediction_model.model as predictor
 
 
 ## examples
@@ -50,7 +51,8 @@ for fragment in audio_fragments :
 visual.plot_gaps(waveform[0], audio_fragments, sample_rate)
 
 # perform prediction model to search for hesitations
-
+hesitations = predictor.predict(audio_fragments)    # list of {start, end, label}   speech is relative
 
 # transcribe hesitations
+
 
