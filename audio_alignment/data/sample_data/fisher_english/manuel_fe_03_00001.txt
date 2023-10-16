@@ -1,0 +1,576 @@
+# fe_03_00001.sph
+# Transcribed at the LDC
+
+3.76 5.54 A: and i generally prefer 
+
+5.82 6.48 A: eating at home 
+
+7.92 9.52 B: hi my name is andy 
+
+10.05 10.88 A: hello andy 
+
+11.82 12.31 A: how are you 
+
+12.49 14.04 B: good how are you doing 
+
+13.59 13.96 A: good 
+
+14.47 15.73 A: do you have any idea what's going on 
+
+15.64 18.51 B: no i guess we're supposed to talk about food now 
+
+19.07 19.56 A: yeah 
+
+20.06 20.46 B: um 
+
+20.19 21.25 A: what's your preference 
+
+21.70 24.02 B: i like eating at a restaurant better 
+
+24.45 24.91 A: okay 
+
+25.09 25.70 B: um 
+
+26.36 28.06 B: because i don't like to cook very much 
+
+29.65 30.84 B: which did you say you preferred 
+
+31.33 32.58 A: um eating at home 
+
+32.76 34.16 B: eating at home why is that 
+
+34.90 35.64 A: um 
+
+37.14 40.49 A: i don't know just uh i enjoy eating at home better than 
+
+40.72 41.62 A: i mean casual 
+
+42.21 44.03 A: periodic dining out is fine but 
+
+44.40 45.95 A: generally speaking i like eating at home 
+
+46.56 47.01 B: yeah 
+
+47.33 48.15 B: i tend to eat out 
+
+48.33 48.89 B: probably 
+
+49.32 51.68 B: six or five or six nights a week 
+
+51.66 52.34 A: wow 
+
+52.55 54.18 B: but i live in new york city so 
+
+54.30 55.55 A: oh well that makes a difference 
+
+54.80 56.27 B: it it makes it easier 
+
+56.27 56.84 A: yeah 
+
+57.22 58.10 B: um where do you live 
+
+58.23 60.05 A: we live uh i live in frederick maryland 
+
+60.36 61.07 B: oh okay 
+
+61.44 61.83 A: it's a lot 
+
+61.45 63.06 B: there's probably not too many options 
+
+62.36 63.10 A: smaller town 
+
+63.34 63.80 A: yes 
+
+64.81 65.27 B: um 
+
+65.66 66.84 B: what was our other question 
+
+67.67 68.36 A: i think that was it 
+
+67.70 68.27 B: something about 
+
+68.61 70.11 B: that was it if you prefer eating at home 
+
+69.50 69.79 A: yeah 
+
+70.77 71.77 B: or at a restaurant 
+
+70.92 73.37 A: i think it was yeah i think that was the only question 
+
+73.30 73.84 B: okay 
+
+74.15 76.29 A: so then what ha- is this the first time you've gotten one of these calls 
+
+76.07 77.60 B: yeah is it your first time 
+
+76.97 78.35 A: yeah like wise yes 
+
+78.44 79.78 B: my friend is actually um 
+
+79.88 80.19 B: par- 
+
+80.43 82.13 B: one of the people running this study i guess 
+
+82.43 84.38 A: likewise i have a friend who is 
+
+82.87 83.33 B: so 
+
+84.86 87.33 A: who turned me onto this he works for (( )) and he 
+
+88.04 89.00 A: sent me an email about it 
+
+89.17 90.03 B: yeah 
+
+89.31 91.74 A: i guess he's working on some of the programming behind this 
+
+92.46 96.27 B: yeah my i used to actually work at the linguistic data consortium at penn 
+
+96.64 97.55 B: which is um 
+
+97.72 99.60 B: part of the group that's running it i guess 
+
+99.91 100.37 A: got you 
+
+100.51 100.93 B: so 
+
+102.78 105.10 A: okay so now what happens 
+
+104.73 105.62 B: i don't know i think 
+
+106.15 108.52 B: i thought there would get a computer would come back 
+
+109.17 109.89 B: and um 
+
+109.89 111.85 A: maybe if we stop talking they'll come back on 
+
+111.89 113.51 B: well it said something about ten minutes though 
+
+114.20 115.46 A: we're supposed to talk for ten minutes 
+
+115.39 117.25 B: i don't know i think so that's what it said in the email 
+
+118.53 121.12 A: yeah i did read i did read something about ten minutes 
+
+120.88 121.27 B: right 
+
+122.03 124.06 B: because i remember thinking oh ten dollars for ten minutes 
+
+124.75 126.31 B: well because they're taping us so 
+
+127.27 128.84 A: is it snowing up there 
+
+128.39 130.22 B: yeah it's snowing really badly actually 
+
+130.54 132.00 A: likewise where are you in new york 
+
+131.04 131.94 B: like a blizzard 
+
+132.39 132.96 B: in manhattan 
+
+133.36 134.04 A: in manhattan 
+
+133.95 134.30 B: mhm 
+
+135.02 136.25 A: my best friend lives on the 
+
+136.74 138.82 A: upper west side at eighty seventh and columbus 
+
+138.61 141.08 B: oh really my friend lives on eighty third and columbus 
+
+141.46 142.26 A: right in the neighborhood 
+
+141.89 142.95 B: right in the neighborhood yeah 
+
+142.76 144.83 A: uh is it i think it's the jackson hole 
+
+145.28 146.26 B: oh yeah yeah 
+
+146.44 148.10 B: jackson hole diner 
+
+146.52 147.28 A: it's right on the 
+
+147.93 150.28 A: yeah it's right on the first floor of the building he's in 
+
+150.32 151.43 B: oh really have you been there 
+
+151.92 152.27 A: mhm 
+
+153.49 154.22 A: many times 
+
+154.98 156.40 B: what part of maryland are you in 
+
+156.81 158.74 A: um frederick maryland we're an hour 
+
+158.15 158.73 B: where's that 
+
+158.91 160.86 A: north of washington d._c. 
+
+161.01 161.60 B: oh okay 
+
+161.97 164.57 A: and about an hour west of baltimore 
+
+165.24 165.90 B: oh okay 
+
+166.52 167.06 A: so 
+
+167.79 169.39 A: and it's snowing here we have about 
+
+169.89 171.83 A: eight inches eight to ten inches of snow 
+
+171.91 174.62 B: oh wow i don't even actually i haven't been outside all day but 
+
+174.91 178.04 B: i heard that i mean not since this morning but i heard that there's supposed to be eight 
+
+178.17 179.95 B: i don't five to eight or something like that 
+
+181.00 183.09 A: yeah it looks like we're in that neighborhood too 
+
+183.26 184.11 B: are you at work now 
+
+184.61 190.59 A: um no actually i just came out to my parents house to shovel their driveway and i'm headed back to my office 
+
+190.65 191.32 B: oh okay 
+
+191.68 192.24 A: (( )) 
+
+192.65 194.01 A: putz around there for a while 
+
+194.56 198.55 B: yeah i'm work i figured might as well do these little calls while while i'm at work 
+
+194.73 195.00 A: but 
+
+198.18 200.42 A: what do you do 
+
+200.80 202.13 B: oh i'm an i._t. consultant 
+
+202.74 203.64 A: i._t. consultant 
+
+203.54 205.78 B: yeah i do computer programming stuff 
+
+206.31 206.75 A: got you 
+
+206.78 207.36 B: what do you do 
+
+207.70 208.74 A: i'm a real estate broker 
+
+209.01 209.27 B: oh 
+
+210.13 210.49 A: so 
+
+210.84 213.40 A: it's a slow day in the real estate business but 
+
+214.33 216.16 A: i have a lot of plenty of paper work to do so 
+
+216.74 217.56 B: how old are you 
+
+218.38 219.62 A: thirty four 
+
+219.40 219.99 B: thirty four 
+
+221.33 222.02 A: and yourself 
+
+221.90 222.62 B: twenty four 
+
+226.58 227.96 A: mhm 
+
+228.85 229.37 A: well 
+
+229.89 231.46 A: what are we three minutes into this 
+
+231.53 234.57 B: um my phone actually records it we're almost five minutes actually 
+
+234.89 235.39 A: okay 
+
+235.20 237.35 B: well since the guy called me the computer guy called me 
+
+237.96 238.80 A: yeah (( )) 
+
+239.92 242.86 A: the probably that was probably simultaneous when they did the uh 
+
+242.93 244.69 B: they just call everybody and then figure out 
+
+243.06 243.80 A: introduction 
+
+245.12 246.87 B: how to connect everybody or something like that 
+
+247.28 249.73 A: so do you do you have any idea what what 
+
+249.91 252.43 A: is behind this program what are they doing what kind of 
+
+252.10 253.64 B: my guess is something with 
+
+254.03 255.42 B: where you're from and 
+
+255.60 256.02 B: different 
+
+256.46 257.87 B: speech patterns or something like that 
+
+258.82 261.17 B: but what's the company that you heard about it through what do they do 
+
+258.88 259.63 A: got you 
+
+262.15 262.73 A: um 
+
+263.30 266.89 A: well my my friend works for the government he works at (( nist )) 
+
+267.17 267.62 B: mhm 
+
+268.12 269.39 A: and he's in the uh 
+
+269.72 271.38 A: automated speech recognition 
+
+271.50 272.10 A: division 
+
+272.02 274.58 B: oh okay i bet it's something with that then 
+
+272.23 272.82 A: i think 
+
+275.20 276.25 A: that would make sense 
+
+275.87 278.84 B: because see my friend works for the linguistics data consortium and they do 
+
+279.18 280.05 B: things like that 
+
+280.16 281.43 A: and that's who turned you on to this 
+
+281.88 282.40 B: what 
+
+282.68 284.33 A: that's how you found out about the survey 
+
+283.47 284.08 B: yeah 
+
+284.37 286.62 B: because when i used to work there we did stuff with um 
+
+284.64 285.08 A: got you 
+
+287.12 291.17 B: we'd read news articles and we'd try and figure out what the main topic in the news article was 
+
+292.00 294.50 B: um and the idea was they were trying to figure out 
+
+294.65 297.31 B: if software could be just as good as humans 
+
+297.98 302.13 B: so you'd read an article and say like is it on the topic of you know the war on iraq or something like that 
+
+298.07 298.62 A: got you 
+
+302.37 303.00 B: and 
+
+302.71 303.14 A: got you 
+
+303.72 303.98 B: some 
+
+304.12 305.89 A: so what's your favorite restaurant in new york 
+
+304.38 305.13 B: (( )) 
+
+306.70 307.22 B: restaurant 
+
+307.56 308.15 B: um 
+
+308.39 309.50 B: there's a place called r- 
+
+308.80 310.11 A: what's your favorite type of food 
+
+310.58 311.83 B: well my favorite 
+
+312.07 317.20 B: i like a lot of different kinds of food there's this restaurant called roy's new york and they actually have a few of them around the country i think 
+
+317.29 317.71 B: um 
+
+317.89 318.60 B: which is sort of like 
+
+321.90 322.42 A: okay 
+
+325.99 332.06 B: and once i had a bad experience and complained about it and then i got a fifty dollar coupon the next time so then they started to 
+
+332.27 335.90 B: finding things to (( complain )) about it's like a deal um 
+
+333.98 334.82 A: no way 
+
+336.23 339.12 B: and actually i just finished a project at work and they said we could 
+
+339.73 344.20 B: do something to celebrate i guess so my coworker and i went there and spent like 
+
+344.59 348.54 B: i don't know close to two hundred dollars and a meal it was it was a very good meal 
+
+349.05 349.55 A: wow 
+
+349.46 349.82 B: because i 
+
+349.94 352.21 B: would not be able to afford that on my own 
+
+353.76 354.12 B: um 
+
+353.81 355.81 A: did you school did you school in new york 
+
+356.08 358.81 B: no i went to um university of pennsylvania in philly 
+
+356.74 357.26 A: as well 
+
+359.52 360.02 A: got you 
+
+360.40 361.14 B: where'd you go to school 
+
+361.48 363.32 A: i went to mount saint mary's college 
+
+363.23 363.64 B: oh yeah 
+
+363.83 365.01 A: in (( amittsburgh )) maryland 
+
+364.98 365.28 B: mhm 
+
+366.17 367.66 B: you like maryland a lot 
+
+368.10 368.96 A: yeah i 
+
+369.17 370.28 A: i mean i've lived here all my life 
+
+370.55 371.37 A: and uh 
+
+372.52 374.18 A: so it's it's a nice state it's it's 
+
+374.53 376.61 A: new york is a fun place to come visit my friend 
+
+377.06 379.87 A: lives who lives up there go up and see him every once in a while but 
+
+380.50 382.26 A: i could never live there he's 
+
+382.39 385.58 A: transplanted and swarmed by it and and says he'll never move 
+
+386.30 389.80 A: and uh so it's it's it's nice to go visit and 
+
+390.70 393.88 A: to spend uh you know long weekend or to see a show but 
+
+394.70 395.96 A: then i got to come home 
+
+395.67 398.14 B: yeah i used to think i can never live here but then 
+
+399.11 401.49 B: i don't know once i moved here it's 
+
+400.86 402.27 A: yeah that's what most that happens 
+
+401.87 402.69 B: it's not different 
+
+402.90 404.21 B: it's not that bad once you move here 
+
+404.56 408.92 B: i feel like when you visit you go to all the really crowded areas and do touristy things when you live here you don't 
+
+404.86 405.26 A: well 
+
+407.37 407.87 A: mhm 
+
+409.15 410.06 B: see that as much 
+
+410.25 411.02 A: right 
+
+410.90 412.12 B: it's a great city i love it 
+
+413.42 416.29 B: i grew up in new jersey so i used to come here a lot when i was a little kid 
+
+416.74 417.70 A: what part of jersey 
+
+417.96 419.26 B: um northern jersey 
+
+419.76 420.41 B: burgen county 
+
+421.08 423.19 A: just about everybody from mount saint mary's is from jersey 
+
+423.23 423.91 B: oh really 
+
+424.03 426.90 A: yeah i think jersey's staple crop is college students isn't it 
+
+427.65 430.87 A: it's like what the state produces most of is college students 
+
+430.78 431.78 B: that's funny 
+
+431.26 434.83 A: no seriously everybody from just about everybody from the mount was 
+
+434.97 435.87 A: from new jersey 
+
+435.52 438.94 B: actually everybody at penn probably was from new jersey too 
+
+438.06 439.41 A: oh see that's 
+
+439.16 440.53 B: that's small state 
+
+440.82 441.48 A: that's what jersey 
+
+440.83 443.17 B: see it's a smart state we all go to college 
+
+443.04 445.72 A: are there no colleges in aren't there like there's rutgers 
+
+445.01 446.12 B: rutgers 
+
+445.86 447.07 A: rutgers is in jersey isn't it 
+
+446.87 449.30 B: yeah and the college of new jersey but that's about it 
+
+450.00 450.42 A: that's it 
+
+450.66 454.31 B: i think for the most part people in new jersey identify with either new york city or philadelphia 
+
+454.46 454.90 A: yeah 
+
+454.81 455.28 B: so 
+
+456.60 457.73 B: people tend to go to 
+
+458.10 461.12 B: other states (( )) because there isn't that much to do in new jersey itself 
+
+461.11 461.51 A: uh-huh 
+
+462.24 464.21 A: so do you know my friend steve louis 
+
+464.29 465.95 B: no 
+
+465.29 465.73 A: no 
+
+466.08 466.95 B: what does he do 
+
+466.52 466.90 A: how about 
+
+467.13 468.14 A: how about shelley 
+
+468.27 469.82 A: no sorry shelby 
+
+470.12 470.93 A: (( lanam )) 
+
+471.06 472.05 B: mm no 
+
+471.16 471.55 A: neither 
+
+472.32 472.83 A: no 
+
+472.97 473.35 A: they were 
+
+473.52 474.31 A: they're both uh 
+
+474.73 477.92 A: they both work for this company called fitz morrison company 
+
+478.44 479.58 A: and um 
+
+480.66 481.39 A: they um 
+
+481.51 485.44 A: they actually just got engaged shelby's from l._a. and she lives in new york 
+
+482.90 483.15 B: oh 
+
+485.81 487.95 A: i'm not sure where her place is and steve's 
+
+488.06 489.89 A: the one who lives at eighty seventh and columbus 
+
+490.03 490.45 B: mhm 
+
+490.40 491.27 A: and um 
+
+492.84 493.65 A: they um 
+
+496.32 500.69 A: they met through work they're actually getting married next summer in l._a. that's where she's from 
+
+500.54 501.37 B: oh that's nice 
+
+501.73 502.59 A: but um 
+
+503.30 504.91 A: it's uh it's insurance 
+
+505.99 507.34 A: corporate insurance basically 
