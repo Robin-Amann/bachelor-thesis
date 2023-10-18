@@ -13,7 +13,7 @@ def load_audio(file_path, sample_rate) :
             orig_freq=torchaudio.info(file_path).sample_rate, 
             new_freq=sample_rate, 
             waveform=waveform)
-        waveform = torch.mean(waveform, 0) # make to mono channel
+        waveform = torch.sum(waveform, 0) # make to mono channel    (mean)
         waveform = waveform[None, : ]
         return waveform
     

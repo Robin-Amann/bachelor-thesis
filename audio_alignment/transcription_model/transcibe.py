@@ -13,8 +13,8 @@ def transcribe_dir(speech_dir, transcript_dir) :
     files = files[:1]
     for f in files :
         print("start:", f.stem)
-        # transcript = whisper.transcribe(str(f))
-        transcript = audioclient.transcribe(str(f))
+        transcript = whisper.transcribe(str(f))
+        # transcript = audioclient.transcribe(str(f))
         transcript_location =  f'{transcript_dir}{str(f.parent)[len(speech_dir) : ]}\\{f.stem}.txt'
         print(transcript_location)
         os.makedirs(os.path.dirname(transcript_location), exist_ok=True)

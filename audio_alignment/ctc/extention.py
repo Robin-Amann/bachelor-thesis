@@ -3,7 +3,7 @@ from . import base
 from .base import Segment
 from . import visualization as visual
 
-SCORE_LIMIT = 4
+SCORE_LIMIT = 3
 
 
 def get_peak(trellis) :

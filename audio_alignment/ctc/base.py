@@ -137,7 +137,7 @@ def merge_words(segments, separator="|"):
 
 def ctc(emission, transcript, labels) :
     trellis, tokens = get_trellis(emission, transcript, labels)
-    visual.plot_trellis(trellis)
+#    visual.plot_trellis(trellis)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
         return [], float("inf") 

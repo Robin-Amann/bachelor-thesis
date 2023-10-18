@@ -1,2 +1,2 @@
-import audioclient.client as client
+from .audioclient.client import *
 
