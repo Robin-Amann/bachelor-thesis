@@ -1,6 +1,7 @@
 import torch
 import torchaudio
 import utils.file as loader
+import utils.alignment_metric as metric
 import ctc.extention as ctc
 import voice_activation_detection.voice_detection_silero_vad as voice_activation
 import transcription_model.whisper_model as whisper
@@ -24,7 +25,7 @@ def process(audio_file, waveform, transcript) :
 # example
 audio_file = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
 transcript_manual = "I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT"
-transcript_whisper = "I|HAD|THAT|BESIDE|ME|AT|THIS|MOMENT"
+transcript_whisper = "I|HAD|THAT|BESIDE|ME|AT|THIS|MOMENT"  # metric: 0.964
 
 print("audiofile sample rate:", torchaudio.info(audio_file).sample_rate)
 waveform = loader.load_audio(audio_file, sample_rate)
@@ -32,6 +33,9 @@ waveform = loader.load_audio(audio_file, sample_rate)
 words_manual, speech_timestamps_manual, hesitations_manual = process(audio_file, waveform, transcript_manual)
 words_whisper, speech_timestamps_whisper, hesitations_whisper = process(audio_file, waveform, transcript_whisper)
 
+manual_metric = [{'transcript': i['transcript'], 'start': i['start'] / sample_rate, 'end': i['end'] / sample_rate,} for i in words_manual[:3] + words_manual[4:]]
+whisper_metric = [{'transcript': i['transcript'], 'start': i['start'] / sample_rate, 'end': i['end'] / sample_rate,} for i in words_whisper]
+print(metric.alignment_error(manual_metric, whisper_metric))
 visual.plot_alignment_comparison(waveform[0], [words_manual, words_whisper], [speech_timestamps_manual, speech_timestamps_whisper], ["Manual", "Whisper"], sample_rate)
 
 # visual.plot_words_and_speech(waveform[0], words, speech_timestamps, sample_rate)

@@ -75,16 +75,3 @@ def print_words(start, end) :
             else :
                 print(word + " ", end="")
         print("")
-
-start = "hi hi this is george sottington my name's katie hi katie okay so i like eating at home better me too do you yeah i don't know because you don't have control over things at restaurants and i don't know it's just better when you have control over i like".split(" ")
-end =   "hi hi this is george doddington my name is katie hi katie okay so um i like eating at home better me too do you yeah um i don't know because you don't have control over things noise restaurants i don't know it's just better when you have control over i like".split(" ")
-
-
-print(start[40:100])
-size = 20
-hand_lines = [" ".join(start[size*i: size*(i+1)]) for i in range(int(len(start) / size ) + 1)]
-# print(hand_lines)
-operations = get_operations(start, end)
-align(start, end, operations)
-
-# print_words(start, end)

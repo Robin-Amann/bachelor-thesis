@@ -13,8 +13,7 @@ if __name__ == "__main__":
     # cleanup
     hand_trimmed, hand_clean = pre.process(
         transcript=hand_transcript_messy, 
-        start="B: ", 
-        end="", 
+        start="B: ",
         patterns=["A:", "B:", "\t", "\n", "[0-9]{1,3}.[0-9]{2}", "\(\(", "\)\)"], 
     )
 
@@ -35,8 +34,9 @@ if __name__ == "__main__":
     post.write_to_file("transcript_alignment\\results\\result2.txt", hand_snips, machine_snips)
     hand_trimmed_snips = post.process(hand_snips, hand_trimmed)
     machine_trimmed_snips = post.process(machine_snips, machine_trimmed)
-    post.write_to_file("transcript_alignment\\results\\result.txt", hand_trimmed_snips, machine_trimmed_snips)
+    post.write_to_file("transcript_alignment\\results\\fe_03_00003_alignment.txt", hand_trimmed_snips, machine_trimmed_snips)
     
+    # wer alignment
     operations = wer.get_operations(hand_clean.split(" "), machine_clean.split(" "))
     hand_snips, machine_snips = wer.align(hand_trimmed.split(" "), machine_trimmed.split(" "), operations)
-    post.write_to_file_wer("transcript_alignment\\results\\result_wer.txt", hand_snips, machine_snips, 30)
+    post.write_to_file_wer("transcript_alignment\\results\\fe_03_00003_wer_alignment.txt", hand_snips, machine_snips, 30)
