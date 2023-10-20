@@ -2,16 +2,17 @@ import torch
 import torchaudio
 import utils.file as loader
 import utils.alignment_metric as metric
-import ctc.extention as ctc
-import voice_activation_detection.voice_detection_silero_vad as voice_activation
-import transcription_model.whisper_model as whisper
+import audio_transcript_alignment.ctc_extention as ctc
+import voice_detection.voice_detection_silero_vad as voice_activation
+# import audio_transcription.whisper_model as whisper
 import visualization.visualize as visual
-import prediction_model.audio_utils as audio
-import prediction_model.model as predictor
+import hesitation_prediction.audio_utils as audio
+import hesitation_prediction.model as predictor
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 sample_rate = 16000
+
 
 def process(audio_file, waveform, transcript) :
     words = ctc.full_alignment(waveform, transcript, device)    # list of {transcript, start, end, score}

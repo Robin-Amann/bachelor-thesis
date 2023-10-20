@@ -1,8 +1,6 @@
 import torch
 import torchaudio
 import os
-import wave
-import struct
 
 def read_audio(file_path, sample_rate) :
     if not os.path.isfile(file_path) :
@@ -30,7 +28,6 @@ def read_file(path) :
     return content
 
 def write_file(path, content) :
-    with open(path, "w") as file :
-        print(content)
+    with open(path, "w", encoding='utf8') as file :
         file.write(content)
 
