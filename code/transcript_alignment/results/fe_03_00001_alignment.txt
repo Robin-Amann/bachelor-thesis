@@ -1,0 +1,1047 @@
+Machine: Hello,
+Hand:    : and i generally prefer eating at home
+
+Machine: my name is
+Hand:    hi my name
+
+Machine: Tony Chiquia and I generally prefer eating at home. Hi, my name is
+Hand:    
+
+Machine: Andy. Hello Andy. How are you? Good, how are you doing? Good. Do you have any idea what's going on? No, I guess we're supposed to talk about food now. Yeah.
+Hand:    is andy hello andy how are you good how are you doing good do you have any idea what's going on no i guess we're supposed to talk about food now
+
+Machine: 
+Hand:    yeah
+
+Machine: What's your preference? I like eating at a restaurant better. Okay.
+Hand:    um what's your preference i like eating at a restaurant better
+
+Machine: 
+Hand:    okay
+
+Machine: Because I don't like to cook very much.
+Hand:    um because i don't like to cook very
+
+Machine: 
+Hand:    much
+
+Machine: Did you say you preferred?
+Hand:    which did you say you
+
+Machine: I'm
+Hand:    preferred
+
+Machine: eating at home.
+Hand:    um eating at
+
+Machine: You didn't eat
+Hand:    home
+
+Machine: at home, why is that?
+Hand:    eating at home why is
+
+Machine: 
+Hand:    that
+
+Machine: I don't know,
+Hand:    um i don't
+
+Machine: I just
+Hand:    know just uh
+
+Machine: enjoy eating at home better than, I mean, casual periodic dining out is fine, but generally speaking,
+Hand:    i enjoy eating at home better than i mean casual periodic dining out is fine but generally
+
+Machine: I'm
+Hand:    speaking i
+
+Machine: eating at home. Yeah, I tend to eat out probably
+Hand:    like eating at home yeah i tend to eat out
+
+Machine: 
+Hand:    probably six
+
+Machine: five or six
+Hand:    or five or
+
+Machine: weeks.
+Hand:    six nights a
+
+Machine: Wow. But I live in New York City, so. Oh, well that makes
+Hand:    week wow but i live in new york city so oh well that
+
+Machine: 
+Hand:    makes a difference it it
+
+Machine: it easier.
+Hand:    makes it
+
+Machine: It makes it easier. Yeah. We
+Hand:    easier yeah um where do you live we live uh
+
+Machine: live in Frederick, Maryland. Oh, okay. It's a lot.
+Hand:    i live in frederick maryland oh okay it's a
+
+Machine: 
+Hand:    lot
+
+Machine: Probably not
+Hand:    there's probably
+
+Machine: as
+Hand:    not
+
+Machine: many options.
+Hand:    too many
+
+Machine: Yeah.
+Hand:    options smaller town yes
+
+Machine: What was our other question? I think that was it.
+Hand:    um what was our other question i think that was
+
+Machine: 
+Hand:    it something
+
+Machine: That was it? If you
+Hand:    about that was it if
+
+Machine: preferred
+Hand:    you
+
+Machine: eating at home,
+Hand:    prefer eating at
+
+Machine: 
+Hand:    home
+
+Machine: or at a restaurant?
+Hand:    yeah or at a
+
+Machine: 
+Hand:    restaurant i think it
+
+Machine: Yeah, I think that was the only question. Okay. So
+Hand:    was yeah i think that was the only question okay
+
+Machine: 
+Hand:    so then what ha- is
+
+Machine: the first time you've
+Hand:    this the first time
+
+Machine: got
+Hand:    you've
+
+Machine: one of these calls? Yeah, it
+Hand:    gotten one of these calls yeah
+
+Machine: was so. Yeah, likewise.
+Hand:    is it your first time yeah like
+
+Machine: Yes. My friend is actually
+Hand:    wise yes my friend is
+
+Machine: part,
+Hand:    actually um
+
+Machine: one of
+Hand:    par- one
+
+Machine: 
+Hand:    of
+
+Machine: people running this study, I guess.
+Hand:    the people running this study i
+
+Machine: Like what?
+Hand:    guess
+
+Machine: I have a friend
+Hand:    likewise i have a
+
+Machine: who's,
+Hand:    friend who is
+
+Machine: who turned me
+Hand:    so who turned
+
+Machine: on to
+Hand:    me
+
+Machine: this. He works for
+Hand:    onto this he works
+
+Machine: NIST,
+Hand:    
+
+Machine: and he sent me an email about it. Yeah. I guess he's working on some of the programming behind this. Yeah.
+Hand:    for and he sent me an email about it yeah i guess he's working on some of the programming behind this
+
+Machine: I
+Hand:    yeah my i used
+
+Machine: actually work at the linguistic data consortium at Penn, which is
+Hand:    to actually work at the linguistic data consortium at penn which
+
+Machine: 
+Hand:    is
+
+Machine: part of the group that's running,
+Hand:    um part of the group that's
+
+Machine: and
+Hand:    running
+
+Machine: I guess.
+Hand:    it i
+
+Machine: Gotcha. So what's the hard about it?
+Hand:    guess got you
+
+Machine: Okay. So now what
+Hand:    so okay so now
+
+Machine: happened?
+Hand:    what
+
+Machine: I don't know. I think I thought
+Hand:    happens i don't know i think i
+
+Machine: that
+Hand:    
+
+Machine: there would get a computer would come back. And um. Maybe if we
+Hand:    thought there would get a computer would come back and um maybe if
+
+Machine: stopped
+Hand:    we
+
+Machine: talking, they'll come back
+Hand:    stop talking they'll come
+
+Machine: online. Well, there's
+Hand:    back on well it
+
+Machine: something about
+Hand:    said something
+
+Machine: 
+Hand:    about
+
+Machine: minutes, though.
+Hand:    ten minutes
+
+Machine: Who says
+Hand:    though we're
+
+Machine: to talk for
+Hand:    supposed to talk
+
+Machine: 
+Hand:    for
+
+Machine: minutes? I don't know. I think so. That's
+Hand:    ten minutes i don't know i think so
+
+Machine: what's
+Hand:    that's what it
+
+Machine: in the email.
+Hand:    said in the
+
+Machine: 
+Hand:    email
+
+Machine: I did
+Hand:    yeah i
+
+Machine: retomping
+Hand:    did read i did read
+
+Machine: about
+Hand:    something
+
+Machine: 
+Hand:    about
+
+Machine: minutes. Right.
+Hand:    ten minutes
+
+Machine: So
+Hand:    right
+
+Machine: I remember thinking, oh,
+Hand:    because i remember thinking
+
+Machine: 
+Hand:    oh
+
+Machine: dollars
+Hand:    ten
+
+Machine: or
+Hand:    dollars for
+
+Machine: minutes. Well, because they're taping us, so. Is it snowing up there? Yeah, it's snowing really badly, actually.
+Hand:    ten minutes well because they're taping us so is it snowing up there yeah it's snowing really badly
+
+Machine: Like what?
+Hand:    actually
+
+Machine: Where are you in New York?
+Hand:    likewise where are you in new
+
+Machine: 
+Hand:    york like a
+
+Machine: In Manhattan. In Manhattan.
+Hand:    blizzard in manhattan in
+
+Machine: 
+Hand:    manhattan
+
+Machine: My best friend lives on the Upper West Side at
+Hand:    mhm my best friend lives on the upper west side
+
+Machine: th in
+Hand:    at eighty seventh
+
+Machine: Columbus.
+Hand:    and
+
+Machine: That was
+Hand:    columbus oh
+
+Machine: my friend lives on
+Hand:    really my friend lives
+
+Machine: rd in
+Hand:    on eighty third
+
+Machine: Columbus. Right in the neighborhood.
+Hand:    and columbus right in the
+
+Machine: Yeah.
+Hand:    neighborhood right in the neighborhood yeah uh is
+
+Machine: I think it's the Jackson Hole.
+Hand:    it i think it's the jackson
+
+Machine: Okay.
+Hand:    hole oh yeah
+
+Machine: Jackson,
+Hand:    yeah
+
+Machine: a little
+Hand:    jackson
+
+Machine: diner.
+Hand:    hole
+
+Machine: 
+Hand:    diner it's right on
+
+Machine: Yeah, it's right on the first floor of the building he's in. Oh, really? Have you been there?
+Hand:    the yeah it's right on the first floor of the building he's in oh really have you been
+
+Machine: Mm-hmm. Yep. Anytime.
+Hand:    there mhm many
+
+Machine: What part of Maryland are you on?
+Hand:    times what part of maryland are you
+
+Machine: 
+Hand:    in
+
+Machine: Frederick, Maryland. We're an hour
+Hand:    um frederick maryland we're an
+
+Machine: 
+Hand:    hour where's
+
+Machine: north of Washington, DC. Oh, okay. And about an hour west of Baltimore. Oh,
+Hand:    that north of washington d.c. oh okay and about an hour west of baltimore
+
+Machine: nice.
+Hand:    oh
+
+Machine: So. And it's snowing here. We have about eight inches, eight to ten inches of snow. Oh,
+Hand:    okay so and it's snowing here we have about eight inches eight to ten inches of snow
+
+Machine: well, I'm no
+Hand:    oh wow i don't
+
+Machine: actually. I haven't been outside all day, but I heard that
+Hand:    even actually i haven't been outside all day but i heard
+
+Machine: it's...
+Hand:    
+
+Machine: I mean,
+Hand:    that i
+
+Machine: it's
+Hand:    
+
+Machine: not since this morning, but I heard that there's supposed to be,
+Hand:    mean not since this morning but i heard that there's supposed to
+
+Machine: 
+Hand:    be
+
+Machine: I don't
+Hand:    eight i
+
+Machine: know, five days
+Hand:    don't five to
+
+Machine: or something like that. Yeah, it looks like we're in that neighborhood, too. Are you at work now?
+Hand:    eight or something like that yeah it looks like we're in that neighborhood too are you at work
+
+Machine: 
+Hand:    now
+
+Machine: No, actually,
+Hand:    um no
+
+Machine: it
+Hand:    actually
+
+Machine: just came out to my parents house to shovel their driveway, and I'm headed back to my office. Oh, okay.
+Hand:    i just came out to my parents house to shovel their driveway and i'm headed back to my office oh
+
+Machine: And I'm gonna put it
+Hand:    okay
+
+Machine: around there for a while. Yeah,
+Hand:    putz around there for a while
+
+Machine: more
+Hand:    yeah
+
+Machine: work. I figured
+Hand:    i'm work i
+
+Machine: my school duties were called
+Hand:    figured might as well do these little
+
+Machine: while.
+Hand:    calls
+
+Machine: 
+Hand:    while while i'm at work
+
+Machine: What do you do?
+Hand:    but what do you
+
+Machine: 
+Hand:    do
+
+Machine: I'm an IT consultant. IT consultant? Yeah, I do computer programming stuff.
+Hand:    oh i'm an i.t. consultant i.t. consultant yeah i do computer programming
+
+Machine: Gotcha.
+Hand:    stuff got
+
+Machine: What do you do? I'm a real estate
+Hand:    you what do you do i'm a real
+
+Machine: program.
+Hand:    estate
+
+Machine: Oh. So it's a slow day in the real estate business, but a
+Hand:    broker oh so it's a slow day in the real estate business but
+
+Machine: 
+Hand:    i have
+
+Machine: lot of plenty of
+Hand:    a lot of plenty
+
+Machine: paperwork
+Hand:    of paper
+
+Machine: to do, so. How old are you?..
+Hand:    work to do so how old are
+
+Machine: In your shelf?.
+Hand:    you thirty four thirty four and yourself twenty four
+
+Machine: Well, what are we three minutes into this? My
+Hand:    mhm well what are we three minutes into this
+
+Machine: 
+Hand:    um
+
+Machine: phone actually records it. We're almost five minutes, actually.
+Hand:    my phone actually records it we're almost five minutes
+
+Machine: 
+Hand:    actually
+
+Machine: Well, since the guy called me, the computer guy called me. Yeah,
+Hand:    okay well since the guy called me the computer guy called me
+
+Machine: I think they
+Hand:    yeah
+
+Machine: probably, that was probably simultaneous when they did the...
+Hand:    the probably that was probably simultaneous when they did
+
+Machine: They'd
+Hand:    the uh they
+
+Machine: call everybody and then figure out
+Hand:    just call everybody and then figure
+
+Machine: 
+Hand:    out
+
+Machine: how to connect
+Hand:    introduction how to
+
+Machine: it.
+Hand:    
+
+Machine: Everybody or something like that? So do you
+Hand:    connect everybody or something like that so do
+
+Machine: 
+Hand:    you do
+
+Machine: have any idea what
+Hand:    you have any idea
+
+Machine: 
+Hand:    what
+
+Machine: is behind this program? What are they doing?
+Hand:    what is behind this program what are they
+
+Machine: 
+Hand:    doing what kind
+
+Machine: My guess is something with where you're from and different speech patterns or something like that. But what's the company that you heard about it through? What do they do?
+Hand:    of my guess is something with where you're from and different speech patterns or something like that but what's the company that you heard about it through what do they
+
+Machine: Well,
+Hand:    do got you um well
+
+Machine: my friend works for the government
+Hand:    my my friend works for the
+
+Machine: and
+Hand:    
+
+Machine: he works at NIST.
+Hand:    government he works at
+
+Machine: 
+Hand:    nist
+
+Machine: And he's in the
+Hand:    mhm and he's in
+
+Machine: 
+Hand:    the
+
+Machine: automated speech recognition division. Oh, okay. I bet it's something with that then.
+Hand:    uh automated speech recognition division oh okay i bet it's something with that
+
+Machine: 
+Hand:    then i
+
+Machine: That would make sense. Because
+Hand:    think that would make sense
+
+Machine: you're
+Hand:    because
+
+Machine: my friend works for the
+Hand:    see my friend works for
+
+Machine: linguistic
+Hand:    the
+
+Machine: data consortium and they do things like that. And
+Hand:    linguistics data consortium and they do things like that
+
+Machine: you actually turn
+Hand:    and that's who
+
+Machine: you on to this? What? That's how you found out about the
+Hand:    turned you on to this what that's how you found out about
+
+Machine: library.
+Hand:    the
+
+Machine: Yeah, because
+Hand:    survey yeah
+
+Machine: 
+Hand:    because
+
+Machine: I used to work there. We did stuff with...
+Hand:    when i used to work there we did stuff
+
+Machine: 
+Hand:    with um got
+
+Machine: We'd read news articles and we'd try
+Hand:    you we'd read news articles and we'd
+
+Machine: to
+Hand:    try
+
+Machine: figure out what the main topic
+Hand:    and figure out what the main
+
+Machine: and
+Hand:    topic
+
+Machine: the news article was.
+Hand:    in the news article
+
+Machine: 
+Hand:    was
+
+Machine: And the idea was
+Hand:    um and the idea
+
+Machine: that
+Hand:    
+
+Machine: they were trying to figure out if software could be just as good as humans. So
+Hand:    was they were trying to figure out if software could be just as good as humans
+
+Machine: you
+Hand:    so
+
+Machine: read an article and say, like, is it on the topic of, you know, the war
+Hand:    you'd read an article and say like is it on the topic of you know the
+
+Machine: and I rack
+Hand:    war on
+
+Machine: or something like that?
+Hand:    iraq or something like
+
+Machine: Gotcha.
+Hand:    that got you and got you
+
+Machine: So what's your favorite restaurant in New York?
+Hand:    some so what's your favorite restaurant in new
+
+Machine: 
+Hand:    york restaurant um there's a place called r- what's your favorite type of food
+
+Machine: My favorite
+Hand:    well my
+
+Machine: 
+Hand:    favorite i like a lot of different kinds of food there's
+
+Machine: restaurant.
+Hand:    this
+
+Machine: There's a place
+Hand:    
+
+Machine: called...
+Hand:    restaurant
+
+Machine: What's your favorite type of food? Well, my favorite... sI like a lot of the one kinds of food. There's this restaurant called Rois,
+Hand:    called
+
+Machine: New York and
+Hand:    roy's new york
+
+Machine: I
+Hand:    and
+
+Machine: actually have a few of them around the country, I think.
+Hand:    they actually have a few of them around the country i
+
+Machine: 
+Hand:    think
+
+Machine: Which is sort of like
+Hand:    um which is sort of
+
+Machine: Pan, Asian, Hawaiian kind of food, I guess. Okay. Really, really good. My parents love it and they've been there a few times
+Hand:    like
+
+Machine: and once
+Hand:    okay and
+
+Machine: they
+Hand:    once
+
+Machine: had a bad experience and complained about it and then
+Hand:    i had a bad experience and complained about it and
+
+Machine: they
+Hand:    then
+
+Machine: got a
+Hand:    i got
+
+Machine: 
+Hand:    a fifty
+
+Machine: coupon the next time. So then they started
+Hand:    dollar coupon the next time so then they
+
+Machine: just
+Hand:    started
+
+Machine: finding things
+Hand:    to finding
+
+Machine: they're complaining
+Hand:    things to
+
+Machine: about.
+Hand:    complain
+
+Machine: That's a good deal.
+Hand:    about it's like a deal um no
+
+Machine: And actually, I just finished
+Hand:    way and actually i just
+
+Machine: the
+Hand:    finished
+
+Machine: project at work and they said we could do something to celebrate, I guess. So my coworker and I went there and spent like, I don't know, close to
+Hand:    a project at work and they said we could do something to celebrate i guess so my coworker and i went there and spent like i don't know close
+
+Machine: on
+Hand:    to two hundred dollars
+
+Machine: a meal,
+Hand:    and a
+
+Machine: which
+Hand:    meal it was
+
+Machine: was a very good meal. Wow. Because I would not be able to afford that on my own.
+Hand:    it was a very good meal wow because i would not be able to afford that on my
+
+Machine: 
+Hand:    own
+
+Machine: Did you
+Hand:    um did
+
+Machine: go to
+Hand:    you school did
+
+Machine: school in New York? No, I went to
+Hand:    you school in new york no i went
+
+Machine: 
+Hand:    to
+
+Machine: University of Pennsylvania
+Hand:    um university of
+
+Machine: and
+Hand:    pennsylvania
+
+Machine: Philly.
+Hand:    in
+
+Machine: Gotcha.
+Hand:    philly as well got
+
+Machine: Where'd you go to school? I went to Mount
+Hand:    you where'd you go to school i went to
+
+Machine: St.
+Hand:    mount
+
+Machine: Mary's College. Oh, yeah. In
+Hand:    saint mary's college oh yeah
+
+Machine: Namadsburg,
+Hand:    in
+
+Machine: Maryland?
+Hand:    amittsburgh
+
+Machine: 
+Hand:    maryland mhm you like maryland a
+
+Machine: Yeah, I
+Hand:    lot yeah
+
+Machine: could go into that. Yeah.
+Hand:    
+
+Machine: I mean, I've lived here all my life.
+Hand:    i i mean i've lived here all my
+
+Machine: So
+Hand:    life and uh so
+
+Machine: it's a nice state.
+Hand:    it's it's a nice
+
+Machine: New York's
+Hand:    state it's it's new york is
+
+Machine: fun place to come visit. My friend lives
+Hand:    a fun place to come visit my friend
+
+Machine: 
+Hand:    lives who
+
+Machine: up there
+Hand:    lives up
+
+Machine: and
+Hand:    
+
+Machine: go up and see him every once in a while, but I could never live there. He's transplanted and
+Hand:    there go up and see him every once in a while but i could never live there he's transplanted
+
+Machine: sworn
+Hand:    and
+
+Machine: by it and
+Hand:    swarmed by it
+
+Machine: 
+Hand:    and
+
+Machine: says he'll never move. And
+Hand:    and says he'll never move
+
+Machine: so
+Hand:    and uh so it's
+
+Machine: it's nice to go visit and
+Hand:    it's it's nice to go visit
+
+Machine: 
+Hand:    and
+
+Machine: spend
+Hand:    to
+
+Machine: a
+Hand:    spend uh you
+
+Machine: long weekend or
+Hand:    know long weekend
+
+Machine: just
+Hand:    or to
+
+Machine: a show, but then I got to come home. Yeah, I used to think I
+Hand:    see a show but then i got to come home yeah i used to think
+
+Machine: could
+Hand:    i
+
+Machine: never live here, but then I don't know, once I moved here.
+Hand:    can never live here but then i don't know once i moved
+
+Machine: 
+Hand:    here
+
+Machine: Yeah, that's what must
+Hand:    it's yeah that's what
+
+Machine: have been happening.
+Hand:    most that happens
+
+Machine: Not different. It's not that bad once you move here. I feel like when you visit, you go to all the really crowded areas and do touristy things. When you live here, you don't
+Hand:    it's not different it's not that bad once you move here i feel like when you visit you go to all the really crowded areas and do touristy things when you live here you
+
+Machine: 
+Hand:    don't well
+
+Machine: see that as much. Right.
+Hand:    mhm see that as much
+
+Machine: That's
+Hand:    right
+
+Machine: a great city. I love it. I grew up in New Jersey, so I
+Hand:    it's a great city i love it i grew up in new jersey so
+
+Machine: 
+Hand:    i used
+
+Machine: come here a lot when I was a little kid. What part of Jersey?
+Hand:    to come here a lot when i was a little kid what part of
+
+Machine: 
+Hand:    jersey
+
+Machine: Northern Jersey. Burden County. Just about everybody from
+Hand:    um northern jersey burgen county just about everybody
+
+Machine: out of the sea, Marys was
+Hand:    from mount saint mary's
+
+Machine: from Jersey. Oh, really? Yeah, I think Jersey's staple crop as college students.
+Hand:    is from jersey oh really yeah i think jersey's staple crop is college
+
+Machine: 
+Hand:    students isn't
+
+Machine: It's like what the state produces most of
+Hand:    it it's like what the state produces most
+
+Machine: 
+Hand:    of
+
+Machine: college students. That's
+Hand:    is college students
+
+Machine: what we're doing.
+Hand:    that's funny no
+
+Machine: Everybody from just about everybody from
+Hand:    seriously everybody from just about everybody
+
+Machine: them out
+Hand:    from the
+
+Machine: was from New Jersey. Actually, everybody at Penn probably was from New Jersey too.
+Hand:    mount was from new jersey actually everybody at penn probably was from new jersey
+
+Machine: Same.
+Hand:    too oh
+
+Machine: That's
+Hand:    see
+
+Machine: a
+Hand:    that's
+
+Machine: small state.
+Hand:    that's small
+
+Machine: 
+Hand:    state that's what
+
+Machine: See, it's a smart state. We all go to college. Are there no colleges?
+Hand:    jersey see it's a smart state we all go to college are there no
+
+Machine: 
+Hand:    colleges
+
+Machine: Aren't there like,
+Hand:    in aren't there
+
+Machine: like, recorders? Records in
+Hand:    like there's rutgers rutgers rutgers is in jersey isn't it yeah and the college
+
+Machine: New Jersey.
+Hand:    of new
+
+Machine: Yeah, and the college
+Hand:    jersey but that's about it that's it i think for the most part
+
+Machine: in New Jersey.
+Hand:    people in new
+
+Machine: But that's about it. That's it. I think for the most part,
+Hand:    jersey identify with either new york city or philadelphia yeah
+
+Machine: people
+Hand:    so
+
+Machine: 
+Hand:    people tend to go to other states because there isn't that much to
+
+Machine: in New Jersey
+Hand:    do in new
+
+Machine: identify with either New York City or Philadelphia. Yeah. So people tend to go to other states and all like this. There's not that much in New Jersey itself.
+Hand:    jersey itself
+
+Machine: So do you know my friend Steve
+Hand:    uh-huh so do you know my friend
+
+Machine: Lewis?
+Hand:    steve
+
+Machine: No. No. What does he do? How about
+Hand:    louis no no what does he do how
+
+Machine: 
+Hand:    about how
+
+Machine: Shelley?
+Hand:    about
+
+Machine: She'll be. Lannum. No.
+Hand:    shelley no sorry shelby lanam mm no neither no they were they're both
+
+Machine: They both work for this company called
+Hand:    uh they both work for this company
+
+Machine: Fitzmars and
+Hand:    called fitz
+
+Machine: Company. And
+Hand:    morrison company
+
+Machine: 
+Hand:    and um they
+
+Machine: they actually just got engaged. Shelby's from LA.
+Hand:    um they actually just got engaged shelby's from
+
+Machine: 
+Hand:    l.a.
+
+Machine: She lives in New York.
+Hand:    and she lives in new
+
+Machine: 
+Hand:    york
+
+Machine: I'm not sure where her place is.
+Hand:    oh i'm not sure where her place
+
+Machine: 
+Hand:    is
+
+Machine: Steve's the one who lives at
+Hand:    and steve's the one who lives
+
+Machine: th in
+Hand:    at eighty seventh
+
+Machine: Columbus.
+Hand:    and
+
+Machine: And
+Hand:    columbus mhm and um they
+
+Machine: they met through work. They're actually getting married next summer in LA. That's where she's from. Oh,
+Hand:    um they met through work they're actually getting married next summer in l.a. that's where she's from
+
+Machine: 
+Hand:    oh
+
+Machine: nice. But
+Hand:    that's nice
+
+Machine: 
+Hand:    but um it's
+
+Machine: it's insurance. Corporate insurance,
+Hand:    uh it's insurance corporate
+
+Machine: basically. That's their, what they focus on. How do you know them? How do I know them? Steve and I went to high school together. Oh, okay. So I'm going to him to high school and stay friends through college. He went to Villanova. And we just have always stayed friends. That's a bad idea. Have you been to LA before? No. And I can't wait. Because we're going to go out for their wedding next summer and probably take a couple of weeks and do a west coast tour. Oh, fun. And um. My friend is no Dalai actually. So I'm hoping to get there. I've been to San Francisco. But I've never been anywhere other than San Francisco area, the Bay area. And that was years ago. I don't even remember it. So looking forward to it. There was a really pretty. All right. My phone. Whatever remember. From whatever remember. There for a wedding. Yeah. It's nice. I'm at over just over minutes now. Okay. I don't know what happens now. I assume they'll come back, right? I know. This is not at all. I had no idea what to expect. But this is certainly not what I expected. Just getting to a dialogue with this stranger and talk about whatever. I'm going to get there. I'm going to get there. I'm going to get there. I'm going to get there. I'm going to get there. I'm going to get there. I'm going to get there. Anotherm-ra malware is screw it. Oh well. I didn't want say bad. It's strange. I went and said, this bastard he's not here to talk about. And that's strange. Yeah. Yes. All right. I'll ask you what happens here and decide whatever you want to talk you
+Hand:    insurance
+
