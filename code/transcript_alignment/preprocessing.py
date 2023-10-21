@@ -16,7 +16,6 @@ def process(transcript, start = "", end = "", patterns = [], additional_trim_cha
     if end != "" :
         end_index = transcript.index(end)
     trimmed = transcript[start_index : end_index]
-    
     # remove patterns
     for pattern in patterns :
         trimmed = re.sub(pattern, ' ', trimmed)
@@ -47,12 +46,3 @@ def process(transcript, start = "", end = "", patterns = [], additional_trim_cha
         clean = clean.replace(c, '')
 
     return trimmed, clean
-
-
-# preprocess transcripts and stone them in the lists
-def read_file(path) :
-    transcript = ""
-    with open(path, "r", encoding="utf8") as file :
-        transcript = file.read()
-    
-    return transcript

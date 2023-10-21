@@ -1,6 +1,11 @@
 import torch
 import torchaudio
+import pathlib
 import os
+
+def get_directory_files(directory, filetype) :
+    files = [f for f in pathlib.Path(directory).glob("**\*." + filetype)]    
+    return files
 
 def read_audio(file_path, sample_rate) :
     if not os.path.isfile(file_path) :
@@ -28,6 +33,8 @@ def read_file(path) :
     return content
 
 def write_file(path, content) :
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding='utf8') as file :
         file.write(content)
+
 

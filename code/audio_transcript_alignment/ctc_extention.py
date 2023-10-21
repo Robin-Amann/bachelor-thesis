@@ -1,6 +1,6 @@
 import torch
-from . import base
-from .base import Segment
+from . import ctc_base as base
+from .ctc_base import Segment
 from . import visualization as visual
 
 SCORE_LIMIT = 3

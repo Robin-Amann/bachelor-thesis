@@ -27,14 +27,15 @@ def backtrack(from_words, to_words, matrix) :
                 j -= 1
                 i -= 1
     while i > 0 :
-        operations.append("d")
+        operations.append("i")
         i -= 1
     while j > 0 :
-        operations.append("i")
+        operations.append("d")
         j -= 1
     return operations[::-1]
 
-def get_operations(from_words, to_words):
+
+def levenshtein_matrix(from_words, to_words) :
     d = np.zeros((len(to_words) + 1, len(from_words) + 1))
     for i in range(len(to_words) + 1):
         d[i, 0] = i
@@ -49,6 +50,11 @@ def get_operations(from_words, to_words):
                 insertion = d[i, j - 1] + 1
                 deletion = d[i - 1, j] + 1
                 d[i, j] = min(substitution, insertion, deletion)
+    return d
+
+
+def get_operations(from_words, to_words):
+    d = levenshtein_matrix(from_words, to_words)
     return backtrack(from_words, to_words, d)
 
 
@@ -65,6 +71,7 @@ def align(start, end, operations) :
         i += 1
         j += 1 
     return x, y
+
 
 def print_words(start, end) :
     alignments = [zip(start, end), zip(end, start)]

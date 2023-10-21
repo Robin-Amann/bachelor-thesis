@@ -2,11 +2,11 @@ import pathlib
 from . import whisper_model as whisper
 from . import audioclient_model as audioclient
 import os
+from utils import file as utils
 
 def get_directory_files(directory, filetype) :
     files = [f for f in pathlib.Path(directory).glob("**\*." + filetype)]    
     return files
-
 
 def transcribe_dir(speech_dir, transcript_dir, model="whisper") :
     files = get_directory_files(speech_dir, 'wav')
@@ -18,9 +18,7 @@ def transcribe_dir(speech_dir, transcript_dir, model="whisper") :
             transcript = audioclient.transcribe(str(f))
         transcript_location =  f'{transcript_dir}{str(f.parent)[len(speech_dir) : ]}\\whisper_{f.stem}.txt'
         print(transcript_location)
-        os.makedirs(os.path.dirname(transcript_location), exist_ok=True)
-        with open(transcript_location, "w", encoding="utf8") as tf :
-            tf.write(transcript)
+        utils.write_file(transcript_location, transcript)
 
 
 # stub = "D:\\Robin_dataset\\fisher english" 
