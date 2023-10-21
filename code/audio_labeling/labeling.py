@@ -1,4 +1,7 @@
 from enum import Enum
+import utils.file as utils
+import audio_transcript_alignment.audio_transcript_alignment as audio_transcript_alignment
+
 
 LABELS = Enum('Label', ['SILENCE', 'SPEECH', 'HESITATION'])
 THRESHOLD = 0.25 #minimum legth of audio to be considered a gap in seconds
@@ -39,3 +42,36 @@ def label(words, audio_len, sample_rate) :
         else :
             i += 1
     return segments
+# {label, start, end}
+
+
+def write_segments_to_file(audio_file, segments) :
+    segments = [seg['label'] + '|' + seg['start'] + '|'+ seg['end'] for seg in segments]
+    segments = '\n'.join(segments)
+    utils.write_file(audio_file[:-4] + ".txt", )
+
+
+def read_segments_from_file(file_path) :
+    segments = utils.read_file(file_path)
+    segments = segments.split('\n')
+    segments = [tuple(l.split('|')) for l in segments]
+    segments = [ { 'label' : label, 'start' : start, 'end' : end} for label, start, end in segments ]
+    return segments
+
+
+def label_file(audio_file, sample_rate, words) :
+    audio = utils.read_audio(audio_file, sample_rate)
+    audio_len = audio[0].size(0)
+    segments = label(words, audio_len, sample_rate)
+    write_segments_to_file(audio_file, segments)
+
+
+def align_directory(audio_directory, words_directory, sample_rate) :
+    files = utils.get_directory_files(words_directory, "txt")
+    for file in files :
+        print("align", str(file))
+        f = str(file)[len(words_directory) : ]
+        audio_file = audio_directory + f
+        words_file = words_directory + f
+        words = audio_transcript_alignment.read_words_from_file(words_file)
+        label_file(audio_file, sample_rate, words)
