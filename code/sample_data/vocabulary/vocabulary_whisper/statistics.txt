@@ -1,0 +1,5 @@
+vocabulary:  7602   162389 
+common:       220   124092   0.76
+hesitations:   48     2800   0.02
+stutter:       12       12   7.39e-05
+commentary:     0        0   0.0

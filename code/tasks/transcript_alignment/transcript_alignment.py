@@ -1,6 +1,6 @@
-import transcript_alignment.preprocessing as pre
-import transcript_alignment.postprocessing as post
-import transcript_alignment.wer_align as wer
+import tasks.transcript_alignment.preprocessing as pre
+import tasks.transcript_alignment.postprocessing as post
+import tasks.transcript_alignment.wer_align as wer
 import utils.file as utils
 
 
@@ -30,7 +30,7 @@ def align_directory(manual_directory, automatic_directory, destination_directory
     files = utils.get_directory_files(manual_directory, "txt")
     # file = source + parent + (stem + suffix = name)
     for file in files :
-        print("segment", str(file))
+        print("align TT:", str(file))
         f = str(file)[len(manual_directory) : ]
         manual_transcript = manual_directory + f
         automatic_transcript = automatic_directory + f

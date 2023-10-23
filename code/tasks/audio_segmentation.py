@@ -3,7 +3,7 @@ import utils.file as utils
 JOIN_GAP = 0.5  # in sec
 
 def extract_speaker(transcript, speaker_A = "A", speaker_B = "B", header_lines = 2) :
-    lines = [l for l in transcript.split("\n") if l and not l.isspace()][header_lines:]
+    lines = [l for l in transcript.split("\n") if l and not l.isspace() and any(c.isalpha() for c in l)][header_lines:]
     text = []
     for l in lines :
         line = l.split(' ')

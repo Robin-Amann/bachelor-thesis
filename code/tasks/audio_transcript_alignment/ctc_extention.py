@@ -1,7 +1,7 @@
 import torch
-from . import ctc_base as base
-from .ctc_base import Segment
-from . import visualization as visual
+import tasks.audio_transcript_alignment.ctc_base as base
+from tasks.audio_transcript_alignment.ctc_base import Segment
+import tasks.audio_transcript_alignment.visualization as visual
 
 SCORE_LIMIT = 3
 
@@ -156,8 +156,8 @@ def full_alignment(waveform, transcript, device) :
     return transform_result(ratio, words)
 
 
-def base_ctc(waveform, transcript, device) :
-    labels, emission = base.get_emission(waveform, device)
+def base_ctc(waveform, transcript, device, wav2vec2_model=None) :
+    labels, emission = base.get_emission(waveform, device, wav2vec2_model)
     words, _, trellis_width = base.ctc(emission, transcript, labels)
     ratio = waveform[0].size(0) / trellis_width
     return transform_result(ratio, words)

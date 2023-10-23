@@ -28,3 +28,16 @@ def get_untranscribed_audio(waveform, words, speech_timestamps, sample_rate) :
             "speech" : [{ "start" : s["start"] - start, "end" : s["end"] - start } for s in speech]
         })
     return result
+
+def predict(fragments) :
+    hesitations = [{"start": f["start"], "end": f["end"], "label": ""} for f in fragments]
+    return fragments
+
+# labels :
+# filled pauses:
+  # thinking: 'um', 'er', 'ah', 'uh', ...
+  # filling words: 'well', 'you know', 'okay'
+  # stutter: 'I I I I..', 'W W W Well'
+# empty pauses: 
+  # silence
+  # pause

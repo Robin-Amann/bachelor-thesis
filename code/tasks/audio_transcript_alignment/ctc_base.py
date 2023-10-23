@@ -1,11 +1,14 @@
 import torch
 import torchaudio
 from dataclasses import dataclass
-from . import visualization as visual
+import tasks.audio_transcript_alignment.visualization as visual
 
-def get_emission(waveform, device) :
-    bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
-    model = bundle.get_model().to(device)
+def get_emission(waveform, device, wav2vec2_model=None) :
+    if wav2vec2_model != None :
+        bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
+        model = bundle.get_model().to(device)
+    else :
+        bundle, model = wav2vec2_model
     labels = bundle.get_labels()                                        
     with torch.inference_mode():
         emissions, _ = model(waveform.to(device))   
@@ -140,7 +143,7 @@ def ctc(emission, transcript, labels) :
 #    visual.plot_trellis(trellis)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
-        return [], float("inf") 
+        return [], float("inf"), trellis.size(0) 
     path = backtrack(trellis, emission, tokens)
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)

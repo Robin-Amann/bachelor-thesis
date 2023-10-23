@@ -1,0 +1,6 @@
+vocabulary:  65095   21905138
+common:       5278   21380013 0.9760
+hesitations:   110     824366 0.0376
+stutter:      6756     153168 0.0069
+commentary:     15     559618 0.0255
+[laughter], [noise], [sigh], [mn], [lipsmack], [cough], [laugh], [breath], [pause], [[skip]], [mn]-, [sigh]-, s[laughter], [laughter]-, [sneeze]
