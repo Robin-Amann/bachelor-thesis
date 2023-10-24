@@ -4,6 +4,10 @@ import tasks.transcript_alignment.wer_align as alignment
 from progress.bar import ChargingBar
 
 
+print(12345678)
+print(f'{45678: 08,}')
+
+
 # combine hesitations
 # hesitations = list( utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual\\hesitations_by_eye.txt').keys() )
 # vocabulary = list( utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual\\vocabulary.txt').keys() )

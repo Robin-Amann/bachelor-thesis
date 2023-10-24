@@ -21,16 +21,22 @@ transcript_alignment_dir =       "D:\\Robin_dataset\\fisher english\\whisper man
 audio_transcript_alignment_dir = "D:\\Robin_dataset\\fisher english\\audio manual segmented aligned\\training transcripts 1\\data\\trans\\000"
 
 
-vocabulary_extraction.get_vocabulary_set(
-    source_directory="D:\\Robin_dataset\\fisher english\\transcripts", 
-    destination_directory="code\\sample_data\\vocabulary_new\\vocabulary_manual", 
-    patterns=["# Transcribed at the LDC", "# fe_[0-9]{2}_[0-9]{5}.sph", "A:", "B:", "\t", "[0-9]{1,3}.[0-9]{2}", "\(\(", "\)\)"]
-    )
-vocabulary_extraction.get_vocabulary_set(
-    source_directory=whisper_dir, 
-    destination_directory="code\\sample_data\\vocabulary_new\\vocabulary_whisper", 
-    patterns=['\.', ',', '!', '\?']
-    )       # 좋아요<|ko|> was in whisper vocabulary
+# vocabulary_extraction.get_vocabulary_set(
+#     source_directory=transcript_dir,
+#     destination_directory="code\\sample_data\\vocabulary\\vocabulary_manual_small", 
+#     patterns=["# Transcribed at the LDC", "# fe_[0-9]{2}_[0-9]{5}.sph", "A:", "B:", "\t", "[0-9]{1,3}.[0-9]{2}", "\(\(", "\)\)", '\.', ',', '!', '\?']
+# )
+# vocabulary_extraction.get_vocabulary_set(
+#     source_directory="D:\\Robin_dataset\\fisher english\\transcripts", 
+#     destination_directory="code\\sample_data\\vocabulary\\vocabulary_manual", 
+#     patterns=["# Transcribed at the LDC", "# fe_[0-9]{2}_[0-9]{5}.sph", "A:", "B:", "\t", "[0-9]{1,3}.[0-9]{2}", "\(\(", "\)\)", '\.', ',', '!', '\?']
+#     )
+# vocabulary_extraction.get_vocabulary_set(
+#     source_directory=whisper_dir, 
+#     destination_directory="code\\sample_data\\vocabulary\\vocabulary_whisper", 
+#     patterns=['\.', ',', '!', '\?']
+#     )       # 좋아요<|ko|> was in whisper vocabulary
+
 
 segmentation.segment_directory(speech_dir, transcript_dir, segmented_speech_dir, segmented_transcript_dir, sample_rate)
 transcriptor.transcribe_dir(segmented_speech_dir, whisper_dir, 'whisper')

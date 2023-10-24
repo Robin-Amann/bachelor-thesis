@@ -19,10 +19,16 @@ transcript_alignment_dir = "D:\\Robin_dataset\\fisher english\\whisper manual se
 # l
 
 
-vocabulary = utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual\\vocabulary.txt')
-for w, c in vocabulary.items() :
-    if "'" in w and c >= 10:
-        print(w, c)
+# vocabulary = utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual\\vocabulary.txt')
+# for w, c in vocabulary.items() :
+#     if "'" in w and c >= 10:
+#         print(w, c)
 
-# statistics.vocabulary_set_statistic('code\\sample_data\\vocabulary\\vocabulary_manual')
+statistics.vocabulary_set_statistic('code\\sample_data\\vocabulary\\vocabulary_manual_small')
 # statistics.vocabulary_set_statistic('code\\sample_data\\vocabulary\\vocabulary_whisper')
+
+# new_hes = utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual_small\\hesitations.txt')
+# hes = utils.read_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual\\hesitations_by_eye.txt')
+
+# new_hes = { k:v for k, v in new_hes.items() if k in hes.keys() }
+# utils.write_vocabulary('code\\sample_data\\vocabulary\\vocabulary_manual_new\\hesitations_by_eye.txt', new_hes)

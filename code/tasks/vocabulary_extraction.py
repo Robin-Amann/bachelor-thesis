@@ -9,21 +9,19 @@ from progress.bar import ChargingBar
 def get_vocabulary(directory, patterns=[]) :
     files = utils.get_directory_files(directory, "txt")
     vocabulary = dict()
-    with ChargingBar("Collecting Vocabulary", max=len(files)) as bar:
-        for file in files :
-            content = utils.read_file(str(file))
-            content = content.replace('\n', ' ')
-            for pattern in patterns :
-                content = re.sub(pattern, ' ', content)
-            content = content.lower()
-            content = content.split()
-            words = dict(Counter(content))
-            for word, count in words.items() :
-                if vocabulary.get(word) == None : 
-                    vocabulary[word] = count
-                else :
-                    vocabulary[word] += count
-            bar.next()
+    for file in ChargingBar("Collecting Vocabulary").iter(files) :
+        content = utils.read_file(str(file))
+        content = content.replace('\n', ' ')
+        for pattern in patterns :
+            content = re.sub(pattern, ' ', content)
+        content = content.lower()
+        content = content.split()
+        words = dict(Counter(content))
+        for word, count in words.items() :
+            if vocabulary.get(word) == None : 
+                vocabulary[word] = count
+            else :
+                vocabulary[word] += count
     return vocabulary
 
 

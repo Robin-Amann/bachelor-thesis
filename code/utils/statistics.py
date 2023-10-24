@@ -58,16 +58,21 @@ def vocabulary_set_statistic(dir, hes='code\\sample_data\\vocabulary\\hesitation
     stutter = utils.read_vocabulary(stutter_file)   
     common = utils.read_vocabulary(common_file)   
     vocabulary = utils.read_vocabulary(vocabulary_file)   
+    commentary = { w: c for w, c in vocabulary.items() if '[' in w }
+
 
     vocabulary_sum = sum(vocabulary.values())
-    print('vocabulary:', len(vocabulary), vocabulary_sum)
-    common_sum = sum(common.values())
-    print('common:', len(common), common_sum, common_sum / vocabulary_sum)
-    hesitations_sum = sum(hesitations.values())
-    print('hesitations:', len(hesitations), hesitations_sum, hesitations_sum / vocabulary_sum)
-    stutter_sum = sum(stutter.values())
-    print('stutter:', len(stutter), stutter_sum, stutter_sum / vocabulary_sum)
-    commentary = { w: c for w, c in vocabulary.items() if '[' in w }
-    commentary_sum = sum(commentary.values())
-    print('commentary:', len(commentary), commentary_sum, commentary_sum / vocabulary_sum)
+    print('vocabulary:'.ljust(12), f'{len(vocabulary): 12,}', f'{vocabulary_sum: 12,}')
+#    common_sum = sum(common.values())
+#    print('common:     ', f'{len(common): 012,}', f'{common_sum: 012,}', f'{common_sum / vocabulary_sum * 100:.2f}', '%')
+#    hesitations_sum = sum(hesitations.values())
+#    print('hesitations:', f'{len(hesitations): 012,}', f'{hesitations_sum: 012,}', f'{hesitations_sum / vocabulary_sum * 100:.2f}', '%')
+#    stutter_sum = sum(stutter.values())
+#    print('stutter:    ', f'{len(stutter): 012,}', f'{stutter_sum: 012,}', f'{stutter_sum / vocabulary_sum * 100:.2f}', '%')
+#    commentary_sum = sum(commentary.values())
+#    print('commentary: ', f'{len(commentary): 012,}', f'{commentary_sum: 012,}', f'{commentary_sum / vocabulary_sum * 100:.2f}', '%')
+    for x, n in zip([common, hesitations, stutter, commentary], ['common:', 'hesitations:', 'stutter:', 'commentary:']) :
+        x_sum = sum(x.values())
+        print(n.ljust(12), f'{len(x): 12,}', f'{x_sum: 12,}', f'{x_sum / vocabulary_sum * 100: 6.2f}', '%')
+        
     print(', '.join(commentary.keys()))

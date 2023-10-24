@@ -1,13 +1,13 @@
-i|984359
-you|702941
+i|985864
+you|702947
 and|643905
-the|571554
+the|571556
 to|444330
-know|443859
-a|440681
-yeah|437133
-that|402193
-it|346686
+know|443861
+a|443008
+yeah|437138
+that|402195
+it|346688
 like|317497
 of|305974
 in|246355
@@ -15,57 +15,57 @@ so|231494
 they|226390
 it's|223858
 but|213616
-um|211027
+um|211028
 [laughter]|208788
 [noise]|179938
 have|179933
 is|172635
 was|168193
-oh|167667
+oh|167669
 just|166865
 don't|161630
 uh|157637
-right|150907
+right|150908
 that's|146019
 think|143408
 do|142439
-i'm|136392
-what|132361
+i'm|136393
+what|132362
 my|131313
 for|124363
 or|119437
 we|115940
 on|114901
-well|114871
-not|111278
+well|114874
+not|111280
 be|106381
-really|105045
+really|105047
 if|102868
 mean|102502
 are|102363
 mhm|96019
 with|91024
 about|90483
-ah|88562
-all|83979
+ah|88563
+all|83980
 there|82916
 people|81989
-this|79679
+this|79681
 get|77411
 [sigh]|75124
-no|73893
+no|73894
 would|73158
-one|72013
+one|72015
 because|69083
-at|68862
+at|68863
 he|66780
 okay|65879
 when|65564
-then|64306
+then|64307
 go|64246
 out|63833
 [mn]|62869
-me|62696
+me|62697
 how|61575
 they're|58602
 as|58347
@@ -73,19 +73,19 @@ can|58039
 up|57438
 lot|55775
 had|54632
-now|53064
-good|52485
-from|51176
+now|53065
+good|52486
+from|51178
 your|49371
 something|48369
 some|47838
-them|47687
+them|47688
 time|47526
 too|47344
 going|47263
 more|46684
 you're|45806
-got|44650
+got|44651
 kind|44085
 see|43961
 where|42995
@@ -107,7 +107,7 @@ other|34479
 even|34390
 actually|33842
 'cause|33743
-yes|32475
+yes|32477
 their|32259
 could|31535
 little|30861
@@ -117,21 +117,22 @@ didn't|29239
 who|28004
 way|27684
 want|26873
-said|26791
-school|26202
+said|26793
+by|26566
+school|26203
 any|26189
 pretty|25773
 we're|25472
 can't|25424
 two|25373
 probably|24986
-doing|24436
-work|23926
+doing|24437
+work|23927
 back|23677
 [lipsmack]|23319
 never|23246
 make|22850
-er|22787
+er|22794
 over|22676
 maybe|22630
 has|22285
@@ -151,7 +152,7 @@ these|20794
 anything|20771
 sure|20730
 hi|20551
-take|20244
+take|20245
 into|20097
 always|20024
 gonna|19918
@@ -171,12 +172,11 @@ which|17057
 went|17029
 same|16909
 why|16874
-by|16371
 everything|16295
-true|16237
+true|16240
 talk|16192
-us|15796
-three|15791
+us|15797
+three|15792
 around|15780
 five|15738
 feel|15715
@@ -184,7 +184,7 @@ year|15710
 come|15567
 used|15388
 kinda|15258
-friends|15156
+friends|15157
 long|15101
 getting|15026
 his|15019
@@ -193,12 +193,12 @@ home|14968
 definitely|14722
 what's|14623
 many|14618
-bad|14567
+bad|14568
 thought|14546
 also|14504
 though|14469
 every|14248
-life|14068
+life|14071
 nice|13921
 i'd|13908
 being|13752
@@ -218,7 +218,8 @@ hello|12874
 through|12795
 she's|12715
 else|12711
-person|12662
+t|12674
+person|12664
 find|12637
 put|12526
 hard|12518
@@ -227,6 +228,7 @@ dollars|12239
 somebody|12165
 trying|12067
 done|12040
+_v|11903
 call|11845
 ten|11806
 last|11760
@@ -244,17 +246,19 @@ haven't|10965
 i'll|10950
 try|10886
 great|10873
-far|10837
+far|10838
 interesting|10779
 tell|10765
 saying|10668
-t._v.|10620
 better|10613
 twenty|10532
 another|10524
 part|10456
 friend|10423
 funny|10235
+transcribed|10199
+bbn/wordwave|10195
+#|10195
 might|10055
 either|9869
 country|9850
@@ -311,11 +315,11 @@ let|7652
 usually|7645
 seen|7640
 called|7627
-married|7595
+married|7596
 made|7589
 minutes|7576
 we've|7543
-show|7519
+show|7520
 am|7492
 least|7305
 man|7299
@@ -345,17 +349,17 @@ started|6823
 came|6787
 problem|6785
 dog|6784
-change|6751
+change|6752
 let's|6730
 week|6653
 together|6650
 type|6643
-food|6640
+food|6641
 sports|6619
 care|6594
 minimum|6556
 news|6554
-happened|6548
+happened|6550
 th-|6513
 each|6497
 couldn't|6494
@@ -377,7 +381,7 @@ isn't|6232
 almost|6226
 yep|6212
 thirty|6204
-days|6200
+days|6201
 phone|6158
 both|6147
 war|6111
@@ -390,7 +394,7 @@ public|5971
 california|5950
 quite|5902
 nine|5891
-schools|5809
+schools|5810
 end|5790
 sorry|5769
 stay|5767
@@ -400,11 +404,11 @@ living|5618
 second|5607
 eight|5590
 games|5531
-game|5491
+game|5492
 night|5479
 important|5477
 next|5466
-fact|5455
+fact|5456
 coming|5424
 idea|5406
 outside|5399
@@ -415,13 +419,14 @@ hey|5296
 may|5288
 smoke|5278
 seven|5217
-yet|5129
+yet|5130
 took|5126
 cold|5100
 found|5068
-movies|5034
+movies|5035
 state|5026
 comes|5013
+u|4984
 such|4961
 question|4942
 shows|4932
@@ -442,7 +447,8 @@ fifteen|4572
 places|4562
 hours|4561
 computers|4550
-security|4545
+_s|4549
+security|4546
 already|4537
 internet|4517
 paid|4507
@@ -471,13 +477,14 @@ you'd|4106
 who's|4080
 weather|4056
 mind|4036
-knew|4031
+knew|4032
 sense|4025
 spend|4020
 age|4019
 won't|3994
 less|3991
 mine|3990
+_a|3987
 walk|3979
 mom|3959
 watched|3928
@@ -520,13 +527,13 @@ ask|3557
 book|3539
 against|3535
 number|3534
-summer|3531
+summer|3532
 problems|3523
 month|3523
 child|3522
 thousand|3502
 rather|3498
-favorite|3494
+favorite|3495
 aren't|3486
 comedy|3469
 leave|3469
@@ -549,7 +556,7 @@ left|3245
 we'll|3243
 exercise|3234
 name's|3232
-reading|3230
+reading|3231
 cause|3201
 depends|3190
 gotten|3187
@@ -558,6 +565,7 @@ d-|3181
 cats|3174
 side|3163
 somewhere|3147
+l|3119
 girl|3103
 class|3098
 unless|3095
@@ -573,6 +581,7 @@ women|3016
 teachers|3006
 weeks|3005
 florida|3002
+c|2994
 wait|2994
 happy|2991
 south|2974
@@ -583,6 +592,7 @@ certainly|2956
 water|2942
 move|2941
 set|2933
+_c|2928
 boy|2920
 calling|2910
 ahead|2903
@@ -604,8 +614,7 @@ hand|2772
 wish|2759
 dad|2748
 information|2748
-u._s.|2745
-restaurant|2743
+restaurant|2744
 turn|2735
 difference|2722
 basketball|2716
@@ -620,9 +629,10 @@ although|2664
 third|2661
 hit|2656
 shouldn't|2654
-pets|2647
-eating|2647
+pets|2648
+eating|2648
 huge|2640
+_n|2632
 bring|2629
 instead|2621
 near|2618
@@ -637,6 +647,7 @@ television|2586
 september|2582
 cut|2579
 hate|2566
+d|2560
 sitting|2555
 expensive|2555
 morning|2553
@@ -664,7 +675,7 @@ calls|2417
 o-|2412
 f-|2411
 later|2406
-airport|2396
+airport|2397
 it'll|2389
 sad|2388
 subject|2384
@@ -680,6 +691,7 @@ amazing|2359
 cook|2350
 bunch|2344
 worse|2342
+s|2337
 opinion|2335
 wonderful|2330
 worth|2315
@@ -732,8 +744,8 @@ regular|2129
 front|2129
 soon|2126
 yea|2126
+grade|2123
 lose|2123
-grade|2122
 interested|2121
 seeing|2120
 restaurants|2116
@@ -762,7 +774,6 @@ building|2027
 using|2020
 personal|2009
 stand|2005
-l._a.|2003
 looks|2002
 growing|1997
 seventy|1996
@@ -831,6 +842,7 @@ bet|1808
 allowed|1807
 behind|1802
 turned|1792
+_d|1788
 coast|1787
 eighty|1787
 hopefully|1784
@@ -867,8 +879,10 @@ hang|1694
 glad|1693
 los|1688
 test|1685
+m|1680
 season|1679
 break|1679
+_b|1677
 inside|1674
 fly|1673
 local|1668
@@ -885,8 +899,9 @@ late|1647
 research|1637
 ended|1636
 degree|1633
-fall|1631
+fall|1632
 low|1630
+n|1627
 angeles|1623
 hobbies|1623
 sell|1619
@@ -922,13 +937,13 @@ park|1539
 fair|1535
 radio|1531
 worst|1530
-t.|1527
 several|1526
 apartment|1518
 everywhere|1510
 longer|1507
 eighteen|1506
 questions|1505
+p|1503
 drinking|1499
 weight|1496
 higher|1495
@@ -982,7 +997,6 @@ needed|1410
 large|1409
 beginning|1402
 sign|1401
-a.|1400
 animals|1398
 honest|1393
 choose|1393
@@ -1001,19 +1015,21 @@ court|1373
 language|1367
 kidding|1364
 dunno|1361
+o|1361
 ohio|1357
 media|1353
 bigger|1352
 library|1347
 possible|1347
 canada|1343
-gym|1341
+gym|1342
 interest|1341
 heart|1339
 church|1338
 shopping|1334
 per|1330
 nowadays|1330
+v|1326
 awful|1326
 hockey|1325
 events|1323
@@ -1021,6 +1037,7 @@ affect|1319
 clean|1313
 terrorists|1312
 strong|1309
+e|1308
 yup|1306
 oil|1306
 trade|1303
@@ -1082,7 +1099,7 @@ normal|1211
 korea|1208
 religion|1205
 flying|1202
-cooking|1200
+cooking|1201
 meal|1200
 topics|1198
 future|1196
@@ -1122,7 +1139,6 @@ newspaper|1139
 cigarettes|1138
 familiar|1138
 normally|1134
-c.|1132
 stick|1130
 act|1129
 popular|1129
@@ -1132,8 +1148,8 @@ blah|1120
 tonight|1120
 speaking|1113
 background|1111
+atlanta|1110
 husband's|1110
-atlanta|1109
 hum|1109
 channel|1108
 bed|1108
@@ -1151,12 +1167,11 @@ trial|1095
 sixteen|1092
 finding|1092
 party|1090
-v.|1089
 southern|1089
 brothers|1088
 somehow|1087
 tired|1086
-red|1084
+red|1085
 notice|1082
 board|1081
 he'd|1080
@@ -1176,6 +1191,7 @@ cigarette|1058
 ain't|1057
 loves|1057
 she'll|1056
+_t|1056
 build|1051
 u-|1051
 missed|1050
@@ -1200,6 +1216,7 @@ bother|1034
 stayed|1034
 religious|1034
 whereas|1033
+b|1032
 bike|1031
 europe|1030
 boring|1030
@@ -1213,6 +1230,7 @@ website|1021
 teams|1020
 thinks|1018
 save|1017
+_i|1015
 somebody's|1013
 handle|1013
 industry|1010
@@ -1226,7 +1244,6 @@ position|997
 culture|994
 blood|991
 freedom|989
-s.|985
 lie|984
 grown|979
 keeping|978
@@ -1234,6 +1251,7 @@ types|977
 smart|977
 that'll|976
 listening|975
+_o|975
 businesses|974
 period|972
 would've|969
@@ -1266,9 +1284,9 @@ besides|940
 awesome|940
 entire|938
 forgot|937
-retired|931
+retired|932
 spending|931
-effect|926
+effect|927
 rich|926
 basic|924
 stock|923
@@ -1278,6 +1296,7 @@ sisters|921
 joe|921
 cheap|921
 straight|918
+_p|916
 athletes|915
 chinese|913
 dating|912
@@ -1286,7 +1305,6 @@ process|912
 nuclear|911
 china|911
 situations|911
-d._c.|910
 bomb|908
 opposed|908
 seasons|906
@@ -1313,7 +1331,6 @@ offensive|889
 bus|888
 basis|886
 cents|884
-l.|883
 ideas|883
 mass|882
 medical|880
@@ -1337,15 +1354,16 @@ millions|865
 minnesota|863
 stories|862
 hospital|862
+gossiping|861
 wear|861
+coffee|861
 forward|861
-gossiping|860
 apparently|860
-coffee|860
 eyes|859
 pictures|857
 available|856
 track|856
+r|855
 site|855
 degrees|853
 technology|853
@@ -1360,7 +1378,7 @@ form|846
 foreign|846
 force|846
 mess|846
-u.|846
+_l|845
 pounds|841
 buying|841
 beat|839
@@ -1374,7 +1392,6 @@ feels|835
 somewhat|834
 french|833
 cancer|832
-e.|832
 yours|831
 sex|829
 mad|827
@@ -1398,7 +1415,6 @@ meant|806
 continue|804
 wa-|803
 enjoyed|802
-o.|801
 particularly|801
 whoever|800
 discuss|800
@@ -1443,7 +1459,6 @@ eye|774
 ourselves|773
 hardly|772
 planes|771
-i.|771
 fit|771
 relationships|770
 individual|769
@@ -1485,9 +1500,8 @@ tape|743
 ran|741
 mail|740
 odd|739
-d.|738
+differently|737
 lunch|737
-differently|736
 cheaper|735
 thanksgiving|735
 politics|734
@@ -1500,7 +1514,7 @@ adult|729
 pregnant|729
 tennessee|725
 rights|725
-tickets|723
+tickets|724
 hussein|722
 station|722
 appreciate|721
@@ -1552,6 +1566,7 @@ selling|695
 planning|693
 laid|692
 table|692
+_m|692
 crime|690
 film|688
 shape|687
@@ -1570,7 +1585,6 @@ search|682
 alive|682
 buildings|682
 daily|682
-n.|681
 leaving|680
 papers|679
 costs|679
@@ -1590,11 +1604,12 @@ mid|672
 evening|672
 extremely|671
 female|670
+partners|668
 piece|668
 wha-|668
 celebrate|668
+x|667
 wild|667
-partners|666
 bringing|666
 perspective|665
 offer|664
@@ -1638,11 +1653,11 @@ mouth|644
 credit|643
 grand|641
 youngest|640
-r.|640
 daughter's|640
 shame|640
 studies|638
 occasionally|638
+h|637
 adults|636
 airports|635
 rock|635
@@ -1698,6 +1713,7 @@ blame|607
 ends|607
 spanish|607
 stress|606
+f|606
 penn|605
 kansas|604
 fresh|603
@@ -1730,11 +1746,10 @@ diego|590
 report|590
 houston|590
 garden|589
-m.|588
+energy|588
 wind|588
 judge|587
 hollywood|587
-energy|587
 skating|586
 flew|586
 fill|586
@@ -1770,6 +1785,7 @@ maryland|578
 raising|577
 risk|577
 border|577
+_r|577
 checking|576
 medicine|576
 grandparents|575
@@ -1781,7 +1797,6 @@ tests|573
 [laugh]|573
 meeting|571
 turns|570
-b.|570
 humid|570
 survive|569
 option|569
@@ -1801,11 +1816,11 @@ depend|561
 doctors|561
 incredible|561
 becoming|560
-c._n._n.|560
 mountains|560
 responsible|559
 deep|559
 distance|559
+j|558
 prepared|558
 separate|557
 'til|556
@@ -1838,6 +1853,7 @@ communication|546
 bird|544
 david|544
 directly|544
+_e|543
 sold|543
 where's|543
 pro|542
@@ -1848,6 +1864,7 @@ impact|541
 japan|541
 beer|540
 network|540
+g|539
 ex|539
 innocent|538
 seventies|537
@@ -1860,6 +1877,7 @@ thousands|534
 nasty|534
 sometime|534
 chris|533
+w|533
 comedians|533
 afghanistan|533
 senior|533
@@ -1952,7 +1970,6 @@ effects|501
 vegas|500
 offended|500
 clubs|500
-x.|500
 actors|500
 magazine|500
 banned|499
@@ -1989,7 +2006,6 @@ views|487
 nights|487
 district|486
 missing|485
-u._n.|483
 mix|482
 northern|482
 stage|481
@@ -2009,7 +2025,6 @@ recent|475
 ma-|475
 bothers|475
 comedian|474
-j.|474
 located|474
 aha|473
 hurting|472
@@ -2116,7 +2131,6 @@ fisher|442
 privacy|441
 violent|441
 ch-|441
-p.|440
 sons|440
 fox|440
 honesty|439
@@ -2155,6 +2169,7 @@ physically|429
 object|428
 bathroom|428
 covered|428
+k|427
 caffeine|427
 wrote|426
 fortunate|426
@@ -2166,6 +2181,7 @@ zero|424
 ill|424
 resources|423
 lazy|423
+'s|423
 episode|423
 conversations|423
 horse|422
@@ -2178,8 +2194,10 @@ some-|420
 dude|418
 expected|418
 profile|417
+_u|417
 understood|417
 yo-|417
+y|416
 dress|416
 equal|416
 lead|416
@@ -2208,11 +2226,11 @@ clinton|408
 fifties|408
 uncomfortable|408
 nobody's|407
+weights|407
 chose|407
 argument|406
 stations|406
 management|406
-weights|406
 surgery|405
 unemployment|405
 fault|405
@@ -2238,22 +2256,22 @@ equipment|399
 sexual|399
 blocks|399
 bread|399
+aside|398
 intelligence|398
 profit|398
 schedule|398
 mo-|398
 bowl|398
-aside|397
 drove|397
 addicted|397
 wide|397
 experiences|397
+meaning|397
 quarter|397
 stays|397
 criminal|396
 traveled|396
 character|396
-meaning|396
 saint|396
 hundreds|395
 mountain|395
@@ -2304,6 +2322,7 @@ yeh|383
 pot|383
 cent|382
 camping|382
+_f|381
 extended|381
 challenge|381
 lawyer|381
@@ -2316,7 +2335,7 @@ effective|379
 nope|379
 wearing|378
 unusual|378
-result|376
+result|377
 product|375
 racing|375
 evidence|375
@@ -2384,7 +2403,6 @@ obvious|362
 letter|362
 scandals|361
 sensitive|361
-d._v._d.|361
 jesus|360
 coverage|360
 candy|360
@@ -2421,6 +2439,7 @@ butt|350
 amazed|350
 rare|350
 fortunately|350
+st|349
 nurse|349
 hungry|349
 minds|348
@@ -2461,7 +2480,6 @@ unfortunate|341
 loud|341
 leg|341
 fr-|341
-st|340
 capital|340
 design|340
 lights|340
@@ -2478,11 +2496,11 @@ thin|337
 dancing|337
 smokes|337
 suffer|337
+wine|337
 created|336
 no-|336
 heads|336
 automatically|336
-wine|336
 colleges|336
 jack|335
 bronx|335
@@ -2524,7 +2542,6 @@ vitamins|330
 miserable|330
 options|330
 ideal|329
-w.|329
 bowling|329
 cuts|329
 causes|329
@@ -2548,7 +2565,6 @@ grass|326
 stomach|326
 fucking|326
 steve|326
-c._d.|325
 com-|325
 desert|325
 asleep|325
@@ -2571,6 +2587,7 @@ volunteer|322
 grad|322
 bothered|322
 salt|322
+_j|321
 monitor|321
 there'll|321
 un-|321
@@ -2654,6 +2671,7 @@ cooked|309
 lakers|308
 niece|308
 fixed|308
+_k|308
 depressed|308
 outrageous|307
 transportation|307
@@ -2667,14 +2685,12 @@ manage|306
 scares|306
 circle|305
 gifts|305
-y.|305
 final|305
 relative|305
 seventh|305
 supply|304
 freak|304
 james|304
-k.|303
 forties|303
 developed|303
 lisa|302
@@ -2692,13 +2708,13 @@ sees|299
 sufficient|299
 golden|299
 adopted|298
+cautious|298
 treadmill|298
 location|298
 winning|298
 firm|298
 eighth|298
 minorities|297
-cautious|297
 there'd|297
 including|297
 comic|297
@@ -2733,21 +2749,18 @@ mcdonald's|293
 dishes|293
 unemployed|292
 cruise|292
-g.|291
 republican|291
 corporation|291
-m._t._v.|291
 father's|291
 screwed|290
 fiction|290
 fascinating|290
 studied|290
+goals|289
 construction|289
 switch|289
 uh-oh|289
 martin|288
-goals|288
-h.|288
 races|288
 proper|288
 ring|288
@@ -2821,6 +2834,7 @@ woods|276
 shops|276
 housing|276
 content|276
+_h|276
 birth|276
 slowly|276
 breathe|276
@@ -2880,7 +2894,6 @@ matt|269
 wet|269
 connect|269
 solitaire|268
-f.|268
 tour|268
 films|268
 couch|268
@@ -2931,11 +2944,11 @@ la|261
 song|261
 jus-|261
 agency|261
+thursday|261
 dave|260
 oriented|260
 struggling|260
 yoga|260
-thursday|260
 disabled|259
 employee|259
 enemy|259
@@ -2968,6 +2981,7 @@ production|255
 positions|255
 fed|255
 screw|255
+ed|255
 gorgeous|255
 lessons|255
 mouse|255
@@ -2978,7 +2992,6 @@ theatre|254
 qaeda|254
 screaming|254
 saving|254
-ed|254
 jordan|253
 election|253
 greater|253
@@ -3031,6 +3044,7 @@ woke|247
 se|247
 london|247
 grandson|246
+compatible|246
 brian|246
 alternative|246
 blowing|246
@@ -3039,11 +3053,11 @@ workout|245
 filled|245
 duty|245
 incident|245
-compatible|245
 maintenance|245
 hall|245
 beef|245
 hole|245
+ma'am|244
 siblings|244
 mothers|244
 minded|244
@@ -3056,7 +3070,6 @@ hassle|244
 expense|244
 literature|244
 typically|244
-ma'am|243
 he-|243
 unfair|243
 funds|243
@@ -3235,6 +3248,7 @@ males|222
 mi-|222
 core|222
 volleyball|222
+applied|222
 patience|222
 paranoid|222
 soup|222
@@ -3245,7 +3259,6 @@ listened|221
 modern|221
 essentially|221
 focused|221
-applied|221
 superbowl|220
 arkansas|220
 pace|220
@@ -3261,7 +3274,6 @@ stopping|220
 who've|220
 cooler|220
 details|220
-a._o._l.|219
 compromise|219
 false|219
 interaction|219
@@ -3298,17 +3310,16 @@ sits|216
 tune|216
 centre|216
 debt|216
+wednesday|216
+freshman|216
 travelled|215
 separated|215
-i._d.|215
 frankly|215
 microsoft|215
-freshman|215
 urban|215
 settled|215
 ignore|215
 fancy|215
-wednesday|215
 success|214
 jeez|214
 added|214
@@ -3367,7 +3378,6 @@ fireworks|209
 organized|209
 government's|209
 guessing|209
-p._i._n.|209
 surfing|209
 largest|209
 gray|209
@@ -3408,7 +3418,6 @@ sporting|206
 suspect|206
 summers|206
 yah|205
-n._b._a.|205
 theirs|205
 publicity|205
 attacking|205
@@ -3496,12 +3505,12 @@ therapy|197
 crack|197
 aerobics|196
 drivers|196
-e._s._p._n.|196
 status|196
 cop|196
 aggressive|196
 ab-|196
 pa-|196
+_w|196
 unacceptable|196
 staff|196
 susan|196
@@ -3538,6 +3547,7 @@ kevin|194
 arrested|194
 bikes|194
 recorded|194
+_y|194
 describe|194
 muscles|193
 registered|193
@@ -3575,6 +3585,7 @@ nicotine|191
 me-|191
 impressed|191
 breath|191
+_g|191
 duct|190
 lobster|190
 officer|190
@@ -3725,7 +3736,6 @@ discrimination|179
 tear|179
 purposes|179
 shoulder|179
-o._j.|179
 husbands|179
 treatment|179
 believed|179
@@ -3910,7 +3920,6 @@ infection|165
 emailed|165
 neighborhoods|165
 nearby|165
-h._b._o.|164
 happiness|164
 van|164
 laura|164
@@ -3961,7 +3970,6 @@ julie|162
 allows|162
 jogging|161
 commission|161
-u._s._a.|161
 compatibility|161
 occurred|161
 funniest|161
@@ -4044,6 +4052,7 @@ learnt|156
 lee|156
 solid|156
 disaster|156
+assistance|156
 pam|156
 commute|156
 primary|156
@@ -4061,7 +4070,6 @@ indians|156
 absolute|156
 bones|155
 zoo|155
-assistance|155
 talented|155
 campaign|155
 led|155
@@ -4091,6 +4099,7 @@ that-|154
 theme|154
 criminals|154
 whereabouts|154
+attract|154
 wor-|154
 smith|154
 gr-|154
@@ -4105,7 +4114,6 @@ token|153
 republicans|153
 hitler|153
 collar|153
-attract|153
 giant|153
 dramatic|153
 altogether|153
@@ -4140,7 +4148,6 @@ knocked|150
 flags|150
 winner|150
 understandable|150
-f._b._i.|150
 associate|150
 passes|150
 happier|150
@@ -4215,7 +4222,6 @@ transfer|146
 wives|146
 photography|146
 socially|146
-o._k.|146
 academic|146
 mornings|146
 scam|146
@@ -4236,6 +4242,7 @@ trash|145
 consumer|145
 diabetes|145
 accomplish|145
+concentrate|145
 vegetable|144
 consulting|144
 rob|144
@@ -4243,16 +4250,13 @@ outlook|144
 director|144
 smallpox|144
 subscribe|144
-n._b._c.|144
 ultimate|144
 walls|144
 pride|144
-concentrate|144
 chest|144
 corn|144
 flavor|144
 bullshit|143
-t._v.s|143
 stole|143
 'specially|143
 poodle|143
@@ -4321,7 +4325,6 @@ loyalty|139
 addition|139
 parade|139
 tiger|139
-c._i._a.|139
 included|139
 stephanie|139
 trail|139
@@ -4350,7 +4353,6 @@ ho|138
 cab|138
 equally|138
 patch|138
-a._b._c.|138
 ordinary|138
 grows|138
 accents|138
@@ -4537,7 +4539,6 @@ teacher's|128
 reputation|128
 practices|128
 ruined|128
-b._b._c.|128
 electrical|128
 instructor|128
 map|128
@@ -4595,7 +4596,6 @@ exam|126
 association|126
 shrimp|126
 leash|125
-n._f._l.|125
 carpet|125
 don|125
 patty|125
@@ -4804,7 +4804,6 @@ chick|117
 excess|117
 who'd|117
 contribute|117
-u._c._l._a.|117
 wears|117
 permission|117
 advertised|117
@@ -4839,7 +4838,6 @@ harvard|116
 blank|116
 tempting|116
 bend|115
-d._v._d.s|115
 tomato|115
 casinos|115
 singer|115
@@ -4996,8 +4994,6 @@ communicating|109
 jessica|109
 worlds|109
 distant|109
-n._p._r.|109
-o|109
 crew|109
 automatic|109
 delivered|109
@@ -5012,7 +5008,6 @@ unlimited|108
 richer|108
 elizabeth|108
 cockpit|108
-c._d.s|108
 musical|108
 jamie|108
 revenue|108
@@ -5041,7 +5036,6 @@ wings|107
 snowboarding|107
 filter|107
 jets|107
-c._e._o.|107
 perjure|107
 tornadoes|107
 spreading|107
@@ -5054,6 +5048,7 @@ presidents|107
 believes|107
 charges|107
 actress|107
+_x|107
 stepping|107
 acted|107
 fo-|107
@@ -5125,7 +5120,6 @@ exists|105
 chill|105
 improvement|105
 polite|105
-x|105
 sub|105
 master's|105
 excel|105
@@ -5291,7 +5285,6 @@ islamic|99
 norm|99
 sharp|99
 foreigners|99
-p._c.|99
 sticky|99
 colored|99
 possibilities|99
@@ -5332,7 +5325,6 @@ brutal|98
 harsh|98
 rip|98
 focusing|98
-p._b._s.|98
 task|98
 overcome|98
 discount|98
@@ -5382,7 +5374,6 @@ monthly|96
 screens|96
 outlet|96
 br-|96
-m._b._a.|96
 sexually|96
 popped|96
 identity|96
@@ -5398,11 +5389,9 @@ remove|96
 researching|96
 jenny|96
 day's|96
-c._b._s.|96
 entertained|96
 dentist|96
 strain|96
-s|96
 toll|96
 staten|96
 pointed|96
@@ -5423,7 +5412,6 @@ committing|95
 rating|95
 personnel|95
 growth|95
-t|95
 artistic|95
 poison|95
 coincidence|95
@@ -5433,13 +5421,11 @@ bubble|95
 silver|95
 believer|95
 eater|95
-c._e._o.s|94
 turtles|94
 narrow|94
 seed|94
 antique|94
 patio|94
-m._s._n.|94
 collie|94
 studios|94
 crystal|94
@@ -5545,6 +5531,7 @@ muggy|91
 schooled|91
 organic|91
 jean|91
+z|91
 frog|91
 client|91
 sew|91
@@ -5552,7 +5539,6 @@ cocaine|91
 noble|91
 earthquakes|91
 weddings|91
-u._c.|91
 judges|91
 lifelong|91
 australian|91
@@ -5620,7 +5606,6 @@ greyhound|89
 suitcase|89
 designer|89
 thomas|89
-n._y._u.|89
 librarian|89
 tw-|89
 pete|89
@@ -5753,11 +5738,11 @@ logical|86
 internationally|86
 pose|86
 initiate|86
-a._m.|86
 thrill|86
 da-|86
 creativity|86
 stunts|86
+dr|86
 script|86
 obese|86
 novel|86
@@ -5799,7 +5784,6 @@ council|85
 needing|85
 beth|85
 explicit|85
-dr|85
 mole|85
 shh|85
 allen|85
@@ -5891,7 +5875,6 @@ televising|83
 obscene|83
 elections|83
 wiped|83
-t._v.'s|83
 failing|83
 ethical|83
 signal|83
@@ -6018,7 +6001,6 @@ golfing|80
 campaigns|80
 farming|80
 floors|80
-i._b._m.|80
 merit|80
 william|80
 law's|80
@@ -6051,7 +6033,6 @@ reasoning|80
 publishing|80
 patches|80
 alarm|80
-u._s._c.|80
 roast|80
 cheesecake|79
 injuries|79
@@ -6096,7 +6077,6 @@ interacting|79
 messy|79
 distracted|79
 fe-|79
-v._c._r.|79
 lasting|79
 immunity|79
 gut|79
@@ -6201,7 +6181,6 @@ decline|76
 diff-|76
 when's|76
 decorate|76
-c|76
 denise|76
 format|76
 mexicans|76
@@ -6299,7 +6278,6 @@ macaroni|74
 extend|74
 stove|74
 ham|74
-i._t.|74
 doberman|73
 dice|73
 warehouse|73
@@ -6467,7 +6445,6 @@ predominantly|69
 dinners|69
 lessen|69
 units|69
-m|69
 deserves|69
 albums|69
 bicycling|69
@@ -6520,7 +6497,6 @@ birmingham|68
 ghetto|68
 fred|68
 them's|68
-m._s._n._b._c.|68
 cafe|68
 codes|68
 grounds|68
@@ -6756,7 +6732,6 @@ mechanic|64
 carrier|64
 specialized|64
 chuck|64
-y|64
 downfall|64
 snap|64
 upside|64
@@ -6789,6 +6764,7 @@ filming|64
 dragged|64
 continues|64
 bud|64
+phenomenon|64
 locations|64
 spices|64
 driveway|64
@@ -6808,6 +6784,7 @@ bacon|63
 leisure|63
 johnson|63
 overcast|63
+q|63
 updates|63
 frogs|63
 jen|63
@@ -6845,7 +6822,6 @@ springtime|63
 combine|63
 instruments|63
 grandmother's|63
-phenomenon|63
 pharmacy|63
 nicest|63
 col-|63
@@ -6898,7 +6874,6 @@ drastically|62
 representative|62
 nicely|62
 stream|62
-p._h._d.|62
 pers-|62
 grandma's|62
 converse|62
@@ -7057,6 +7032,7 @@ joints|59
 ruth|59
 daytona|59
 relying|59
+-|59
 submit|59
 korea's|59
 lease|59
@@ -7113,7 +7089,6 @@ lasagna|58
 horseback|58
 ro-|58
 bosses|58
-d._s._l.|58
 cancun|58
 counties|58
 ivy|58
@@ -7153,7 +7128,6 @@ document|58
 defiantly|58
 unpleasant|58
 miller|58
-p._m.|58
 damaged|58
 considerate|58
 poisoning|58
@@ -7172,7 +7146,6 @@ trap|57
 virgin|57
 offending|57
 explode|57
-w|57
 animated|57
 exercised|57
 wacky|57
@@ -7221,14 +7194,12 @@ spy|57
 germans|57
 rebel|57
 morality|57
-p._a.|57
 barb|57
 verbal|57
 flood|57
 shifts|57
 fridge|57
 needle|57
-b|57
 wireless|57
 erica|57
 janet|57
@@ -7292,7 +7263,6 @@ segment|56
 practicing|56
 hus-|56
 unable|56
-d|56
 plates|56
 approximately|56
 relieve|56
@@ -7303,7 +7273,6 @@ hug|56
 introducing|56
 breeds|56
 hindsight|56
-d._n._a.|56
 mailing|56
 sentences|56
 teeny|56
@@ -7329,7 +7298,6 @@ participation|55
 delete|55
 modem|55
 us-|55
-a._c.|55
 randy|55
 chooses|55
 alison|55
@@ -7467,7 +7435,6 @@ murders|53
 movie's|53
 market's|53
 waitressing|53
-p._g.|53
 bam|53
 es-|53
 huntington|53
@@ -7488,7 +7455,6 @@ crosses|53
 racket|53
 aspirin|53
 sunset|53
--|53
 afternoons|53
 deceased|53
 powerpoint|53
@@ -7532,7 +7498,6 @@ gigantic|53
 taylor|53
 highschool|53
 ramifications|53
-u._k.|53
 genre|53
 interrupted|53
 liquid|53
@@ -7704,14 +7669,12 @@ holly|51
 obesity|51
 replacement|51
 destination|51
-m._i._t.|51
 weakness|51
 guest|51
 respiratory|51
 system's|51
 preventative|51
 pumping|51
-e|51
 sicker|51
 provider|51
 publish|51
@@ -7734,7 +7697,6 @@ unbiased|50
 wendy's|50
 ancestors|50
 factions|50
-p._t._a.|50
 experiments|50
 grandsons|50
 obsolete|50
@@ -7897,7 +7859,6 @@ robbed|48
 durham|48
 server|48
 crooked|48
-m._s.|48
 mighty|48
 norfolk|48
 needy|48
@@ -7967,11 +7928,11 @@ wishes|48
 disconnect|48
 styles|48
 belonged|48
+mrs|48
 container|48
 generated|48
 erie|48
 forwarded|48
-m._c._i.|48
 straightforward|48
 benadryl|48
 distinguish|48
@@ -7988,7 +7949,6 @@ preferred|48
 parrots|47
 knicks|47
 carbon|47
-z|47
 lowered|47
 spectacular|47
 royal|47
@@ -8005,6 +7965,7 @@ streak|47
 sequel|47
 genuinely|47
 insulin|47
+_q|47
 chefs|47
 rib|47
 confide|47
@@ -8012,7 +7973,6 @@ blading|47
 who-|47
 helicopters|47
 technician|47
-n|47
 playful|47
 ali|47
 interior|47
@@ -8033,7 +7993,6 @@ juvenile|47
 maintained|47
 texans|47
 con|47
-d._j.|47
 witch|47
 donations|47
 concentrated|47
@@ -8051,12 +8010,11 @@ carter|47
 discouraging|47
 disarmament|47
 horrific|47
-b._s.|47
 fetched|47
 identical|47
+perspectives|47
 continuously|47
 stigma|47
-mrs|47
 analogy|47
 of-|47
 complains|47
@@ -8152,7 +8110,6 @@ gung|46
 audition|46
 devices|46
 represents|46
-perspectives|46
 distasteful|46
 morris|46
 arrive|46
@@ -8198,7 +8155,6 @@ cheering|45
 fella|45
 nickelodeon|45
 parades|45
-f|45
 scrapbooking|45
 storage|45
 wicked|45
@@ -8216,7 +8172,6 @@ solely|45
 sights|45
 devil's|45
 ankles|45
-s._a._t.|45
 innocence|45
 explains|45
 delays|45
@@ -8250,7 +8205,6 @@ amazingly|45
 experts|45
 sacrifices|45
 themself|45
-p._r.|45
 appalled|45
 tra-|45
 railroad|45
@@ -8285,7 +8239,6 @@ barney|44
 so's|44
 upscale|44
 incentives|44
-v._h._s.|44
 cynthia|44
 lizards|44
 benny|44
@@ -8309,7 +8262,6 @@ midst|44
 state's|44
 liability|44
 turmoil|44
-g._e._d.|44
 ed-|44
 honors|44
 gra-|44
@@ -8356,7 +8308,6 @@ parked|44
 cone|44
 theresa|44
 layers|44
-u|44
 affiliated|44
 vaccinations|44
 polls|44
@@ -8418,7 +8369,6 @@ denominator|43
 ourself|43
 beta|43
 reno|43
-u._p._s.|43
 crucial|43
 ladder|43
 designs|43
@@ -8456,7 +8406,6 @@ fools|43
 wholeheartedly|43
 lo|43
 auction|43
-e._r.|43
 girls'|43
 fills|43
 limitations|43
@@ -8491,7 +8440,6 @@ coats|42
 billionaire|42
 jacob|42
 man-|42
-r._m._c.|42
 dixie|42
 kmart|42
 functioning|42
@@ -8513,7 +8461,6 @@ nigger|42
 creation|42
 subsidized|42
 aggravated|42
-q.|42
 stamp|42
 heels|42
 babysitters|42
@@ -8593,7 +8540,6 @@ comforting|42
 coaster|41
 niners|41
 vegan|41
-a._a.|41
 upenn|41
 businessman|41
 it'|41
@@ -8637,7 +8583,6 @@ roms|41
 hour's|41
 advise|41
 spark|41
-z.|41
 dealings|41
 abs-|41
 redskins|41
@@ -8686,7 +8631,6 @@ psyche|41
 -til|41
 barbecues|41
 rutgers|41
-l._a.'s|40
 crafty|40
 raider|40
 queer|40
@@ -8699,7 +8643,6 @@ mov-|40
 thirtieth|40
 witnessed|40
 blades|40
-h._i._v.|40
 infringing|40
 stabbed|40
 ministry|40
@@ -8729,7 +8672,6 @@ dieting|40
 catfish|40
 waters|40
 curricular|40
-u._t.|40
 paste|40
 uproar|40
 nazis|40
@@ -8796,7 +8738,6 @@ veterinarian|40
 par|40
 herb|40
 cookbook|40
-l|40
 accordingly|40
 sauces|40
 peculiar|40
@@ -8818,7 +8759,6 @@ benefited|39
 lois|39
 valued|39
 strangest|39
-i._r._s.|39
 someth-|39
 consumers|39
 nathan|39
@@ -9014,7 +8954,6 @@ canada's|38
 bout|38
 aftermath|38
 tires|38
-e._s._l.|38
 lip|38
 firmly|38
 analyzing|38
@@ -9088,7 +9027,6 @@ unethical|37
 grave|37
 ventilation|37
 hack|37
-l._a._x.|37
 cedar|37
 sniff|37
 trunk|37
@@ -9516,7 +9454,6 @@ muscular|34
 lotto|34
 allah|34
 presently|34
-b._y._u.|34
 provo|34
 hearted|34
 remaining|34
@@ -9652,7 +9589,6 @@ opt|33
 tale|33
 dolphins|33
 unheard|33
-x._p.|33
 equals|33
 lacy|33
 hermit|33
@@ -9713,7 +9649,6 @@ filtered|33
 clinton's|33
 bounds|33
 pens|33
-s._p._c._a.|33
 educator|33
 structures|33
 toddlers|33
@@ -9791,7 +9726,6 @@ hepatitis|33
 microphone|33
 nyquil|33
 sudafed|33
-h._m._o.|33
 philosophical|33
 cucumbers|33
 ryder|32
@@ -9807,7 +9741,6 @@ squares|32
 painter|32
 trucking|32
 enhanced|32
-p._c.s|32
 mistreated|32
 drawbacks|32
 dodger|32
@@ -9867,7 +9800,6 @@ floods|32
 voters|32
 stuart|32
 businessmen|32
-a._p.|32
 mankind|32
 education's|32
 bogus|32
@@ -9916,7 +9848,6 @@ castro|32
 presenting|32
 denny's|32
 corpus|32
-j._f._k.|32
 booming|32
 compassionate|32
 forefront|32
@@ -9943,7 +9874,6 @@ pursuit|32
 trim|32
 look-|32
 bastards|32
-g|32
 boston's|32
 stamina|32
 dumping|32
@@ -10048,7 +9978,6 @@ boredom|31
 interferes|31
 bummed|31
 readers|31
-r|31
 tomorrow's|31
 wee|31
 mega|31
@@ -10175,7 +10104,6 @@ coordinated|30
 allentown|30
 glamorous|30
 gameboy|30
-b._c.|30
 marion|30
 disruptive|30
 eileen|30
@@ -10257,7 +10185,6 @@ positives|30
 lessens|30
 restriction|30
 stickers|30
-i._d.s|30
 shack|30
 publisher|30
 teased|30
@@ -10279,7 +10206,6 @@ installed|30
 opponent|30
 new-|30
 feud|30
-i._r._a.|30
 territorial|30
 doubts|30
 horizon|30
@@ -10294,7 +10220,6 @@ scrutiny|30
 countryside|30
 hugh|30
 semesters|30
-c._s._i.|30
 weakest|30
 apparent|30
 fro-|30
@@ -10342,7 +10267,6 @@ weaker|29
 shadow|29
 calming|29
 destiny|29
-y._m._c._a.|29
 marvin|29
 receiver|29
 astoria|29
@@ -10350,7 +10274,6 @@ ashes|29
 balloon|29
 chicago's|29
 hires|29
-i._q.|29
 ambition|29
 coma|29
 hammer|29
@@ -10389,7 +10312,6 @@ cools|29
 hikes|29
 maureen|29
 elevated|29
-p._e.|29
 strengthen|29
 juices|29
 wool|29
@@ -10519,7 +10441,6 @@ abou-|29
 commonplace|29
 minesweeper|28
 blockbusters|28
-o._h.|28
 poodles|28
 wizards|28
 yuk|28
@@ -10570,7 +10491,6 @@ hilary|28
 ming|28
 stereotyping|28
 confront|28
-m._p.|28
 freeways|28
 torturing|28
 now's|28
@@ -10578,11 +10498,9 @@ fibromyalgia|28
 bold|28
 kirk|28
 flavored|28
-p._s.|28
 nevertheless|28
 showtime|28
 demographics|28
-g._p._a.|28
 say-|28
 tablets|28
 nile|28
@@ -10741,7 +10659,6 @@ carrot|27
 swayed|27
 charlie's|27
 gump|27
-s._a._t.s|27
 augusta|27
 borough|27
 skaters|27
@@ -10933,7 +10850,6 @@ bakersfield|26
 yosemite|26
 jails|26
 gabriel|26
-g._e.|26
 convict|26
 dispute|26
 nailed|26
@@ -11072,7 +10988,6 @@ reaches|26
 weaponry|26
 cue|26
 bullies|26
-a._d._d.|26
 kitchens|26
 strive|26
 errors|26
@@ -11213,7 +11128,6 @@ pol-|25
 gripe|25
 spurts|25
 blackjack|25
-h|25
 coyotes|25
 nutrients|25
 tow|25
@@ -11286,7 +11200,6 @@ anticipation|25
 hillary|25
 imposing|25
 skies|25
-g._m.|25
 piled|25
 poses|25
 agreements|25
@@ -11364,7 +11277,6 @@ claw|24
 hairless|24
 madden|24
 fencing|24
-n._h._l.|24
 bor-|24
 billiards|24
 inlaws|24
@@ -11393,7 +11305,6 @@ giuliani|24
 trampoline|24
 reliever|24
 doomed|24
-p._o._w.s|24
 scottish|24
 diversified|24
 jarred|24
@@ -11638,7 +11549,6 @@ browse|23
 woodworking|23
 journals|23
 precise|23
-d._o._s.|23
 drifting|23
 underprivileged|23
 timers|23
@@ -12002,7 +11912,6 @@ facilitate|22
 intermediate|22
 va-|22
 billboard|22
-s._u._v.|22
 racking|22
 grossly|22
 spun|22
@@ -12012,6 +11921,7 @@ fav-|22
 hicks|22
 willingly|22
 prerogative|22
+inc|22
 oceans|22
 simultaneously|22
 homey|22
@@ -12028,7 +11938,6 @@ job's|22
 terrorize|22
 sliced|22
 embrace|22
-i._n._s.|22
 imp-|22
 newman|22
 sid|22
@@ -12123,7 +12032,6 @@ greenwich|21
 bro|21
 waldorf|21
 curl|21
-t._n._t.|21
 crib|21
 rodman|21
 graceful|21
@@ -12183,7 +12091,6 @@ accuse|21
 visually|21
 inheritance|21
 dependable|21
-r._v.|21
 trashed|21
 blacked|21
 routinely|21
@@ -12227,8 +12134,6 @@ servants|21
 fringe|21
 living's|21
 gl-|21
-p|21
-a._d._h._d.|21
 southerners|21
 vacationing|21
 venus|21
@@ -12296,7 +12201,6 @@ trinity|21
 toyota|21
 determination|21
 play-|21
-w._w._f.|21
 jerseys|21
 lazier|21
 diligent|21
@@ -12447,7 +12351,6 @@ beckham|20
 discretion|20
 dc|20
 falcons|20
-k|20
 monoxide|20
 hypnosis|20
 bums|20
@@ -12599,7 +12502,6 @@ memorabilia|20
 fisherman|20
 her's|20
 gardener|20
-c._d.'s|20
 buffy|20
 abo-|20
 strayed|20
@@ -12612,7 +12514,6 @@ fades|20
 validity|20
 conjunction|20
 stumbled|20
-r._o._t._c.|20
 somalia|20
 heartland|20
 laden's|20
@@ -12779,7 +12680,6 @@ riders|19
 prostitutes|19
 collectors|19
 bruno|19
-a._c._c.|19
 trophy|19
 brentwood|19
 appreciates|19
@@ -12902,7 +12802,6 @@ hick|19
 existent|19
 culinary|19
 supervise|19
-inc|19
 schemes|19
 self-employed|19
 buyer|19
@@ -13012,7 +12911,6 @@ revert|19
 alerted|19
 sunscreen|19
 poss-|19
-u._p._e._n._n.|19
 invaluable|19
 entail|19
 scrapbook|19
@@ -13038,7 +12936,6 @@ hybrid|19
 confrontation|19
 guerilla|19
 subsidize|19
-m._p._r.|19
 diplomatically|19
 tel|19
 realities|19
@@ -13063,7 +12960,6 @@ pleasurable|19
 dissertation|19
 marvelous|19
 gossiped|19
-t._l._c.|19
 wiping|19
 teas|19
 lowers|19
@@ -13093,7 +12989,6 @@ waterfront|18
 refunder|18
 discs|18
 mcguire|18
-f._c._c.|18
 newsworthy|18
 mirrors|18
 julius|18
@@ -13203,7 +13098,6 @@ cen-|18
 wrestled|18
 mex|18
 dryer|18
-c._p._a.|18
 kickboxing|18
 broadband|18
 upwards|18
@@ -13323,7 +13217,6 @@ asparagus|18
 limousine|18
 snowmobiling|18
 incidences|18
-c._e._o.'s|18
 stumped|18
 homesick|18
 blurb|18
@@ -13471,7 +13364,6 @@ cradle|18
 commercialization|18
 powerless|18
 deathly|18
-f._d._a.|18
 clogged|18
 charlottesville|18
 veggies|18
@@ -13480,8 +13372,6 @@ shrimps|18
 avocado|18
 pickle|18
 mary's|18
-s._w._a._t.|17
-c._j.|17
 joanie|17
 warcraft|17
 maurice|17
@@ -13630,7 +13520,6 @@ maids|17
 pen-|17
 pay-|17
 inbred|17
-c._d._c.|17
 evicted|17
 reservoirs|17
 frighten|17
@@ -13739,7 +13628,6 @@ efficiency|17
 simulation|17
 leasing|17
 passage|17
-s._u._v.s|17
 editorials|17
 faction|17
 continual|17
@@ -13756,7 +13644,6 @@ packer|17
 headphones|17
 brighter|17
 angelo|17
-u._n._c.|17
 licensing|17
 cosmopolitan|17
 sprung|17
@@ -13808,7 +13695,6 @@ turkeys|17
 rubbed|17
 cinco|17
 carols|17
-o._u.|17
 rival|17
 catalogues|17
 pluses|17
@@ -13937,11 +13823,9 @@ aspiring|16
 redford|16
 whoopee|16
 humiliate|16
-m._c.|16
 manifest|16
 inconsiderate|16
 bitterness|16
-i._v.|16
 pigeons|16
 lovable|16
 kale|16
@@ -14033,7 +13917,6 @@ pillows|16
 skirts|16
 vo-|16
 booed|16
-i._m._a._x.|16
 harrison|16
 dalton|16
 mcdonald|16
@@ -14054,11 +13937,9 @@ woken|16
 sparkle|16
 hoffman|16
 disposition|16
-b._a.|16
 safeway|16
 smoother|16
 gambler|16
-d._u._i.|16
 leslie|16
 decker|16
 protested|16
@@ -14080,7 +13961,6 @@ wendell|16
 sheeting|16
 crazies|16
 intending|16
-k._u.|16
 foo-|16
 metropolis|16
 webster|16
@@ -14172,7 +14052,6 @@ suppressed|16
 vacuuming|16
 tile|16
 purdue|16
-k._f._c.|16
 specified|16
 yeast|16
 butcher|16
@@ -14306,7 +14185,6 @@ earns|16
 fantasies|16
 thinkers|16
 inv-|16
-m._t._v.'s|16
 hen|16
 roosters|16
 fantasize|16
@@ -14387,7 +14265,6 @@ lhasa|15
 gillette|15
 achieving|15
 archery|15
-n._c.|15
 hitter|15
 agassi|15
 astros|15
@@ -14476,7 +14353,6 @@ irks|15
 horns|15
 deregulation|15
 bask-|15
-m._p.s|15
 quoted|15
 coward|15
 nation's|15
@@ -14550,7 +14426,6 @@ stumble|15
 pablo|15
 rake|15
 outweighs|15
-i.e.|15
 kisses|15
 inseparable|15
 celsius|15
@@ -14591,7 +14466,6 @@ stoop|15
 bloopers|15
 growling|15
 endings|15
-n._y._p._d.|15
 penguin|15
 gazillion|15
 gere|15
@@ -14626,7 +14500,6 @@ mat|15
 barracks|15
 unfolding|15
 induced|15
-m._g._m.|15
 bipolar|15
 generalized|15
 succeeding|15
@@ -14676,6 +14549,7 @@ ding|15
 overs|15
 collapsing|15
 johns|15
+ammonia|15
 moderator|15
 fou-|15
 specialties|15
@@ -14836,7 +14710,6 @@ inspiration|15
 davidson|15
 stair|15
 tier|15
-l._d._c.|15
 whammy|15
 coon|15
 yells|15
@@ -14980,7 +14853,6 @@ emphasized|14
 colgate|14
 saddest|14
 adrian|14
-u._p.|14
 stacks|14
 technology's|14
 intrigue|14
@@ -14999,7 +14871,6 @@ veil|14
 walgreen's|14
 beret|14
 syrians|14
-ammonia|14
 putin|14
 babylon|14
 restoring|14
@@ -15048,7 +14919,6 @@ vividly|14
 most-|14
 scriptures|14
 hannibal|14
-e._m._t.|14
 pshaw|14
 afforded|14
 automobiles|14
@@ -15069,7 +14939,6 @@ qual-|14
 translates|14
 flunked|14
 salaried|14
-n._c._a._a.|14
 personalize|14
 oprah's|14
 cho|14
@@ -15124,7 +14993,6 @@ lotteries|14
 underestimate|14
 demanded|14
 afterlife|14
-i._m.|14
 observer|14
 insect|14
 ponder|14
@@ -15243,7 +15111,6 @@ alvin|14
 mayhem|14
 reas-|14
 urgent|14
-a._c._l._u.|14
 tow-|14
 incorrectly|14
 irritation|14
@@ -15315,7 +15182,6 @@ mecca|14
 rabbi|14
 spe-|14
 deteriorating|14
-u._p._n.|14
 spectators|14
 maggots|14
 resented|14
@@ -15477,7 +15343,6 @@ sprained|13
 waterskiing|13
 budding|13
 starches|13
-m._r._i.|13
 sporadically|13
 napa|13
 mercury|13
@@ -15500,7 +15365,6 @@ breezes|13
 lavender|13
 pollutants|13
 commissions|13
-m._t._a.|13
 terminated|13
 jenna|13
 palatable|13
@@ -15743,7 +15607,6 @@ wards|13
 dolores|13
 beware|13
 one'll|13
-r._n.|13
 colon|13
 loudest|13
 scallops|13
@@ -15857,7 +15720,6 @@ labelled|13
 clique|13
 dictating|13
 realist|13
-u._s.'s|13
 undocumented|13
 antidote|13
 infatuation|13
@@ -15867,7 +15729,6 @@ saddened|13
 crises|13
 generators|13
 anchor|13
-u._n.'s|13
 tunes|13
 wan|13
 unconscious|13
@@ -15963,7 +15824,6 @@ recumbent|12
 align|12
 offbeat|12
 audible|12
-l._a._n.|12
 composer|12
 roxanne|12
 paddling|12
@@ -15974,7 +15834,6 @@ squared|12
 binder|12
 gov|12
 penis|12
-o._j.'s|12
 miranda|12
 albequerque|12
 principal's|12
@@ -15988,6 +15847,7 @@ rascals|12
 slump|12
 ramona|12
 chronicle|12
+pre-k|12
 bartenders|12
 career's|12
 somerville|12
@@ -16020,7 +15880,6 @@ ent-|12
 purina|12
 elbows|12
 bre-|12
-t._n._n.|12
 restless|12
 nortel|12
 houston's|12
@@ -16035,7 +15894,6 @@ sweltering|12
 evaluated|12
 kids'll|12
 bathed|12
-b._m._w.|12
 rancho|12
 nun|12
 rapist|12
@@ -16220,7 +16078,6 @@ recommends|12
 gliding|12
 nickels|12
 curls|12
-d._a._r._e.|12
 feisty|12
 mythology|12
 pitfalls|12
@@ -16241,7 +16098,6 @@ patrons|12
 introduces|12
 paperback|12
 handyman|12
-c._n._b._c.|12
 twister|12
 tug|12
 veto|12
@@ -16249,7 +16105,6 @@ jacqueline|12
 fictitious|12
 prosperous|12
 tastefully|12
-p._o._w.|12
 freeman|12
 spacey|12
 enthralled|12
@@ -16268,7 +16123,6 @@ parcel|12
 gabe|12
 fulfillment|12
 communicated|12
-b._u.|12
 buddy's|12
 decatur|12
 villa|12
@@ -16323,21 +16177,17 @@ travellers|12
 assed|12
 prevailing|12
 announcements|12
-m._d.|12
 drilled|12
 catalina|12
 intrigues|12
 betraying|12
 jacking|12
-v._a.|12
-v._i._p.|12
 unload|12
 conver-|12
 eel|12
 floats|12
 junkies|12
 noel|12
-v._c._r.s|12
 preparations|12
 deceiving|12
 ration|12
@@ -16437,7 +16287,6 @@ alleged|12
 lopsided|12
 owl|12
 revolt|12
-p._m._s.|12
 person-|12
 mick|12
 smut|12
@@ -16455,7 +16304,6 @@ darva|12
 platinum|12
 -at's|12
 credited|12
-t._g._i.|12
 intensely|12
 southwestern|12
 ladies'|12
@@ -16491,7 +16339,6 @@ milder|12
 gardeners|12
 brute|12
 aspen|12
-s._e._c.|12
 haven-|12
 speedy|12
 dur-|12
@@ -16770,7 +16617,6 @@ horticulture|11
 employer's|11
 amenities|11
 minim-|11
-h._i.|11
 binding|11
 screwdriver|11
 surveying|11
@@ -16853,10 +16699,8 @@ practised|11
 coffin|11
 flats|11
 meaner|11
-v._h.|11
 airwaves|11
 brooklyn's|11
-w._w._e.|11
 downey|11
 clump|11
 nicorette|11
@@ -16941,9 +16785,7 @@ digitally|11
 pra-|11
 cusp|11
 antisocial|11
-a._b._c.s|11
 infinite|11
-h._t._m._l.|11
 processors|11
 penitentiary|11
 reading's|11
@@ -17046,7 +16888,6 @@ anarchist|11
 lunatics|11
 orphans|11
 tolkien|11
-k._k._k.|11
 paper's|11
 violates|11
 submarines|11
@@ -17062,7 +16903,6 @@ infamous|11
 subscribing|11
 volley|11
 rollercoaster|11
-d._v._d.'s|11
 masked|11
 pisces|11
 generation's|11
@@ -17147,7 +16987,6 @@ selectively|11
 bungy|11
 phoebe|11
 conga|11
-b._m._x.|11
 employee's|11
 uncensored|11
 campground|11
@@ -17176,7 +17015,6 @@ suny|11
 back-|11
 architectural|11
 orphanage|11
-h._p.|11
 discounted|11
 franchising|11
 housekeeping|11
@@ -17186,7 +17024,6 @@ dyslexia|11
 merged|11
 thanked|11
 evansville|11
-d._a.|11
 apollo|11
 exemption|11
 hauled|11
@@ -17351,7 +17188,6 @@ persistence|11
 abbey|11
 pamphlet|11
 yang|11
-i._i.|11
 maher|11
 sensed|11
 sept-|11
@@ -17397,7 +17233,6 @@ corresponding|11
 hannukah|11
 tiresome|11
 invades|11
-u._r._l.|11
 demolished|11
 ballots|11
 bandwidth|11
@@ -17413,7 +17248,6 @@ drone|11
 gesture|11
 imposition|11
 pathologist|11
-t._a.|11
 presley|11
 instigate|11
 dory|11
@@ -17434,11 +17268,9 @@ getaway|11
 pairing|11
 voyeurs|11
 notary|11
-t._b._s.|11
 forehead|11
 skimmed|11
 misnomer|11
-h._d._t._v.|11
 videotaped|11
 carded|11
 conflicted|11
@@ -17508,7 +17340,6 @@ smokers'|10
 roanoke|10
 whirl|10
 corked|10
-f._a._a.|10
 tamper|10
 golds|10
 pedals|10
@@ -17628,7 +17459,6 @@ synopsis|10
 vance|10
 redwings|10
 lennox|10
-w._n._b._a.|10
 residency|10
 trampolines|10
 duo|10
@@ -17654,7 +17484,6 @@ julian|10
 presidents'|10
 park's|10
 glitter|10
-j|10
 sun-|10
 england's|10
 walters|10
@@ -17688,7 +17517,6 @@ joins|10
 dork|10
 condescending|10
 hisself|10
-d._u._i.s|10
 somet-|10
 judo|10
 enlighten|10
@@ -17820,10 +17648,8 @@ gall|10
 jordans|10
 graft|10
 jobless|10
-i._u.|10
 equilibrium|10
 unionize|10
-m._l._s.|10
 basin|10
 wro-|10
 sellers|10
@@ -17888,7 +17714,6 @@ distraught|10
 maimed|10
 regain|10
 deceitful|10
-g._p._s.|10
 hayley|10
 decks|10
 dubbed|10
@@ -17943,8 +17768,6 @@ postcards|10
 deceive|10
 habitual|10
 garrett|10
-w._b.|10
-b._e._t.|10
 boycotting|10
 expressive|10
 ticketing|10
@@ -18007,7 +17830,6 @@ interruption|10
 trolley|10
 boob|10
 refreshments|10
-l._d._s.|10
 prepaid|10
 si|10
 brother-in-law|10
@@ -18018,7 +17840,6 @@ participatory|10
 shoreline|10
 leans|10
 elective|10
-a._t.|10
 unintentionally|10
 cardiac|10
 alo-|10
@@ -18107,7 +17928,6 @@ twenty-one|10
 maiden|10
 vanished|10
 dangling|10
-e._d._u.|10
 beets|10
 canning|10
 parlors|10
@@ -18128,7 +17948,6 @@ softwares|10
 philosophically|10
 creatively|10
 repetitious|10
-v|10
 riled|10
 insidious|10
 europe's|10
@@ -18138,7 +17957,6 @@ bird's|10
 everglades|10
 federation|10
 huddled|10
-a._c._t.|10
 lambs|10
 gratuitous|10
 everett|10
@@ -18165,7 +17983,6 @@ handcuffs|10
 aerial|10
 legislators|10
 mimicking|10
-l._s._u.|10
 metallic|10
 residue|10
 visitation|10
@@ -18342,7 +18159,6 @@ drive-in|9
 oo-|9
 matan|9
 goldenseal|9
-u._c.s|9
 edson|9
 surya|9
 meatball|9
@@ -18482,14 +18298,11 @@ wiggles|9
 noam|9
 docked|9
 fuse|9
-s._s._i.|9
 libra|9
 aspire|9
-c.'s|9
 brewing|9
 rooster|9
 betrayal|9
-p._t.|9
 lola|9
 baiter|9
 throwaway|9
@@ -18548,7 +18361,6 @@ trillions|9
 affinity|9
 skimming|9
 bangles|9
-o._b.|9
 charlestown|9
 caddy|9
 kerrigan|9
@@ -18623,7 +18435,6 @@ caf-|9
 spanked|9
 obsessively|9
 uncool|9
-l._s._d.|9
 pregnancies|9
 observations|9
 walking's|9
@@ -18707,7 +18518,6 @@ dimensions|9
 projectors|9
 scot|9
 tumbling|9
-e._p._a.|9
 zapper|9
 a-a|9
 consolidated|9
@@ -18727,7 +18537,6 @@ welder|9
 adores|9
 vegetation|9
 venting|9
-h._r.|9
 receives|9
 winchester|9
 dysfunction|9
@@ -18742,7 +18551,6 @@ pecking|9
 preschools|9
 improperly|9
 throughs|9
-r._c.|9
 funner|9
 microscopic|9
 baker's|9
@@ -18773,7 +18581,6 @@ optimist|9
 australia's|9
 vis|9
 seymour|9
-i._m._f.|9
 puyallup|9
 refugee|9
 aol|9
@@ -18810,7 +18617,6 @@ begrudge|9
 biggies|9
 elway|9
 oriels|9
-a._c._l.|9
 execs|9
 custodians|9
 abundant|9
@@ -18820,7 +18626,6 @@ basketballs|9
 sweatshops|9
 ant-|9
 spor-|9
-s._b._c.|9
 groupies|9
 unpaid|9
 chump|9
@@ -18925,7 +18730,6 @@ slums|9
 forecast|9
 our's|9
 developmentally|9
-st.|9
 shattering|9
 bookcases|9
 bunches|9
@@ -18982,7 +18786,6 @@ credence|9
 misused|9
 flirt|9
 fickle|9
-a._t._m.|9
 bur-|9
 dopey|9
 watchdog|9
@@ -19003,7 +18806,6 @@ intervals|9
 unimportant|9
 peters|9
 acquisition|9
-s._b._a.|9
 burdens|9
 plato|9
 ste-|9
@@ -19317,7 +19119,6 @@ securing|9
 implying|9
 payback|9
 toting|9
-d._v._d._s.|9
 overhear|9
 grotesque|9
 faked|9
@@ -19362,7 +19163,6 @@ patent|9
 terminally|9
 it's-|9
 perf-|9
-o._s._u.|9
 measles|9
 champaign|9
 resurrection|9
@@ -19391,11 +19191,9 @@ pep-|9
 selenium|8
 munising|8
 elm|8
-m._c._a._s._t.|8
 segal|8
 winged|8
 fruitcake|8
-d.s|8
 covina|8
 namaskar|8
 sinclair|8
@@ -19413,7 +19211,6 @@ midas|8
 tadpole|8
 quart|8
 toto|8
-s._a._g.|8
 saudi's|8
 shaka|8
 estates|8
@@ -19424,7 +19221,6 @@ printout|8
 payphone|8
 frogger|8
 oddest|8
-pre-k.|8
 thirty-five|8
 carlisle|8
 mmkay|8
@@ -19452,10 +19248,8 @@ disinterested|8
 dysentery|8
 rockland|8
 pales-|8
-t._s._a.|8
 freemont|8
 flung|8
-a._j.|8
 annika|8
 joggers|8
 fatigued|8
@@ -19499,7 +19293,6 @@ professionalism|8
 diplomas|8
 elec-|8
 trigonometry|8
-a.'s|8
 apes|8
 cascades|8
 clowns|8
@@ -19564,7 +19357,6 @@ rove|8
 handouts|8
 sustenance|8
 rocketed|8
-v._i._p.s|8
 schoolteachers|8
 provinces|8
 puzzled|8
@@ -19700,8 +19492,6 @@ door's|8
 canister|8
 mutant|8
 yvette|8
-n._o.|8
-u._f._o.s|8
 hassan|8
 workplaces|8
 respite|8
@@ -19729,7 +19519,6 @@ attentions|8
 slogans|8
 ministries|8
 damascus|8
-n._d._s._u.|8
 zimmer|8
 tibetan|8
 imperial|8
@@ -19806,7 +19595,6 @@ tract|8
 sperm|8
 biotechnology|8
 chewable|8
-c._a._t.|8
 wes|8
 whacking|8
 carl's|8
@@ -19823,7 +19611,6 @@ grossest|8
 hy-|8
 teriyaki|8
 tortillas|8
-m._s._g.|8
 guacamole|8
 delight|8
 calves|8
@@ -19838,7 +19625,6 @@ marketers|8
 nsima|8
 enzymes|8
 cornbread|8
-i._h._o._p.|8
 frees|8
 pat's|8
 burma|8
@@ -19897,7 +19683,6 @@ val-|8
 scatter|8
 corona|8
 var-|8
-t._i.|8
 graphs|8
 inmates|8
 parole|8
@@ -20014,7 +19799,6 @@ clippings|8
 warring|8
 unreality|8
 complexion|8
-c._p._r.|8
 fur-|8
 purifier|8
 dishing|8
@@ -20052,7 +19836,6 @@ chic-|8
 morgue|8
 cinematography|8
 hernia|8
-p._g._a.|8
 vid-|8
 phantom|8
 predator|8
@@ -20089,7 +19872,6 @@ translator|8
 implanted|8
 tweak|8
 accredited|8
-w._w._w.|8
 skateboards|8
 nh|8
 devoting|8
@@ -20125,7 +19907,6 @@ now-|8
 build-|8
 rethinking|8
 pamphlets|8
-n._o._r._a._d.|8
 cocoon|8
 conceivably|8
 czechoslovakia|8
@@ -20174,7 +19955,6 @@ indicators|8
 everybod-|8
 redirect|8
 ucla|8
-u._s._s.|8
 graces|8
 pedestrians|8
 breadwinners|8
@@ -20216,7 +19996,6 @@ offen-|8
 unfunny|8
 toxin|8
 bangkok|8
-b._j.|8
 grips|8
 consolation|8
 cramps|8
@@ -20227,7 +20006,6 @@ perished|8
 unleash|8
 infecting|8
 containing|8
-u._s._s._r.|8
 disperse|8
 pussy|8
 chord|8
@@ -20249,7 +20027,6 @@ expiration|8
 deposition|8
 ni|8
 trav-|8
-c._b._c.|8
 speechless|8
 thrifty|8
 snaps|8
@@ -20287,7 +20064,6 @@ clot|8
 unsubscribe|8
 shampoos|8
 engineered|8
-f._x.|8
 twenty-three|8
 fowl|8
 simon's|8
@@ -20444,7 +20220,6 @@ steward|8
 nitroglycerine|8
 peoria|8
 precarious|8
-b._w._i.|8
 hospitable|8
 friendliest|8
 defi-|8
@@ -20510,7 +20285,6 @@ wreath|8
 sac|8
 secretaries'|8
 commercially|8
-g._i.|8
 ministers|8
 depict|8
 verb|8
@@ -20582,6 +20356,7 @@ creeped|8
 intently|8
 tenured|8
 carbonation|8
+-ing|8
 caffeine's|8
 possessed|8
 contextual|8
@@ -20599,12 +20374,10 @@ shrug|8
 univer-|8
 fevers|8
 somethi-|8
-s._a._d.|8
 fay|8
 pasted|8
 preventable|8
 hair's|8
-b._b._n.|8
 communicable|8
 introvert|8
 raspy|8
@@ -20626,7 +20399,6 @@ emmys|7
 schwarzeneger|7
 um-huh|7
 carina|7
-k._t._l._a.|7
 seabiscuit|7
 criminalist|7
 potsy|7
@@ -20687,8 +20459,6 @@ beloit|7
 santana|7
 riveted|7
 station's|7
-s._i._m.|7
-s._i._m._s.|7
 inhibitions|7
 twenty-two|7
 -chool|7
@@ -20821,7 +20591,6 @@ columbian|7
 renton|7
 faceless|7
 incurred|7
-q|7
 west-|7
 caterpillar|7
 manny's|7
@@ -20889,16 +20658,13 @@ tyco|7
 tele|7
 dun-|7
 crappiest|7
-u._c._s._b.|7
 drudgery|7
 commissioned|7
 councilman|7
 munroe|7
 uppity|7
 pataki|7
-f._e._m._a.|7
 if's|7
-c._d._l.|7
 walkie|7
 whooping|7
 resourceful|7
@@ -20942,7 +20708,6 @@ meditative|7
 osteoarthritis|7
 paypal|7
 sling|7
-m._m.|7
 inching|7
 shaggy|7
 brea|7
@@ -20989,7 +20754,6 @@ doggies|7
 greta|7
 aniston|7
 nico|7
-a._s._p._c._a.|7
 corgi|7
 shelties|7
 thor|7
@@ -21407,7 +21171,6 @@ wilds|7
 deal-|7
 mustn't|7
 happen-|7
-w._m._b._a.|7
 gla-|7
 bodyguards|7
 assembled|7
@@ -21505,7 +21268,6 @@ affirm-|7
 ditches|7
 doings|7
 things'll|7
-u._c._i.|7
 feel-|7
 lindsey|7
 benchmark|7
@@ -21556,7 +21318,6 @@ confidentiality|7
 acquitted|7
 fidgety|7
 omission|7
-a._m._c.|7
 kimmel|7
 contradicts|7
 threads|7
@@ -21635,7 +21396,6 @@ miscarriages|7
 uterus|7
 shyness|7
 blames|7
-u._f._o.|7
 duplex|7
 weeded|7
 hindered|7
@@ -21691,7 +21451,6 @@ impulsive|7
 lumber|7
 okla-|7
 petco|7
-i._c._u.|7
 july's|7
 kiddies|7
 materialism|7
@@ -21707,7 +21466,6 @@ researches|7
 panning|7
 piqued|7
 dude's|7
-c._n._n.'s|7
 matlock|7
 folks'|7
 diller|7
@@ -21746,7 +21504,6 @@ bal-|7
 tolerates|7
 soggy|7
 linguine|7
-a._f._c.|7
 stephan|7
 patties|7
 dazs|7
@@ -21766,9 +21523,7 @@ eroded|7
 reforming|7
 busin-|7
 gaff|7
-q._v._c.|7
 embezzlement|7
-e._e._o.|7
 mocked|7
 marts|7
 reins|7
@@ -21879,7 +21634,6 @@ robes|7
 cynicism|7
 mastermind|7
 invasions|7
-e._u.|7
 nine-eleven|7
 revived|7
 paulie|7
@@ -22051,6 +21805,7 @@ batches|7
 prematurely|7
 immunization|7
 combing|7
+_z|7
 decongestant|7
 yams|7
 starch|7
@@ -22082,7 +21837,6 @@ transitional|7
 pudgy|7
 truckers|7
 minna|6
-f._i._f._a.|6
 chick-fil-a|6
 carmine|6
 anan|6
@@ -22094,7 +21848,6 @@ scarface|6
 barook|6
 carmella|6
 deavere|6
-s._n._l.|6
 daly|6
 hitters|6
 peirce|6
@@ -22138,7 +21891,6 @@ anus|6
 opportunistic|6
 sigrid|6
 immunized|6
-v.'s|6
 hookah|6
 torment|6
 neuropathy|6
@@ -22187,7 +21939,6 @@ casablanca|6
 weighted|6
 stuyvesant|6
 valedictorian|6
-f._c._a._t.|6
 truancy|6
 bianca|6
 mer-|6
@@ -22288,7 +22039,6 @@ traumas|6
 depressions|6
 bookmark|6
 firehouses|6
-j.'s|6
 uninterrupted|6
 overpopulated|6
 marijuana's|6
@@ -22337,14 +22087,12 @@ preordained|6
 dobie|6
 debacle|6
 superhero|6
--ing|6
 backfiring|6
 composed|6
 metaphor|6
 uconn|6
 clementine|6
 especial|6
-a._c._p.|6
 lawmakers|6
 shootout|6
 stemmed|6
@@ -22367,7 +22115,6 @@ scoreboard|6
 indebted|6
 lilly|6
 cairo|6
-p._o.|6
 bearer|6
 co-ops|6
 masturbate|6
@@ -22386,11 +22133,9 @@ senile|6
 budgeted|6
 nobles|6
 huntingdon|6
-e._a.|6
 railroads|6
 crushing|6
 xs|6
-d._d._r.|6
 stoked|6
 branded|6
 thea|6
@@ -22448,10 +22193,8 @@ spic|6
 sens-|6
 forgiven|6
 voltage|6
-n._s._m.|6
 hudson's|6
 geor-|6
-m._a._s._h.|6
 acrylics|6
 racers|6
 amp|6
@@ -22471,7 +22214,6 @@ renovate|6
 choc-|6
 exploitive|6
 abysmal|6
-b._m._w.s|6
 drudge|6
 union's|6
 baggers|6
@@ -22628,7 +22370,6 @@ acrobatic|6
 plowing|6
 irwin|6
 superstitious|6
-a._k._c.|6
 pas-|6
 gripping|6
 prima|6
@@ -22646,7 +22387,6 @@ accent's|6
 mucks|6
 syllable|6
 rugby's|6
-n._c._a.|6
 philips|6
 heavyweight|6
 guys'll|6
@@ -22669,7 +22409,6 @@ reggie|6
 dribble|6
 ide-|6
 tackles|6
-x._f._l.|6
 sportscaster|6
 porta|6
 redskin|6
@@ -22889,7 +22628,6 @@ pete's|6
 seagulls|6
 prosciutto|6
 bremerton|6
-a._l._c._o._a.|6
 quotations|6
 americorps|6
 endearing|6
@@ -22925,7 +22663,6 @@ exerting|6
 plaques|6
 roo-|6
 sedate|6
-a._t._v.|6
 skiing's|6
 robe|6
 lightweight|6
@@ -22989,7 +22726,6 @@ shortfall|6
 board's|6
 electronically|6
 leesburg|6
-n._s._a.|6
 mae|6
 springboard|6
 equations|6
@@ -23017,11 +22753,9 @@ playhouse|6
 preteen|6
 networked|6
 blockers|6
-u._p._c.|6
 infrared|6
 aristotle|6
 owls|6
-i._t._t.|6
 abbreviated|6
 zac|6
 agai-|6
@@ -23165,7 +22899,6 @@ assurance|6
 triceps|6
 milds|6
 bodybuilding|6
-l._p._n.|6
 almonds|6
 thirtyish|6
 occupies|6
@@ -23276,7 +23009,6 @@ trespassing|6
 probabl-|6
 comed-|6
 sinatra|6
-d._j.s|6
 jackson's|6
 mork|6
 choi-|6
@@ -23359,7 +23091,6 @@ coursework|6
 pooling|6
 chastised|6
 fundings|6
-i._p.|6
 exceeds|6
 morse|6
 spaceship|6
@@ -23374,8 +23105,6 @@ challenger|6
 ritz|6
 furthered|6
 heartaches|6
-t._e._s._o._l.|6
-r._p._g.|6
 airfares|6
 patronize|6
 kumon|6
@@ -23431,7 +23160,6 @@ ticketed|6
 spotty|6
 rayed|6
 theyre|6
-l._l.|6
 kelsey|6
 lasers|6
 barefooted|6
@@ -23444,7 +23172,6 @@ falwell|6
 marisa|6
 kaiser|6
 canaveral|6
-i._d.'s|6
 screenplays|6
 cheery|6
 hardened|6
@@ -23486,15 +23213,12 @@ deceived|6
 sociologist|6
 web-|6
 conn|6
-u._s._f.|6
 overindulge|6
-c._o._p._d.|6
 day-care|6
 ducky|6
 missus|6
 tamara|6
 marymount|6
-g._n._c.|6
 bac-|6
 heave|6
 untreated|6
@@ -23553,7 +23277,6 @@ sublet|6
 ohio's|6
 overthrown|6
 bengal|6
-i._s._p.|6
 orthodoxy|6
 yoda|6
 proxy|6
@@ -23715,7 +23438,6 @@ apron|6
 checklist|6
 joyful|6
 ups-|6
-m._a.|6
 wellstone|6
 absentee|6
 kaczynski|6
@@ -23737,7 +23459,6 @@ flashbacks|6
 wherein|6
 militaries|6
 briefings|6
-m._t._r.|6
 revolutions|6
 dawson's|6
 limbo|6
@@ -23820,18 +23541,15 @@ lentils|6
 paradigm|6
 dupont|6
 lemons|6
-you?|6
 roasting|6
 morrison|6
 periodic|6
 colorized|5
 tch|5
 gilman|5
-d._d.|5
 berto|5
 dace|5
 plad|5
-p._b._a.|5
 iol|5
 buster's|5
 erudian|5
@@ -23849,7 +23567,6 @@ arianna|5
 romi|5
 arnold's|5
 air-conditioning|5
-t._i._v._o.|5
 amir|5
 hertzel|5
 kojo|5
@@ -23863,7 +23580,6 @@ verners|5
 statics|5
 barclay|5
 millwood|5
-m._b.|5
 eid|5
 contender|5
 mikel|5
@@ -23877,7 +23593,6 @@ filthadelphia|5
 titus|5
 hersh|5
 quartet|5
-w._t._o.|5
 underdeveloped|5
 elites|5
 jaipur|5
@@ -23985,7 +23700,6 @@ dramatized|5
 teleprompter|5
 baser|5
 haircuts|5
-o._j.s|5
 backtrack|5
 vers-|5
 sutherland|5
@@ -24013,7 +23727,6 @@ stirred|5
 phosphate|5
 houdini|5
 jenkins|5
-i._b._m.'s|5
 childless|5
 asteroid|5
 gogh|5
@@ -24029,7 +23742,6 @@ epiphany|5
 firefighting|5
 honest-|5
 pta|5
-r._s.|5
 gujarati|5
 transfered|5
 redistricting|5
@@ -24069,7 +23781,6 @@ valet|5
 ditching|5
 stopover|5
 rip-off|5
-d._l.|5
 moralistic|5
 hoard|5
 degrades|5
@@ -24080,10 +23791,8 @@ coleman's|5
 affec-|5
 aerosmith|5
 inhibit|5
-f._i._s._h._e._r.|5
 accommodation|5
 merced|5
-j._t.|5
 rowers|5
 yu-gi-oh|5
 blacklisted|5
@@ -24103,7 +23812,6 @@ future's|5
 atrophied|5
 adv-|5
 sahara|5
-c._a._d.|5
 riff|5
 inflation's|5
 retailer|5
@@ -24191,7 +23899,6 @@ clarice|5
 vehicle's|5
 plac-|5
 permeates|5
-n._i._c._u.|5
 fragments|5
 snide|5
 kingston|5
@@ -24241,7 +23948,6 @@ seven's|5
 persuasion|5
 madonna's|5
 paraded|5
-a._b._c.'s|5
 stern's|5
 spotter|5
 gazette|5
@@ -24272,7 +23978,6 @@ emperor's|5
 sensuality|5
 cineplex|5
 dean's|5
-o._c._d.|5
 ladybugs|5
 codey|5
 anton|5
@@ -24330,13 +24035,11 @@ linear|5
 clarinets|5
 fanciest|5
 endlessly|5
-s._m._u.|5
 vigorously|5
 vetoed|5
 shortcake|5
 della|5
 actuarial|5
-e._s._p.|5
 richland|5
 vapor|5
 mays|5
@@ -24348,7 +24051,6 @@ peachtree|5
 pearls|5
 groovy|5
 boba|5
-a._i.|5
 racehorse|5
 nichols|5
 fiscally|5
@@ -24410,7 +24112,6 @@ quicken|5
 redd|5
 marg|5
 chalkboard|5
-g._d.|5
 sledge|5
 poetic|5
 tornado's|5
@@ -24418,13 +24119,11 @@ caro-|5
 wop|5
 comi-|5
 porkies|5
-p._c._s.|5
 carlsbad|5
 chicano|5
 groan|5
 yu|5
 lizzie|5
-k._p._m._g.|5
 neces-|5
 iraqians|5
 def|5
@@ -24678,7 +24377,6 @@ whooped|5
 warmers|5
 keisha|5
 stub|5
-c._u.|5
 fli-|5
 overlapping|5
 chainsaw|5
@@ -24716,13 +24414,11 @@ dodgers'|5
 geological|5
 gavin|5
 maverick|5
-w._f._l.|5
 equestrian|5
 scrimmage|5
 cosell|5
 chipper|5
 landry|5
-m._v._p.|5
 shrine|5
 quarterbacking|5
 simms|5
@@ -24763,7 +24459,6 @@ ida|5
 public-|5
 acknowledgement|5
 crepe|5
-v._s._w.|5
 vari-|5
 prem|5
 adoptive|5
@@ -24803,7 +24498,6 @@ milked|5
 downtrodden|5
 victorious|5
 tranquil|5
-a._k.|5
 gubernatorial|5
 null|5
 consulted|5
@@ -24901,9 +24595,6 @@ ena|5
 frowning|5
 brook-|5
 intermediary|5
-u._n._i._c._e._f.|5
-h._m._o.s|5
-p._p._o.|5
 aspirins|5
 yakking|5
 alka-seltzer|5
@@ -24991,7 +24682,6 @@ pretzel|5
 informally|5
 comple-|5
 laughlin|5
-m._i._s.|5
 relegated|5
 nag|5
 distinguished|5
@@ -25026,7 +24716,6 @@ slush|5
 bea-|5
 bunion|5
 whacko|5
-a._t._v.s|5
 wheeled|5
 madam|5
 lounges|5
@@ -25055,7 +24744,6 @@ squeal|5
 muncie|5
 shenanigans|5
 revolting|5
-c._f._o.s|5
 oxley|5
 sarbanes|5
 liquidate|5
@@ -25066,7 +24754,6 @@ testers|5
 probl-|5
 leases|5
 worldcom's|5
-e._d._s.|5
 druggie|5
 wavering|5
 paternal|5
@@ -25108,7 +24795,6 @@ restricts|5
 goggle|5
 melon|5
 moreover|5
-m._b._a.s|5
 regent's|5
 occult|5
 woe|5
@@ -25254,7 +24940,6 @@ adjusts|5
 aus-|5
 assessing|5
 instinctively|5
-n._y.|5
 tiff|5
 reckoning|5
 stone's|5
@@ -25358,7 +25043,6 @@ ital-|5
 malkovich|5
 theat-|5
 clooney|5
-d._f._w.|5
 meteorology|5
 tend-|5
 inequity|5
@@ -25390,7 +25074,6 @@ furtherest|5
 steph|5
 stephanie's|5
 perplexing|5
-u._h.|5
 promiscuous|5
 conspiring|5
 partici-|5
@@ -25501,7 +25184,6 @@ tar-|5
 jabbering|5
 powell's|5
 binghampton|5
-p._v._s.|5
 indefinite|5
 pepsi's|5
 chrome|5
@@ -25522,7 +25204,6 @@ gentleman's|5
 diaries|5
 giveaway|5
 tarantino|5
-u._a.|5
 slater|5
 lilo|5
 avenge|5
@@ -25545,7 +25226,6 @@ harrelson|5
 penns-|5
 somebody'd|5
 viking|5
-c._v._s.|5
 ashish|5
 trite|5
 quotation|5
@@ -25608,7 +25288,6 @@ immediacy|5
 pan-|5
 reevaluating|5
 instructing|5
-a._t._m.s|5
 bodied|5
 nano-technology|5
 enabled|5
@@ -25714,9 +25393,6 @@ manufactures|5
 flu's|5
 mitral|5
 lysol|5
-o._t._c.|5
-b._b._s.|5
-y._d._f.|5
 loin|5
 gingerbread|5
 gamy|5
@@ -25778,7 +25454,6 @@ prowling|5
 rotted|5
 drooling|5
 larvae|5
-k._c.|5
 betas|5
 cassie|5
 lavishly|5
@@ -25827,7 +25502,6 @@ adele|5
 vacuumed|5
 defer|5
 impresses|5
-d._m._v.|5
 unionization|5
 matthews|5
 hardball|5
@@ -26099,7 +25773,6 @@ heats|5
 stewed|5
 -h|5
 caffeinated|5
-yeah,|5
 chicken's|5
 poway|4
 socal|4
@@ -26107,7 +25780,6 @@ pecker|4
 forton|4
 natalia|4
 propecia|4
-n._d._t._v.|4
 samachar|4
 authored|4
 dragush|4
@@ -26133,7 +25805,6 @@ paranormal|4
 bling|4
 glavine|4
 accupuncture|4
-c._l._a.|4
 macrobiotic|4
 pilaf|4
 boyne|4
@@ -26165,14 +25836,12 @@ darkening|4
 glam|4
 ghibli|4
 spinners|4
-m._b._n._a.|4
 hines|4
 realplayer|4
 weeklies|4
 athlon|4
 setris|4
 freeware|4
-m._u._d.|4
 frequencies|4
 bjork|4
 desperado|4
@@ -26207,13 +25876,10 @@ purim|4
 reciting|4
 ghostbusters|4
 hanif|4
-c._b._g._b.'s|4
 monica's|4
 don't-|4
 back-up|4
-w._m._d.s|4
 tweaked|4
-t.s|4
 dracula|4
 aussie|4
 dino|4
@@ -26253,18 +25919,15 @@ skilljam|4
 tana|4
 africa's|4
 cowardice|4
-w._t._c.|4
 privatize|4
 repression|4
 insurgents|4
 ullianna|4
 vikas|4
-v._s.|4
 baltimore's|4
 qantas|4
 formidable|4
 uncivilized|4
-x._m.|4
 splashing|4
 accentuate|4
 lavaman|4
@@ -26279,11 +25942,9 @@ riddled|4
 denora|4
 tenora|4
 softly|4
-t._h._c.|4
 tobac-|4
 pasteurized|4
 drowns|4
-v._r.|4
 soli-|4
 sequences|4
 rainman|4
@@ -26348,7 +26009,6 @@ constricts|4
 ephemeral|4
 validation|4
 carcinogens|4
-s._a._d.s|4
 jay's|4
 flushed|4
 maples|4
@@ -26373,11 +26033,9 @@ refried|4
 omelette|4
 chris's|4
 ritzier|4
-e._j.|4
 corolla|4
 mamma|4
 morristown|4
-i._c._q.|4
 achievements|4
 noelle|4
 smothered|4
@@ -26386,7 +26044,6 @@ albuquerque's|4
 rachana|4
 epson|4
 conversant|4
-f._t._a.|4
 guyana|4
 tapestry|4
 ray's|4
@@ -26401,14 +26058,12 @@ willa|4
 grandkids'|4
 but-|4
 wilkes|4
-d._c.'s|4
 shatter|4
 getters|4
 sadat|4
 bale|4
 raucous|4
 brining|4
-'s|4
 deere|4
 -en|4
 unaffected|4
@@ -26465,7 +26120,6 @@ kindergartners|4
 septem-|4
 winstons|4
 lamport|4
-t._b.|4
 handfuls|4
 emitted|4
 advair|4
@@ -26476,10 +26130,8 @@ ethingham|4
 mona|4
 crosswords|4
 meagan|4
-c._o._s._i.|4
 runner's|4
 scolding|4
-l._p.s|4
 embroider|4
 knits|4
 millie|4
@@ -26514,7 +26166,6 @@ goblet|4
 pinkett|4
 tambien|4
 miramax|4
-u._s._b.|4
 blending|4
 coaxed|4
 ebony|4
@@ -26529,7 +26180,6 @@ playmates|4
 forty-two|4
 mainstreaming|4
 nor'easters|4
-s._a._t.'s|4
 extracurriculars|4
 eligibility|4
 abducted|4
@@ -26545,13 +26195,11 @@ politicking|4
 entrusted|4
 payoffs|4
 fina-|4
-r._p._i.|4
 publishes|4
 tensed|4
 rediscover|4
 sizing|4
 rust|4
-u._b.|4
 youn-|4
 kazoo|4
 intranet|4
@@ -26561,7 +26209,6 @@ gigabytes|4
 nexis|4
 individualize|4
 kore-|4
-u._f.|4
 asia's|4
 confederacy|4
 advan-|4
@@ -26628,7 +26275,6 @@ kombat|4
 civ|4
 bixby|4
 titties|4
-r._v.s|4
 tidy|4
 perha-|4
 overshadows|4
@@ -26643,7 +26289,6 @@ relegate|4
 pledged|4
 prevails|4
 madhouse|4
-d._a._r._t.|4
 firewall|4
 infrequent|4
 alerting|4
@@ -26697,7 +26342,6 @@ ing|4
 roadmap|4
 impeding|4
 valley's|4
-x.s|4
 hesitations|4
 yasha|4
 una-|4
@@ -26734,9 +26378,7 @@ permissible|4
 childr-|4
 prohibits|4
 reconstruct|4
-n._a.|4
 beamer|4
-d._e._a.|4
 crim-|4
 amphetamines|4
 celebrity's|4
@@ -26795,14 +26437,12 @@ houseboats|4
 entendre|4
 bosch|4
 enjoy-|4
-k._p._f._k.|4
 anda|4
 polices|4
 bowed|4
 desebrock|4
 barnett|4
 quaeda|4
-a._s.|4
 uni|4
 in-between|4
 cobble|4
@@ -26820,7 +26460,6 @@ hoyle|4
 dv-|4
 augusta's|4
 teamed|4
-l._s._a._t.|4
 canasta|4
 playstations|4
 emulator|4
@@ -26836,14 +26475,12 @@ block-|4
 geriatric|4
 profanities|4
 masterpiece|4
-f._m.|4
 emir|4
 a&m|4
 sailors|4
 puritans|4
 kim's|4
 illustrations|4
-p._d._a.|4
 rappelling|4
 vibrate|4
 chiropractic|4
@@ -26852,11 +26489,9 @@ capacities|4
 depr-|4
 mutilation|4
 uptake|4
-b._b._c.'s|4
 manip-|4
 brunettes|4
 indus-|4
-t.'s|4
 beneficiaries|4
 causeway|4
 underqualified|4
@@ -26896,8 +26531,6 @@ lamborghini|4
 upshot|4
 styling|4
 squadron|4
-u._g._a.|4
-a._s._l.|4
 incomprehensible|4
 snobbish|4
 johannesburg|4
@@ -26912,7 +26545,6 @@ indian-|4
 un-uh|4
 crater|4
 reaganomics|4
-u._t._a.|4
 enigma|4
 mead|4
 slackers|4
@@ -27061,7 +26693,6 @@ macabre|4
 depreciated|4
 semitism|4
 multitasking|4
-b._t.|4
 stump|4
 belittles|4
 whee|4
@@ -27135,7 +26766,6 @@ queued|4
 tucson's|4
 mayoral|4
 resorting|4
-c._n._a.|4
 tri-state|4
 flocking|4
 stiffs|4
@@ -27150,7 +26780,6 @@ renato|4
 magnified|4
 health-|4
 techs|4
-pre-k|4
 busboy|4
 impos-|4
 foodline|4
@@ -27167,7 +26796,6 @@ cush|4
 impo-|4
 geraldine|4
 educat-|4
-p._x.|4
 employers'|4
 shel-|4
 compensates|4
@@ -27211,7 +26839,6 @@ carburetor|4
 acadian|4
 infertile|4
 downgrading|4
-c.s|4
 keokuk|4
 feeling's|4
 jointly|4
@@ -27274,7 +26901,6 @@ lonnie|4
 avian|4
 birdies|4
 woolly|4
-l._t.|4
 zooey|4
 ornery|4
 retested|4
@@ -27303,7 +26929,6 @@ dumbo|4
 rowed|4
 clumps|4
 retrieving|4
-b._c._c.|4
 silky|4
 rabbit's|4
 spanky|4
@@ -27399,9 +27024,7 @@ telecast|4
 sport-|4
 athleticism|4
 donnas|4
-n._b._a.'s|4
 astro|4
-p._f.|4
 hondas|4
 ashby|4
 wildcard|4
@@ -27410,12 +27033,10 @@ yank-|4
 hoc-|4
 jagr|4
 spiraled|4
-y._e._s.|4
 monotone|4
 phoo|4
 crowd's|4
 hamm|4
-a._a._u.|4
 philippe|4
 neon|4
 athle-|4
@@ -27480,10 +27101,8 @@ maine's|4
 duke's|4
 rockwall|4
 tailgating|4
-a._h._l.|4
 dockers|4
 divides|4
-e._s.|4
 mcnamara|4
 restorers|4
 hoppers|4
@@ -27526,7 +27145,6 @@ partridge|4
 picturesque|4
 potholes|4
 departed|4
-c._c.|4
 holid-|4
 rambo|4
 behest|4
@@ -27546,11 +27164,9 @@ consid-|4
 accented|4
 potluck|4
 reminisce|4
-w._b._a._i.|4
 purify|4
 ref|4
 geopolitical|4
-s._s.|4
 horrify|4
 charred|4
 buchanan|4
@@ -27614,7 +27230,6 @@ flaunt|4
 portrayal|4
 zena|4
 repaint|4
-d._o._d.|4
 milkshake|4
 mightn't|4
 sandstorms|4
@@ -27685,7 +27300,6 @@ listerine|4
 geena|4
 hazzard|4
 applauded|4
-n._i._h.|4
 smoke-|4
 overturn|4
 lemar|4
@@ -27705,7 +27319,6 @@ juncture|4
 exercis-|4
 excruciating|4
 yawn|4
-u._v.|4
 fool's|4
 malnourished|4
 metabolize|4
@@ -27725,7 +27338,6 @@ tavist|4
 capri|4
 purifiers|4
 asthma's|4
-e._n._t.|4
 toothache|4
 herpes|4
 moneymaker|4
@@ -27897,14 +27509,12 @@ tripling|4
 protections|4
 dismayed|4
 slaps|4
-c._f._o.|4
 beck|4
 redistributing|4
 dogged|4
 stanton|4
 shauna|4
 exonerated|4
-i._p._a._l._c._o.|4
 rebounding|4
 evict|4
 salina|4
@@ -27953,7 +27563,6 @@ sociologists|4
 pours|4
 sams|4
 pettiness|4
-j._a._g.|4
 tilley|4
 autonomous|4
 mayflower|4
@@ -27995,7 +27604,6 @@ wondrous|4
 scottie|4
 spaceships|4
 accessed|4
-p._t._o.|4
 typewritten|4
 prompting|4
 socrates|4
@@ -28098,7 +27706,6 @@ masochist|4
 irked|4
 mistreatment|4
 tangle|4
-u._d.|4
 unti-|4
 forerunner|4
 unloaded|4
@@ -28131,7 +27738,6 @@ propensity|4
 nati-|4
 shredder|4
 aneurysm|4
-a._w._o._l.|4
 bodega|4
 para-|4
 huff|4
@@ -28193,7 +27799,6 @@ bys|4
 mommies|4
 nosedive|4
 hillsdale|4
-g._m._c.|4
 fared|4
 grumbling|4
 nth|4
@@ -28227,7 +27832,6 @@ aton|4
 sadist|4
 independ-|4
 bostonian|4
-a._s._u.|4
 crunchies|4
 nut-|4
 gymnastic|4
@@ -28306,7 +27910,6 @@ color-|4
 becca|4
 consolidate|4
 collaborative|4
-g._t.|4
 shortages|4
 conceiving|4
 retrained|4
@@ -28318,7 +27921,6 @@ earthy|4
 mateo|4
 underscore|4
 buena|4
-p._j.|4
 weds|4
 vu|4
 befriended|4
@@ -28394,7 +27996,6 @@ swedes|4
 unappealing|4
 eastside|4
 alot|4
-t._g._i._f.|4
 philippine|4
 margarita|4
 wetter|4
@@ -28439,7 +28040,6 @@ verde|4
 imperfections|4
 rioting|4
 deceit|4
-j._c.|4
 lasik|4
 knott's|4
 tustin|4
@@ -28566,7 +28166,6 @@ earphone|4
 tramp|4
 ozarks|4
 kudos|4
-u._s._d._a.|4
 doyle|4
 occur-|4
 gilligan's|4
@@ -28598,7 +28197,6 @@ overtook|4
 securely|4
 unexplainable|4
 cashiering|4
-n._f._o.|4
 terrorisms|4
 legionnaires|4
 lithgow|4
@@ -28606,7 +28204,6 @@ spectacularly|4
 winging|4
 eavesdropping|4
 tracing|4
-a._r.|4
 stockpiles|4
 polenta|4
 flaxseed|4
@@ -28757,7 +28354,6 @@ stout|4
 dressers|4
 whittle|4
 exactl-|4
-r._a.|4
 skillet|4
 portsmouth|4
 ling|4
@@ -28775,12 +28371,10 @@ nuc-|4
 stepmother's|4
 versatility|4
 longhand|4
-c._s.|4
 plainfield|4
 fel-|4
 printouts|4
 composing|4
-g._p._a.'s|4
 socio-economic|4
 dissecting|4
 approachable|4
@@ -28820,7 +28414,6 @@ kubrick|4
 manuscripts|4
 compliant|4
 proprietor|4
-p._h._d.'s|4
 credentialing|4
 crackpot|4
 somedays|4
@@ -28830,7 +28423,6 @@ wong|4
 gooky|4
 plato's|4
 strait|4
-g._r._e.|4
 everest|4
 equip-|4
 livelihoods|4
@@ -28862,7 +28454,6 @@ porto|4
 aerosol|4
 flied|4
 civility|4
-g._w.|4
 layperson|4
 pizzeria|4
 survivable|4
@@ -28882,7 +28473,6 @@ excesses|4
 assuring|4
 airline's|4
 commandeer|4
-n._r._a.|4
 thickness|4
 accomplishes|4
 politeness|4
@@ -28971,7 +28561,6 @@ divisive|4
 contenders|4
 yati|4
 slinging|4
-c._d._s.|4
 disable|4
 smokescreen|4
 impotent|4
@@ -29031,7 +28620,6 @@ showdown|4
 bolster|4
 suspiciously|4
 rephrased|4
-transcribed|4
 chomping|4
 skewing|4
 tariq|4
@@ -29059,7 +28647,6 @@ confessional|4
 mirrored|4
 transformed|4
 trashing|4
-e._t.|4
 nup|4
 comma|4
 regularity|4
@@ -29079,7 +28666,6 @@ disassociate|4
 concerted|4
 denies|4
 nd|4
-m._c._a._t.|4
 nodoze|4
 neuro|4
 regenerate|4
@@ -29122,7 +28708,6 @@ pus|4
 twinkies|4
 conformity|4
 hypochondriacs|4
-j._d.|4
 irk|4
 hydrate|4
 cancer's|4
@@ -29149,7 +28734,6 @@ roset|3
 rhino|3
 stanhope|3
 eighty-five|3
-s._c._o._t._t.|3
 sholls|3
 labraya|3
 brame|3
@@ -29178,7 +28762,6 @@ rossi|3
 filthladelphia|3
 tangles|3
 bedbug|3
-o._c.|3
 access-o-ride|3
 pit-bull|3
 tonny|3
@@ -29188,8 +28771,6 @@ schmaltzy|3
 lionel|3
 snow-boarding|3
 benishi|3
-s._p.|3
-r._t.|3
 waver|3
 eamon|3
 zwart|3
@@ -29212,7 +28793,6 @@ bo-bo|3
 thal|3
 tweetie|3
 purry|3
-c._g._i.|3
 slinky|3
 weebelow|3
 cobby|3
@@ -29243,7 +28823,6 @@ sizzler's|3
 jewtown|3
 vacaville|3
 offish|3
-f._d._u.|3
 drummer's|3
 satana|3
 bookish|3
@@ -29289,7 +28868,6 @@ pancreatic|3
 winfield|3
 hannity|3
 citation|3
-t._j.|3
 stu|3
 mcentire|3
 olaf|3
@@ -29305,8 +28883,6 @@ centrist|3
 geforce|3
 nvidia|3
 pharaoh|3
-a._m._d.|3
-m._a._m._e.|3
 reardon|3
 independents|3
 domed|3
@@ -29364,7 +28940,6 @@ rims|3
 gunner|3
 freeling|3
 rafael|3
-v._w.|3
 snooky|3
 tucker's|3
 longhair|3
@@ -29393,7 +28968,6 @@ kareem|3
 aqueduct|3
 ironman|3
 giants'|3
-p._a._x.|3
 secondaries|3
 parcells|3
 gehrig|3
@@ -29444,7 +29018,6 @@ disposability|3
 junta|3
 fortress|3
 minelli|3
-d.'s|3
 statesmanship|3
 laymen's|3
 strangling|3
@@ -29490,7 +29063,6 @@ tranessa|3
 udaipur|3
 twenty-seven|3
 neighborly|3
-s._c.|3
 natures|3
 compatriots|3
 architecture's|3
@@ -29501,7 +29073,6 @@ effortlessness|3
 carmichael|3
 lazarus|3
 dribbling|3
-f._d._r.|3
 ashanti|3
 sanitarium|3
 vespas|3
@@ -29525,7 +29096,6 @@ alon-|3
 -gusting|3
 impossibility|3
 theta|3
-f._s._u.|3
 pruddy|3
 bimbo|3
 teaspoons|3
@@ -29544,16 +29114,13 @@ finklestein|3
 mac's|3
 enmity|3
 dix|3
-l._b._j.|3
 ambush|3
 niger|3
 byproducts|3
 buildup|3
 georgeanne|3
 palestinia|3
-t._b._n.|3
 agriculturally|3
-a._d.|3
 atoms|3
 selfishly|3
 jailed|3
@@ -29582,7 +29149,6 @@ birth-|3
 mobilized|3
 tormented|3
 exe-|3
-n._y._c.|3
 bulked|3
 chelle|3
 thousand's|3
@@ -29597,7 +29163,6 @@ elvira|3
 sully|3
 kerouac|3
 twain's|3
-f._i._c.|3
 yearning|3
 minard|3
 veers|3
@@ -29635,7 +29200,6 @@ cubeys|3
 variants|3
 krueger|3
 starman|3
-c._g.|3
 mulan|3
 rhythms|3
 ricci|3
@@ -29651,19 +29215,16 @@ raps|3
 suit-|3
 uncreative|3
 piecing|3
-i._e._p.s|3
 jest|3
 furlough|3
 damme|3
 gurgle|3
 ted's|3
 livermore|3
-n._i._i._n._y.|3
 appraisals|3
 recitals|3
 malini|3
 mainstay|3
-p._d._f.|3
 blowout|3
 hilfiger|3
 nebulous|3
@@ -29789,7 +29350,6 @@ greensboro|3
 manicotti|3
 calzones|3
 azteca|3
-c._c.'s|3
 milligan|3
 portobello|3
 kosco|3
@@ -29847,7 +29407,6 @@ asher|3
 ramonica|3
 presen-|3
 some's|3
-p._d._a.s|3
 evidenced|3
 clarification|3
 tactile|3
@@ -29930,7 +29489,6 @@ homophobia|3
 divo-|3
 sixt-|3
 spinster|3
-r._m._c.er|3
 recommending|3
 downplay|3
 arkie|3
@@ -29987,7 +29545,6 @@ siphon|3
 adhering|3
 overweightness|3
 waft|3
-o._d.|3
 satisfies|3
 hooey|3
 hefner|3
@@ -30041,7 +29598,6 @@ shiatsus|3
 collages|3
 downplayed|3
 soundary|3
-b._j.s|3
 beth's|3
 clifford|3
 inaccessible|3
@@ -30087,15 +29643,11 @@ evened|3
 eho|3
 capris|3
 jacquie|3
-a._b.|3
 pageants|3
 sister-in-law's|3
 paged|3
 plunk|3
 paddled|3
-t._a._k._s.|3
-t._a._a._s.|3
-t._e._e.|3
 -ports|3
 engenders|3
 predictor|3
@@ -30196,14 +29748,12 @@ rosenbergs|3
 falsehood|3
 inquiries|3
 oppressors|3
-g._i.s|3
 czar|3
 impeachable|3
 lifers|3
 possessing|3
 contradictions|3
 rerouting|3
-p._l._o.|3
 gendarmes|3
 refrained|3
 queuing|3
@@ -30366,12 +29916,10 @@ aerosolize|3
 hatfill|3
 chemi-|3
 toppling|3
-u._f._c.|3
 wu|3
 mongolia|3
 dumpling|3
 yuma|3
-m._o._s.|3
 reenlist|3
 callie|3
 february's|3
@@ -30424,7 +29972,6 @@ provable|3
 narcotic|3
 classifications|3
 misrepresented|3
-t._s._e.|3
 enrons|3
 aldo|3
 legis-|3
@@ -30559,10 +30106,8 @@ farcical|3
 individuals'|3
 routier|3
 darlie|3
-v._f._w.|3
 tribunals|3
 czechoslovakian|3
-s._v._u.|3
 misdiagnose|3
 radiological|3
 preceding|3
@@ -30652,7 +30197,6 @@ tanglewood|3
 compilation|3
 dvd|3
 goethe|3
-g._v.|3
 kenner|3
 peterbilt|3
 houseboat|3
@@ -30666,18 +30210,15 @@ hennery|3
 loafers|3
 sud-|3
 electorate|3
-w._n._y._c.|3
 cursory|3
 pimps|3
 affiliations|3
 martians|3
 succinct|3
-w._i._n._s.|3
 hailstorm|3
 pulverized|3
 replant|3
 beading|3
-a._l._l.|3
 parishioner|3
 illicit|3
 portals|3
@@ -30685,7 +30226,6 @@ mcneil|3
 pulitzer|3
 baby-sitter|3
 youns|3
-i._t._n.|3
 nathan's|3
 bookmarked|3
 blog|3
@@ -30721,7 +30261,6 @@ modine|3
 wedding's|3
 drumline|3
 pluto|3
-j._r.|3
 kusturica|3
 hitman|3
 kruger|3
@@ -30737,7 +30276,6 @@ alpharetta|3
 morrissey|3
 prequel|3
 wolverine|3
-h._b._o.'s|3
 venite|3
 novocain|3
 mythological|3
@@ -30747,7 +30285,6 @@ widescreen|3
 rare-|3
 broad-|3
 gulping|3
-s._t._d.s|3
 internalized|3
 milicic|3
 instated|3
@@ -30757,7 +30294,6 @@ methuen|3
 rac-|3
 devour|3
 inoperable|3
-c._i._g._n._a.|3
 nepotism|3
 cabana|3
 fighting's|3
@@ -30768,7 +30304,6 @@ deejays|3
 corridors|3
 ives|3
 mummified|3
-i._q.s|3
 emphatic|3
 unify|3
 unincorporated|3
@@ -30791,10 +30326,8 @@ bushel|3
 rancid|3
 unjustified|3
 ebore|3
-h._c._c.|3
 causal|3
 daraclean|3
-b.'s|3
 educate-|3
 overhauled|3
 froth|3
@@ -30808,7 +30341,6 @@ bebop|3
 leif|3
 benefa-|3
 zippo|3
-m._o.|3
 philanthropists|3
 philanthropist|3
 milken|3
@@ -30877,7 +30409,6 @@ ketris|3
 complacency|3
 rolex|3
 egalitarian|3
-u._m.|3
 of's|3
 pinedale|3
 okie|3
@@ -30904,7 +30435,6 @@ modernize|3
 voc|3
 condoned|3
 blanked|3
-s._r._a.s|3
 halter|3
 badder|3
 jumba|3
@@ -30988,7 +30518,6 @@ discouragement|3
 airbags|3
 hypnotherapy|3
 pricilla|3
-a._k._a.|3
 chubb|3
 levonne|3
 housed|3
@@ -31129,7 +30658,6 @@ disapproval|3
 williams'|3
 wads|3
 blunder|3
-t._a.s|3
 boulder's|3
 congresswoman|3
 everybody-|3
@@ -31148,7 +30676,6 @@ encino|3
 desi|3
 carls|3
 gerneele|3
-d._m.|3
 classed|3
 affor-|3
 stiffed|3
@@ -31192,7 +30719,6 @@ merchants|3
 stagnate|3
 fru-|3
 panhandlers|3
-s._e._p._t._a.|3
 -ation|3
 alveda|3
 categorizing|3
@@ -31362,7 +30888,6 @@ hairballs|3
 hairball|3
 matts|3
 angsty|3
-i._s._p.s|3
 fjords|3
 tailed|3
 blacktop|3
@@ -31495,7 +31020,6 @@ pom|3
 sheepdogs|3
 macaws|3
 mohammad|3
-r._j.|3
 warns|3
 solidified|3
 apsos|3
@@ -31594,7 +31118,6 @@ obs-|3
 spanned|3
 kristi|3
 mansfield|3
-f._o._x.|3
 roughest|3
 hearn|3
 park-|3
@@ -31607,7 +31130,6 @@ fren-|3
 preachers|3
 carolin-|3
 fanfare|3
-w._c._w.|3
 wwe|3
 glenview|3
 alecky|3
@@ -31643,7 +31165,6 @@ rebroadcast|3
 fiel-|3
 atlan-|3
 makin|3
-m._l._m.s|3
 barbarians|3
 cecelia|3
 mcenroe|3
@@ -31685,11 +31206,9 @@ timeouts|3
 shelved|3
 attr-|3
 die-hard|3
-a._f._l.|3
 honor's|3
 comer|3
 boulders|3
-s._b._n.|3
 espn|3
 marin|3
 mozart|3
@@ -31742,7 +31261,6 @@ festivus|3
 pouting|3
 alkaline|3
 plaid|3
-u._v._a.|3
 toity|3
 hoity|3
 pinatas|3
@@ -31836,7 +31354,6 @@ whitening|3
 kutcher|3
 cut-|3
 inverse|3
-e._t._v.|3
 testicle|3
 mt-|3
 recklessly|3
@@ -31909,7 +31426,6 @@ eye-|3
 eye's|3
 livers|3
 cognac|3
-t._k.|3
 goner|3
 governmentally|3
 reveals|3
@@ -32063,7 +31579,6 @@ tangy|3
 perkasie|3
 pennsylva-|3
 caboose|3
-c._c._d.|3
 todi|3
 seeded|3
 sundaes|3
@@ -32199,7 +31714,6 @@ hull|3
 comfort-|3
 yah-|3
 folklore|3
-i._r._a.s|3
 bookkeepers|3
 paupers|3
 conspired|3
@@ -32214,10 +31728,8 @@ eminently|3
 cote|3
 bach|3
 misrepresenting|3
-f._d._i._c.|3
 blister|3
 invest-|3
-c._d._w.|3
 pittman|3
 jarvis|3
 scrounge|3
@@ -32230,8 +31742,6 @@ appropriations|3
 allocation|3
 equa-|3
 yachts|3
-n._c._i.|3
-c._p._a.s|3
 enlisting|3
 ancor|3
 connersville|3
@@ -32242,7 +31752,6 @@ cottie|3
 weans|3
 bentleys|3
 spewing|3
-a._e._s.|3
 bilk|3
 jolted|3
 flogging|3
@@ -32319,13 +31828,11 @@ immed-|3
 alabama's|3
 outgrowing|3
 populating|3
-p._v._c.|3
 nintendo's|3
 luka|3
 chaperoned|3
 microchip|3
 solicitations|3
-d._o._t.|3
 intrinsically|3
 pedagogical|3
 disseminate|3
@@ -32375,7 +31882,6 @@ covet|3
 coalitions|3
 gar|3
 meridian|3
-u._s._c._c.|3
 toughed|3
 sprang|3
 resembling|3
@@ -32497,7 +32003,6 @@ innovated|3
 warsaw|3
 predestined|3
 fortified|3
-p._i._n.s|3
 tick-|3
 launder|3
 limousines|3
@@ -32534,7 +32039,6 @@ buccaneer|3
 stocker|3
 sprain|3
 umpire's|3
-t._w._a.|3
 speedier|3
 altercation|3
 farmlands|3
@@ -32689,7 +32193,6 @@ uncooperative|3
 oversized|3
 degeneration|3
 poppet|3
-n._t.|3
 warping|3
 subtitled|3
 bog|3
@@ -32721,7 +32224,6 @@ prying|3
 graduate-|3
 flunking|3
 trig|3
-s._o._l.s|3
 humanistic|3
 disingenuous|3
 squeaked|3
@@ -32737,7 +32239,6 @@ gloat|3
 ruff|3
 cements|3
 grotesquely|3
-c._a._s.|3
 entourages|3
 boatload|3
 gaskins|3
@@ -32859,7 +32360,6 @@ hayman|3
 compla-|3
 assimilating|3
 overstay|3
-c._a._d._m._s.|3
 invi-|3
 martins|3
 pansies|3
@@ -32882,7 +32382,6 @@ depots|3
 latches|3
 undetected|3
 diaspora|3
-e._f._l.|3
 conspiracies|3
 padlocked|3
 m16|3
@@ -32952,7 +32451,6 @@ glum|3
 moviegoer|3
 glover|3
 maryland's|3
-a._d._a.|3
 consul|3
 patronizing|3
 exceeding|3
@@ -32960,7 +32458,6 @@ suites|3
 epidural|3
 piecemeal|3
 understaffed|3
-a._h.|3
 disguising|3
 disciplinarians|3
 lye|3
@@ -33235,7 +32732,6 @@ greenish|3
 superficiality|3
 baskins|3
 chorale|3
-u._s._d.|3
 conta-|3
 elvin|3
 antonia|3
@@ -33263,7 +32759,6 @@ polytech|3
 shying|3
 dibs|3
 austen|3
-v._c._u.|3
 arrival|3
 anticlimactic|3
 hams|3
@@ -33278,10 +32773,9 @@ philosophers|3
 revisions|3
 mimicked|3
 teletype|3
-p._d._d.|3
+'d|3
 interrelated|3
 solders|3
-b._t._u.|3
 ether|3
 spokes|3
 ethernet|3
@@ -33321,14 +32815,12 @@ hullo|3
 immigrating|3
 reese|3
 witherspoon|3
-inc.|3
 xiao|3
 concurrently|3
 flow-|3
 rulings|3
 bibliographer|3
 generalist|3
-v._p.|3
 retention|3
 costuming|3
 tipper|3
@@ -33372,14 +32864,12 @@ lob|3
 buy-|3
 autopilot|3
 johnston|3
-a._n._c.|3
 installs|3
 bizarrely|3
 nitro|3
 collaboration|3
 beau|3
 breathtaking|3
-d._w._i.|3
 fasten|3
 brim|3
 excepted|3
@@ -33437,7 +32927,6 @@ wretched|3
 boyfr-|3
 twenty-|3
 oklaho-|3
-s._o._s.|3
 attrac-|3
 trucilla|3
 tiffany's|3
@@ -33477,7 +32966,6 @@ culmination|3
 celeb-|3
 dreidel|3
 deloitte|3
-m._l._k.|3
 toefl|3
 mailroom|3
 womens'|3
@@ -33570,7 +33058,6 @@ briefed|3
 -ike|3
 seekers|3
 bopper|3
-t._r._l.|3
 keitel|3
 cyrus|3
 repackage|3
@@ -33618,7 +33105,6 @@ cannoli|3
 samaritan|3
 implicitly|3
 bridgette|3
-c._s._l._r.|3
 throat's|3
 negate|3
 intestinal|3
@@ -33684,7 +33170,6 @@ infused|3
 palette|3
 spanning|3
 teetotaler|3
-true,|3
 shelby|3
 swarmed|3
 simultaneous|3
@@ -33695,7 +33180,6 @@ soundtracks|2
 colorizing|2
 noir|2
 siedman|2
-b._d._o.|2
 web-sites|2
 re-build|2
 plink|2
@@ -33707,8 +33191,6 @@ gelo|2
 seventy-eight|2
 pierces|2
 von's|2
-w._b._c.|2
-d.-|2
 capitols|2
 baske-|2
 nicolson|2
@@ -33721,9 +33203,7 @@ havoline|2
 catrina|2
 staking|2
 counter-terrorism|2
-k.'s|2
 fanhi|2
-p._y.|2
 wiry|2
 reedmen|2
 atwitter|2
@@ -33754,7 +33234,6 @@ relationshi-|2
 mid-town|2
 sixty-seven|2
 besieged|2
-a._p._o.|2
 -pecting|2
 -tew|2
 -topped|2
@@ -33783,7 +33262,6 @@ bush-|2
 goddard|2
 panamanians|2
 tickers|2
-k._n._x.|2
 colmes|2
 hannigan|2
 biggs|2
@@ -33794,7 +33272,6 @@ rounders|2
 overcoats|2
 -tuff|2
 evr-|2
-i._m._s._a.|2
 twenty's|2
 nominee|2
 tweedle|2
@@ -33839,7 +33316,6 @@ eighty-eight|2
 eh-eh|2
 frothy|2
 nas|2
-well,|2
 forty-three|2
 arsenals|2
 backroom|2
@@ -33854,13 +33330,10 @@ wydner|2
 nieve|2
 non-existent|2
 palatis|2
-p._a._c.s|2
 polartec|2
 massport|2
-s._a._s.|2
 hookups|2
 'frigerator|2
-a._b._c._d.|2
 washingtonians|2
 canesia|2
 hanni|2
@@ -33869,7 +33342,6 @@ farrow|2
 coarsening|2
 omej|2
 bluetooth|2
-j._a._g._s.|2
 mootashir|2
 seagull|2
 gracelands|2
@@ -33892,7 +33364,6 @@ crystalline|2
 mitering|2
 rick's|2
 bis-|2
-v._c._a.|2
 yoting|2
 prussian|2
 plumb|2
@@ -33900,10 +33371,8 @@ rashi|2
 candied|2
 ventrillo|2
 mirc|2
-m._c._s._e.|2
 heddon|2
 manure|2
-n._a._f.|2
 panero|2
 cobblestone|2
 multifamily|2
@@ -33930,7 +33399,6 @@ tarbey|2
 rejections|2
 shelley's|2
 westwood's|2
-d._b._q.|2
 rosemarie|2
 frigerator|2
 unruliness|2
@@ -34022,7 +33490,6 @@ figueroa|2
 hypnotic|2
 steamboats|2
 murlow|2
-r._b.'s|2
 quesadillas|2
 wawai|2
 logger|2
@@ -34042,7 +33509,6 @@ calibration|2
 lamour|2
 hikers|2
 outsid-|2
-d._v.|2
 spectating|2
 ronda|2
 draftsman|2
@@ -34138,7 +33604,6 @@ battalions|2
 circ-|2
 awed|2
 iden-|2
-w._k._l._s.|2
 laminated|2
 lithium|2
 mccray's|2
@@ -34156,7 +33621,6 @@ durals|2
 self-righteous|2
 vespa|2
 etymology|2
-n._g._o.|2
 shanks|2
 cornmeal|2
 neurobiology|2
@@ -34168,16 +33632,13 @@ permaculture|2
 padu|2
 hyman|2
 ven-|2
-j._b._c.|2
 madison's|2
-f._f._a.|2
 standbys|2
 characterization|2
 infos|2
 andie|2
 assemblymen|2
 insurrection|2
-r._e._x.|2
 intel-|2
 bernardo|2
 spirals|2
@@ -34194,14 +33655,11 @@ burners|2
 athlons|2
 navigation|2
 importer|2
-t._t.'s|2
 alienware|2
 whizzes|2
 striker|2
 agincourt|2
-r._p._g.s|2
 amd|2
-m._o._h._a.|2
 gravis|2
 evercrack|2
 applegate|2
@@ -34210,13 +33668,10 @@ centimeter|2
 griots|2
 maori|2
 pop-up|2
-v._c._d.|2
 kelso|2
 nickleby|2
-m._i._u.|2
 sagan|2
 projectionist|2
-p._j.s|2
 ukiyo|2
 stiffler|2
 poppas|2
@@ -34288,7 +33743,6 @@ judeo-christian|2
 magdalene|2
 prioritized|2
 merediths|2
-m._n._t.|2
 rosen|2
 outwards|2
 floorboards|2
@@ -34347,7 +33801,6 @@ registration's|2
 consult-|2
 regionalization|2
 nonunion|2
-n._t._n.|2
 lens|2
 underperforming|2
 timberland|2
@@ -34374,7 +33827,6 @@ roreg|2
 loyalty's|2
 name-|2
 reciprocated|2
-c._u._n._y.|2
 sustains|2
 wringer|2
 chas|2
@@ -34432,14 +33884,11 @@ mannix|2
 riddick|2
 musicianship|2
 seamus|2
-k._f.|2
-p._n._c.|2
 photo's|2
 snooker|2
 competition's|2
 fing|2
 dowden|2
-q._b.|2
 hella|2
 olajuwon|2
 simi|2
@@ -34458,8 +33907,6 @@ geometric|2
 heinekens|2
 martinus|2
 knickerbockers|2
-s._c._a.|2
-s._e._a.|2
 signif-|2
 fencer|2
 crinsley|2
@@ -34468,9 +33915,7 @@ wrestler's|2
 patton|2
 re-signed|2
 guerrero|2
-x._f._o.|2
 leighton|2
-h._d.|2
 nethon|2
 arial|2
 spotting|2
@@ -34506,7 +33951,6 @@ cinematic|2
 banzai|2
 bri|2
 entir-|2
-o._p._e._c.|2
 volka|2
 disarmament's|2
 wahabi|2
@@ -34518,7 +33962,6 @@ fisticuffs|2
 postwar|2
 hydroplane|2
 think'll|2
-s._p.s|2
 hawe|2
 u2|2
 grafted|2
@@ -34638,7 +34081,6 @@ wellbutrin|2
 dramatization|2
 homeo-|2
 loca-|2
-d._a.'s|2
 taunton|2
 brockton|2
 sufferers|2
@@ -34706,12 +34148,9 @@ sparkley|2
 akea|2
 paulina|2
 sawmill|2
-a._i._t.|2
 hooth|2
-a._a._r._p.|2
 secaucus|2
 westbound|2
-g._y._n.|2
 ninetieth|2
 conversating|2
 goodra|2
@@ -34744,12 +34183,10 @@ diddle|2
 mcdougall|2
 vayne|2
 lak-|2
-p._c._h.|2
 hatteras|2
 dented|2
 hector|2
 harmonizing|2
-b._b.|2
 jabber|2
 replace-|2
 canoed|2
@@ -34789,7 +34226,6 @@ rambled|2
 stakeholders|2
 sodaris|2
 funkier|2
-s._c._c.|2
 cutback|2
 registry|2
 topeka's|2
@@ -34818,7 +34254,6 @@ both-|2
 balk|2
 businesswise|2
 giovanna|2
-c._a.|2
 nucleus|2
 fouled|2
 caretaking|2
@@ -34844,7 +34279,6 @@ malter|2
 lesbianism|2
 advocated|2
 stalingrad|2
-m._l._a.|2
 latimer|2
 alf|2
 compatibles|2
@@ -34874,14 +34308,12 @@ resolvable|2
 ecologically|2
 backtracking|2
 -ist|2
-n._y._s._p._i.|2
 brownhole|2
 militar-|2
 manifesting|2
 parable|2
 spawns|2
 castro's|2
-w._m.|2
 gaumin|2
 shakedown|2
 arising|2
@@ -34972,13 +34404,11 @@ aquacise|2
 wyle|2
 aldborough|2
 choirs|2
-m._s._a.|2
 trapeze|2
 fists|2
 voluptuous|2
 lowington|2
 splashes|2
-p._a._l.|2
 stairmasters|2
 actuall-|2
 owego|2
@@ -35032,7 +34462,6 @@ garp|2
 bookmobile|2
 middlesex|2
 kafir|2
-g._p.|2
 arseny|2
 'most|2
 howe-|2
@@ -35052,7 +34481,6 @@ shielding|2
 forbi-|2
 foisted|2
 forbids|2
-c._r._c.|2
 mile-|2
 -sposed|2
 kindersley|2
@@ -35071,7 +34499,6 @@ barrettes|2
 many's|2
 reiterating|2
 crackly|2
-d._s.|2
 tranquilizers|2
 navoo|2
 coercion|2
@@ -35079,7 +34506,6 @@ saffy|2
 purist|2
 misspent|2
 gourd|2
-f._i._m._a.|2
 berate|2
 sme-|2
 loveland|2
@@ -35105,7 +34531,6 @@ refr-|2
 indigestion|2
 newsman|2
 pinpointing|2
-b._a._i.|2
 agg-|2
 begin-|2
 satellite's|2
@@ -35158,9 +34583,7 @@ calligraphy|2
 atmospheres|2
 curric-|2
 vote-|2
-s._o._l.|2
 footers|2
-s._c._o._r._f.|2
 janie|2
 assertiveness|2
 mater-|2
@@ -35170,7 +34593,6 @@ redistribute|2
 manheim|2
 gigolos|2
 overn|2
-i._s._u.|2
 canaan|2
 flinging|2
 chunten|2
@@ -35193,16 +34615,13 @@ delusional|2
 wilcox|2
 fanzine|2
 typography|2
-r.'s|2
 heirlooms|2
 recompense|2
 debtor|2
 miner|2
-l._s.|2
 chauffeur's|2
 rutherford|2
 crazily|2
-n._h._c._d.|2
 burly|2
 horsing|2
 venturer|2
@@ -35330,8 +34749,6 @@ cousteau|2
 keesa|2
 nascars|2
 birthplace|2
-p._g._e.|2
-o._u.'s|2
 sorenson|2
 beefs|2
 -ment|2
@@ -35605,7 +35022,6 @@ gronyea|2
 dumpstered|2
 odessa's|2
 david's|2
-u._f._m.|2
 setsu|2
 bolin|2
 highlands|2
@@ -35656,7 +35072,6 @@ thes-|2
 computations|2
 incom-|2
 arti-|2
-p._d._k.|2
 bibliographies|2
 mother'd|2
 advisories|2
@@ -35670,7 +35085,6 @@ choruses|2
 jobwise|2
 millage|2
 descents|2
-c._p._u.|2
 engineering's|2
 cents'|2
 bemoaning|2
@@ -35686,7 +35100,6 @@ coups|2
 disillusioning|2
 patrolled|2
 unwarranted|2
-a._t._p.|2
 sevenish|2
 hangars|2
 scrubbed|2
@@ -35696,13 +35109,10 @@ massacring|2
 prophetic|2
 naisha|2
 kuwaits|2
-i._g._a.|2
 bib|2
 deckers|2
 blahdy|2
 raleigh's|2
-n._e._a.|2
-n._i._s.|2
 exed|2
 complimented|2
 on's|2
@@ -35745,13 +35155,11 @@ ultraviolet|2
 extremo|2
 extremoganza|2
 wariness|2
-f._b._i.'s|2
 neckers|2
 reroute|2
 radars|2
 foyer|2
 hoards|2
-t._m._i.|2
 u-turn|2
 javier|2
 claimants|2
@@ -35762,8 +35170,6 @@ caravans|2
 cia|2
 angelic|2
 happen's|2
-a._l.|2
-e._l.|2
 petrello|2
 ophelia|2
 casco's|2
@@ -35880,7 +35286,6 @@ jason's|2
 laudable|2
 sudd-|2
 coddled|2
-i._u._d.|2
 lasiks|2
 checkings|2
 legalese|2
@@ -35948,7 +35353,6 @@ mousetrap|2
 rmc|2
 couric|2
 wil|2
-p._d.|2
 o'rourke|2
 bloomsburg|2
 preemies|2
@@ -35958,7 +35362,6 @@ agitate|2
 seaports|2
 worley|2
 halting|2
-p._e._t._a.|2
 midorn|2
 cressa|2
 bothe-|2
@@ -36050,7 +35453,6 @@ undertow|2
 meld|2
 gymnast-|2
 finders|2
-i._r._c.|2
 fred's|2
 florals|2
 lei|2
@@ -36071,7 +35473,6 @@ refinished|2
 minnesotans|2
 bess|2
 porgy|2
-u._p._c.s|2
 loaner|2
 accrue|2
 tequia|2
@@ -36116,7 +35517,6 @@ pertained|2
 ao-|2
 newscaster's|2
 staked|2
-a._j._c.|2
 surpassing|2
 juicier|2
 westover|2
@@ -36159,12 +35559,10 @@ sherbet|2
 farscape|2
 boiler|2
 teleport|2
-t._h._x.|2
 neither-|2
 elmo's|2
 babytalk|2
 sian|2
-yes,|2
 piglets|2
 littered|2
 apopka|2
@@ -36228,7 +35626,6 @@ abdicated|2
 ivy's|2
 forc-|2
 cours-|2
-i._e.|2
 mentorship|2
 ideal-|2
 pampa|2
@@ -36248,7 +35645,6 @@ forty-eight|2
 tardy|2
 tota-|2
 jaguar|2
-m._c._a._s.|2
 conserving|2
 citizen's|2
 factious|2
@@ -36300,7 +35696,6 @@ wobble|2
 weeble|2
 doozie|2
 get-togethers|2
-u._c._s._d.|2
 muir|2
 nixed|2
 cherishing|2
@@ -36369,7 +35764,6 @@ countering|2
 chattel|2
 insolence|2
 countered|2
-d._m._z.|2
 lulled|2
 trudeau|2
 jackasses|2
@@ -36383,13 +35777,10 @@ emirate|2
 lutz|2
 detractors|2
 decadence|2
-p._a._t._s.|2
 reprisals|2
-a._w._a._c.|2
 russ-|2
 responsibility's|2
 curtails|2
-i._c._b._m.s|2
 molecules|2
 synthesize|2
 twosies|2
@@ -36508,7 +35899,6 @@ quenches|2
 limbering|2
 intensifying|2
 broadside|2
-j._v.|2
 abbreviate|2
 waistline|2
 communi-|2
@@ -36534,7 +35924,6 @@ diver-|2
 rifts|2
 lawyering|2
 jap|2
-g._o.|2
 tremble|2
 literature's|2
 cona-|2
@@ -36591,7 +35980,6 @@ ango|2
 pausing|2
 fishburne|2
 calisi|2
-a._c._t.s|2
 -ive|2
 decreed|2
 porte|2
@@ -36620,7 +36008,6 @@ animators|2
 eli-|2
 sellout|2
 insurers|2
-d._o.|2
 britten|2
 monson|2
 young's|2
@@ -36679,7 +36066,6 @@ entitlements|2
 cheswick|2
 indolent|2
 jettison|2
-u._m._a._s.|2
 not'|2
 manufact-|2
 alit|2
@@ -36731,7 +36117,6 @@ igloo|2
 champion-|2
 potbellies|2
 -ball|2
-t._v._s.|2
 advert|2
 stank|2
 -cross|2
@@ -36790,7 +36175,6 @@ strike's|2
 ambler|2
 ordnance|2
 hotlanta|2
-h._e._b.|2
 predic-|2
 keep-|2
 sapphire|2
@@ -36812,7 +36196,6 @@ borne|2
 mallard|2
 baste|2
 correll|2
-w._i._p.|2
 sergei|2
 region's|2
 apricots|2
@@ -36858,7 +36241,6 @@ southcorp|2
 kenwyn|2
 overheating|2
 bubble's|2
-r._s._p.|2
 elude|2
 halen|2
 irretrievable|2
@@ -36888,8 +36270,6 @@ participle|2
 logarithms|2
 esoura|2
 refrigerant|2
-h._f._c.s|2
-c._f._c.s|2
 dwelled|2
 remiss|2
 finns|2
@@ -37074,8 +36454,6 @@ chann-|2
 versace|2
 persons'|2
 sways|2
-e._m._s.|2
-e._m._t.s|2
 gallerson|2
 monopolized|2
 enrage|2
@@ -37086,7 +36464,6 @@ judy's|2
 blake's|2
 cartel|2
 mimea|2
-l._a._p._d.|2
 snug|2
 parolee|2
 illustrates|2
@@ -37108,7 +36485,6 @@ shelving|2
 rerouted|2
 fatigues|2
 anybod-|2
-s._g._i.|2
 announ-|2
 tanzania|2
 mcvey|2
@@ -37154,7 +36530,6 @@ cigarette-|2
 lindie|2
 callings|2
 income's|2
-e._l._c.|2
 tiffy|2
 erupting|2
 arguer|2
@@ -37175,7 +36550,6 @@ delaney|2
 vibrating|2
 automo-|2
 reupholstering|2
-r._c._a.|2
 negli-|2
 dijon|2
 sparkly|2
@@ -37219,7 +36593,6 @@ pineapples|2
 ocher|2
 triathlete|2
 bena|2
-n._y._u.'s|2
 chartered|2
 izika|2
 aero-|2
@@ -37235,7 +36608,6 @@ hulda|2
 spirochete|2
 noga|2
 armez|2
-r._c.s|2
 ebaying|2
 essences|2
 moms'|2
@@ -37249,7 +36621,6 @@ cybill|2
 committal|2
 arent|2
 cumberland|2
-o._d._u.|2
 justna|2
 michig-|2
 plan's|2
@@ -37268,7 +36639,6 @@ jellies|2
 paraffin|2
 slanty|2
 heraldo|2
-k._f._i.|2
 traf-|2
 glossing|2
 symp-|2
@@ -37285,7 +36655,6 @@ idiom|2
 attila|2
 duplexes|2
 degenerates|2
-o._r._g.|2
 haddon|2
 phraseology|2
 wi|2
@@ -37320,7 +36689,6 @@ superfluous|2
 millers|2
 schlitz|2
 recall's|2
-o._s.|2
 sister-|2
 paddles|2
 playboys|2
@@ -37414,7 +36782,6 @@ vocalized|2
 mobilize|2
 thome's|2
 thome|2
-t._c._p.|2
 subnetting|2
 employable|2
 institutionalize|2
@@ -37444,7 +36811,6 @@ troy's|2
 systemic|2
 boyce|2
 overridden|2
-c._a._t.s|2
 carers|2
 disruptions|2
 crunched|2
@@ -37509,7 +36875,6 @@ geezer|2
 rent-|2
 pard-|2
 e-learning|2
-m._d.s|2
 so-and-so|2
 full-length|2
 shiver|2
@@ -37523,7 +36888,6 @@ sketched|2
 nolan|2
 vagaries|2
 creston|2
-t._v._n.|2
 speculative|2
 flarema|2
 constellation|2
@@ -37620,7 +36984,6 @@ osceola|2
 wicker|2
 levek|2
 northport|2
-e._x._a._c._t._l._y.|2
 kernels|2
 schinder|2
 yer-|2
@@ -37648,7 +37011,6 @@ touchstone|2
 erections|2
 viagra|2
 occupant|2
-s._r._a.|2
 formulating|2
 invalids|2
 sell-|2
@@ -37724,9 +37086,7 @@ stagnated|2
 enterprenal|2
 kel-|2
 mandalay|2
-a._s._i._d.|2
 reseller|2
-i._b._m.s|2
 soundproof|2
 bligh|2
 schutz|2
@@ -37793,7 +37153,6 @@ preparatory|2
 takeouts|2
 rocksberry|2
 sess-|2
-y._w._c._a.|2
 decorators|2
 hummingbird|2
 tampax|2
@@ -37884,7 +37243,6 @@ idiosyncratic|2
 arkansas's|2
 serendipity|2
 birdcage|2
-i._m._c.|2
 schmeer|2
 schm-|2
 satires|2
@@ -37926,7 +37284,6 @@ akamatsu|2
 dainty|2
 bertie|2
 prejudged|2
-k._c._e._t.|2
 cos-|2
 macdonald|2
 mabley|2
@@ -37935,7 +37292,6 @@ abor-|2
 dramatics|2
 yooglie|2
 polymers|2
-s._a._p.|2
 duquesne|2
 barroom|2
 segregating|2
@@ -37945,7 +37301,6 @@ retell|2
 wron-|2
 euphemisms|2
 brotherish|2
-l._v._n.|2
 appropriation|2
 admiring|2
 transvestites|2
@@ -37959,7 +37314,6 @@ magoo|2
 paltrow|2
 gwyneth|2
 igby|2
-i._q.'s|2
 material's|2
 stabs|2
 'how|2
@@ -38027,7 +37381,6 @@ juke|2
 re-taped|2
 prat|2
 traverse|2
-j._j.|2
 tem|2
 doen't|2
 unparallel|2
@@ -38157,7 +37510,6 @@ overpay|2
 welf-|2
 gyp|2
 clunker|2
-n._p._a.|2
 exca-|2
 scrubbing|2
 ratified|2
@@ -38188,7 +37540,6 @@ ay-|2
 mink|2
 underestimating|2
 partitions|2
-c._o._r._b._a.|2
 bi-weekly|2
 coned|2
 goaded|2
@@ -38339,7 +37690,6 @@ breakage|2
 breakable|2
 noun|2
 civilly|2
-p.s|2
 samhoney|2
 wac-|2
 geogra-|2
@@ -38359,7 +37709,6 @@ uno|2
 gainfully|2
 subvert|2
 adaptability|2
-k._b.|2
 honeymooning|2
 pepperidge|2
 pert-|2
@@ -38372,7 +37721,6 @@ kindhearted|2
 rocketing|2
 -bility|2
 unsound|2
-c._b.s|2
 palest-|2
 scape-|2
 behoove|2
@@ -38383,7 +37731,6 @@ gal's|2
 poofy|2
 'ello|2
 silkier|2
-f._i._v.|2
 bungie|2
 urination|2
 olathe|2
@@ -38472,7 +37819,6 @@ follow-|2
 sickleds|2
 emperors|2
 isobel|2
-c._p._s.|2
 alleyways|2
 pygmy|2
 softie|2
@@ -38537,7 +37883,6 @@ motifs|2
 whiter|2
 dilapidated|2
 moulder|2
-a._d._c.|2
 valu-|2
 clink|2
 penetration|2
@@ -38722,9 +38067,7 @@ alumnae|2
 interceptions|2
 huntsville's|2
 lukalevira|2
-w._w.|2
 wresting|2
-v._c._r.'s|2
 misappropriation|2
 marris|2
 marris's|2
@@ -38736,7 +38079,6 @@ spot's|2
 jazzed|2
 fors-|2
 drury|2
-u._n._m.|2
 waugh|2
 funtiard|2
 runich|2
@@ -38761,12 +38103,10 @@ arvin|2
 pharm|2
 hawthorn|2
 abil-|2
-d._u.|2
 canucks|2
 iveson|2
 hagler|2
 hotheads|2
-w._g._n.|2
 oblong|2
 winningest|2
 boof|2
@@ -38777,7 +38117,6 @@ chastain|2
 shilling|2
 luiz|2
 randallstown|2
-x._n.|2
 resubmitted|2
 relatives'|2
 softballs|2
@@ -38808,7 +38147,6 @@ brada|2
 dodgeball|2
 walkathons|2
 pris-|2
-p._b._r.|2
 latvians|2
 cozumel's|2
 cubbies|2
@@ -38848,11 +38186,9 @@ honing|2
 undertaker|2
 buff-|2
 deering|2
-l._p._g._a.|2
 holyfield's|2
 foreman's|2
 icecapades|2
-e._m.|2
 dimaggio|2
 yankees'|2
 celts|2
@@ -38898,7 +38234,6 @@ failings|2
 berman|2
 i'm-|2
 turner's|2
-c._c._n.|2
 dragonflies|2
 lis|2
 papier-mache|2
@@ -38943,7 +38278,6 @@ mcqueen|2
 landon|2
 mutton|2
 magnifying|2
-w._b._a._l.|2
 consen-|2
 soleil|2
 celtic's|2
@@ -39082,7 +38416,6 @@ tin-|2
 buffoons|2
 muscled|2
 militarized|2
-s._i._a.|2
 unconvincing|2
 selflessness|2
 outlining|2
@@ -39101,7 +38434,6 @@ winger|2
 vatican|2
 changeover|2
 peacemaking|2
-v._x.|2
 preemptively|2
 inspect-|2
 milosevic|2
@@ -39117,7 +38449,6 @@ grisly|2
 klinghoffer|2
 newberry|2
 bull-|2
-n._g._o.s|2
 send-|2
 bung-|2
 skeptics|2
@@ -39132,7 +38463,6 @@ biolog-|2
 dubai|2
 quietened|2
 damnation|2
-k._c._r._w.|2
 overhang|2
 sonar|2
 overpasses|2
@@ -39268,11 +38598,9 @@ satmars|2
 louds|2
 guarini|2
 astrological|2
-n._s._y._n._c.|2
 duffy's|2
 cheesier|2
 suitors|2
-o._s._h._a.|2
 pelvis|2
 gimped|2
 rosario|2
@@ -39326,7 +38654,6 @@ stoli|2
 flask|2
 mm-|2
 vote's|2
-t._e.|2
 spendy|2
 manifested|2
 overactive|2
@@ -39340,7 +38667,6 @@ ess-|2
 thrived|2
 jacky|2
 danger-|2
-r._s._v._p.|2
 nowa-|2
 homescan|2
 babysitter's|2
@@ -39367,10 +38693,8 @@ logan's|2
 spirulina|2
 dimetapp|2
 warmly|2
-g._s._m.|2
 sweeteners|2
 colorings|2
-m._p._a.|2
 susce-|2
 practitioners|2
 echinacea's|2
@@ -39384,7 +38708,6 @@ samed|2
 momentary|2
 platelet|2
 fizzy|2
-p._p._o.s|2
 subside|2
 sweetened|2
 unsweetened|2
@@ -39494,7 +38817,6 @@ catchall|2
 bishops|2
 gardiner|2
 embellishing|2
-z._v.|2
 queensborough|2
 delicatessens|2
 crumbs|2
@@ -39509,7 +38831,6 @@ macrobiotics|2
 clean-|2
 mcnuggets|2
 target's|2
-b._j.'s|2
 mahi|2
 circ|2
 massa|2
@@ -39724,7 +39045,6 @@ ambig-|2
 seekonk|2
 seek-|2
 superchunk|2
-t._e._s._l.|2
 clutches|2
 easel|2
 dungle|2
@@ -39867,7 +39187,6 @@ manhattans|2
 sedated|2
 schoolhouse|2
 casing|2
-a._m._u.|2
 interac-|2
 subjectivity|2
 upsides|2
@@ -39924,7 +39243,6 @@ hubby's|2
 downloadable|2
 radford|2
 typewriting|2
-m._e.|2
 unplugging|2
 guess-|2
 automat-|2
@@ -40029,7 +39347,6 @@ depiction|2
 pigheaded|2
 trotting|2
 jantzen|2
-s._a._u.|2
 dupage|2
 bookham|2
 croix|2
@@ -40132,7 +39449,6 @@ divinely|2
 webs-|2
 sear-|2
 barbeques|2
-b._m._i.|2
 obispo|2
 crossfire|2
 largish|2
@@ -40148,7 +39464,6 @@ pasty|2
 spammed|2
 indu|2
 yorgen|2
-c._o.|2
 stuff-|2
 peace-loving|2
 frenchmen|2
@@ -40182,7 +39497,6 @@ dangled|2
 ridgemont|2
 nob-|2
 more's|2
-i._t.s|2
 'no|2
 razorback|2
 resold|2
@@ -40316,7 +39630,6 @@ relics|2
 pobox|2
 sentinel|2
 asides|2
-i.'s|2
 keenly|2
 everything'll|2
 buckled|2
@@ -40349,7 +39662,6 @@ then-|2
 fic-|2
 harm-|2
 southway|2
-m._r.|2
 injunction|2
 log-|2
 untold|2
@@ -40374,7 +39686,6 @@ woah|2
 zions|2
 patients'|2
 kim-|2
-b._s._n.|2
 goldilocks|2
 anarchist's|2
 findlay|2
@@ -40412,7 +39723,6 @@ gauges|2
 lighthouses|2
 annuals|2
 bookseller|2
-a._t._v.'s|2
 topica|2
 tonics|2
 radishes|2
@@ -40428,12 +39738,9 @@ stars'|2
 uday's|2
 addict-|2
 mannie|2
-p._c._b.|2
 videoing|2
-p._o._w.'s|2
 hornet's|2
 inured|2
-n._t._r.|2
 crawler|2
 dropper|2
 droppers|2
@@ -40473,7 +39780,6 @@ salvadorians|2
 arcnord|2
 georgine|2
 hartman|2
-m._t._c.|2
 whittenberg|2
 corporative|2
 taipei|2
@@ -40500,7 +39806,6 @@ zilch|2
 overrule|2
 literalist|2
 bosom|2
-l._c._d.|2
 unbeatable|2
 unequivocally|2
 gulfport|2
@@ -40525,6 +39830,7 @@ footstool|2
 that-a-way|2
 ai|2
 livin|2
+'er|2
 oxford's|2
 rogers'|2
 talahassee|2
@@ -40568,7 +39874,6 @@ bagger|2
 atwater|2
 collision|2
 credit's|2
-c._b.|2
 ranching|2
 dashed|2
 adventurer|2
@@ -40591,7 +39896,6 @@ cattery|2
 opti-|2
 snappers|2
 irresistible|2
-e._k._g.|2
 barkley's|2
 daug-|2
 enabling|2
@@ -40618,7 +39922,6 @@ influxes|2
 awe-|2
 simpons|2
 unclean|2
-m.'s|2
 broached|2
 downwards|2
 rerunning|2
@@ -40693,7 +39996,6 @@ surmise|2
 know-how|2
 hobos|2
 inoculations|2
-c._m._r._t.|2
 appeasement|2
 stranglehold|2
 aquifer|2
@@ -40749,7 +40051,6 @@ burping|2
 hairline|2
 maced|2
 perturbed|2
-q._c.|2
 staph|2
 'here's|2
 dat|2
@@ -40757,7 +40058,6 @@ readiness|2
 hammond|2
 lou-|2
 humboldt|2
-s._o._u.|2
 married's|2
 improvised|2
 retr-|2
@@ -40785,7 +40085,6 @@ beckford|2
 tawdry|2
 chiming|2
 ear's|2
-n._s.|2
 sched-|2
 countryside's|2
 enough's|2
@@ -40806,7 +40105,6 @@ trick-|2
 velcro|2
 wristbands|2
 aj|2
-w._v._u.|2
 asheville|2
 microscopes|2
 implements|2
@@ -40816,7 +40114,6 @@ sound-|2
 hardness|2
 crosswalk|2
 shoelace|2
-i._s._d.|2
 joni|2
 kilpatrick|2
 foxworth|2
@@ -40826,7 +40123,6 @@ tonal|2
 dickson|2
 collette|2
 bayer|2
-u._n._h.|2
 yeee|2
 nance|2
 stran-|2
@@ -40837,8 +40133,6 @@ initialy|2
 hailan|2
 audis|2
 ash-|2
-really?|2
-from?|2
 -ad|2
 re-live|2
 reconstructing|2
@@ -40846,9 +40140,7 @@ chula|2
 purgo|2
 chis-|2
 rockettes|2
-p._e._t.|2
 famines|2
-s._p._a.|2
 unforeseen|2
 pocono's|2
 issu-|2
@@ -40856,7 +40148,6 @@ syndicator|2
 theorem|2
 handhold|2
 complet-|2
-c._o._b._o._l.|2
 hailstorms|2
 refurnishing|2
 verboten|2
@@ -40875,7 +40166,6 @@ suiting|2
 text-|2
 walden|2
 -store|2
-p._h.|2
 chu|2
 tire-|2
 christiansen|2
@@ -40908,12 +40198,10 @@ demeans|2
 merciful|2
 whiners|2
 excu-|2
-p.'s|2
 prisses|2
 cath|2
 dach-|2
 funicello|2
-b._e._p.|2
 legos|2
 confining|2
 -burg|2
@@ -40932,7 +40220,6 @@ ensue|2
 inoculate|2
 ym-|2
 duh-|2
-a._t._f.|2
 spied|2
 senates|2
 -cussed|2
@@ -40958,7 +40245,6 @@ operational|2
 afghanistani|2
 wanded|2
 barrette|2
-r._v.er|2
 obsidian|2
 leathermans|2
 disrobing|2
@@ -40990,7 +40276,6 @@ bons|2
 bona|2
 uzbekistan|2
 looses|2
-n._p._d._o._r.|2
 booms|2
 hol|2
 druid|2
@@ -41026,7 +40311,6 @@ nosing|2
 hooligan|2
 dowry|2
 acknowledges|2
-u._a._w.|2
 blabbing|2
 fannies|2
 leaflets|2
@@ -41047,7 +40331,6 @@ preoccupy|2
 sixty-five|2
 re-runs|2
 examiners|2
-oh,|2
 bridezilla|2
 loader|2
 schwab|2
@@ -41064,7 +40347,6 @@ unhealthier|2
 blahsy|2
 eyewitness|2
 epsilon|2
-s._h._a._l._a.|2
 shera|2
 fags|2
 whiff|2
@@ -41075,7 +40357,6 @@ uninhibited|2
 bere-|2
 tavita|2
 unscratched|2
-d._r.|2
 lewiville|2
 melborn|2
 non-stop|2
@@ -41126,7 +40407,6 @@ weaning|2
 absorption|2
 whitey's|2
 dimly|2
-b._q.|2
 squirrel's|2
 unbleached|2
 stir-fry|2
@@ -41171,8 +40451,6 @@ leer|2
 drones|2
 recessionary|2
 gung-ho|2
-f._a._f._b.|2
-f._a._s._d.|2
 inquiry|2
 abuse-|2
 intrusions|2
@@ -41182,11 +40460,9 @@ mumbo|2
 skep-|2
 mid-tier|2
 impervious|2
-i._r._a.'s|2
 configured|2
 snuggled|2
 yes-ah|2
-c._m._u.|2
 richfield|2
 wooster|2
 hunh|2
@@ -41215,8 +40491,7 @@ spell-|2
 deductive|2
 -spensive|2
 middle-aged|2
-c._d.-rom|2
-t._a.'d|2
+-rom|2
 key-|2
 auditory|2
 overextended|2
@@ -41257,11 +40532,9 @@ mistresses|2
 easy-|2
 frenetic|2
 scampering|2
-p._i.|2
 magnum|2
 wryly|2
 apparent-|2
-p._s._i.|2
 concer-|2
 patootie|2
 quay|2
@@ -41332,7 +40605,6 @@ bala|2
 wince|2
 contagion|2
 inducing|2
-n._d.|2
 eire|2
 check-in|2
 islan-|2
@@ -41359,7 +40631,6 @@ lad-|2
 coi-|2
 digitize|2
 font|2
-x._m._l.|2
 logon|2
 innoc-|2
 eventuality|2
@@ -41418,7 +40689,6 @@ scrapped|2
 infiltration|2
 puria|2
 clenched|2
-s._u.|2
 graze|2
 torched|2
 sadan|2
@@ -41432,7 +40702,6 @@ corroborate|2
 interdependence|2
 serbs|2
 diverts|2
-p._s._u.|2
 slops|2
 uniformly|2
 underwent|2
@@ -41457,7 +40726,6 @@ brood|2
 relationsh-|2
 laureate|2
 intangibles|2
-life,|2
 misrepresent|2
 amalgamation|2
 squeezes|2
@@ -41606,7 +40874,6 @@ concoct|2
 articulated|2
 anti-immigrant|2
 rearm|2
-s._u._v.'s|2
 laces|2
 ethnocentric|2
 record's|2
@@ -41652,11 +40919,9 @@ sulky|2
 streamed|2
 imprint|2
 ot|2
-the,|2
 wayward|2
 pro-morals|2
 deprives|2
-c._i._s.|2
 severally|2
 locust|2
 preceded|2
@@ -41730,7 +40995,6 @@ turtleneck|2
 patenting|2
 -ted|2
 dependencies|2
-r._p._m.|2
 compiling|2
 lovin-|2
 insulating|2
@@ -41756,7 +41020,6 @@ eniva|2
 nostrils|2
 proverb|2
 shot's|2
-o._b._g._y._n.|2
 misdiagnoses|2
 octane|2
 absurdist|2
@@ -41766,7 +41029,6 @@ chilis|2
 -tituted|2
 scoops|2
 hamburg-|2
-that.|2
 inauthentic|2
 mussel|2
 souther|2
@@ -41844,7 +41106,6 @@ tight-knit|1
 fingertip-|1
 edj-|1
 heimlich|1
-s._m._s.-ing|1
 reformatting|1
 catchup|1
 -ome|1
@@ -41858,7 +41119,6 @@ power-point|1
 outer-space|1
 -draw|1
 ruh|1
-k._e._n.|1
 non-activist|1
 palistine|1
 misrepresentation|1
@@ -41879,7 +41139,6 @@ reigns|1
 unfini-|1
 close-minded|1
 vanns|1
-k._i._a.|1
 circumvented|1
 israelies|1
 nuc|1
@@ -41894,11 +41153,9 @@ imperil|1
 youngin|1
 dap|1
 washin-|1
-n._f.|1
 cysco|1
 cys-|1
 -gistically|1
-r._f._i._d.|1
 unzips|1
 deficiently|1
 segma-|1
@@ -41911,8 +41168,6 @@ trodding|1
 gotten'|1
 veen|1
 reactivating|1
-f._d.|1
-f._a.-|1
 hij-|1
 non-stops|1
 yeaha|1
@@ -41931,7 +41186,6 @@ khadaffi|1
 mendome|1
 matanska|1
 tranbutola|1
-m._d.'s|1
 apprehended|1
 galvanizes|1
 nittle-|1
@@ -42046,9 +41300,6 @@ bio-technology|1
 gropenator|1
 afri-|1
 ilan-|1
-h._a._v._o._l._i._n._e.|1
-h._a.|1
-h._a._v._i._l._i._n._e.|1
 haviline|1
 septe-|1
 deerborn|1
@@ -42068,9 +41319,6 @@ squinting|1
 singe|1
 excavate|1
 squib|1
-t.'d|1
-a._l._p._a.|1
-s._o.|1
 kidnapings|1
 -per|1
 encored|1
@@ -42081,25 +41329,12 @@ frequent-|1
 oca-|1
 sticked|1
 onesidedness|1
-a._t._m.'s|1
 pennsylv-|1
-t._y.|1
-p._y._p._y._l._k._a._l._a._c._n.|1
-t._y._t._y._p._k.|1
-t._y._p.|1
 lackin|1
-a._c._n.|1
-a._z._n.|1
-k._a._o.|1
 wako|1
-i._e._n.|1
-d._a._m.|1
-y._i.|1
-p._y._t._i.|1
 cancellation|1
 shlo-|1
 imperiled|1
-c._c._s.|1
 baske-i|1
 mainl-|1
 ogling|1
@@ -42109,7 +41344,6 @@ troomdale|1
 phenomenauts|1
 barch's|1
 barch|1
-m._u._n._y.|1
 obes-|1
 equil-|1
 simmon's|1
@@ -42142,7 +41376,6 @@ stye|1
 stand-ins|1
 -spersing|1
 id'|1
-p._r._o._g._r._a._m._s.|1
 re-rooting|1
 unresistant|1
 iroline|1
@@ -42175,7 +41408,6 @@ philipe|1
 -ello|1
 durin-|1
 ae-|1
-d._v._r.|1
 crapped|1
 wiegle|1
 sei-|1
@@ -42246,14 +41478,12 @@ farell|1
 negativeness|1
 word-|1
 -ait|1
-t.-|1
 triboro|1
 unionville|1
 amstead|1
 luchi|1
 gallow|1
 cortizon|1
-f._l._u.|1
 mooners|1
 inexp-|1
 trebec|1
@@ -42306,7 +41536,6 @@ trives|1
 vantera|1
 commutative|1
 disrespectfully|1
-me.|1
 divan|1
 unattached|1
 bizz|1
@@ -42325,7 +41554,6 @@ sayin|1
 barmitzvahs|1
 barmitzvah|1
 mclodes|1
-l._i._c.|1
 borway|1
 gamway|1
 wellin-|1
@@ -42367,7 +41595,6 @@ yasir|1
 riyaz|1
 -able|1
 knowin-|1
-h._v._a._c.|1
 infound|1
 ambassador's|1
 noggins|1
@@ -42375,7 +41602,6 @@ goof-balls|1
 goof-ball|1
 hammer's|1
 antagonized|1
-n._a._t._o.|1
 commanded|1
 propagated|1
 pip-|1
@@ -42388,8 +41614,6 @@ plivista|1
 presided|1
 habit-|1
 anti-aircraft|1
-x.'s|1
-x._x._x._x._x.|1
 unsuspectful|1
 unsuccess-|1
 really's|1
@@ -42405,7 +41629,6 @@ shorting|1
 wittingly|1
 chadama|1
 padama|1
-n._t._s._b.|1
 sob-|1
 -fore|1
 -ork|1
@@ -42421,29 +41644,18 @@ poly-rhythms|1
 adopters|1
 weezer|1
 walds|1
-w._a._l._d._s.|1
-s._t._o.|1
 soe|1
 gels|1
 semi-good|1
 catonize|1
 non-fat|1
 clairemont|1
-all?|1
 trac|1
-take?|1
-got?|1
 lifecycles|1
 levers|1
-at?|1
 mackina|1
 lifecycle|1
-now?|1
-weights?|1
-what?|1
 intersperse|1
-far?|1
-days?|1
 trainer's|1
 lafond|1
 clu-|1
@@ -42461,7 +41673,6 @@ edon|1
 irga|1
 result's|1
 ellison's|1
-l._m._u.|1
 pretesting|1
 god'll|1
 cotton's|1
@@ -42521,7 +41732,6 @@ crabbies|1
 troubleshooter|1
 father'd|1
 conscio-|1
-r._c._n.|1
 rcn|1
 freebase|1
 invigorate|1
@@ -42551,7 +41761,6 @@ re-marketing|1
 destig-|1
 freshfield|1
 whaddyou|1
-m._k.|1
 exit's|1
 cymbal|1
 lagano|1
@@ -42598,7 +41807,6 @@ bransville|1
 navaro|1
 drunkard|1
 d'etat|1
-f._m.'s|1
 marhaba|1
 mitchum's|1
 vonadoo|1
@@ -42606,7 +41814,6 @@ secrest|1
 snively|1
 pota-|1
 barberie|1
-k._a._b._c.|1
 spiegel|1
 ex-colonies|1
 multi-layered|1
@@ -42617,7 +41824,6 @@ manhandle|1
 clark's|1
 vacating|1
 substanti-|1
-h._a._c.|1
 speak'|1
 'everybody's|1
 ranchos|1
@@ -42625,7 +41831,6 @@ cucamunga|1
 rancha|1
 rooters|1
 newsflashes|1
-w._a._b._c.|1
 affi-|1
 bopping|1
 veracious|1
@@ -42655,17 +41860,14 @@ calculates|1
 malley|1
 coordi-|1
 lan|1
-c._o._n.|1
 fifa|1
 hammad|1
-c._f._c._c.|1
 muffy|1
 co-ordinates|1
 uploads|1
 co-partner|1
 card's|1
 craft's|1
-m._m._o._r._p._g.s|1
 gamecube's|1
 looki-|1
 sensens-|1
@@ -42676,12 +41878,10 @@ gunfighter|1
 singleton|1
 theatricals|1
 practicalities|1
-y._a._r._d.|1
 kozinsky's|1
 brabidge|1
 pekar|1
 re-did|1
-m._w._r.|1
 infuse|1
 yun|1
 bollywood|1
@@ -42786,7 +41986,6 @@ ayol|1
 transpat-|1
 utopias|1
 inculturate|1
-c._n._c.|1
 does'n-|1
 substitution|1
 untucked|1
@@ -42828,7 +42027,6 @@ docklands|1
 shiqh|1
 ihad|1
 leeman|1
-g._c._a.|1
 flapwitch|1
 bedstye|1
 hitter's|1
@@ -42919,7 +42117,6 @@ clemen|1
 hesita-|1
 undependable|1
 berkely|1
-m._s._c._e.|1
 hill's|1
 freehand|1
 hands-on|1
@@ -42978,7 +42175,6 @@ holgren|1
 lacroy|1
 fiver|1
 widdier|1
-p._c._c.|1
 scepter|1
 streetcars|1
 trickemenisis|1
@@ -43002,7 +42198,6 @@ motherboards|1
 harlot|1
 rudolf|1
 por|1
-k._c._b._s.|1
 dyer|1
 trademarks|1
 ripon|1
@@ -43034,7 +42229,6 @@ chao-|1
 cutted|1
 histor-|1
 cooman|1
-f._u.|1
 stigmatizing|1
 debunking|1
 inne-|1
@@ -43073,7 +42267,6 @@ ninety-six|1
 thirty-first|1
 dumfounded|1
 din't|1
-right,|1
 shitsus|1
 shitsu|1
 curly-haired|1
@@ -43104,7 +42297,6 @@ cafe's|1
 wista|1
 shmooze|1
 very-s|1
-e._p._s._n.|1
 minniap-|1
 tiebreakers|1
 linesmen|1
@@ -43127,7 +42319,6 @@ silvio|1
 rhine|1
 vig-|1
 adminis-|1
-r._i._c._o.|1
 extemporaneously|1
 judgeship|1
 guinere|1
@@ -43165,7 +42356,6 @@ obviously-|1
 fame's|1
 hell'd|1
 trapezoidal|1
-l._i._w.|1
 brookdale|1
 schmuckawhacka|1
 transpires|1
@@ -43211,7 +42401,6 @@ gluttany|1
 figire|1
 oin|1
 predominate|1
-m._a._n._n._y.|1
 sacramental|1
 cambering|1
 horton|1
@@ -43251,7 +42440,6 @@ slay|1
 liike|1
 skeletal|1
 -posedly|1
-c._a._p.|1
 prow|1
 rided|1
 sunshine's|1
@@ -43298,7 +42486,6 @@ dicky|1
 supervision's|1
 help's|1
 folly|1
-d._d._a._t.|1
 condo-|1
 re-pot|1
 cheerio|1
@@ -43374,7 +42561,6 @@ feasibility|1
 wire's|1
 wallo|1
 tailgated|1
-w._c.|1
 countlessly|1
 ish-|1
 cert|1
@@ -43400,7 +42586,6 @@ typhoons|1
 buddies'|1
 anniver-|1
 soul's|1
-v._i._s._a.|1
 templar|1
 beecham|1
 aleichem|1
@@ -43521,7 +42706,6 @@ togo|1
 equaliser|1
 grands|1
 haden|1
-b._t._l._s.|1
 proclivity|1
 meths|1
 wat|1
@@ -43533,7 +42717,6 @@ yung|1
 inp-|1
 locos|1
 blockages|1
-e._v._t.'s|1
 billable|1
 tape-|1
 electron-|1
@@ -43545,7 +42728,6 @@ cost's|1
 singing's|1
 admin-|1
 mopeds|1
-a._t._c.|1
 murdoch's|1
 whosever|1
 sawhorse|1
@@ -43573,7 +42755,6 @@ undermanned|1
 ankle-|1
 irritat-|1
 conve-|1
-p._h._p.|1
 uninviting|1
 mods|1
 irc|1
@@ -43591,7 +42772,6 @@ r-originally|1
 h-hi|1
 product's|1
 consign|1
-b._t._c.|1
 bootstrapping|1
 copiers|1
 ostler|1
@@ -43603,7 +42783,6 @@ canfield|1
 overlands|1
 hardware'd|1
 'bout-|1
-l._s._f.|1
 azad|1
 headhunters|1
 flan-|1
@@ -43698,7 +42877,6 @@ genal|1
 journa-|1
 unabomber's|1
 jaywalking|1
-u._c._s._c.|1
 testifies|1
 hutch-|1
 perjures|1
@@ -43778,7 +42956,6 @@ sh-a|1
 atell|1
 gringo|1
 heine|1
-s._u._b.|1
 sander|1
 imogene|1
 bruce's|1
@@ -43791,7 +42968,6 @@ larramendy|1
 inqui-|1
 embarrass-|1
 aflac|1
-tickets.|1
 sixty-six|1
 allotments|1
 prefinish|1
@@ -43819,7 +42995,6 @@ lancasham|1
 skying|1
 colpepper|1
 eighteens|1
-c._m._i._s.|1
 winn|1
 highbrow|1
 concurring|1
@@ -43834,9 +43009,6 @@ calvinist|1
 calvinistic|1
 ortis|1
 increment|1
-w._i._c._k.|1
-t._a._n._f.|1
-d._b._q.s|1
 costumer|1
 barrow|1
 presid-|1
@@ -43982,9 +43154,7 @@ augie|1
 prinny|1
 banshee|1
 kaboodle|1
-r._c._b.|1
 webmaster|1
-c._s._s.|1
 touch-|1
 slinky's|1
 hound's|1
@@ -44020,7 +43190,6 @@ pre-teen|1
 punted|1
 triton|1
 parlo|1
-c._c._l._a.|1
 twirping|1
 'though|1
 floo-|1
@@ -44062,7 +43231,6 @@ emoti-|1
 telpro|1
 supposingly|1
 hoa-|1
-n._f._c.|1
 volleying|1
 ephedrine|1
 lepenska|1
@@ -44088,7 +43256,6 @@ gentlest|1
 fidget|1
 benched|1
 lisa's|1
-f._h._m.|1
 screech|1
 nivel|1
 directv|1
@@ -44198,7 +43365,6 @@ visi-|1
 confederate's|1
 mistletoe|1
 mistru-|1
-a._c._d._c.|1
 kool-aid|1
 nahuh|1
 treater|1
@@ -44241,7 +43407,6 @@ cornucopia|1
 shire|1
 bolshy-|1
 teness-|1
-i.s|1
 garments|1
 lacage|1
 grouches|1
@@ -44270,7 +43435,6 @@ humvee|1
 number-|1
 bein|1
 squadrons|1
-a._c._m._e.|1
 corso|1
 roslin|1
 amic|1
@@ -44295,7 +43459,6 @@ fifty-three|1
 totalmente|1
 spinoffs|1
 weinsorf|1
-work?|1
 imprompt|1
 hee-haw|1
 in-in|1
@@ -44317,7 +43480,6 @@ unc|1
 meddles|1
 yuppieville|1
 moderation's|1
-f._d._a.'s|1
 unfond|1
 absentmindedly|1
 tourette's|1
@@ -44363,7 +43525,6 @@ finnigan's|1
 carino's|1
 biaggi's|1
 madeleine's|1
-e._t.'s|1
 mcchicken|1
 yangs|1
 wield|1
@@ -44436,7 +43597,6 @@ tacks|1
 croker|1
 mcclean|1
 starline|1
-i._c._s.|1
 cowy|1
 vaca|1
 minions|1
@@ -44459,7 +43619,6 @@ bromley|1
 rafik|1
 asha-|1
 re-inspire|1
-k._o._a.'s|1
 flourishes|1
 lithograph|1
 bringers|1
@@ -44518,7 +43677,6 @@ intermurals|1
 typic-|1
 firmin|1
 laypeople|1
-l._v.|1
 tallis|1
 mastic|1
 shinnicock|1
@@ -44542,7 +43700,6 @@ coolridge|1
 davies'|1
 trams|1
 tisham|1
-r._s._d.|1
 kisco|1
 guttural|1
 trillionaires|1
@@ -44570,7 +43727,6 @@ enforcements'|1
 kitting|1
 lobbying's|1
 corrup-|1
-p._x.s|1
 acumen|1
 businesses'|1
 scrushy|1
@@ -44615,7 +43771,6 @@ rocky's|1
 offspring's|1
 republished|1
 soprano's|1
-r.s|1
 mommaloni|1
 alamanian|1
 dito|1
@@ -44647,7 +43802,6 @@ chapel's|1
 curate|1
 metroer|1
 largemont|1
-e.s|1
 jones's|1
 tv's|1
 fissure|1
@@ -44657,7 +43811,6 @@ kinko's|1
 implantation|1
 inpl-|1
 bryman|1
-m._a._c.s|1
 equivalents|1
 frats|1
 revolutionizes|1
@@ -44816,12 +43969,10 @@ equalness|1
 unzip|1
 macarthy|1
 survei-|1
-perspectives.|1
 dyla-|1
 pinpoints|1
 deves-|1
 freew-|1
-a._i._d._s.|1
 cauti-|1
 redialing|1
 jip-|1
@@ -44898,7 +44049,6 @@ starin-|1
 dyerson|1
 paloma|1
 osteopathi-|1
-u._c._d.|1
 waltzing|1
 buncha|1
 waltzes|1
@@ -44946,7 +44096,6 @@ cushing|1
 bartender's|1
 bartendered|1
 lep-|1
-u._g.|1
 smoki-|1
 pot-heads|1
 califorina|1
@@ -44968,7 +44117,6 @@ boss'll|1
 everyon-|1
 reapplied|1
 non-drug|1
-f.ed|1
 sporadic-|1
 demetrius|1
 danberry|1
@@ -45002,7 +44150,6 @@ enhancers|1
 prehiring|1
 midemployment|1
 subis-|1
-c._p._t.|1
 sideswipes|1
 retrial|1
 masa|1
@@ -45065,7 +44212,6 @@ kenmore's|1
 hiccups|1
 hambulli|1
 earthquake's|1
-s._l._a.|1
 safely's|1
 dilutes|1
 doused|1
@@ -45102,7 +44248,6 @@ forty-seven|1
 wouldlove|1
 unprofitable|1
 rothman|1
-u._c._r.|1
 entryways|1
 coroners|1
 christoph-|1
@@ -45144,7 +44289,6 @@ dts|1
 kools|1
 vaporizes|1
 cigar-|1
-n._r._t.|1
 boringness|1
 idleness|1
 showboat|1
@@ -45156,21 +44300,17 @@ sick-|1
 coppell|1
 whammying|1
 mal's|1
-a._d._s.|1
 -servative|1
 caca|1
 grinner|1
 wee-ho|1
 non-flight|1
 -cellent|1
-c._c._f.|1
 directorship|1
 crowning|1
-p._l._u.|1
 aibo|1
 sony's|1
 unlicensed|1
-s._a.|1
 garnier|1
 baroque|1
 distillers|1
@@ -45179,12 +44319,10 @@ cincinnatian|1
 ohioan|1
 mackintosh|1
 djed|1
-b._a._r._t.|1
 planetarium|1
 nint-|1
 aromatic|1
 postdoctoral|1
-e._o._s.|1
 minolta|1
 travelling's|1
 oddies|1
@@ -45277,7 +44415,6 @@ nobler|1
 ellsberg|1
 speech-|1
 fransisco|1
-k._l._w.|1
 moguls|1
 biasing|1
 bustamonte|1
@@ -45311,7 +44448,6 @@ pinball's|1
 tachyon's|1
 tac-|1
 arkanoids|1
-a._c._s.|1
 counterstrike's|1
 subcontract|1
 pepperdine's|1
@@ -45331,10 +44467,8 @@ arcologies|1
 resolute-|1
 ladybug|1
 tucows|1
-a._g._p.|1
 zilog|1
 sprinkled|1
-m._o._h.|1
 discworld|1
 asus|1
 starseed's|1
@@ -45350,7 +44484,6 @@ galaxies|1
 gamewise|1
 scripting|1
 protection's|1
-a._m._c.s|1
 ueberroth|1
 megaplexes|1
 corky|1
@@ -45390,7 +44523,6 @@ neighborhoody|1
 burgeoning|1
 reason-|1
 iota|1
-a._m._c.'s|1
 katharine|1
 visalia|1
 tights|1
@@ -45405,7 +44537,6 @@ wurn-|1
 tern|1
 multiplexed|1
 sugarcubes|1
-b._b._q.s|1
 confidently|1
 registrar|1
 pascet|1
@@ -45420,7 +44551,6 @@ sorcerer's|1
 kinnison|1
 dangerfield's|1
 ees-|1
-d._d._s.|1
 journeys|1
 plot's|1
 cruises'|1
@@ -45536,7 +44666,6 @@ kurosawa|1
 akira|1
 cooper's|1
 vend|1
-u.'s|1
 subpoenas|1
 copyrights|1
 woun-|1
@@ -45619,7 +44748,6 @@ misallocated|1
 froncho|1
 teache-|1
 chauffeured|1
-i._e._p.'s|1
 solarno|1
 crappier|1
 texas's|1
@@ -45642,14 +44770,12 @@ edicts|1
 fulcrum|1
 unovercomeable|1
 bellville|1
-f._c._a._t._s.|1
 cheval|1
 ranchero|1
 chevys|1
 stephenville|1
 gert|1
 mcdonagh|1
-d._j._b._a.|1
 fund-|1
 ravaged|1
 gat-|1
@@ -45662,10 +44788,7 @@ harnessed|1
 colossally|1
 shetch|1
 guilton|1
-j._d.s|1
 doug's|1
-s._j._s._u.|1
-s._c._u.|1
 ucs|1
 dee-|1
 regimens|1
@@ -45702,10 +44825,7 @@ larkin|1
 heathers|1
 moneybags|1
 phong|1
-g._m._i.|1
-j._d._a.|1
 like's|1
-c._i._o.|1
 hunnington|1
 docal|1
 homeboys|1
@@ -45716,8 +44836,6 @@ venti|1
 redken|1
 slope's|1
 measurecom|1
-d._m._c._c.|1
-p._v._i.|1
 succee-|1
 wahid|1
 retook|1
@@ -45762,7 +44880,6 @@ sloping|1
 bleakest|1
 drink's|1
 happenstances|1
-s._f.|1
 flaversham|1
 pentax|1
 dubinsky|1
@@ -45776,11 +44893,9 @@ nobility|1
 fearfulness|1
 poole|1
 doren|1
-u._c._a.|1
 padellen|1
 pragg's|1
 wormholes|1
-s._s._t.|1
 trillionaire|1
 gravity's|1
 graviton|1
@@ -45802,7 +44917,6 @@ guardrail|1
 microcapsule|1
 viaduct|1
 hitten|1
-a._p._n.|1
 apply-|1
 portfolio's|1
 unfulfilling|1
@@ -45837,7 +44951,6 @@ rockingham|1
 invert|1
 tool's|1
 seeger|1
-k._m.|1
 iconic|1
 midwifery|1
 butter-|1
@@ -45876,7 +44989,6 @@ desola-|1
 plazas|1
 statistic's|1
 investment's|1
-t._r.|1
 cala|1
 fathe-|1
 laddie|1
@@ -46020,7 +45132,6 @@ wade-|1
 strongholds|1
 pole's|1
 'xuse|1
-f._i._c._a.|1
 him-|1
 ormeeya|1
 associ-|1
@@ -46042,14 +45153,12 @@ swilly|1
 bollocks|1
 indulgences|1
 kovac|1
-d._c._l._a.|1
 keggers|1
 withy|1
 horham|1
 orbital|1
 opticians|1
 finance-|1
-u._n._b._c.|1
 puma|1
 mins-|1
 wef-|1
@@ -46082,7 +45191,6 @@ moorpark|1
 beatle|1
 gauze|1
 fulfills|1
-a._n._r.|1
 besc-|1
 convin-|1
 counterintuitive|1
@@ -46097,7 +45205,6 @@ loosy|1
 compatibil-|1
 not's|1
 flyest|1
-e.g.|1
 timberlanes|1
 flamey|1
 lutherish|1
@@ -46208,7 +45315,6 @@ consider-|1
 sacatecas|1
 scintillating|1
 squid's|1
-r._a.s|1
 chinchilla's|1
 gimpy|1
 furred|1
@@ -46298,7 +45404,6 @@ exertive|1
 two-|1
 gets-|1
 maricon|1
-b._f._a.|1
 podges|1
 shoals|1
 rattener|1
@@ -46337,9 +45442,7 @@ alber|1
 ecomass|1
 carlene|1
 caskets|1
-w._k._n._o.|1
 frisk-|1
-m._l._d.|1
 holbrook|1
 perfor-|1
 fantails|1
@@ -46363,7 +45466,6 @@ genita-|1
 mucous|1
 aquita|1
 canidae|1
-e._s._p._n.'s|1
 blakeport|1
 disenlisted|1
 ikuski|1
@@ -46412,14 +45514,12 @@ misma-|1
 compilations|1
 diction|1
 telestrator|1
-a.s|1
 schlessinger|1
 snowbo-|1
 crazing|1
 explai-|1
 bonz|1
 nl-|1
-u._p._a.|1
 marinette|1
 sheboygan|1
 summerfest|1
@@ -46451,10 +45551,8 @@ boxy|1
 ruddock|1
 bowe|1
 songwriters|1
-w._k._b._d.|1
 ireson|1
 eagle-|1
-m._p._p.|1
 mighties|1
 resigns|1
 westfork|1
@@ -46466,7 +45564,6 @@ clementi|1
 solider|1
 dominantly|1
 potemple|1
-r._b._i.|1
 whiteman|1
 evolvement|1
 earpieces|1
@@ -46496,7 +45593,6 @@ journalists'|1
 lakers'|1
 pineiro|1
 shutout|1
-p._o._v.|1
 tron|1
 premiering|1
 jamma|1
@@ -46506,7 +45602,6 @@ borders'|1
 reseda|1
 lyin'|1
 devotes|1
-s.s|1
 extre-|1
 swimmi-|1
 racing's|1
@@ -46519,7 +45614,6 @@ l'andre|1
 wicket|1
 taqueria|1
 falway|1
-k._t._e._l.|1
 rambis|1
 undefeatable|1
 nextel's|1
@@ -46529,7 +45623,6 @@ sponsor's|1
 more-|1
 punting|1
 sportstastic|1
-n._y._u.s|1
 swim-|1
 strasburg|1
 beleaguered|1
@@ -46549,7 +45642,6 @@ vertact|1
 worera|1
 knickerbocker|1
 mysterio|1
-j._p._e._g.|1
 darach|1
 caledokos|1
 foils|1
@@ -46562,7 +45654,6 @@ stallback|1
 schram|1
 deflected|1
 wingerland|1
-e._s._b._n.'s|1
 socce-|1
 wristband|1
 hypertext|1
@@ -46571,10 +45662,7 @@ immedia-|1
 mattan|1
 ainge|1
 hammerty|1
-x._f._o.s|1
 steelers'|1
-x._s._l.|1
-s._e._v.s|1
 arc-|1
 headq-|1
 toxin's|1
@@ -46672,7 +45760,6 @@ halloweenish|1
 purim's|1
 maccabees|1
 serbians|1
-p._k.s|1
 jabbed|1
 yuri|1
 'burban|1
@@ -46760,7 +45847,6 @@ weardon|1
 molasses|1
 minutely|1
 sks-|1
-c._n._n.s|1
 salesmanship|1
 qusay's|1
 squabbled|1
@@ -46797,7 +45883,6 @@ morticians'|1
 purportedly|1
 perpet-|1
 institutionalization|1
-w._m._d.|1
 weapon-|1
 samarra|1
 propagandistic|1
@@ -46815,7 +45900,6 @@ unwavering|1
 infantilized|1
 native's|1
 campaigned|1
-l._b.|1
 people're|1
 obliteration|1
 theyself|1
@@ -46841,7 +45925,6 @@ aegis|1
 rebu|1
 aba-|1
 snitch|1
-p._b._c.|1
 howlson|1
 gladiatorial|1
 undemocratic|1
@@ -46917,7 +46000,6 @@ stalag|1
 capos|1
 reprise|1
 wagons|1
-w._g.|1
 klingon|1
 marvista|1
 roller-|1
@@ -46947,7 +46029,6 @@ tobb|1
 garrick|1
 shulman|1
 hopefuls|1
-i._f._c.|1
 episodic|1
 fos-|1
 fortuna|1
@@ -47153,7 +46234,6 @@ fuzzies|1
 revolted|1
 reichen|1
 mid-wiltshire|1
-c._i.|1
 banks's|1
 hester|1
 hull-|1
@@ -47250,7 +46330,6 @@ cameraman's|1
 swags|1
 vegas'|1
 eac-|1
-t._h._e.|1
 styvesant|1
 straight-|1
 -in|1
@@ -47303,12 +46382,10 @@ unhealthiest|1
 central's|1
 humidifiers|1
 rj|1
-k._o.|1
 mooing|1
 tinsel|1
 glistening|1
 accompaniment|1
-k._p.|1
 construing|1
 member-|1
 shit'll|1
@@ -47386,7 +46463,6 @@ ruzucki|1
 scrat-|1
 francisc-|1
 kp-|1
-k._p._f._a.|1
 kpf-|1
 venostasis|1
 venos-|1
@@ -47396,7 +46472,6 @@ pneumovax|1
 ryder's|1
 moreka|1
 epidemiological|1
-e._i._s.|1
 unnaturalness|1
 doggedly|1
 unexpectedness|1
@@ -47427,7 +46502,6 @@ ultravent|1
 renal|1
 wellcome|1
 glaxo|1
-b._p._h.|1
 pneumonia's|1
 alergist|1
 scratc-|1
@@ -47493,7 +46567,6 @@ checkouts|1
 chewier|1
 luckiest|1
 reshaping|1
-a._u.|1
 symph-|1
 milwak-|1
 chancer|1
@@ -47603,7 +46676,6 @@ balsamic|1
 dullness|1
 half-sister|1
 gobson|1
-I|1
 ponderosa's|1
 -sitter|1
 scraggly|1
@@ -47677,7 +46749,6 @@ favoritisms|1
 doggoned|1
 committ-|1
 kauffmans|1
-u._s._x.|1
 sowe|1
 cafet-|1
 justin's|1
@@ -47705,8 +46776,6 @@ longtime|1
 world-wide|1
 tenden-|1
 camperee|1
-l._t._s.|1
-b._s._a.|1
 lunchtimes|1
 acquires|1
 duhall|1
@@ -47862,7 +46931,6 @@ childer's|1
 philo-|1
 wissahickon|1
 clubbed|1
-d._a._c.|1
 saler|1
 alberson's|1
 recouponing|1
@@ -47905,7 +46973,6 @@ ers|1
 fores-|1
 chassar|1
 damndest|1
-d._e._e._t.|1
 curi-|1
 jumpers|1
 palest|1
@@ -48031,7 +47098,6 @@ croak|1
 overeducated|1
 indoor's|1
 bicycling's|1
-w._h._m.|1
 uproars|1
 basical-|1
 hemsley|1
@@ -48042,7 +47108,6 @@ entertainments|1
 retrenched|1
 mci|1
 auditor's|1
-m._c._s.|1
 misdoings|1
 pena-|1
 tempts|1
@@ -48065,7 +47130,6 @@ pend-|1
 texoma|1
 stephanopoulos|1
 barricading|1
-f._t._c.|1
 plunging|1
 thousa-|1
 dagel|1
@@ -48089,7 +47153,6 @@ blackball|1
 nm-|1
 insiders'|1
 -ma-|1
-i._n.|1
 pragmatism|1
 bowski|1
 magnetism|1
@@ -48161,9 +47224,7 @@ play-doh|1
 hard-boiled|1
 sarah-anne|1
 intertwining|1
-u._m._f.|1
 glucocorticoid|1
-p._i.s|1
 oxidative|1
 keyring|1
 settle-|1
@@ -48194,8 +47255,6 @@ eightyish|1
 sinaville|1
 provocateur|1
 jowls|1
-h._b._u.|1
-p._s._a._t.s|1
 lanier|1
 kema|1
 matriarchs|1
@@ -48244,7 +47303,6 @@ orbited|1
 britannicas|1
 goldeneye|1
 sables|1
-d._i._r._w.|1
 programed|1
 -quired|1
 windstar|1
@@ -48274,13 +47332,11 @@ coordinat-|1
 droids|1
 droid|1
 technophobe|1
-c._u._e.|1
 warriator|1
 iq|1
 them've|1
 kidner-|1
 voila|1
-c._c._a.s|1
 -cational|1
 eduqu-|1
 novi|1
@@ -48323,7 +47379,6 @@ proctoring|1
 resourcer|1
 program-|1
 snowman's|1
-a._p._a.|1
 unscientific|1
 tames|1
 preps|1
@@ -48342,7 +47397,6 @@ diction-|1
 disengaging|1
 danker|1
 shatteringly|1
-g._s.|1
 suppleme-|1
 taliba-|1
 matzos|1
@@ -48352,7 +47406,6 @@ pompadour|1
 pakista-|1
 ado-|1
 upstarts|1
-u._n._t.|1
 egotist|1
 kindheartedness|1
 democra-|1
@@ -48365,7 +47418,6 @@ innova-|1
 profit-|1
 saber|1
 accep-|1
-p._a._t._h.|1
 sentiment's|1
 waldwick|1
 prejudic-|1
@@ -48434,7 +47486,6 @@ encrippled|1
 jamaica's|1
 aero|1
 hubristic|1
-i._l.|1
 pragmatically|1
 ibert|1
 poyntus|1
@@ -48458,7 +47509,6 @@ beside-|1
 unrecognizable|1
 bartlett|1
 cayden|1
-w._n.|1
 cooter|1
 conserve-|1
 aufair|1
@@ -48515,8 +47565,6 @@ closel-|1
 snipered|1
 maie|1
 talk's|1
-g._n._p.s|1
-u._j._a.|1
 vaneet|1
 pacemakers|1
 nanometer|1
@@ -48543,8 +47591,6 @@ flattern|1
 reposition|1
 formica|1
 itsy|1
-m._o._s._s._a._d.|1
-k._g._b.|1
 curlers|1
 shrip-|1
 swinburg|1
@@ -48577,7 +47623,6 @@ penknife|1
 benares|1
 hindi's|1
 blastings|1
-m._s._u.|1
 misser|1
 van's|1
 irritib-|1
@@ -48598,7 +47643,6 @@ cities'|1
 -fluenced|1
 activates|1
 luggages|1
-m._v._p.s|1
 sunwear|1
 charit-|1
 impersonator|1
@@ -48613,7 +47657,6 @@ spearheads|1
 seahawk|1
 objectivism|1
 fountainhead|1
-n._s._o.|1
 rin-|1
 basebal-|1
 dupont's|1
@@ -48626,7 +47669,6 @@ renegotiated|1
 trinity's|1
 inter-league|1
 chrysler's|1
-m._t._v.s|1
 potts|1
 hornace|1
 frankfurters|1
@@ -48773,7 +47815,6 @@ draya|1
 afterw-|1
 conscient-|1
 conscien-|1
-w._l._i._w.|1
 hyderabad|1
 sangeta|1
 swarming|1
@@ -48804,7 +47845,6 @@ rebook|1
 wack-|1
 -um|1
 deloris|1
-a._s._a._m.|1
 attractors|1
 levron|1
 shakiest|1
@@ -48878,7 +47918,6 @@ piscataway|1
 thingummy|1
 jam-|1
 creaky|1
-n._b._s.|1
 submerse|1
 narage|1
 policemen's|1
@@ -48907,7 +47946,6 @@ achiness|1
 synd-|1
 sinesia|1
 inchworm|1
-b._p.|1
 hindustani|1
 dasa|1
 kali|1
@@ -48983,7 +48021,6 @@ ikijit-|1
 silat|1
 pentjak|1
 bondo|1
-c._e._a._s._e.|1
 molten|1
 delivery's|1
 pricking|1
@@ -49070,7 +48107,6 @@ nyah|1
 boardy|1
 -sential|1
 rubes|1
-r._i._f.|1
 guidanceship|1
 adven-|1
 understo-|1
@@ -49176,7 +48212,6 @@ contraceptives|1
 hoos|1
 momar|1
 grandhold|1
-s._p._a._m.|1
 dwarf's|1
 blyton|1
 enid|1
@@ -49228,7 +48263,6 @@ witchcrafty|1
 conjugate|1
 ruffling|1
 bernstein|1
-i._e._p.|1
 mn|1
 fondle|1
 ero-|1
@@ -49277,7 +48311,6 @@ headfirst|1
 inbr-|1
 pivotally|1
 festively|1
-d._l._t.|1
 evangelistic|1
 rigmaroles|1
 impairing|1
@@ -49306,7 +48339,6 @@ boons-|1
 gaseous|1
 meteor's|1
 decontamination|1
-l._v._s.|1
 blackfoot|1
 unexpectable|1
 readied|1
@@ -49391,8 +48423,6 @@ togan|1
 diapering|1
 inartistically|1
 hilliers|1
-s._m.|1
-m._n._m.|1
 regals|1
 ander|1
 spreaders|1
@@ -49415,7 +48445,6 @@ knoxville's|1
 aminat-|1
 chrysalis|1
 cayuga|1
-v.s|1
 editorialism|1
 familiarizing|1
 sapphires|1
@@ -49447,7 +48476,6 @@ oncoming|1
 karmageddon|1
 joust|1
 galaxia|1
-z._d.|1
 rube|1
 re-deal|1
 twilly|1
@@ -49463,7 +48491,6 @@ mortalities|1
 petma-|1
 e-group|1
 compata-|1
-a._h._d.|1
 unprogramming|1
 reprogramming|1
 namer|1
@@ -49492,7 +48519,6 @@ niobe|1
 undisturbed|1
 forrester|1
 price'll|1
-h._d._t._v.s|1
 icepack|1
 keanu's|1
 nicolson's|1
@@ -49596,8 +48622,6 @@ unfund|1
 gays'|1
 inattentive|1
 mains-|1
-l._d.|1
-c._p.|1
 sterner|1
 mid-state|1
 democrac-|1
@@ -49613,7 +48637,6 @@ overnighter|1
 inclusiveness|1
 peppered|1
 shakedowns|1
-w._t._y.|1
 cept-|1
 sols|1
 edenberry|1
@@ -49623,13 +48646,10 @@ dodos|1
 attica|1
 conservancy|1
 entr|1
-m._e._a._t.|1
 midterm|1
 pre-care|1
 desegregating|1
 mixtures|1
-l._e._a._p.|1
-c._r._t.|1
 budgetary|1
 regone|1
 huc-|1
@@ -49640,7 +48660,6 @@ childress|1
 re-getting|1
 class's|1
 reworded|1
-p._t._a.'s|1
 muggings|1
 materialism's|1
 -tario|1
@@ -49657,7 +48676,6 @@ lucrecia|1
 styberson|1
 annualize|1
 petsald|1
-a.'s.|1
 natick|1
 liesl|1
 rhinebeck|1
@@ -49666,7 +48684,6 @@ facto|1
 matu-|1
 doozer|1
 localizing|1
-g._e._d.s|1
 pubs-|1
 conservations|1
 galleria|1
@@ -49681,7 +48698,6 @@ chardonnays|1
 scari-|1
 foolhardiness|1
 foolhardy|1
-x._l.|1
 cratchey|1
 matilda's|1
 benefact-|1
@@ -49705,7 +48721,6 @@ chemin|1
 sensua-|1
 serpentine|1
 moll|1
-a._s._c.|1
 toug-|1
 gillespie|1
 -teering|1
@@ -49723,15 +48738,12 @@ now'll|1
 betrayer|1
 quepos|1
 redefinition|1
-l._p._n.s|1
-r._n.s|1
 saturnine|1
 engined|1
 une-|1
 furloughs|1
 southward|1
 wellsy|1
-h._g.|1
 unclutter|1
 tanking|1
 nit-|1
@@ -49749,7 +48761,6 @@ joelle|1
 sensual|1
 bookend|1
 representa-|1
-d._r._a.|1
 likewi-|1
 penetrating|1
 ararat|1
@@ -49758,7 +48769,6 @@ motorcycle's|1
 sumatra|1
 beastie|1
 phot-|1
-f._i._t.|1
 invent-|1
 snitched|1
 nichol|1
@@ -49790,7 +48800,6 @@ ocsta-|1
 confirmations|1
 devora|1
 unappreciated|1
-o.s|1
 piggybacked|1
 felicitation|1
 intest|1
@@ -49820,7 +48829,6 @@ stowaways|1
 hideaways|1
 mullane|1
 kensey|1
-a._t._s.|1
 hyper-|1
 iyda|1
 zeal-|1
@@ -49901,7 +48909,6 @@ distaste-|1
 misogynist|1
 button's|1
 tapin-|1
-d._e._t.|1
 demoin|1
 oversteps|1
 tenvale|1
@@ -49951,7 +48958,6 @@ kass|1
 tina's|1
 oversupply|1
 remarketing|1
-i._t.'s|1
 gomez|1
 claridon's|1
 convey-|1
@@ -49960,7 +48966,6 @@ mcleans|1
 rentmouth|1
 unemp-|1
 instan-|1
-d._c._s._s.|1
 bride's|1
 davin|1
 'hood|1
@@ -49978,7 +48983,6 @@ groc-|1
 taxachusetts|1
 farmhands|1
 dedication's|1
-a._f._d._c.|1
 aim's|1
 kr-|1
 freeload|1
@@ -50038,7 +49042,6 @@ willing-|1
 brookland|1
 conscientiousness|1
 tiptoeing|1
-n._o._i._s._e.|1
 codependency|1
 impersonate|1
 relationship-|1
@@ -50064,7 +49067,7 @@ heretic|1
 thanks'|1
 jealousy's|1
 wire-|1
-f.'ing|1
+'ing|1
 scrabbling|1
 hensen|1
 pentecostals|1
@@ -50091,7 +49094,6 @@ mousters|1
 stabler|1
 reckons|1
 og|1
-c.'er|1
 puffball|1
 cushings|1
 washrag|1
@@ -50101,7 +49103,6 @@ ahmee|1
 precariously|1
 perched|1
 bianca's|1
-i._a._m._s.|1
 deathl-|1
 mops|1
 nonshedding|1
@@ -50213,7 +49214,6 @@ slaloms|1
 duran|1
 cheerle-|1
 teleperformance|1
-s._t._v.|1
 garvey|1
 valenzuela|1
 loax|1
@@ -50239,9 +49239,7 @@ gladman|1
 clemmens|1
 speared|1
 laterals|1
-h._b._o.s|1
 chars-|1
-e._s._p._n.s|1
 scrums|1
 alcoa|1
 collan|1
@@ -50259,7 +49257,6 @@ autozones|1
 wal-marts|1
 irving's|1
 palance|1
-b.'s.|1
 acworth|1
 belmar|1
 longbranch|1
@@ -50313,7 +49310,6 @@ ardy|1
 sired|1
 nearsightedness|1
 projectile|1
-a._l._o.|1
 iberson|1
 timberline|1
 netted|1
@@ -50326,9 +49322,7 @@ jamesville|1
 m&m|1
 derra|1
 linebackers|1
-u._o.|1
 tostitos|1
-l._p._t._a.|1
 colwell|1
 centerway|1
 cucoach|1
@@ -50340,7 +49334,6 @@ delon|1
 wres-|1
 voulez|1
 pirates'|1
-f._o._l._s.|1
 goalers|1
 alai's|1
 alai|1
@@ -50420,7 +49413,6 @@ nonpaying|1
 bummest|1
 decayed|1
 symposium|1
-m._d._a.s|1
 knowing's|1
 unwrapped|1
 allude|1
@@ -50472,7 +49464,6 @@ quietus|1
 holidaying|1
 commemorates|1
 ambit-|1
-r._t._d.|1
 pecul-|1
 fakery|1
 artificiality|1
@@ -50502,7 +49493,6 @@ gul-|1
 altercations|1
 midways|1
 uganda|1
-r._s._v.|1
 branston|1
 believ-|1
 squealed|1
@@ -50511,7 +49501,6 @@ kennebunk-|1
 somalians|1
 suicide-|1
 counterfeited|1
-m._o._a._b.|1
 falkland|1
 concretely|1
 pro-clergy|1
@@ -50538,8 +49527,6 @@ blindfold|1
 losing-|1
 confessing|1
 arduous|1
-t._s._n.|1
-t._s._t.|1
 lofter's|1
 mette|1
 elimidated|1
@@ -50612,7 +49599,6 @@ liq-|1
 weightlifters|1
 algen|1
 stockley|1
-d._f._l.|1
 eudora|1
 makeup's|1
 wreaked|1
@@ -50639,7 +49625,6 @@ accapulco|1
 embellishment|1
 amou-|1
 zeroes|1
-i._l._d.|1
 deadens|1
 moderating|1
 fetters|1
@@ -50674,7 +49659,6 @@ vitaminute|1
 fructose|1
 vitabears|1
 ringworm|1
-n._f._o.'s|1
 northbrook|1
 hickman|1
 re-implant|1
@@ -50748,7 +49732,6 @@ eustacean|1
 dorenda|1
 asthmas|1
 listlessness|1
-r._r.|1
 beget|1
 herbalize|1
 reliv|1
@@ -50757,7 +49740,6 @@ potpie|1
 reinfecting|1
 linden|1
 saltaco|1
-d._x.|1
 picchu|1
 machu|1
 andes|1
@@ -50840,7 +49822,6 @@ peeler|1
 unlisted|1
 bargainer|1
 indianapo-|1
-h._d._l.|1
 masterpieces|1
 mya|1
 aztec|1
@@ -50870,7 +49851,6 @@ christy's|1
 thyme|1
 collating's|1
 laparoscopically|1
-j._e._t.|1
 donado's|1
 baguette|1
 seafoods|1
@@ -50911,7 +49891,6 @@ transfat|1
 kilson|1
 malea|1
 crisps|1
-c._c.s|1
 ponchos|1
 chevy's|1
 butter's|1
@@ -50935,7 +49914,6 @@ shiitake|1
 lomay|1
 egglands|1
 comping|1
-i._b._p.|1
 rosie's|1
 pregnancy's|1
 eyre|1
@@ -50992,7 +49970,6 @@ wahu|1
 lomilomi|1
 yoke|1
 heaping|1
-m._t._o.|1
 leedeow|1
 portioned|1
 nort's|1
@@ -51005,7 +49982,6 @@ coug|1
 southstead|1
 vig|1
 inevitable's|1
-u._f._o.'s|1
 similari-|1
 socializers|1
 penam|1
@@ -51029,7 +50005,6 @@ hare|1
 rima|1
 ronya|1
 letania|1
-a._o.|1
 soard|1
 felicia's|1
 fizzes|1
@@ -51089,8 +50064,6 @@ tak|1
 sheila's|1
 diane's|1
 gina's|1
-n.s|1
-u.s|1
 bopped|1
 neonate|1
 neonates|1
@@ -51207,7 +50180,6 @@ jargon|1
 cohn|1
 multibillionaire|1
 depar-|1
-s._a._c.|1
 democratize|1
 stockholder's|1
 lambaste|1
@@ -51226,7 +50198,6 @@ capital-|1
 valuated|1
 suzanna|1
 toothpastes|1
-f._t._a._a.|1
 genetic-|1
 ndc|1
 disillusions|1
@@ -51337,7 +50308,6 @@ camp's|1
 biscayne|1
 hurricane's|1
 decorticate|1
-d._n._r.|1
 gallivanting|1
 mccaffrey|1
 peso|1
@@ -51357,8 +50327,6 @@ childishness|1
 interfering'|1
 clannishy|1
 selexa|1
-a._c._o._a.|1
-p._g._n.|1
 redistricted|1
 -quires|1
 imbred|1
@@ -51372,7 +50340,6 @@ cohabitating|1
 cea-|1
 mimicry|1
 aspens|1
-d._s._s.|1
 registries|1
 pre-licensing|1
 siblings'|1
@@ -51401,25 +50368,20 @@ smileys|1
 isolates|1
 absentees|1
 pornos|1
-l._t._m.|1
 neesha|1
-e._e._g.|1
 twitch|1
 alousiana|1
 associates'|1
-l._t._n.|1
 arkan|1
 nisha|1
 technolized|1
 depersonalized|1
 comeuppance|1
-o._a.|1
 prittany|1
 frag-|1
 unsuitable|1
 inth|1
 microfiche|1
-p._v._a.|1
 pentacle|1
 porno-|1
 streamlining|1
@@ -51429,7 +50391,6 @@ pixes|1
 mariette|1
 olivetti|1
 keypunch|1
-t._i.s|1
 plateaus|1
 intercity|1
 wilkesberg|1
@@ -51439,7 +50400,6 @@ girls'll|1
 galls|1
 imd|1
 disencourage|1
-h._g._h.|1
 chaperons|1
 yar|1
 tierney|1
@@ -51503,7 +50463,6 @@ kri-|1
 braz-|1
 saris|1
 shake-|1
-s._a._i.|1
 blanco|1
 surfaced|1
 hitchhike|1
@@ -51513,8 +50472,6 @@ withdrawed|1
 signa-|1
 effigy|1
 civvies|1
-b._d._u.s|1
-i._r._r.|1
 wisconsion|1
 slights|1
 loath|1
@@ -51557,7 +50514,6 @@ humas|1
 smites|1
 brutalities|1
 kinole|1
-n._p._r.'s|1
 ottomans|1
 katie's|1
 ruler's|1
@@ -51583,7 +50539,6 @@ blahdyy|1
 guestimation|1
 dorethea|1
 applewayt|1
-t._c._u.|1
 nutrit-|1
 mosey|1
 damnest|1
@@ -51618,7 +50573,6 @@ cattails|1
 beep-|1
 cordo|1
 vag-|1
-u._s._p._a.|1
 karema|1
 gogamale|1
 elgrove|1
@@ -51644,7 +50598,6 @@ cutter's|1
 frowny|1
 munn|1
 -adies|1
-n._s._f.|1
 girlies|1
 elkton|1
 signal-|1
@@ -51677,7 +50630,6 @@ raunch|1
 murderous|1
 gormless|1
 kids're|1
-t._s._l.s|1
 nb-|1
 shreena|1
 exorb-|1
@@ -51740,7 +50692,6 @@ kinetic|1
 extremo's|1
 juxtapoz|1
 escalante|1
-k._p._s._k.|1
 detoured|1
 posterity|1
 constantly's|1
@@ -51814,7 +50765,6 @@ conde-|1
 recom-|1
 tragedy's|1
 nixes|1
-a._w._a._c._s.|1
 onofre|1
 sorry'|1
 'listen|1
@@ -51839,7 +50789,6 @@ oiled|1
 prothotics|1
 maratho-|1
 messengered|1
-m._a._r._t._a.|1
 ochre|1
 officers'|1
 smart-|1
@@ -51862,7 +50811,6 @@ tusch|1
 newin|1
 peach-|1
 sandview|1
-a._m.'s|1
 newfound|1
 tapers|1
 runners'|1
@@ -51872,7 +50820,6 @@ prechet|1
 blass|1
 endor-|1
 thunderstormed|1
-p._a._c.|1
 nutritiously|1
 glit-|1
 sistersville|1
@@ -51884,7 +50831,6 @@ yucaipa|1
 hathen|1
 cletchy|1
 fasciitis|1
-n._c._w._a.|1
 scull|1
 eustachy|1
 precor|1
@@ -51941,7 +50887,6 @@ myadic|1
 inversion|1
 achier|1
 wome-|1
-m._r._i.s|1
 sand-|1
 grinders|1
 gruffness|1
@@ -52067,7 +51012,6 @@ greenwell|1
 easely|1
 ormen|1
 stein|1
-r._l.|1
 fairytales|1
 harroway|1
 halluc|1
@@ -52116,7 +51060,6 @@ casta|1
 bickers|1
 chauffeurs|1
 hogwash|1
-s._f.er|1
 dislodged|1
 chautauqua|1
 talka-|1
@@ -52162,8 +51105,6 @@ kins-|1
 hazar-|1
 correc-|1
 'fessing|1
-d._a._s.|1
-s._r._o.|1
 rehiring|1
 pabelo|1
 accommodated|1
@@ -52171,7 +51112,6 @@ procurement|1
 handbooks|1
 machiner-|1
 doned|1
-t._b._o.|1
 mendan-|1
 feno|1
 jonbenet|1
@@ -52264,7 +51204,6 @@ serona|1
 retrialing|1
 deny-|1
 alred|1
-a._s._t._u.|1
 fictionalised|1
 cn-|1
 manangle|1
@@ -52322,7 +51261,6 @@ hatteysburgh|1
 indianap-|1
 police'd|1
 kaleen|1
-o._b.s|1
 aut-|1
 rampart|1
 unease|1
@@ -52341,7 +51279,6 @@ jimmywa|1
 undefined|1
 countrified|1
 concordia|1
-n._d._f._u.|1
 maverick's|1
 mccleary|1
 immobilize|1
@@ -52358,7 +51295,6 @@ agra|1
 scratcher|1
 stunner|1
 dampeners|1
-l._a.s|1
 devout-|1
 clearw-|1
 evill|1
@@ -52399,7 +51335,6 @@ heartrending|1
 terrowi-|1
 postmistress|1
 overthrew|1
-v._n.|1
 combustible|1
 sprinkl-|1
 junkle|1
@@ -52422,7 +51357,6 @@ morris's|1
 nonsmo-|1
 gravitates|1
 antismoking|1
-c._q.|1
 expunged|1
 nota|1
 firestones|1
@@ -52431,7 +51365,6 @@ huddling|1
 patuti|1
 brillandy|1
 disproves|1
-r._j._r.|1
 suntans|1
 principalities|1
 adair|1
@@ -52440,7 +51373,6 @@ kaya|1
 earm-|1
 waukesha|1
 tars|1
-r._e._i.|1
 cigaretty|1
 ocu-|1
 marlboroughs|1
@@ -52476,7 +51408,6 @@ enve-|1
 frenetically|1
 chokes|1
 carcinogenic's|1
-c._f._s.|1
 carcinogen|1
 nonsmokers'|1
 bronchiolar|1
@@ -52640,10 +51571,8 @@ teapot|1
 lladro|1
 lladros|1
 krupps|1
-b._i._c.|1
 fittings|1
 needlepointing|1
-p._p.s|1
 thingees|1
 go-cart|1
 hair-|1
@@ -52692,7 +51621,6 @@ duval|1
 scarecrows|1
 lott-|1
 mcbain|1
-g._c._e.|1
 aphid|1
 claus-|1
 murk|1
@@ -52735,14 +51663,11 @@ banny|1
 coles|1
 okel|1
 hannerdy|1
-u._s._c._b.|1
 combatant|1
 summarizes|1
 jen-|1
 interviewees|1
 lapdogs|1
-k._g._a._n.|1
-k._n.|1
 forsythias|1
 vocally|1
 distill|1
@@ -52750,7 +51675,6 @@ ss|1
 semper|1
 redrawing|1
 forget-|1
-w._n._y._c._n._i.|1
 stratified|1
 gare-|1
 harpers|1
@@ -52763,16 +51687,12 @@ blenders|1
 oakalla|1
 eustis|1
 tavares|1
-t._e._s.|1
 byline|1
 negations|1
 subscri-|1
 summarizations|1
-w._m._u.|1
 widow's|1
 winnable|1
-n._b._c.'s|1
-w._b._r._c.|1
 hardl-|1
 manhandled|1
 participles|1
@@ -52789,7 +51709,6 @@ suburbsville|1
 aleni|1
 daig|1
 teenagers'|1
-s._m._s.|1
 retraction|1
 hone-|1
 disti-|1
@@ -52807,18 +51726,14 @@ murrow|1
 bartlesville|1
 juliana|1
 abc|1
-m._b._r.|1
 intimation|1
 statesmen|1
 rowboat|1
 gilliam|1
 sundry|1
 walk-ins|1
-d._n._v.|1
-g._n._v.s|1
 skylights|1
 redefined|1
-w._g._l._a.|1
 lavern|1
 dowd|1
 editorialists|1
@@ -52837,10 +51752,8 @@ lauderda-|1
 handbells|1
 spol-|1
 melbourne's|1
-u._c._s.|1
 arounds|1
 development's|1
-p._r._n.|1
 -it's|1
 limbyer|1
 cbs|1
@@ -52858,7 +51771,6 @@ spiritu-|1
 report'|1
 'we|1
 bedr-|1
-n._a._b._c.|1
 arie|1
 susteren|1
 newsflash|1
@@ -52881,7 +51793,6 @@ extinguishing|1
 carjacked|1
 hurric-|1
 talin|1
-r._o.|1
 cultury|1
 cb-|1
 obits|1
@@ -52897,11 +51808,9 @@ abraham's|1
 israeli-|1
 retaliates|1
 therefore's|1
-w._h._a._t.|1
 yon-|1
 newspa-|1
 blah's|1
-g._o._p.|1
 abridge|1
 cash's|1
 omi-|1
@@ -52917,7 +51826,6 @@ gyler|1
 brief-|1
 noca-|1
 untarnished|1
-j._f._k.'s|1
 opthamologist|1
 bril-|1
 hail's|1
@@ -52939,7 +51847,6 @@ chitter|1
 speediest|1
 ken's|1
 enveloping|1
-m._i._s._t.|1
 giselle|1
 repotting|1
 daubs|1
@@ -52951,7 +51858,6 @@ pacmans|1
 spitball|1
 sontella|1
 solit-|1
-m._s._n.'s|1
 dexter-|1
 add-|1
 bux|1
@@ -52974,7 +51880,6 @@ austen's|1
 anagrams|1
 honeycomb|1
 cubis|1
-h._g._t._v.|1
 ambi|1
 miasake|1
 airbud|1
@@ -53022,26 +51927,11 @@ octo-|1
 moviewise|1
 singalong|1
 grouchland|1
-f._y._e.|1
 non-professional|1
 waterworld|1
 mockumentaries|1
-d._v.-|1
 actre-|1
-restaurant?|1
-them,|1
 acces-|1
-three?|1
-assistance,|1
-retired.|1
-atlanta?|1
-concentrate,|1
-reading?|1
-doing?|1
-bad.|1
-not,|1
-fact,|1
-movies?|1
 post-season|1
 corel|1
 delver|1
@@ -53263,8 +52153,6 @@ den-|1
 remote-|1
 mam|1
 surfacely|1
-f.-|1
-f._c._a._t.'s|1
 perspe-|1
 exhorbitant|1
 indiv-|1
@@ -53279,12 +52167,9 @@ budafuco|1
 massapeaqua|1
 non-participant|1
 non-re-|1
-b._a._d.|1
 precalculus|1
-n._e._h._a.|1
 academ-|1
 preschool's|1
-i._t._b._s.|1
 wascals|1
 psh|1
 -xes|1
@@ -53295,7 +52180,6 @@ inr-|1
 tri-district|1
 magna|1
 phen-|1
-n._j._s.|1
 hm-mm|1
 -portant|1
 sponsing|1
@@ -53347,7 +52231,6 @@ mastercard's|1
 over-crowding|1
 dona-|1
 amplify|1
-effect.|1
 don'that's|1
 continuances|1
 macelvene|1
@@ -53359,7 +52242,6 @@ self-limiting|1
 paran-|1
 now-a-days|1
 dar|1
-friends,|1
 non-relative|1
 arizon-|1
 politest|1
@@ -53453,11 +52335,9 @@ reconciliation|1
 buro-|1
 kw-|1
 unsteady|1
-m._t._a.'s|1
 beatch|1
 crocked|1
 nishon|1
-m._c._i.s|1
 consciousnesses|1
 differentiator|1
 walburg|1
@@ -53466,8 +52346,6 @@ claim's|1
 investors'll|1
 airpower|1
 gascos|1
-c._o._o.s|1
-a._s._a.|1
 firm's|1
 polisci|1
 adelphi|1
@@ -53504,13 +52382,11 @@ propelling|1
 andersens|1
 scholes|1
 suisse|1
-v._p.s|1
 skillings|1
 zeeland|1
 surrealism|1
 compacting|1
 sympathetically|1
-o._p._n.|1
 slovakian|1
 rollovers|1
 ucsd|1
@@ -53539,7 +52415,6 @@ sippy|1
 hourish|1
 commutable|1
 holliston|1
-r._i._t.|1
 wahlberg|1
 langford|1
 rotter|1
@@ -53560,7 +52435,6 @@ procr-|1
 vamp|1
 encompa-|1
 solicits|1
-s._s._u.|1
 sulking|1
 dostoevsky|1
 karamazov|1
@@ -53570,7 +52444,6 @@ shellacking|1
 discuss-|1
 babysitting's|1
 deconey|1
-e._p._c._o._t.|1
 myers'|1
 filonion|1
 maker's|1
@@ -53600,7 +52473,6 @@ modernization|1
 modern-|1
 detriment-|1
 unrestricted|1
-m._b._a.'s|1
 strategy's|1
 banking's|1
 sumit's|1
@@ -53616,7 +52488,6 @@ paging|1
 walling|1
 cari-|1
 reinstall|1
-u._c._s._e.|1
 personalization|1
 sworded|1
 typo|1
@@ -53625,7 +52496,6 @@ e-reserve|1
 guestimations|1
 faci-|1
 attaining|1
-i._n._c.|1
 sko-|1
 mcquaid|1
 rochford|1
@@ -53766,7 +52636,6 @@ improv-|1
 transformers|1
 brews|1
 tribe-|1
-u._a._e.|1
 accede|1
 jummo|1
 supplanting|1
@@ -53790,7 +52659,6 @@ rasc-|1
 clint-|1
 mediatory|1
 millenniums|1
-e._e._s.|1
 rati-|1
 yitzhak|1
 obtains|1
@@ -53837,7 +52705,6 @@ fahey|1
 deadheading|1
 extinguishers|1
 airports'|1
-b._p._l.|1
 stool's|1
 unaccommodating|1
 jariman|1
@@ -53847,7 +52714,6 @@ hairdryer|1
 wartimes|1
 gomo|1
 launcher|1
-i._h._l.|1
 wolvers|1
 seahorn|1
 scholarship's|1
@@ -53865,7 +52731,6 @@ busner|1
 megastar|1
 cheer-|1
 supply'll|1
-l._d._c.'s|1
 millen-|1
 haywood|1
 fallant|1
@@ -53883,7 +52748,6 @@ vaughn's|1
 bron|1
 illustrated|1
 orthoscopic|1
-a._c._l.'s|1
 directors'|1
 broadway's|1
 percen-|1
@@ -53956,7 +52820,6 @@ lanbo|1
 relishes|1
 jivon|1
 elevened|1
-e._t._a.|1
 after's|1
 annico|1
 ethnocentrically|1
@@ -53980,7 +52843,6 @@ flagship|1
 comment's|1
 subcontinent|1
 knapsacks|1
-i._n._e._t.|1
 paresis|1
 -sin|1
 guardsman|1
@@ -54165,7 +53027,6 @@ catering's|1
 biog-|1
 steadier|1
 jill's|1
-g._b._h.|1
 havens|1
 experi-|1
 shockers|1
@@ -54174,7 +53035,6 @@ unrela-|1
 retried|1
 videot-|1
 compensatory|1
-h._p._d.'s|1
 defense's|1
 prisonment|1
 canons|1
@@ -54210,21 +53070,16 @@ causalities|1
 occuren-|1
 kronkite|1
 nationalist|1
-k._y._w.|1
-a._n._l.|1
 wbai|1
 intertwines|1
 spectacles|1
 rivaling|1
 acad-|1
-n._b._a.s|1
 whoof|1
 roleplaying|1
 parsippany|1
 montclare|1
-d._c._f._s.|1
 enjoyments|1
-a._s._c._a._p.|1
 coffeehouse|1
 delves|1
 dufuses|1
@@ -54240,7 +53095,6 @@ mior-|1
 kegonomics|1
 shef|1
 bila|1
-g._p._a.s|1
 o'connor's|1
 tomball|1
 diversity's|1
@@ -54253,7 +53107,6 @@ secularize|1
 deduce|1
 mils|1
 prostitutes'|1
-m._c._a._t.s|1
 iq-|1
 samantha's|1
 reallocate|1
@@ -54317,7 +53170,6 @@ ubiqu-|1
 embarcadero|1
 midstream|1
 ironclad|1
-b.s|1
 busti-|1
 adler|1
 steiger's|1
@@ -54345,7 +53197,6 @@ disproved|1
 relea-|1
 denials|1
 overlaying|1
-u._s._g._s.|1
 surveyor|1
 pocus|1
 hocus|1
@@ -54396,14 +53247,12 @@ disp-|1
 wither|1
 conceptions|1
 animator|1
-u._c._o._n.|1
 steward's|1
 griffins|1
 lia-|1
 alister|1
 incred-|1
 mcdonalds'|1
-u._n._e._s.|1
 elian|1
 surety|1
 edict|1
@@ -54475,7 +53324,6 @@ thun-|1
 corpu|1
 ey-|1
 swats|1
-a._q._h._a.|1
 midnights|1
 doberm-|1
 doberman's|1
@@ -54541,11 +53389,9 @@ croyderman|1
 origin-|1
 gehri-|1
 fairex|1
-r._f._k.|1
 unles-|1
 botwill|1
 eroll|1
-p._n._d.|1
 arline|1
 mirada|1
 apec-|1
@@ -54555,9 +53401,7 @@ proli-|1
 pingers|1
 steel-|1
 modder|1
-m._c._a.|1
 knick-|1
-g._m.s|1
 kidd's|1
 ditely|1
 yohad|1
@@ -54573,9 +53417,7 @@ beefy|1
 hawley|1
 seau|1
 espn2|1
-v._s._b._n.|1
 letchnakov|1
-y._i._f.|1
 roofy|1
 -wood|1
 riv-|1
@@ -54584,7 +53426,6 @@ gerry's|1
 incredulously|1
 falem|1
 professed|1
-s._t._n.|1
 wilk|1
 mali|1
 broward|1
@@ -54650,7 +53491,6 @@ thorpe|1
 mankato's|1
 hosmer|1
 mediterr-|1
-s._p._i._c.|1
 reenlistment|1
 everything'|1
 probs|1
@@ -54659,7 +53499,6 @@ jung|1
 strangulating|1
 diplom-|1
 opon-|1
-a._c.'s|1
 mutzing|1
 footsy|1
 ufos|1
@@ -54680,7 +53519,6 @@ debase|1
 centrists|1
 -chuting|1
 para-gliding|1
-v._c.|1
 marya|1
 lighth-|1
 non-cable|1
@@ -54722,7 +53560,6 @@ crew's|1
 adver-|1
 junkiest|1
 borscher's|1
-d._i._e.|1
 gum's|1
 triangulating|1
 smoo-|1
@@ -54901,8 +53738,6 @@ bremerhove|1
 creo|1
 overhauls|1
 bremner|1
-e._m.s|1
-e._t.s|1
 electrician's|1
 mercaya|1
 tricycles|1
@@ -54916,10 +53751,8 @@ megabyte|1
 reword|1
 clico|1
 sneider|1
-x._t.s|1
 tut-|1
 waffling|1
-o._j._t.|1
 craftsmanship|1
 woodworkers|1
 dissections|1
@@ -54931,7 +53764,6 @@ interpolate|1
 tabulate|1
 hydrofluorocarbons|1
 chlorofluorocarbon|1
-c._f._c.|1
 rantings|1
 tenses|1
 'rithmetic|1
@@ -54963,11 +53795,9 @@ quails|1
 stang|1
 roberson|1
 sloughing|1
-d._k._n._y.|1
 trekkers|1
 reparable|1
 gnat|1
-v._i._a._c._o._m.|1
 innovate|1
 collaring|1
 wereton|1
@@ -55024,7 +53854,6 @@ dmv|1
 rescreen|1
 screener's|1
 rescreening|1
-s._u._o.|1
 sesoda|1
 lurks|1
 assassinating|1
@@ -55048,7 +53877,6 @@ attorneys'|1
 milk-|1
 penning|1
 idel|1
-w._p._r._i.|1
 anythings|1
 laurente|1
 larent-|1
@@ -55062,13 +53890,11 @@ mis-throw|1
 plucks|1
 baseballwise|1
 bottomless|1
-n._b._l.|1
 drysdale|1
 cannell|1
 kestler|1
 solitu-|1
 servitude|1
-g._d._p.|1
 poly-psy|1
 puckett|1
 megamall|1
@@ -55101,7 +53927,6 @@ adoration|1
 sals-|1
 portsmith|1
 trembles|1
-b._f.|1
 kente|1
 norger|1
 pradic-|1
@@ -55146,9 +53971,7 @@ ross's|1
 azerbaijan|1
 power-|1
 invincibility|1
-m._v._s._a.|1
 narea|1
-c._b._g._b.s|1
 chartertown|1
 statey|1
 alternat-|1
@@ -55156,7 +53979,6 @@ outsor-|1
 weider|1
 ack-|1
 philadelph-|1
-q._a.|1
 wife'll|1
 barage|1
 daylater|1
@@ -55185,7 +54007,6 @@ steiber|1
 expends|1
 incubus|1
 smitty|1
-s._w._r.|1
 carven's|1
 corralled|1
 mahoney|1
@@ -55267,7 +54088,6 @@ autho-|1
 rika|1
 abstaining|1
 combi-|1
-o._p._b.|1
 rajah|1
 vindictively|1
 negati-|1
@@ -55286,7 +54106,6 @@ carris|1
 lumley|1
 incompatibleness|1
 vicissitudes|1
-m._h._m.|1
 rhett|1
 lie-|1
 stick-|1
@@ -55302,7 +54121,6 @@ partaken|1
 marcellain|1
 signalled|1
 speedwagon|1
-r._e._o.|1
 scaffolds|1
 applicators|1
 non-intentional|1
@@ -55325,7 +54143,6 @@ louidis|1
 predispositions|1
 testable|1
 undetectable|1
-c._f.|1
 infringe-|1
 pothead|1
 stoner|1
@@ -55335,7 +54152,6 @@ toulouse|1
 jro-|1
 unfunctional|1
 filthier|1
-g._h._b.|1
 pneumatics|1
 subcontractor|1
 attarol|1
@@ -55361,7 +54177,6 @@ collided|1
 sequestering|1
 mabel|1
 vpning|1
-b._s._o.|1
 forsaken|1
 telethon|1
 sparred|1
@@ -55391,7 +54206,6 @@ elongate|1
 neck-|1
 gera-|1
 breath-|1
-o._w._i.s|1
 unju-|1
 krukoff|1
 prurient|1
@@ -55418,12 +54232,9 @@ hipped|1
 refuse-niks|1
 polarize|1
 demystified|1
-b._f._f.s|1
 topside|1
-p._e._n._n.|1
 retro-|1
 anthr-|1
-u._s.s|1
 unq-|1
 arriv-|1
 gresham|1
@@ -55486,12 +54297,9 @@ hutton's|1
 banasa|1
 rowe|1
 dirkson|1
-a._g.|1
 habeas|1
 grandia|1
-s._b._y.|1
 hardwired|1
-b._b._n.'s|1
 overcapacity|1
 demand's|1
 yeses|1
@@ -55517,7 +54325,6 @@ imbedded|1
 convening|1
 databank|1
 scienc-|1
-b._e._k.|1
 almers|1
 constituted|1
 worse-|1
@@ -55553,7 +54360,6 @@ arrest-|1
 fallacies|1
 goop|1
 paned|1
-r._g.|1
 asthmatics|1
 stinkier|1
 glenside|1
@@ -55627,8 +54433,6 @@ mellie|1
 poetries|1
 upstarting|1
 rebuilder|1
-d._f._t.|1
-d._t.s|1
 enquiring|1
 lerant|1
 emanuelle|1
@@ -55710,7 +54514,6 @@ fibers|1
 fungi|1
 galman|1
 headse-|1
-m._g._d.|1
 dooney|1
 alu-|1
 patchwork|1
@@ -55767,7 +54570,6 @@ compress|1
 capella|1
 soundboard|1
 tweakable|1
-o._s._x.|1
 ipod|1
 -ext|1
 eyrie|1
@@ -55793,7 +54595,6 @@ brooklea|1
 distaste|1
 coombes|1
 o'r-|1
-k._f._y._i.|1
 draftable|1
 decomposed|1
 scratchies|1
@@ -55801,10 +54602,8 @@ congestion's|1
 rotates|1
 shooting's|1
 summation|1
-w._c._b._s.|1
 obg-|1
 give-|1
-w._h._y._y.|1
 weesatche|1
 oversea|1
 stand-outish|1
@@ -55812,14 +54611,12 @@ iver|1
 proselytizes|1
 sharia|1
 prophetically|1
-f._s._n.|1
 solver|1
 terrible's|1
 editorializing|1
 encapsulates|1
 computerally|1
 whirling|1
-w._i._n._z.|1
 dramatizing|1
 kursk|1
 throughway|1
@@ -55835,9 +54632,7 @@ firer|1
 uzi's|1
 concealment|1
 metro's|1
-w._d._c.|1
 barcellos|1
-w._p._n.|1
 busschere|1
 mccaddon|1
 dehare|1
@@ -55851,11 +54646,9 @@ moleman|1
 unus-|1
 anadarko|1
 pre-recorded|1
-m._s._m._b._c.|1
 availabil-|1
 mico|1
 progeny|1
-t._n._a.|1
 cobleskill|1
 pataki's|1
 gob|1
@@ -55879,7 +54672,6 @@ hen-|1
 henedy|1
 enbar|1
 kcpt|1
-k._c._p._t.|1
 shortwave|1
 bb-|1
 troust|1
@@ -55894,12 +54686,9 @@ jesair|1
 arnie's|1
 foreshadowed|1
 mcgorian|1
-i._t._n.'s|1
 boylston|1
 popadopolos|1
-v._u.|1
 blog's|1
-l._a._t.|1
 candidacy|1
 gapart|1
 leiberman|1
@@ -55939,7 +54728,6 @@ marblehead|1
 swanset|1
 barvillian|1
 coupe|1
-w._r._x.|1
 imprezza|1
 berth|1
 valterra|1
@@ -55951,8 +54739,6 @@ bette-|1
 critter's|1
 scooby's|1
 saturda-|1
-c._t._x.|1
-s._n._e._s.|1
 zelda's|1
 asheron's|1
 atl-|1
@@ -55968,7 +54754,6 @@ padre's|1
 audibles|1
 cell's|1
 persignia|1
-e._s._n.|1
 gulisano|1
 got's|1
 varie-|1
@@ -55977,7 +54762,6 @@ mashing|1
 wordflop|1
 pacman's|1
 colicovision|1
-l._a._n._d.|1
 fairies|1
 sugarplum|1
 shamelessly|1
@@ -55988,7 +54772,6 @@ telepho-|1
 playtoy|1
 osh-|1
 nicklaus|1
-x._x._x.|1
 blockbuste-|1
 engraved|1
 shalon|1
@@ -56028,11 +54811,8 @@ typical-|1
 maxes|1
 jujubes|1
 realist-|1
-i._m._d._b.|1
 swimvan|1
 bowfinger|1
-p._m._t.|1
-p._m._m.|1
 chocktaws|1
 yello|1
 doug-|1
@@ -56041,7 +54821,7 @@ siegel|1
 beatty|1
 bugsy|1
 russel|1
-2.|1
+2|1
 homeschooling|1
 ewan|1
 nexta|1
@@ -56073,7 +54853,6 @@ vader|1
 darth|1
 padme|1
 capper|1
-c._d._i.|1
 reverb|1
 kilmer|1
 liu|1
@@ -56130,7 +54909,6 @@ brainchild|1
 politici-|1
 inappro-|1
 biologists|1
-e._e._o._c.|1
 expectancies|1
 polemic|1
 pape-|1
@@ -56197,7 +54975,6 @@ reintroduce|1
 abu|1
 rul-|1
 await|1
-s._c._e.|1
 malverna|1
 roadwork|1
 equality's|1
@@ -56211,9 +54988,6 @@ ena-|1
 amicus|1
 carbide|1
 leehigh|1
-v._p._n.|1
-t._i._s._c._o.|1
-c._n._e._t.|1
 monroeville|1
 freidman|1
 anti-israel|1
@@ -56235,7 +55009,6 @@ remigration|1
 suburbanites|1
 re-migration|1
 croweism|1
-m._e._n._s._a.|1
 ballplayer|1
 lika|1
 rottenburg|1
@@ -56262,7 +55035,6 @@ baulked|1
 bondings|1
 lexuses|1
 nomenclature|1
-u._t._s._a.|1
 microcosms|1
 cassis|1
 chancellors|1
@@ -56303,7 +55075,6 @@ alwin|1
 solution's|1
 deeha|1
 colette|1
-c._s._l.|1
 facilitators|1
 richardson's|1
 dede-|1
@@ -56363,7 +55134,6 @@ psychobabble|1
 affronted|1
 strin-|1
 porterick|1
-p.h.d.|1
 floria|1
 superseding|1
 unjustifiable|1
@@ -56413,7 +55183,6 @@ tipton|1
 beresford|1
 willan|1
 fillies|1
-t._d._a.|1
 iniar-|1
 rosa's|1
 marceau|1
@@ -56440,7 +55209,6 @@ subli-|1
 solben|1
 practi-|1
 exasperating|1
-m._s._m._x.|1
 speeded|1
 appreciably|1
 tax-free|1
@@ -56484,7 +55252,6 @@ alecia|1
 downingtown|1
 rocklyn|1
 stereotypically|1
-a._s._a._p.|1
 overspend|1
 wheelbarrow|1
 blondin|1
@@ -56540,7 +55307,6 @@ retyped|1
 educow-|1
 hitlerism|1
 -pointment|1
-g._t._e.|1
 straight-laced|1
 castanza's|1
 aco-|1
@@ -56564,7 +55330,6 @@ woulda|1
 sentimentally|1
 virile|1
 duets|1
-u._i._c.|1
 octavian|1
 protagonists|1
 mexicana|1
@@ -56649,14 +55414,12 @@ tinkle|1
 orchestrate|1
 non-study|1
 recoveri-|1
-r._i._t._a.|1
 noyia|1
 immaturely|1
 monthl-|1
 inscription|1
 dresden|1
 genocides|1
-c._k.|1
 sparkplugs|1
 joplin's|1
 peninsulas|1
@@ -56672,17 +55435,14 @@ atoll|1
 majuro|1
 rut's|1
 pinhole|1
-g._t._c.|1
 lincolnshire|1
 backlogs|1
-d._h._l.|1
 taliani|1
 harran|1
 stentorian|1
 playi-|1
 shaliah|1
 sidarta|1
-u._b._a.|1
 outgrowth|1
 mccarhy|1
 contrition|1
@@ -56690,9 +55450,7 @@ sweetly|1
 christine's|1
 linders|1
 downpayment|1
-g._b.|1
 shipiro|1
-c._s._s._r.|1
 grandmom's|1
 predestination|1
 pleasureful|1
@@ -56718,7 +55476,6 @@ wallowing|1
 overdraft|1
 thumbnail|1
 corrosion|1
-n._a._c._e.|1
 pultorick|1
 manliness|1
 mary-joe|1
@@ -56773,7 +55530,6 @@ salsiun|1
 playings|1
 fearfully|1
 coralville|1
-e._i._n.|1
 flemings|1
 fartsy|1
 cashere-|1
@@ -56795,13 +55551,11 @@ photojournalistic|1
 fabulitch|1
 elan|1
 gemstone|1
-a._m._a.|1
 albertans|1
 beckteld|1
 flowered|1
 printing's|1
 biennium|1
-f._t._e.s|1
 handcrafted|1
 hypol-|1
 never-ending|1
@@ -56816,11 +55570,9 @@ brio|1
 commit-|1
 discernible|1
 riverton|1
-y._m._c._a.s|1
 stupendous|1
 ebays|1
 pu|1
-w._t._o.'s|1
 intri-|1
 chinatown's|1
 bosmo|1
@@ -56852,7 +55604,6 @@ assuredly|1
 envisaged|1
 tarran|1
 suckey|1
-x._p.'s|1
 pawnshop|1
 bergdorfs|1
 massagers|1
@@ -56898,7 +55649,6 @@ scottsd-|1
 blaylock|1
 jany|1
 sublease|1
-e._c.|1
 museum's|1
 mediates|1
 beauticians|1
@@ -56947,7 +55697,6 @@ rowland|1
 through's|1
 mcdan-|1
 frani-|1
-t._v._d.|1
 multi-levels|1
 ad'|1
 batik|1
@@ -56977,7 +55726,6 @@ sloop|1
 gee's|1
 tomfoolery|1
 shithouses|1
-t._b._b.|1
 recontact|1
 hierarchal|1
 quarterlies|1
@@ -57042,7 +55790,6 @@ undertakers|1
 consequential|1
 morticians|1
 rothalsky|1
-f._s._b._a.|1
 handsborough|1
 integ-|1
 tillered|1
@@ -57092,13 +55839,11 @@ roseland|1
 reid's|1
 keswick|1
 croatis|1
-w._f._a._n.|1
 hippyish|1
 vinyls|1
 consolidator|1
 trail's|1
 blance|1
-p._p._a.'s|1
 inventor's|1
 lamborghinis|1
 duncaskey|1
@@ -57248,7 +55993,6 @@ portra-|1
 fuck-|1
 ribisi|1
 insult-|1
-g._f._d.|1
 supervisoring|1
 humor-related|1
 mind-sets|1
@@ -57280,7 +56024,6 @@ exaggerates|1
 -acceptable|1
 unaccepta-|1
 matthau|1
-s._i._c._u.|1
 churchgoers|1
 intellectualized|1
 huxley|1
@@ -57317,7 +56060,6 @@ targa|1
 hoopdees|1
 landrover|1
 textual|1
-s._e._t._v.|1
 ferero|1
 frolley's|1
 fudd|1
@@ -57326,7 +56068,6 @@ valkeries|1
 descrip-|1
 artesia|1
 dereal|1
-c._k._y.|1
 -ceptable|1
 deadpan|1
 hilarity|1
@@ -57484,8 +56225,6 @@ punchy|1
 eames|1
 coffman|1
 mclaren|1
-e._m._p.|1
-s._c._t._v.|1
 mallets|1
 hettie|1
 scotville|1
@@ -57545,7 +56284,6 @@ nudey|1
 shows'|1
 sideburns|1
 raymo-|1
-a._i._d.s|1
 bombeck|1
 erma|1
 dreyfuss|1
@@ -57600,10 +56338,8 @@ verges|1
 ecos|1
 uping|1
 corporatey|1
-a._c._o.|1
 regale|1
 convo|1
-u._s._s._l.|1
 lipping|1
 ortega|1
 acrimonious|1
@@ -57650,7 +56386,6 @@ everybr-|1
 incapacities|1
 casson|1
 libertar-|1
-i._p._c.|1
 sidebar|1
 guit-|1
 evers|1
@@ -57658,7 +56393,6 @@ rain-|1
 substadi-|1
 statisticians|1
 appal-|1
-c._o._l._a.|1
 stratifies|1
 garnishments|1
 prevacid|1
@@ -57696,13 +56430,11 @@ oyang|1
 dodgy|1
 unempl-|1
 enpiter-|1
-f._s._i.|1
 deflation|1
 inf|1
 workfare|1
 materialistical|1
 -finitely|1
-l._i._e.|1
 net's|1
 budged|1
 dia|1
@@ -57714,7 +56446,6 @@ consign-|1
 tucso-|1
 eastep|1
 pharmac-|1
-a._b._e.|1
 cory-|1
 -ployees|1
 classist|1
@@ -57741,7 +56472,6 @@ poli-sci|1
 racine|1
 fica|1
 nafta's|1
-h._t.s|1
 reefers|1
 porche|1
 -lize|1
@@ -57790,11 +56520,9 @@ underplaying|1
 representational|1
 sportscasting|1
 petrall|1
-w._s._b._i._u.|1
 too's|1
 kadesha|1
 paras|1
-c._v._a.|1
 florid-|1
 sulkie|1
 raney|1
@@ -57903,8 +56631,6 @@ conditioner's|1
 staycheck|1
 phooey|1
 gentlemans|1
-p._e._p.|1
-u._a._b.|1
 waf-|1
 cabdriver|1
 hostessing|1
@@ -57921,7 +56647,6 @@ incentivizes|1
 rough-|1
 vanderbilts|1
 subaru|1
-o._s._h.|1
 bucets|1
 xanaxes|1
 pittsburger|1
@@ -57948,9 +56673,7 @@ playe-|1
 delights|1
 unregistered|1
 pst|1
-g._s._t.|1
 lub|1
-k._f._c.'s|1
 raman|1
 clerical-|1
 makin-|1
@@ -57990,7 +56713,6 @@ gibby|1
 hplc|1
 defaulting|1
 fleecing|1
-c._d._l.s|1
 fellers|1
 hoggish|1
 barbalase|1
@@ -58024,7 +56746,6 @@ virginian-|1
 nurtures|1
 hominy|1
 legacies|1
-o._c._c.|1
 widow-|1
 weirdnesses|1
 goal's|1
@@ -58105,7 +56826,6 @@ stilling|1
 admins|1
 magill|1
 autonomedia|1
-g._b._d.s|1
 syncs|1
 shitain|1
 sceneries|1
@@ -58233,9 +56953,6 @@ physical's|1
 wishlist|1
 encinitas|1
 mcdown|1
-a._i._n._s.|1
-k._t._b._s.|1
-a._r._m.|1
 carlsburg|1
 humility's|1
 contrite|1
@@ -58350,7 +57067,6 @@ depacote|1
 zyprexa|1
 frickin'|1
 hilde|1
-p._n._t.|1
 caress|1
 zorab|1
 annoym-|1
@@ -58379,7 +57095,6 @@ trem-|1
 hunchback|1
 whiplash|1
 fib-|1
-p._p._a.|1
 peaky|1
 'plain|1
 tugging|1
@@ -58429,9 +57144,7 @@ holster|1
 waggling|1
 playfully|1
 planet's|1
-r._b.|1
 keely|1
-y._o.|1
 joyfulness|1
 dutifully|1
 debasan|1
@@ -58550,7 +57263,6 @@ laer|1
 gunky|1
 knee-highs|1
 lansing's|1
-u._c._f.|1
 mulvane|1
 stripy|1
 runts|1
@@ -58641,7 +57353,6 @@ dir|1
 vac|1
 rayovac|1
 schwarz|1
-f._a._o.|1
 elr-|1
 elmara|1
 shr-|1
@@ -58709,7 +57420,6 @@ skim-|1
 peeka-|1
 booger|1
 ittabee|1
-c._k._c.|1
 overburden|1
 peat|1
 flytrap|1
@@ -58890,7 +57600,6 @@ bich-|1
 hexagonal|1
 storm's|1
 teaky|1
-b._y._a.|1
 termination|1
 amernethy|1
 chatanooga|1
@@ -58901,7 +57610,6 @@ shissa|1
 verbose|1
 desolated|1
 adopt-|1
-p._a._w._s.|1
 nutri|1
 wiemerana|1
 machoism|1
@@ -58959,7 +57667,6 @@ sniveling|1
 angoras|1
 recessio-|1
 seventeen's|1
-w._m._g._k.|1
 pomeranian's|1
 squealer's|1
 squeal-|1
@@ -59057,7 +57764,6 @@ pistorious|1
 icecapade|1
 o'connell|1
 fernado|1
-f._s._l.|1
 roughage|1
 beronas|1
 hooping|1
@@ -59075,7 +57781,6 @@ silverdome|1
 duckin|1
 endurable|1
 cardinal's|1
-e._p._s.|1
 flabbiest|1
 urwin|1
 grandized|1
@@ -59098,7 +57803,6 @@ luck's|1
 famlot|1
 somersaults|1
 nadeau|1
-u._d.s|1
 strongman|1
 woodchopper|1
 visarn|1
@@ -59126,13 +57830,11 @@ dixit|1
 govan|1
 oranthean|1
 billon|1
-i._m._e._t.|1
 vasanti|1
 kenyans|1
 skaters'll|1
 fascinat-|1
 jesters|1
-n._c._a._a.'s|1
 scalping|1
 yanke-|1
 interwound|1
@@ -59158,22 +57860,17 @@ hoosers|1
 longhear-|1
 stag-|1
 browns'|1
-w._g._m.|1
 veroso|1
 yawned|1
 skate-|1
 cow-|1
-n._b._n.|1
 slumping|1
 ankura|1
 geminten|1
 gemin-|1
-w._m._a.|1
 represe-|1
-m._a._d._d.|1
 meeuw|1
 meriallard|1
-i._s._i.|1
 uhf|1
 hateds|1
 lesnar|1
@@ -59181,10 +57878,8 @@ shaq'll|1
 daresay|1
 anvils|1
 undefeated|1
-b._c._s.|1
 yippee|1
 jinxed|1
-m._o._b.|1
 abseek|1
 allburn's|1
 sanborn|1
@@ -59195,7 +57890,6 @@ flores|1
 akers|1
 goalkeeper|1
 agoos|1
-m._s._l.|1
 tykesville|1
 lugged|1
 announcer's|1
@@ -59252,12 +57946,9 @@ lagers|1
 ales|1
 microbreweries|1
 microbrewery|1
-n._c._w.|1
 whupped|1
 tattling|1
-n._h._r._a.|1
 kriegel|1
-c._y._o.|1
 coraopolis|1
 phillie|1
 max-|1
@@ -59274,7 +57965,6 @@ andreziak|1
 azamski|1
 pokers|1
 baiting|1
-r._t._p.|1
 steeply|1
 andr-|1
 front-runners|1
@@ -59288,7 +57978,6 @@ yonee|1
 track's|1
 woolfe|1
 philllies|1
-n._b._r._c.|1
 flip-flop|1
 bazillions|1
 raze|1
@@ -59298,7 +57987,6 @@ commenta-|1
 hoyla|1
 hola|1
 play'd|1
-f._a._u.|1
 dancey|1
 merino|1
 shaquil|1
@@ -59324,10 +58012,8 @@ plum's|1
 lutzes|1
 yorkish|1
 spinks|1
-u._l._c.|1
 renegotiations|1
 muter|1
-n._w._f.|1
 dyna-|1
 strug|1
 niller|1
@@ -59337,11 +58023,9 @@ superficially|1
 oa-|1
 comaneci|1
 korbut|1
-u._s._g._f.|1
 else'd|1
 rewatch|1
 seaview|1
-s._p._n.|1
 nemis|1
 dishwasher's|1
 rizudo's|1
@@ -59369,11 +58053,9 @@ consequo|1
 flecked|1
 fleck|1
 medonite|1
-e._c._u.|1
 alleyoop|1
 bridmore|1
 'grats|1
-i._h._o.|1
 vercoe|1
 'bouts|1
 buckhorns|1
@@ -59402,7 +58084,6 @@ slammers|1
 packers'|1
 bears'|1
 mij-|1
-m._c._a._a.|1
 lumberjacks|1
 olymp-|1
 wilkins|1
@@ -59412,7 +58093,6 @@ putting's|1
 kesorinston|1
 colonial's|1
 ashante|1
-m._l._m.|1
 ml-|1
 sanganon|1
 unsports|1
@@ -59431,8 +58111,6 @@ ballpark's|1
 kupleck|1
 cusman|1
 magney|1
-k._u.'s|1
-m._u.|1
 shuck|1
 jule|1
 dyersburg|1
@@ -59466,7 +58144,6 @@ wamesville|1
 reffing|1
 plexiglas|1
 memorex|1
-p._i._x.|1
 anaya|1
 footba-|1
 intimidator|1
@@ -59476,7 +58153,6 @@ maplesville|1
 navene|1
 leisures|1
 noncompetitive|1
-b._o._j._k._o.|1
 medalist|1
 medalists|1
 hooplaing|1
@@ -59484,7 +58160,6 @@ repoed|1
 interminable|1
 speagle|1
 brasher|1
-v._j.|1
 mucho|1
 serena's|1
 childho-|1
@@ -59527,7 +58202,6 @@ mancin-|1
 argentines|1
 goaler|1
 berny|1
-b._g._n.|1
 gifters|1
 freelanced|1
 broady|1
@@ -59564,7 +58238,6 @@ shar-|1
 security-|1
 everythin-|1
 tenser|1
-x._y._z.|1
 suspect-|1
 adeptly|1
 cente-|1
@@ -59593,7 +58266,6 @@ tyler's|1
 aci-|1
 purificationing|1
 creedmoor|1
-m._s._w.|1
 hassidic|1
 schmiralotzah|1
 courtier|1
@@ -59665,7 +58337,6 @@ connels|1
 professionals'|1
 bord-|1
 sough|1
-p._a._a._s.|1
 rites|1
 barbecueing|1
 burdensome|1
@@ -59763,7 +58434,6 @@ conjured|1
 renaming|1
 hiller|1
 deman-|1
-s._s._n.|1
 derricks|1
 ladera|1
 wd-|1
@@ -59780,7 +58450,6 @@ junk's|1
 suffer-|1
 perception's|1
 montenegro|1
-k._b._c.|1
 hiar-|1
 sissies|1
 oilman|1
@@ -59856,7 +58525,6 @@ autocratic|1
 flexi|1
 defector|1
 floodgates|1
-b._a._a._t._h.|1
 seeked|1
 germanys|1
 tarred|1
@@ -59907,7 +58575,6 @@ scriptwriter|1
 fantasyland|1
 charming's|1
 mole's|1
-p._b._s.'s|1
 sheindlin|1
 opera's|1
 kenevil|1
@@ -59930,7 +58597,6 @@ dorphin|1
 hag|1
 aha-|1
 lifeless|1
-g._p._c.s|1
 silv-|1
 excrete|1
 cucumber's|1
@@ -59951,7 +58617,6 @@ steve-o|1
 simian|1
 untruthful|1
 panders|1
-g._m._t.|1
 nays|1
 exemplify|1
 persevering|1
@@ -59965,7 +58630,6 @@ grayson|1
 kostanza|1
 popstars|1
 finales|1
-k._b._a.|1
 catapults|1
 berry's|1
 accokeek|1
@@ -59981,11 +58645,9 @@ manilow|1
 saracen|1
 non-canadianized|1
 coolworks|1
-f._a.|1
 canneries|1
 corteline|1
 matrimony|1
-o._r.|1
 aisha|1
 butlers|1
 networks'|1
@@ -60195,7 +58857,6 @@ melissa's|1
 resumed|1
 gossipee|1
 infre-|1
-d._t.'s|1
 rehabs|1
 turkied|1
 mortals|1
@@ -60218,7 +58879,6 @@ automatic-|1
 nachez|1
 fuzziness|1
 benders|1
-a._t._t.|1
 bartending's|1
 burgundy's|1
 debilitated|1
@@ -60299,13 +58959,11 @@ somatic|1
 booder|1
 strangulitis|1
 flagel|1
-w._r._o._l.|1
 zitromax|1
 radiologist|1
 underactive|1
 subletter|1
 pre-cold|1
-y._i._l.|1
 acid-|1
 cris-|1
 juic-|1
@@ -60319,7 +58977,6 @@ cait-|1
 ex-man|1
 jitsu|1
 das-|1
-p._u._c.|1
 halers|1
 unrelenting|1
 yeah-|1
@@ -60331,7 +58988,6 @@ fillings|1
 alyssum|1
 exag-|1
 redlin|1
-r._l._s.|1
 pilsners|1
 nutritionals|1
 sinu-|1
@@ -60352,10 +59008,8 @@ zyrtak|1
 panadol|1
 nomia|1
 messianic|1
-i._v.s|1
 collide|1
 isotope|1
-p._a._t.|1
 proce-|1
 angios|1
 susceptibility|1
@@ -60380,7 +59034,6 @@ ockford|1
 inhumanly|1
 'micins|1
 'cillin|1
-a._z._t.|1
 antivacs|1
 antibac-|1
 snuffy|1
@@ -60425,7 +59078,6 @@ stress-|1
 seasons'|1
 mooks|1
 che|1
-r._d._a.|1
 chromium|1
 antiquity|1
 condition-|1
@@ -60507,7 +59159,6 @@ elapsed|1
 intercession|1
 glared|1
 aflonase|1
-j._j.'s|1
 non-allergen|1
 gassy|1
 molding|1
@@ -60589,7 +59240,6 @@ amerigos|1
 pinella|1
 patayria|1
 scour|1
-g._i._f.|1
 gooby|1
 fibrous|1
 tayol|1
@@ -60755,7 +59405,6 @@ outbeck|1
 drumets|1
 drumet-|1
 bud's|1
-b._b._s.s|1
 messo|1
 morm-|1
 gabbling|1
@@ -60871,7 +59520,6 @@ oletha|1
 superficialness|1
 prisms|1
 bullfighting|1
-n._t._n.er|1
 adecco|1
 ditty|1
 dimitrius|1
@@ -60934,7 +59582,6 @@ scoocal|1
 boathouse|1
 carolers|1
 remai-|1
-m._e._d.|1
 versu-|1
 long're|1
 youngest's|1
@@ -60990,7 +59637,6 @@ ellicott|1
 orland-|1
 noak|1
 tristina|1
-n._b.|1
 iver-|1
 bogarted|1
 basketb-|1
@@ -61053,11 +59699,9 @@ thunders|1
 living-|1
 majort-|1
 outsmarting|1
-l._d._d._s.|1
 wiesner|1
 coc-|1
 thousandaire|1
-f._d._i.|1
 raphia|1
 fd-|1
 subjec-|1
@@ -61072,7 +59716,6 @@ ibm|1
 jiggling|1
 non-denominational|1
 nayeda|1
-m._c._i.'s|1
 falsifying|1
 overestimating|1
 shoplifter's|1
@@ -61086,18 +59729,12 @@ shawnbach|1
 ferndale|1
 repaying|1
 federa-|1
-m._i._f.|1
 vario|1
 lang|1
 final-|1
-c._o._e.s|1
 hoisting|1
 cbw|1
-c._b._w.|1
-c._w.|1
-c._w._c.|1
 mother-|1
-o._k.s|1
 payola|1
 datelines|1
 carty|1
@@ -61134,7 +59771,6 @@ hophog|1
 memorandums|1
 forino|1
 stajack|1
-l._t._v.|1
 telcom|1
 falters|1
 saluda|1
@@ -61155,7 +59791,6 @@ bankers'|1
 eberds|1
 jordanna|1
 vanderville|1
-o._g._s._m.|1
 cahonies|1
 mutuals|1
 bazillionaires|1
@@ -61273,14 +59908,12 @@ zachary's|1
 traumatically|1
 monclaire|1
 bringings|1
-i._c._q.'s|1
 frackville|1
 keenan|1
 kristen's|1
 kristofer|1
 sower|1
 flattered|1
-s._r._s.|1
 w-we|1
 tectoma|1
 dennyson|1
@@ -61337,7 +59970,6 @@ chattings|1
 tandys|1
 heun|1
 decimals|1
-t._c.|1
 schamberg|1
 o'claire|1
 peapod|1
@@ -61401,14 +60033,12 @@ straggler|1
 -volved|1
 administrationary|1
 misuses|1
-g._r._e.s|1
 individualization|1
 non-religious|1
 accord-|1
 goosey|1
 loosey|1
 trak|1
-b._s._s.|1
 univac|1
 abecker|1
 dotting|1
@@ -61432,7 +60062,6 @@ toolbar|1
 clunky|1
 numbering|1
 misspoke|1
-g._d._n.|1
 subterranean|1
 q-bert|1
 leidlers|1
@@ -61447,7 +60076,6 @@ doy|1
 acer|1
 compreh-|1
 phone-|1
-p._t._o.s|1
 litty|1
 correct-|1
 repet-|1
@@ -61455,10 +60083,7 @@ spellcheck|1
 scharnagl|1
 intrapersonal|1
 isolation's|1
-e._h.|1
-e._s._e.|1
 passi-|1
-t._a._d.|1
 naivety|1
 ashworth|1
 melacca|1
@@ -61534,7 +60159,6 @@ garen|1
 liechtenstein|1
 earthlings|1
 eart-|1
-m._a._d.|1
 hideouts|1
 grandmamma|1
 dominancy|1
@@ -61580,7 +60204,6 @@ egomaniac|1
 orienting|1
 wanteds|1
 troves|1
-n._s._m._b._c.|1
 armageddon's|1
 fight-|1
 deatta|1
@@ -61715,7 +60338,6 @@ radicalize|1
 muddying|1
 palestinians'|1
 blind's|1
-u._d.'s|1
 imprisons|1
 intermarries|1
 intermarry|1
@@ -61738,7 +60360,6 @@ airbases|1
 vora|1
 nerida|1
 consumers'|1
-t._e._f._a.|1
 seekrems|1
 inklings|1
 sifters|1
@@ -61766,10 +60387,8 @@ impregnable|1
 penshawk|1
 amounting|1
 singl-|1
-p._f._c.|1
 sneck|1
 demilitary|1
-q._b._c.|1
 ridded|1
 seine|1
 allying|1
@@ -61816,7 +60435,6 @@ heigh-|1
 kennicutt|1
 bingham|1
 surgess|1
-p._s._a.|1
 disprin|1
 unsheathe|1
 vulner-|1
@@ -61855,7 +60473,6 @@ trime|1
 plainclothes|1
 behin-|1
 zetel|1
-h._o._v.|1
 preregister|1
 unopened|1
 remy|1
@@ -61869,7 +60486,6 @@ brid-|1
 labor-|1
 atrium|1
 jamilla|1
-j._k._f.|1
 uneventful|1
 shawl|1
 investigate-|1
@@ -61910,7 +60526,6 @@ basketballers|1
 blinder|1
 handcuffed|1
 broadbands|1
-i._u.s|1
 hooshers|1
 mariner's|1
 frenzies|1
@@ -61919,7 +60534,6 @@ shakiel|1
 tiara|1
 pre-set|1
 becam-|1
-m._b._p.|1
 compen-|1
 doing'|1
 apoca|1
@@ -61957,7 +60571,6 @@ overbought|1
 degener-|1
 hargrove|1
 gundarena|1
-a._a._a.|1
 boston'll|1
 perce-|1
 ellway|1
@@ -61980,7 +60593,6 @@ bragged|1
 aroff|1
 biv|1
 segregations|1
-m._f._l.|1
 legislature's|1
 tuit-|1
 mccombs|1
@@ -62065,7 +60677,6 @@ stepbrother's|1
 mcewan|1
 bandanas|1
 rioters|1
-e._v.|1
 moralt|1
 dintilli|1
 a-peeing|1
@@ -62133,7 +60744,6 @@ internat-|1
 dialers|1
 dwel-|1
 paranoiding|1
-d._s._w.|1
 rescuers|1
 macool|1
 taber|1
@@ -62240,7 +60850,6 @@ kindgartener|1
 katy's|1
 disharmony|1
 linkin|1
-m._i._a.|1
 napster's|1
 sols-|1
 anti-black|1
@@ -62264,7 +60873,6 @@ shopper's|1
 classic-|1
 toddle|1
 okerry|1
-p._t._a.s|1
 shakur|1
 diskowski|1
 evolutionism|1
@@ -62277,7 +60885,6 @@ sporm|1
 tarzans|1
 kaluakona|1
 kindell|1
-m._p._a._a.|1
 self-discipline|1
 palmilla|1
 brigaman|1
@@ -62373,11 +60980,9 @@ feverishly|1
 whittling|1
 sculpey|1
 tilk|1
-n._a._s._a.|1
 amelia's|1
 guile|1
 mystery-holic|1
-a._i._b._t.|1
 david-|1
 goldwing|1
 catting|1
@@ -62464,7 +61069,6 @@ sandr-|1
 walken|1
 marisinger|1
 -ten|1
-dr.|1
 polanksy|1
 arkan-|1
 neutralness|1
@@ -62490,7 +61094,6 @@ doa|1
 griggs|1
 wooddale|1
 pay-wise|1
-e._o._c.|1
 trisexual|1
 extramarital|1
 depo-|1
@@ -62503,7 +61106,6 @@ corporation-|1
 hispan-|1
 urb-|1
 higgy|1
-l._b._s.|1
 whitten-|1
 edmondson|1
 bricky|1
@@ -62534,7 +61136,6 @@ casu-|1
 afghansitan|1
 yuppish|1
 agey|1
-c._o._o._k.|1
 smi-|1
 prouder|1
 toulane|1
@@ -62582,7 +61183,6 @@ recove-|1
 cravitson|1
 lier|1
 re-acquainted|1
-'er|1
 clair's|1
 stru-|1
 ordain|1
@@ -62608,7 +61208,6 @@ gini|1
 kym|1
 grandperry|1
 thunderbirds|1
-n._c._o.|1
 bouffant|1
 ciscues|1
 healt-|1
@@ -62617,7 +61216,6 @@ haram|1
 west-pac|1
 crucible|1
 accounting's|1
-b._a.s|1
 sparklys|1
 gemstones|1
 gemology|1
@@ -62650,7 +61248,6 @@ anti-legal|1
 tings|1
 boe|1
 biggish|1
-a._e._o._g.|1
 extradited|1
 unfocussed|1
 obser-|1
@@ -62678,7 +61275,6 @@ catmeridian|1
 crotchet|1
 natal|1
 infusions|1
-b._a._t.|1
 authorizer|1
 homeworking|1
 parlaying|1
@@ -62686,7 +61282,6 @@ self-explanatory|1
 cattlemans|1
 blemishes|1
 pelvic|1
-e._r.s|1
 tas-|1
 rhona|1
 repossession|1
@@ -62745,7 +61340,6 @@ novaville|1
 -ality|1
 confidenti-|1
 perjus-|1
-n._d._a.|1
 lamperty|1
 suzie's|1
 skylight|1
@@ -62771,7 +61365,6 @@ rodrigius|1
 theo-|1
 videocassette|1
 beluchi|1
-w._l._s.|1
 came-|1
 kimmel's|1
 ninjas|1
@@ -62781,7 +61374,6 @@ wyans|1
 ethnicity's|1
 sensitively|1
 cockateil|1
-b._i._n.|1
 samori|1
 tenuda|1
 uncovers|1
@@ -62806,7 +61398,6 @@ flu-|1
 botch|1
 sit-coms|1
 sikes|1
-c._p._t._v.|1
 korman's|1
 korman|1
 -ko|1
@@ -62831,7 +61422,6 @@ decontaminate|1
 debriefings|1
 washiness|1
 overreached|1
-d._m._c.|1
 minyous|1
 tunisia|1
 crimping|1
@@ -62883,7 +61473,6 @@ humphries|1
 -us-|1
 -tingency|1
 building-|1
-d._c._a.|1
 aren-|1
 dry-|1
 maes|1
@@ -62907,7 +61496,6 @@ informs|1
 vigant-|1
 lookee|1
 noncha-|1
-c._d._c.'s|1
 croaking|1
 grammas|1
 distr-|1
@@ -62921,7 +61509,6 @@ bio-chemo|1
 uncivil|1
 milit|1
 melia|1
-c._o._t._w._o.|1
 ultrasounds|1
 boomtown|1
 vialed|1
@@ -62971,8 +61558,6 @@ orthotics|1
 advises|1
 charison|1
 unbuckle|1
-game,|1
-security.|1
 x-rayed|1
 abl-|1
 belt's|1
@@ -62980,7 +61565,6 @@ circuitous|1
 janes|1
 measur-|1
 infra|1
-e._n._c.|1
 sprague|1
 -standable|1
 modernism|1
@@ -63059,7 +61643,6 @@ ontina|1
 enrati|1
 richter|1
 veh-|1
-ma'am.|1
 colloquialism|1
 surpli-|1
 needleation|1
@@ -63080,7 +61663,6 @@ englishwoman|1
 amaz|1
 orangeburg|1
 batchelorette|1
-a._o._l.'s|1
 shhh|1
 comerc-|1
 heartthrob|1
@@ -63154,13 +61736,10 @@ workacaholic|1
 adversaries|1
 headstarts|1
 insensitivity|1
-n._a._e._t.|1
 co-sign|1
 hillary's|1
 quarts|1
 clairmore|1
-knew?|1
-grade.|1
 quamy|1
 chagrined|1
 mismanaging|1
@@ -63173,7 +61752,6 @@ farewells|1
 magnesia|1
 -eh|1
 michele's|1
-p._p._n._l.|1
 dissociate|1
 shuttered|1
 unanonymous|1
@@ -63191,7 +61769,6 @@ poetics|1
 thick-headed|1
 davora|1
 mj|1
-m._b._b._s.|1
 photocopies|1
 sli-|1
 redesigning|1
@@ -63201,13 +61778,7 @@ titusville|1
 lucya|1
 illana|1
 specula-|1
-summer?|1
-fall?|1
-schools?|1
-change?|1
 panteen|1
-then?|1
-differently?|1
 semes-|1
 supervises|1
 priori-|1
@@ -63246,7 +61817,6 @@ developer's|1
 non-profits|1
 land-line|1
 syndicating|1
-b._y._u._n.'s|1
 dan's|1
 serbian|1
 software's|1
@@ -63272,11 +61842,9 @@ pm's|1
 pitas|1
 ah-uh|1
 kumons|1
-b._n._b.|1
 re-set|1
 gift-ware|1
 -peech|1
-d._n._s.|1
 vedic|1
 astrologer|1
 dhosas|1
@@ -63310,7 +61878,6 @@ supposition|1
 whachama|1
 grown-up|1
 obstructing|1
-s._o._b.|1
 what-not|1
 hank's|1
 reproductions|1
@@ -63319,7 +61886,6 @@ authorizes|1
 latrine|1
 says-|1
 boswell|1
-show?|1
 rousso|1
 narrett|1
 grady|1
@@ -63328,13 +61894,11 @@ vicar|1
 penman|1
 -pitol|1
 pre-arranged|1
-a._f._l._a._c.|1
 blandest|1
 young'un|1
 pre-law|1
 tallies|1
 parley|1
-d._j.'s|1
 cooke|1
 osmething|1
 ramon|1
@@ -63354,7 +61918,6 @@ dos-|1
 hansen|1
 poed|1
 much'll|1
-q.'s|1
 skutches|1
 sandbags|1
 newsdays|1
@@ -63366,7 +61929,6 @@ takoma|1
 chinkster|1
 chok|1
 gere's|1
-o._n.|1
 curt|1
 izzi|1
 pock|1
@@ -63423,7 +61985,6 @@ downdraft|1
 neuro-|1
 transmitting|1
 dallied|1
-n._i._n._e.|1
 tectonic|1
 -ign|1
 reverberate|1
@@ -63447,7 +62008,6 @@ knee-high|1
 check-outs|1
 gaven's|1
 brokaw's|1
-d._i._a.|1
 airside|1
 meeters|1
 etlinger|1
@@ -63458,7 +62018,6 @@ coincidently|1
 portford|1
 astringent|1
 bangs|1
-i._d._s.|1
 obliging|1
 v8s|1
 sketchers|1
@@ -63468,7 +62027,6 @@ receptacle|1
 amity|1
 gunboat|1
 prohibitively|1
-k._m._l.|1
 breeches|1
 closey|1
 cinde|1
@@ -63497,14 +62055,7 @@ fitzsimmons|1
 everhart|1
 sprawls|1
 storied|1
-us.|1
-person.|1
-result,|1
-cautious,|1
-airport,|1
-happened,|1
 partways|1
-this?|1
 canvassing|1
 leha|1
 mustek|1
@@ -63546,7 +62097,6 @@ yolaina|1
 caribbeans|1
 berinaux|1
 debone|1
-b._g._s._u.|1
 frigidness|1
 silvernall|1
 karla|1
@@ -63569,7 +62119,6 @@ consumerization|1
 recorders|1
 porky|1
 kenikeeter|1
-e._b._e.|1
 howders|1
 hon'|1
 off-season|1
@@ -63613,7 +62162,6 @@ awash|1
 highshow|1
 equivocal|1
 vietman|1
-t._e._c._h._o.|1
 aced|1
 af|1
 norwiego|1
@@ -63623,7 +62171,6 @@ fitzwilliam|1
 nama|1
 rhesa|1
 re-send|1
-n._e._f._c._s.|1
 eni-|1
 macedonian|1
 scanty|1
@@ -63724,7 +62271,6 @@ titi|1
 mcgruff|1
 scruff|1
 n-ah|1
-mrs.|1
 overeater's|1
 ellenboro|1
 artisans|1
@@ -63770,7 +62316,6 @@ jaffrey|1
 -eight|1
 ambulatory|1
 splo-|1
-l._d._l.|1
 provocol|1
 ailing|1
 drainings|1
@@ -63794,12 +62339,6 @@ symptomatically|1
 over-the-counter|1
 petit|1
 fruit's|1
-n.'s|1
-a._l._a._n._n._a.|1
-a._l._a._n.|1
-c._h._e._n.|1
-g._r._e._t.|1
-g._r.|1
 suburb-y|1
 faired|1
 nauseousness|1
@@ -63827,7 +62366,6 @@ diuretic|1
 dermatitis|1
 dermatypes|1
 cybercork|1
-ammonia,|1
 ammonium|1
 ploughed|1
 bacter-|1
@@ -63861,7 +62399,6 @@ caboodle|1
 premedicated|1
 malrotated|1
 juliard|1
-s._c._h._a._r._f._f.|1
 scharff|1
 knotting|1
 vomits|1
@@ -63919,16 +62456,13 @@ wsh-|1
 shu|1
 kung-fu|1
 windsurfed|1
-gym.|1
 herons|1
-s._p._f.|1
 beastly|1
 enjoined|1
 boccie|1
 wra-|1
 nasc-|1
 qvc|1
-k._i._s._s.|1
 condensing|1
 chimed|1
 susanville|1
@@ -63954,10 +62488,7 @@ wig's|1
 over-sight|1
 elzi|1
 -ffiliated|1
-c._f._o.'s|1
 rejuvenate|1
-g._a._a._p.|1
-g._a._p._p.|1
 party-line|1
 moralist|1
 prospering|1
@@ -63973,9 +62504,7 @@ poignantly|1
 defunk|1
 crooking|1
 leichtefeld|1
-c._e.'s|1
 corpor-|1
-c._l.'s|1
 monop-|1
 cham|1
 mid-level|1
@@ -63983,14 +62512,11 @@ nonessential|1
 wage-|1
 mart's|1
 lay's|1
-i._p._o.'s|1
 multi-million|1
 clinker|1
 endless-|1
 petey's|1
 edy's|1
-know.|1
-r._t._c.|1
 regressing|1
 pro-business|1
 wilma|1
@@ -64016,7 +62542,6 @@ grand-baby|1
 hanad|1
 quintuplets|1
 musician's|1
-s._i._d._s.|1
 calais|1
 honduran|1
 strychnine|1
@@ -64026,7 +62551,6 @@ bowl-a-thon|1
 cross-country|1
 rues|1
 seann|1
-m._s._n._b.|1
 guilted|1
 decrees|1
 conked|1
@@ -64035,9 +62559,7 @@ stepfamily|1
 accelerates|1
 computerize|1
 disseminates|1
-e.'s|1
 undergr-|1
-n._j._i._t.|1
 bacheloric|1
 gozabon|1
 perh-|1
@@ -64048,7 +62570,6 @@ chrisu|1
 inductive|1
 freehandedly|1
 verifications|1
-p._c.'s|1
 over-using|1
 -tracting|1
 mid-eighties|1
@@ -64080,7 +62601,6 @@ conversated|1
 bramma|1
 shammet|1
 morely|1
-happened?|1
 pro--|1
 boggy|1
 tasmanians|1
@@ -64125,10 +62645,7 @@ proselytize|1
 umping|1
 infinitives|1
 phonemes|1
-person?|1
-one?|1
 cumulatively|1
-pets?|1
 cashmir|1
 spellings|1
 summer-y|1
@@ -64146,7 +62663,6 @@ sturbridge|1
 consta-|1
 professiona-|1
 re-doing|1
-e._s._o._l.|1
 slocombe|1
 tomilton|1
 peppy's|1
@@ -64174,7 +62690,6 @@ hobbie-|1
 comically|1
 snid-bits|1
 ruppert|1
-d._v._d|1
 progra-|1
 tesol|1
 wei|1
@@ -64187,7 +62702,6 @@ non-fiction|1
 apprentices|1
 co-owned|1
 notepads|1
-m._l._m.'s|1
 multi-level|1
 tanny|1
 conciliate|1
@@ -64221,7 +62735,6 @@ impediments|1
 recyclables|1
 orthodontics|1
 alverno|1
-u._a._i._c.|1
 booksellers|1
 pathologies|1
 tariasa|1
@@ -64266,7 +62779,6 @@ sugarbowl|1
 narrowness|1
 illy|1
 abroa-|1
-it,|1
 infirm|1
 in-preventable|1
 arbour|1
@@ -64294,14 +62806,14 @@ hysteri-|1
 reissued|1
 federalizing|1
 portsmen|1
-u._a._l.|1
 federalization|1
 figu-|1
 sleety|1
 lockerbee|1
 martials|1
 barahas|1
-124.6|1
+6|1
+124|1
 coincid-|1
 danya|1
 uner-|1
@@ -64324,7 +62836,6 @@ mading|1
 overnights|1
 nerve-racking|1
 re-route|1
-aside,|1
 spectrometer|1
 inter-agency|1
 politicalness|1
@@ -64362,7 +62873,6 @@ newst|1
 enforc-|1
 pre-september|1
 conscription|1
-o._c._u.|1
 traveling's|1
 traumatizes|1
 ak-47|1
@@ -64398,7 +62908,6 @@ moi|1
 peu|1
 shwela|1
 half-cocked|1
-s._u._v._s.|1
 ough|1
 kewpie|1
 shooken|1
@@ -64430,10 +62939,6 @@ counteracting|1
 draxwell|1
 wreathes|1
 expansio-|1
-um,|1
-ah,|1
-thursday,|1
-wednesday,|1
 geologically|1
 truster|1
 7|1
@@ -64451,7 +62956,6 @@ pairings|1
 orcas|1
 adap-|1
 interfaith|1
-p._o._r._t._a._n._t.|1
 structify|1
 quirkiness|1
 tussle|1
@@ -64469,14 +62973,6 @@ cuppa|1
 funny's|1
 attractively|1
 befuddling|1
-partners.|1
-said,|1
-attract?|1
-life?|1
-goals,|1
-compatible,|1
-it?|1
-partners,|1
 prox-|1
 amina|1
 pronoun|1
@@ -64493,7 +62989,6 @@ amortization|1
 tacked|1
 reshaped|1
 rah-|1
-m._r._i.'s|1
 officemate|1
 brewans|1
 falon|1
@@ -64577,7 +63072,6 @@ gawd|1
 dickinson's|1
 pullin-|1
 off-line|1
-phenomenon,|1
 holdom|1
 mcgill|1
 aspirer|1
@@ -64591,7 +63085,6 @@ decorates|1
 winterness|1
 altoretta|1
 wanneer|1
-u._s._a._o.|1
 stamp-|1
 singaporeans|1
 christianized|1
@@ -64618,9 +63111,6 @@ thanksgiv-|1
 noseeums|1
 penitential|1
 swabin's|1
-yet.|1
-good?|1
-meaning.|1
 creswell|1
 erudition|1
 prosodic|1
@@ -64644,9 +63134,7 @@ cypriots|1
 akunge|1
 ilkar|1
 perl|1
-applied.|1
 de-subscribe|1
-school.|1
 babbled|1
 welle|1
 fervently|1
@@ -64693,7 +63181,6 @@ moshe|1
 -tural|1
 radioactives|1
 inspection-|1
-n._p._l._r.|1
 pollyannaish|1
 -ssarily|1
 pacifistic|1
@@ -64710,9 +63197,7 @@ neander-|1
 percep-|1
 ploughshares|1
 airstrips|1
-h._m._o.'s|1
 jonesbrough|1
-t._h.|1
 grabber|1
 courses'|1
 semesters'|1
@@ -64725,7 +63210,6 @@ pro-death|1
 peop|1
 speechworks|1
 outsmarts|1
-u._f._p.|1
 malvern|1
 voorhees|1
 try'd|1
@@ -64734,13 +63218,11 @@ priding|1
 meister|1
 meisters|1
 right-|1
-b._k.|1
 bewildering|1
 truculent|1
 kello-|1
 -spections|1
 technics|1
-I'm|1
 inivation|1
 aught|1
 ratifies|1
@@ -64764,7 +63246,6 @@ plunder|1
 schem-|1
 koppel's|1
 ninety-one|1
-c._s._p._a._n.|1
 news'|1
 combating|1
 gunpowder|1
@@ -64783,7 +63264,6 @@ koller|1
 asplen|1
 neulander|1
 nintee-|1
-e._s._o.|1
 boxful|1
 lisp-|1
 harbin|1
@@ -64804,8 +63284,6 @@ shashona|1
 umlitz|1
 frasier's|1
 nymphomaniac|1
-w._d.|1
-c._y._a.|1
 socil-|1
 youngish|1
 authoritate|1
@@ -64822,14 +63300,12 @@ mueno|1
 publishings|1
 mccowell|1
 [sneeze]|1
-a._i._x.|1
 lexicography|1
 lexical|1
 lec-|1
 lap-top|1
 mumbles|1
 sass|1
-y._v.|1
 hime|1
 wose|1
 internationalization|1
@@ -64892,14 +63368,8 @@ pungent|1
 rivington|1
 unsympathetic|1
 tui-|1
-red,|1
-well.|1
 fasted|1
-energy.|1
-gossiping,|1
-said?|1
 xiofei|1
-this,|1
 sunshines|1
 perpose|1
 vinergy|1
@@ -64909,8 +63379,6 @@ unthinkingly|1
 overconsumption|1
 balconies|1
 pot's|1
-d._w._i.-ing|1
-d._w._i.'s|1
 plummer|1
 whiled|1
 designating|1
@@ -64927,7 +63395,6 @@ honer-|1
 secession|1
 gossi-|1
 dewy|1
-a._e._p.|1
 unwatchable|1
 discus-|1
 cappers|1
@@ -64959,7 +63426,6 @@ hymma|1
 typhoid|1
 purell|1
 detergents|1
-e._e._z._e.|1
 nighters|1
 -bly|1
 trabzon|1
@@ -64983,7 +63449,6 @@ musici-|1
 geneticists|1
 embodiment|1
 principled|1
-g._p._l.|1
 topi-|1
 ween-|1
 dweeb|1
@@ -64993,7 +63458,6 @@ salubrious|1
 shal|1
 dumble|1
 rollings|1
-j._k.|1
 contently|1
 bathesda|1
 herbalists|1
@@ -65015,7 +63479,6 @@ kevexal|1
 precaut-|1
 champaign's|1
 meghan|1
-d._b.|1
 masturbaters|1
 franklin's|1
 shus|1
@@ -65026,12 +63489,10 @@ passa-|1
 antibi-|1
 episcopa-|1
 aurelia|1
-o._b._g._y._n.s|1
 congenital|1
 hypercritical|1
 prolongs|1
 clod|1
-d._r._p.|1
 frugality|1
 quebecers|1
 jitters|1
@@ -65065,23 +63526,10 @@ oshinko|1
 sephardic|1
 matzo|1
 christmas'|1
-n._i._s._t._a.|1
 basics-|1
 -nition|1
 sautee|1
 -quistite|1
-coffee,|1
-wine,|1
-freshman,|1
-food,|1
-cooking,|1
-one,|1
-favorite?|1
-eating.|1
-not.|1
-no,|1
-married?|1
-know,|1
 doddington|1
 segues|1
 -giving|1
