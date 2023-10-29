@@ -31,11 +31,11 @@ def process(transcript, start = "", end = "", patterns = [], additional_trim_cha
 
     # remove space before special character
     for sub in remove_space_after :
-        trimmed = trimmed.replace(sub + " ", sub)
+        trimmed = trimmed.replace(sub + ' ', sub)
     
     # remove space after special character
     for sub in remove_space_before :
-        trimmed = trimmed.replace(" " + sub, sub)
+        trimmed = trimmed.replace(' ' + sub, sub)
 # clean
     # lower
     clean = trimmed.lower()
@@ -45,4 +45,9 @@ def process(transcript, start = "", end = "", patterns = [], additional_trim_cha
     for c in unwanted :
         clean = clean.replace(c, '')
 
+    if len(trimmed.split()) != len(clean.split()) :
+        print("Transcript Preprocessing unforeseen event: trimmed word deleted")
+        print(transcript)
+        print(trimmed)
+        print(clean)
     return trimmed, clean

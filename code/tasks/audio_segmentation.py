@@ -1,4 +1,5 @@
 import utils.file as utils
+from progress.bar import ChargingBar
 
 JOIN_GAP = 0.5  # in sec
 
@@ -6,7 +7,7 @@ def extract_speaker(transcript, speaker_A = "A", speaker_B = "B", header_lines =
     lines = [l for l in transcript.split("\n") if l and not l.isspace() and any(c.isalpha() for c in l)][header_lines:]
     text = []
     for l in lines :
-        line = l.split(' ')
+        line = l.split()
         start = float(line[0])
         end = float(line[1])
         speaker = line[2][0]
@@ -17,25 +18,19 @@ def extract_speaker(transcript, speaker_A = "A", speaker_B = "B", header_lines =
             'speaker' : speaker, 
             'utterance' : utterance.strip()
             })
-    speech_A = [t for t in text if t['speaker'] == speaker_A]
-    i = 0
-    while i < len(speech_A) - 1 :
-        if speech_A[i+1]['start'] - speech_A[i]['end'] < JOIN_GAP :
-            speech_A[i]['end'] = speech_A[i+1]['end']
-            speech_A[i]['utterance'] = speech_A[i]['utterance'] + " " + speech_A[i+1]['utterance']
-            speech_A.pop(i+1)
-        else :
-            i += 1
-    speech_B = [t for t in text if t['speaker'] == speaker_B]
-    i = 0
-    while i < len(speech_B) - 1 :
-        if speech_B[i+1]['start'] - speech_B[i]['end'] <= JOIN_GAP :
-            speech_B[i]['end'] = speech_B[i+1]['end']
-            speech_B[i]['utterance'] = speech_B[i]['utterance'] + " " + speech_B[i+1]['utterance']
-            speech_B.pop(i+1)
-        else :
-            i += 1
-    return speech_A, speech_B
+
+    speech = [[t for t in text if t['speaker'] == speaker_A], [t for t in text if t['speaker'] == speaker_B]]
+    for s in speech :
+        i = 0
+        while i < len(s) - 1 :
+            if s[i+1]['start'] - s[i]['end'] < JOIN_GAP :
+                s[i]['end'] = s[i+1]['end']
+                s[i]['utterance'] = s[i]['utterance'] + ' ' + s[i+1]['utterance']
+                s.pop(i+1)
+            else :
+                i += 1
+
+    return speech[0], speech[1]
     
 
 # i assume 2 channels (stereo)
@@ -46,8 +41,7 @@ def segment(transcript, waveform, sample_rate) :
 def segment_directory(speech_dir_source, transcript_dir_source, speech_dir_destination, transcript_dir_destination, sample_rate) :
     files = utils.get_directory_files(transcript_dir_source, "txt")
     # file = source + parent + stem + suffix
-    for file in files :
-        print("segment", str(file))
+    for file in ChargingBar("Segment Audio and Transcripts").iter(files) :
         stem = file.stem
         parent = str(file.parent)[len(transcript_dir_source) : ] + "\\"
         transcript_file = transcript_dir_source + parent + stem + ".txt"

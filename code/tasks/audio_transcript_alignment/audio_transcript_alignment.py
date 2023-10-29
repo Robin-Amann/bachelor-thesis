@@ -3,6 +3,8 @@ import torchaudio
 import utils.file as loader
 import tasks.audio_transcript_alignment.ctc_extention as ctc
 import tasks.transcript_alignment.preprocessing as pre
+from progress.bar import ChargingBar
+import utils.constants as constants
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -14,8 +16,8 @@ def align_file(audio_file, transcript_file, destination_file, sample_rate, wav2v
     # words = ctc.full_alignment(waveform, transcript, device)    # list of {transcript, start, end, score}
     words = ctc.base_ctc(waveform, transcript, device, wav2vec2_model)    # list of {transcript, start, end, score}
     if words == [] :
-        print("error", transcript_file)
-        loader.write_file('code\\errors\\audio_transcript_alignment.txt', "could not align " + audio_file + " " + transcript_file + '\n', mode='a')
+        print("Audio Transcript Error", transcript_file)
+        loader.write_file(constants.error_dir + '\\audio_transcript_alignment.txt', "could not align " + audio_file + " " + transcript_file + '\n', mode='a')
     for word, t in zip(words, trimmed.split()) :
         word['transcript'] = t
     loader.write_words_to_file(words, destination_file)
@@ -26,7 +28,7 @@ def align_directory(audio_directory, transcript_directory, destination_directory
     bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
     model = bundle.get_model().to(device)
     wav2vec2_model = (bundle, model)
-    for file in files :
+    for file in ChargingBar("Align Transcript to Audio").iter(files) :
         if int(str(file.parent)[-5 : ]) < 38 :
             print("skip", str(file))
             continue
@@ -48,8 +50,7 @@ def realign_file(transcript_file, destination_file) :
 
 def realign_directory(transcript_directory, destination_directory) :
     files = loader.get_directory_files(destination_directory, "txt")
-    for file in files :
-        print("realign AT:", str(file))
+    for file in ChargingBar("Realign Transcript to Audio").iter(files) :
         f = str(file)[len(destination_directory) : -4]
         transcript_file = transcript_directory + f + '.txt'
         destination_file = destination_directory + f + '.txt'

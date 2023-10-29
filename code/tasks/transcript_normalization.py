@@ -1,6 +1,7 @@
 from nemo_text_processing.text_normalization.normalize import Normalizer
 import utils.file as utils
 import os
+from progress.bar import ChargingBar
 
 def normalize(file_path, normalizer = None, filename_extention = None) :
     if normalizer == None :
@@ -16,7 +17,7 @@ def normalize(file_path, normalizer = None, filename_extention = None) :
 def normalize_directory(directory_path, filename_extention = None) :
     files = utils.get_directory_files(directory_path, "txt")
     normalizer = Normalizer(input_case='cased', lang='en')
-    for file in files :
+    for file in ChargingBar("Normalize Transcript").iter(files) :
         normalize(str(file), normalizer, filename_extention)    
 
 # normalized = normalizer.normalize(transcipt, verbose=False, punct_post_process=True)

@@ -2,7 +2,8 @@ import tasks.transcript_alignment.preprocessing as pre
 import tasks.transcript_alignment.postprocessing as post
 import tasks.transcript_alignment.wer_align as wer
 import utils.file as utils
-
+from progress.bar import ChargingBar
+import utils.constants as constants
 
 # operations are from hand to machine
 
@@ -14,7 +15,7 @@ def align_transcript(manual_source, automatic_source, operations_desination, wri
     # hand_trimmed, hand_clean = pre.process(transcript=hand_transcript_messy, patterns=["A:", "B:", "\t", "\n", "[0-9]{1,3}.[0-9]{2}", "\(\(", "\)\)"])
     # machine_trimmed, machine_clean = pre.process(transcript=machine_transcript_messy, additional_clean_chars="<>-")
 
-    hand_trimmed, hand_clean = pre.process(transcript=hand_transcript_messy, patterns=["\(\(", "\)\)"])
+    hand_trimmed, hand_clean = pre.process(transcript=hand_transcript_messy, patterns=constants.manual_trim_patterns)
     machine_trimmed, machine_clean = pre.process(transcript=machine_transcript_messy)
 
     # wer alignment
@@ -29,8 +30,7 @@ def align_transcript(manual_source, automatic_source, operations_desination, wri
 def align_directory(manual_directory, automatic_directory, destination_directory, write_only_operations=False) :
     files = utils.get_directory_files(manual_directory, "txt")
     # file = source + parent + (stem + suffix = name)
-    for file in files :
-        print("align TT:", str(file))
+    for file in ChargingBar("Align Transcripts").iter(files) :
         f = str(file)[len(manual_directory) : ]
         manual_transcript = manual_directory + f
         automatic_transcript = automatic_directory + f

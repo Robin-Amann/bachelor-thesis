@@ -1,5 +1,6 @@
 import whisper
 import utils.file as utils
+from progress.bar import ChargingBar
 
 
 def transcribe_dir(speech_dir, transcript_dir, model="whisper") :
@@ -9,11 +10,10 @@ def transcribe_dir(speech_dir, transcript_dir, model="whisper") :
     else :
         transcription_model = whisper.load_model('base')    
     files = utils.get_directory_files(speech_dir, 'wav')
-    for f in files :
-        print("transcribe:", str(f))
+    for f in ChargingBar("Transcribe Audio").iter(files) :
         stem = f.stem
         parent = str(f.parent)[len(speech_dir) : ] + "\\"
-        transcript = transcription_model.transcribe(str(f), fp16 = False)
+        transcript = transcription_model.transcribe(str(f), language='en', fp16 = False)
         transcript = transcript['text']       
         utils.write_file(transcript_dir + parent + stem + ".txt", transcript)
 

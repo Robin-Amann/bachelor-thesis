@@ -1,6 +1,0 @@
-vocabulary:  63.543   21.985.807
-common:       5.272   21.468.997   97.64 %
-hesitations:    110      829.922   03.77 %
-stutter:      6.752      153.172   00.69 %
-commentary:      15      559.618   02.54 %
-[laughter], [noise], [sigh], [mn], [lipsmack], [cough], [laugh], [breath], [pause], [[skip]], [mn]-, [sigh]-, s[laughter], [laughter]-, [sneeze]
