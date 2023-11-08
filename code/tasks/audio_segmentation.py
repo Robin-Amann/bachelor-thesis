@@ -1,5 +1,6 @@
 import utils.file as utils
 from progress.bar import ChargingBar
+from pathlib import Path
 
 JOIN_GAP = 0.5  # in sec
 
@@ -38,7 +39,7 @@ def segment(transcript, waveform, sample_rate) :
     return [{'transcript' : t['utterance'], 'audio' : waveform[int(t['start'] * sample_rate) : int(t['end'] * sample_rate)]  } for t in transcript]
 
 
-def segment_directory(speech_dir_source, transcript_dir_source, speech_dir_destination, transcript_dir_destination, sample_rate) :
+def fe_segment_directory(speech_dir_source, transcript_dir_source, speech_dir_destination, transcript_dir_destination, sample_rate) :
     files = utils.get_directory_files(transcript_dir_source, "txt")
     # file = source + parent + stem + suffix
     for file in ChargingBar("Segment Audio and Transcripts").iter(files) :
@@ -63,3 +64,50 @@ def segment_directory(speech_dir_source, transcript_dir_source, speech_dir_desti
         for index, seg in enumerate(B) :
             utils.write_audio(speech_dir_destination + parent + stem + "\\B_" + str(index) + ".wav", seg['audio'], sample_rate)
             utils.write_file(transcript_dir_destination + parent + stem + "\\B_" + str(index) + ".txt", seg['transcript'])
+
+
+
+## -------------------------------------------------------------------------------------------------------------------------------------
+
+
+# 'word' : str, 'annotation' : str, 'pause_type' : str, 'is_restart' : bool, 'start' : float, 'end' : float
+def segment(transcript_p) :
+    transcript = transcript_p.copy()
+    segments = []
+    end = 1
+    while end <= len(transcript) :
+        start = end - 1
+        while end < len(transcript) and transcript[end]['start'] - transcript[end - 1]['end'] < JOIN_GAP :
+            end += 1
+        segments.append(transcript[start : end])
+        end += 1
+    
+    timestamps = [{'start' : segment[0]['start'], 'end' : segment[-1]['end']} for segment in segments]
+
+    for segment in segments :
+        start = segment[0]['start']
+        for word in segment:
+            word['start'] -= start
+            word['end'] -= start
+    return segments, timestamps
+
+
+def sb_segment_directory(sb_transcript_dir, sb_segmented_transcript_dir) :
+    manual_transcript_files = [ (f.stem, f) for f in utils.get_directory_files(sb_transcript_dir, 'txt')]
+
+    stub = len(Path(sb_transcript_dir).parts)
+    for stem, transcript_file in ChargingBar("Segment Audio and Transcripts").iter(manual_transcript_files) :
+        number = stem[2:6]
+        speaker = stem[6]
+ 
+        # <segmented-dir>/<specific>/<number>
+        sb_segmented_transcript_file_dir = Path(sb_segmented_transcript_dir) / Path('/'.join(list(transcript_file.parts[stub : -1]) + [number]))
+        # 'word' : str, 'annotation' : str, 'pause_type' : str, 'is_restart' : bool, 'start' : float, 'end' : float
+        transcript = utils.read_label_timings_from_file(transcript_file)
+        segments, timestamps = segment(transcript)
+
+        for index, seg in enumerate(segments) :
+            utils.write_label_timings_to_file(sb_segmented_transcript_file_dir / speaker / ( stem + "{:03d}".format(index) + ".txt" ), seg)
+
+        utils.write_timestamps_to_file(sb_segmented_transcript_file_dir / ( stem + "Speech.txt" ), timestamps)
+        

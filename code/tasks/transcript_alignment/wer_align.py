@@ -58,16 +58,16 @@ def get_operations(from_words, to_words):
     return backtrack(from_words, to_words, d)
 
 
-def align(start, end, operations) :
+def align(start, end, operations, insertion_obj='') :
     x = start[:]
     y = end[:]
     i = 0
     j = 0
     for op in operations :
         if op == "i" :
-            x.insert(i, "")
+            x.insert(i, insertion_obj)
         elif op == "d" :
-            y.insert(j, "")
+            y.insert(j, insertion_obj)
         i += 1
         j += 1 
     return x, y

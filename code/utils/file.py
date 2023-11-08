@@ -1,10 +1,13 @@
-import torch
 import torchaudio
 import pathlib
 import os
 
 def get_directory_files(directory, filetype) :
-    files = [f for f in pathlib.Path(directory).glob("**\*." + filetype)]    
+    system = os.name
+    pattern = "**/*."
+    if system == 'nt' :
+        pattern = "**\*."
+    files = [f for f in pathlib.Path(directory).glob(pattern + filetype)]    
     return files
 
 
@@ -40,6 +43,27 @@ def write_file(path, content, mode='w') :
         file.write(content)
 
 
+
+def read_obj_from_file(file_path, keys, types = [], separator='|') :
+    content = read_file(file_path)
+    lines = content.split('\n')
+    data = [dict(zip(keys, line.split(separator))) for line in lines]
+    if types :
+        bundle = list(zip(keys, types))
+        for value in data :
+            for key, type in bundle :
+                value[key] = type(value[key])
+    return data
+
+def write_obj_to_file(file_path, data_p, separator='|') :
+    data = data_p.copy()
+    for value in data :
+        for key in value.keys() :
+            value[key] = str(value[key])
+    data = [separator.join(list(value.values())) for value in data]
+    write_file(file_path, '\n'.join(data))
+
+    
 def read_vocabulary(path) :
     file_content = read_file(path).split('\n')
     vocabulary = [ tuple(w.split('|')) for w in file_content if w and not w.isspace()]
@@ -70,14 +94,33 @@ def write_audio_labels_to_file(audio_file, segments) :
     write_file(audio_file[:-4] + ".txt", segments)
 
 
-def write_words_to_file(words, destination_file) :
-    words = [word['transcript'] + '|' + str(word['start']) + '|'+ str(word['end']) + '|' + str(word['score']) for word in words]
-    words = '\n'.join(words)
-    write_file(destination_file, words)
-
 def read_words_from_file(file_path) :
     words = read_file(file_path)
     words = words.split('\n')
     words = [tuple(l.split('|')) for l in words]
     words = [ { 'transcript' : transcript, 'start' : int(start), 'end' : int(end), 'score' : float(score) } for transcript, start, end, score in words ]
     return words
+
+
+def write_words_to_file(words, destination_file) :
+    words = [word['transcript'] + '|' + str(word['start']) + '|'+ str(word['end']) + '|' + str(word['score']) for word in words]
+    words = '\n'.join(words)
+    write_file(destination_file, words)
+
+
+def read_label_timings_from_file(file_path) :
+    return read_obj_from_file(file_path, keys=['word', 'annotation', 'pause_type', 'is_restart', 'start', 'end'], types=[str, str, str, bool, float, float], separator='<')
+    
+
+# word, annotation, pause_type, is_restart, start, end
+def write_label_timings_to_file(file_path, data) :
+    write_obj_to_file(file_path, data, separator='<')
+
+
+def read_timestamps_from_file(file_path) :
+    return read_obj_from_file(file_path, keys=['start', 'end'], types=[float, float])
+    
+
+# word, annotation, pause_type, is_restart, start, end
+def write_timestamps_to_file(file_path, data) :
+    write_obj_to_file(file_path, data)

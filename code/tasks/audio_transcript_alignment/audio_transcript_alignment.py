@@ -39,6 +39,22 @@ def align_directory(audio_directory, transcript_directory, destination_directory
         align_file(audio_file, transcript_file, destination_file, sample_rate, wav2vec2_model)
 
 
+def sb_align_directory(segments_dir, audio_dir, transcript_dir, destination_dir, sample_rate) :
+    files = loader.get_directory_files(transcript_dir, "txt")
+    bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
+    model = bundle.get_model().to(device)
+    wav2vec2_model = (bundle, model)
+    for file in ChargingBar("Align Transcript to Audio").iter(files) :
+        if int(str(file.parent)[-5 : ]) < 38 :
+            print("skip", str(file))
+            continue
+        f = str(file)[len(transcript_dir) : -4]
+        audio_file = audio_dir + f + '.wav'
+        transcript_file = transcript_dir + f + '.txt'
+        destination_file = destination_dir + f + '.txt'
+        align_file(audio_file, transcript_file, destination_file, sample_rate, wav2vec2_model)
+
+
 def realign_file(transcript_file, destination_file) :
     transcript = loader.read_file(transcript_file)
     trimmed, clean = pre.process(transcript, patterns=['\(\(', '\)\)'])

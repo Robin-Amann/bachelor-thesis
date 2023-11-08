@@ -1,14 +1,46 @@
+import whisper
+import os
+import re
+from pathlib import Path, PurePath
+
 import utils.file as utils
-import utils.constants as constants
-from collections import Counter
-import matplotlib.pyplot as plt
-from progress.bar import ChargingBar
-from scipy.interpolate import griddata
-import numpy as np
+
+# annotation_dir = "D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd"
+# annotation_files = utils.get_directory_files(annotation_dir, 'mgd')
+# chars = set()
+# for f in annotation_files :
+#     content = utils.read_file(str(f))
+#     chars = chars.union(set(content))
+
+chars = set({"'", '\n', '2', '>', '(', '8', '|', '!', '`', '=', 'z', 'E', 'X', 'A', '#', 'W', ':', ']', '_', '-', 'w', '+', 'U', '6', 's', '?', 'o', 'p', 'G', ',', 'D', ';', 'Z', '^', ')', 'm', 'x', 'T', '\t', '{', 'u', 'N', '"', '*', 'd', 'v', 'J', 'Q', '5', 'c', 'y', 'M', 'H', 'O', 'L', '}', '@', ' ', '7', 'P', 'n', '[', 'l', 'q', 'V', '&', 'C', '1', 'I', 'b', 'B', 'j', 't', 'h', '<', 'r', 'g', 'R', '9', 'k', 'K', 'a', 'f', 'Y', 'i', 'F', '4', '/', '0', '.', 'e', 'S', '3', '$'})
+print(chars - set("qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM1234567890"))
+
+
+
+# {'`', ';', '<', '{', '#', ')', '-', '$', '\t', ']', '=', '|', "'", '[', '*', ',', '@', '^', '?', '(', '&', '}', '!', '/', '_', ' ', '+', '.', '"', '>', '\n', ':'}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+# import utils.file as utils
+# import utils.constants as constants
+# from collections import Counter
+# import matplotlib.pyplot as plt
+# from progress.bar import ChargingBar
+# from scipy.interpolate import griddata
+# import numpy as np
 
 # def wer_distribution() :
 #     files = utils.get_directory_files(constants.transcript_alignment_dir, 'txt')

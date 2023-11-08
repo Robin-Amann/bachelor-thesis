@@ -22,3 +22,15 @@ vocabulary_whisper_000_dir = 'code\\data\\vocabulary\\vocabulary_whisper'
 error_dir = 'code\\data\\errors'
 
 manual_trim_patterns = ["\(\(", "\)\)", '\[laughter\]', '\[noise\]', '\[sigh\]', '\[lipsmack\]', '\[cough\]', '\[laugh\]', '\[breath\]', '\[pause\]', '\[\[skip\]\]', '\[sigh\]-',  '\[laughter\]-', '\[sneeze\]']
+
+
+sb_annotation_dir = "/project/data_asr/LDC/LDC99T42/treebank_3/dysfl/mgd/swbd"
+sb_timing_dir = "/export/data3/bachelor_theses/ramann/data/Switchboard-1 Release 2 Transcripts"
+sb_speech_dir = "/project/data_asr/LDC/LDC97S62"
+
+data_base = "/export/data3/bachelor_theses/ramann/data/"
+
+sb_manual_transcript_dir = data_base + "Transcripts"
+sb_segmented_manual_transcript_dir = data_base + "Transcripts_Segmented"
+sb_segmented_automatic_transcript_dir = data_base + "Whisper_Segmented"
+sb_transcript_alignment_dir = data_base + "Transcript_Alignment"
