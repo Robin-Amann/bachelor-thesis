@@ -26,8 +26,8 @@ transcriptor.sb_transcribe_dir(dir.sb_segmented_manual_transcript_dir, dir.sb_sp
 # works
 transcript_alignment.sb_align_directory(dir.sb_segmented_manual_transcript_dir, dir.sb_segmented_automatic_transcript_dir, dir.sb_transcript_alignment_dir, True)
 
-# not ready
-# audio_transcript_alignment.sb_align_directory(dir.sb_segmented_manual_transcript_dir, dir.sb_speech_dir, dir.sb_segmented_automatic_transcript_dir, dir.sb_destination_dir, dir.sample_rate)
+
+audio_transcript_alignment.sb_align_automatic_directory(dir.sb_segmented_manual_transcript_dir, dir.sb_speech_dir, dir.sb_segmented_automatic_transcript_dir, dir.sb_audio_transcript_alignment_dir, dir.sample_rate)
 
 # not ready
 # vad.

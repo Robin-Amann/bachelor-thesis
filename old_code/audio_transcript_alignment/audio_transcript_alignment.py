@@ -14,8 +14,7 @@ def align_file(audio_file, transcript_file, destination_file, sample_rate, wav2v
     trimmed, clean = pre.process(transcript, patterns=['\(\(', '\)\)'])  # \[[^\]]*\] --> [laughter] [mn] [lipsmack]
     transcript = clean.upper().replace(' ', '|')
     waveform = loader.read_audio(audio_file, sample_rate)
-    # words = ctc.full_alignment(waveform, transcript, device)    # list of {transcript, start, end, score}
-    words = ctc.base_ctc(waveform, transcript, device, wav2vec2_model)    # list of {transcript, start, end, score}
+    words = ctc.full_alignment(waveform, transcript, device)    # list of {transcript, start, end, score}
     if words == [] :
         print("Audio Transcript Error", transcript_file)
         loader.write_file(constants.error_dir + '\\audio_transcript_alignment.txt', "could not align " + audio_file + " " + transcript_file + '\n', mode='a')
@@ -45,8 +44,8 @@ def sb_align_automatic(audio_file, transcript_file, sample_rate, wav2vec2_model)
     transcript = loader.read_file(transcript_file)
     trimmed, clean = pre.process(transcript)
     transcript = clean.upper().replace(' ', '|')
-    # words = ctc.full_alignment(waveform, transcript, device)    # list of {transcript, start, end, score}
-    words = ctc.base_ctc(audio, transcript, device, wav2vec2_model)    # list of {transcript, start, end, score}
+    words = ctc.full_alignment(audio, transcript, device)    # list of {transcript, start, end, score}
+    # words = ctc.base_ctc(audio, transcript, device, wav2vec2_model)    # list of {transcript, start, end, score}
     if words :
         for word, t in zip(words, trimmed.split()) :
             word['transcript'] = t

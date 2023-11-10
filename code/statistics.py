@@ -36,7 +36,7 @@ import utils.constants as constants
 
 
 # hesitation statistic
-stats.hesitation_translation(constants.segmented_transcript_dir, constants.whisper_dir, constants.transcript_alignment_dir)
+# stats.hesitation_translation(constants.segmented_transcript_dir, constants.whisper_dir, constants.transcript_alignment_dir)
 #       w   h+i      n  c
 # [152074,  139, 12292, 0]
 # [  1499, 2431,  3632, 0]
@@ -49,3 +49,8 @@ stats.hesitation_translation(constants.segmented_transcript_dir, constants.whisp
 # 32 % are beeing transcribed as hesitations and
 # 48 % are not beeing transcribed
 
+manual_dir = "D:\\Robin_dataset\\Switchboard\\Example\\Transcripts_Segmented"
+automatic_dir = "D:\\Robin_dataset\\Switchboard\\Example\\Whisper_Segmented"
+alignment_dir = "D:\\Robin_dataset\\Switchboard\\Example\\Transcript_Alignment"
+
+stats.sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir)

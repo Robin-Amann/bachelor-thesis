@@ -109,12 +109,12 @@ def write_words_to_file(words, destination_file) :
 
 
 def read_label_timings_from_file(file_path) :
-    return read_obj_from_file(file_path, keys=['word', 'annotation', 'pause_type', 'is_restart', 'start', 'end'], types=[str, str, str, bool, float, float], separator='<')
+    return read_obj_from_file(file_path, keys=['word', 'annotation', 'pause_type', 'is_restart', 'start', 'end'], types=[str, str, str, bool, float, float], separator='|')
     
 
 # word, annotation, pause_type, is_restart, start, end
 def write_label_timings_to_file(file_path, data) :
-    write_obj_to_file(file_path, data, separator='<')
+    write_obj_to_file(file_path, data, separator='|')
 
 
 def read_timestamps_from_file(file_path) :
@@ -124,3 +124,19 @@ def read_timestamps_from_file(file_path) :
 # word, annotation, pause_type, is_restart, start, end
 def write_timestamps_to_file(file_path, data) :
     write_obj_to_file(file_path, data)
+
+
+def get_dir_tuples(dir_list, type_list, conditions, merge_condition) :
+    all_files = []
+    for d, t, c in zip(dir_list, type_list, conditions) :
+        files = get_directory_files(d, t)
+        files = [(f.stem, f) for f in files if c(f.stem)]
+        all_files.append(files)
+    tuples = []
+    for f in all_files[0] :
+        suitable = []
+        for files in all_files[1 : ] :
+            suitable.append([x for x in files if merge_condition(f[0], x[0])])
+        if all(len(x) > 0 for x in suitable) :
+            tuples.append((f, *suitable))
+    return tuples
