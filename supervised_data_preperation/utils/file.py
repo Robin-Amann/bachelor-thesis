@@ -8,6 +8,14 @@ def get_directory_files(directory, filetype) :
     files = [f for f in pathlib.Path(directory).glob(pattern + filetype)]    
     return files
 
+# def get_single_dir_tuples(dir_list, type_list, names, condition) :
+#     all_files = []
+#     all_files.append([f for f in get_directory_files(dir_list[0], type_list[0]) if condition(f)])
+    
+#     for dir, t, name in zip(dir_list[1:], type_list[1:], names) :
+#         all_files.append([repath(f, dir_list[0], dir, stem = name(f) ,suffix=t) for f in all_files[0] ])
+    
+#     return list(zip(*all_files))
 
 def _get_dir_tuples(dir_list, type_list, conditions, merge_condition) :
     all_files = []
@@ -26,6 +34,7 @@ def _get_dir_tuples(dir_list, type_list, conditions, merge_condition) :
         if all(len(x) > 0 for x in suitable) :
             tuples.append((f, *suitable))
     return tuples
+
 
 def get_dir_tuples(*args) :
     if len(args) == 4 :
@@ -58,7 +67,6 @@ def repath(file, old_grand_dir_p, new_grad_dir_p, sub_dir=[], stem=None, suffix=
     n = len(old_grand_dir.parts)
     return new_grad_dir / Path('/'.join(list(file.parts[n : -1]) + sub_dir)) / (stem + suffix)
     
-
 
 def read_audio(file_path, sample_rate) :
     if not os.path.isfile(file_path) :
@@ -132,13 +140,6 @@ def write_vocabulary(file_path, vocabulary) :
 
 from enum import Enum
 LABELS = Enum('Label', ['SILENCE', 'SPEECH', 'HESITATION'])
-
-def read_audio_labels_from_file(file_path) :
-    return read_obj_from_file(file_path, keys=['label', 'start', 'end'], types=[str, int, int])
-
-def write_audio_labels_to_file(file_path, data) :
-    write_obj_to_file(file_path, data)
-
 
 def read_words_from_file(file_path) :
     return read_obj_from_file(file_path, keys=['transcript', 'start', 'end', 'score'], types=[str, int, int, float])

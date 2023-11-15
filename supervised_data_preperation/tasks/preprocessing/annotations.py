@@ -30,7 +30,7 @@ def lines_to_words(ann) :
 
 def merge_abbreviations(trans) :
     for i in range(len(trans) - 1) :
-        if "'" in trans[i + 1]['word'] :
+        if trans[i + 1]['word'] in ["'s", "'d", "n't", "'re", "'ve", "'m", "'ll", "'"]:
             trans[i]['word'] = trans[i]['word'] + trans[i+1]['word']
             trans[i]['annotation'] = trans[i]['annotation'] + "+" + trans[i+1]['annotation']
             trans[i+ 1]['word'] = ""

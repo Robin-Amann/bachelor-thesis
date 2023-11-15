@@ -1,21 +1,17 @@
 import tasks.preprocessing.annotations as annotations
 import tasks.preprocessing.timings as timing
 import utils.file as utils
+import utils.constants as constants
 from progress.bar import ChargingBar
 from pathlib import Path
 import re
-import tasks.transcript_alignment as wer 
-
-
-def lower_words(words) :
-    for value in words :
-        value['word'] = value['word'].lower()  
+import tasks.transcript_alignment as wer
 
 
 def align(trans_p, timing_p) :
     trans = trans_p.copy()
     timing = timing_p.copy()
-    operations = wer.get_operations([w['word'] for w in trans], [w['word'] for w in timing])
+    operations = wer.get_operations([w['word'].lower() for w in trans], [w['word'].lower() for w in timing])
     trans_aligned, timing_aligned = wer.align(trans, timing, operations, insertion_obj=dict())
     
     start = 0
@@ -40,7 +36,7 @@ def align(trans_p, timing_p) :
             start = end
 
         # word split up in multiple words (some time == sometime) --> take whole word
-        elif ''.join(xi) == yi[0] or ''.join(yi) == xi[0] :
+        elif ''.join(xi).lower() == yi[0].lower() or ''.join(yi).lower() == xi[0].lower() :
             trans_i = [v for v in trans_aligned[start : end] if 'word' in v]
             timing_i = [v for v in timing_aligned[start : end] if 'word' in v]
             trans_i = {
@@ -99,12 +95,6 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
     timing_A = timing.extract_timing(timing_A_content, timing_patterns)
     timing_B = timing.extract_timing(timing_B_content, timing_patterns)
 
-    # align
-    lower_words(trans_A)  
-    lower_words(trans_B)  
-    lower_words(timing_A)  
-    lower_words(timing_B)  
-
     return align(trans_A, timing_A), align(trans_B, timing_B)
 
 
@@ -120,7 +110,7 @@ def process_dir(annotation_dir, timing_dir, desination_dir, annotation_type='mgd
         ], 
         lambda s, sn : sn.startswith(s) 
     )    
-    files = [ (s, f0, f1[0][1], f2[0][1]) for (s, f0), f1, f2 in files ]
+    files = [ (s, f0, f1[0][1], f2[0][1]) for (s, f0), f1, f2 in files if not s[2:6] in constants.ignore_files]
 
     for stem, annotation_file, timing_file_A, timing_file_B in ChargingBar("Prepare Transcripts").iter(files) :
         a, b = process_file(str(annotation_file), str(timing_file_A), str(timing_file_B), ann_patterns, timing_patterns)

@@ -1,6 +1,7 @@
 import utils.file as utils
+import utils.constants as constants
 from progress.bar import ChargingBar
-from pathlib import Path
+
 
 JOIN_GAP = 0.5  # in sec
 
@@ -27,7 +28,7 @@ def segment(transcript_p) :
 
 
 def segment_dir(transcript_dir, segmented_transcript_dir) :
-    manual_transcript_files = [ (f.stem, f) for f in utils.get_directory_files(transcript_dir, 'txt')]
+    manual_transcript_files = [ (f.stem, f) for f in utils.get_directory_files(transcript_dir, 'txt') if not f.stem[2:6] in constants.ignore_files]
 
     for stem, transcript_file in ChargingBar("Segment Audio and Transcripts").iter(manual_transcript_files) :
         number = stem[2:6]

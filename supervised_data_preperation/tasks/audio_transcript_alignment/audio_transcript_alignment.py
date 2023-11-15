@@ -5,8 +5,10 @@ import tasks.audio_transcript_alignment.ctc as ctc
 import tasks.transcript_cleanup as cleaning
 from progress.bar import ChargingBar
 import os
+import utils.constants as constants
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
 
 def transform_result(ratio, words) :
     result = []
@@ -41,22 +43,22 @@ def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, en
 def align_file(audio_file, transcript_file, sample_rate, wav2vec2_model=None, start=-1, end=-1) :
     if wav2vec2_model == None :
         bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
-        model = bundle.get_model().to(device)
+        model = bundle.get_model(dl_kwargs=model_args).to(device)
         wav2vec2_model = (bundle, model)
 
     transcript = utils.read_file(transcript_file)
     if transcript and not transcript.isspace() :
         words = align(audio_file, transcript_file, sample_rate, wav2vec2_model, int(start*sample_rate), int(end*sample_rate))
         if not words :
-            print("\ncould not align", transcript_file.stem)
+            utils.write_file(constants.error_dir / 'audio_transcript_alignment.txt', "could not align: " + transcript_file.stem + "\n", mode='a')
         return words
     else :
         return []
 
 
 def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir, sample_rate) :
-    bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
-    model = bundle.get_model().to(device)
+    bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H
+    model = bundle.get_model(dl_kwargs=model_args).to(device)
     wav2vec2_model = (bundle, model)
     print('device:', device)
     print('os:', os.name)
@@ -67,39 +69,25 @@ def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir, sample_r
         (transcript_dir, "txt", lambda s : True) ], 
         lambda s1, s2: s1[2:7] in s2  # number and speaker
     )
-    files = [(s, f1, f2[0][1], [f for _, f in f3]) for (s, f1), f2, f3 in files]
+    files = [(s, f1, f2[0][1], [f for _, f in f3]) for (s, f1), f2, f3 in files if not s[2:6] in constants.ignore_files]
 
-    for stem, segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(files) :
-        segments = utils.read_timestamps_from_file(str(segment_file))
-        
-        for index, segment in enumerate(segments) :
-            transcript_file = next(f for f in transcript_files if (stem[6] + "{:03d}".format(index)) in f.stem)
-            destination_file = utils.repath(segment_file, segments_dir, destination_dir, [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
+    s = 1
+    grouped = dict()
+    for f in files :
+        p = int(f[1].parts[-3])
+        if p in grouped :
+            grouped[p].append(f)
+        else :
+             grouped[p] = [f]
+    for p in [x for x in grouped.keys() if x >= s].sort() :
+        print("Transcribe dir", p)
 
-            words = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'])
-            utils.write_words_to_file(destination_file, words)
+        for stem, segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(files) :
+            segments = utils.read_timestamps_from_file(str(segment_file))
+            
+            for index, segment in enumerate(segments) :
+                transcript_file = next(f for f in transcript_files if (stem[6] + "{:03d}".format(index)) in f.stem)
+                destination_file = utils.repath(segment_file, segments_dir, destination_dir, [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
 
-
-# sw2005ASpeech
-# D:\Robin_dataset\Switchboard\Example\Manual_Segmented\20\2005\sw2005ASpeech.txt
-# D:\Robin_dataset\Switchboard\Example\Speech\01\SWB1\sw02005A.wav
-# WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/A/sw2005A000.txt'), 
-# WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/A/sw2005A001.txt'), 
-# WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/A/sw2005A002.txt'), 
-# WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/A/sw2005A003.txt'), 
-# WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/A/sw2005A004.txt')]
-
-# sw2005BSpeech
-# D:\Robin_dataset\Switchboard\Example\Manual_Segmented\20\2005\sw2005BSpeech.txt
-# D:\Robin_dataset\Switchboard\Example\Speech\01\SWB1\sw02005B.wav
-# [WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/B/sw2005B000.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/B/sw2005B001.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/B/sw2005B002.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/B/sw2005B003.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/20/2005/B/sw2005B004.txt')]
-
-# sw2154ASpeech
-# D:\Robin_dataset\Switchboard\Example\Manual_Segmented\21\2154\sw2154ASpeech.txt
-# D:\Robin_dataset\Switchboard\Example\Speech\02\SWB1\sw02154A.wav
-# [WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/A/sw2154A000.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/A/sw2154A001.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/A/sw2154A002.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/A/sw2154A003.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/A/sw2154A004.txt')]
-
-# sw2154BSpeech
-# D:\Robin_dataset\Switchboard\Example\Manual_Segmented\21\2154\sw2154BSpeech.txt
-# D:\Robin_dataset\Switchboard\Example\Speech\02\SWB1\sw02154B.wav
-# [WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/B/sw2154B000.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/B/sw2154B001.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/B/sw2154B002.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/B/sw2154B003.txt'), WindowsPath('D:/Robin_dataset/Switchboard/Example/Automatic_Segmented/21/2154/B/sw2154B004.txt')]
+                words = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'])
+                utils.write_words_to_file(destination_file, words)

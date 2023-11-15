@@ -2,11 +2,14 @@ import torch
 import torchaudio
 from dataclasses import dataclass
 import tasks.audio_transcript_alignment.visualization as visual
+import utils.constants as constants
+
+model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
 
 def get_emission(waveform, device, wav2vec2_model=None) :
     if wav2vec2_model == None :
         bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
-        model = bundle.get_model().to(device)
+        model = bundle.get_model(dl_kwargs=model_args).to(device)
     else :
         bundle, model = wav2vec2_model
     labels = bundle.get_labels()                   

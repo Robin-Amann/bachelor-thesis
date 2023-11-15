@@ -14,12 +14,10 @@ segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
 
 transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_seg_dir, constants.sample_rate, 'whisper')
 
-# normalizer.normalize_dir(constants.manual_seg_dir)
-###
-# normalizer.normalize_dir(constants.automatic_seg_dir)
+normalizer.normalize_dir(constants.manual_seg_dir, dataset= 'switchboard')
+
+normalizer.normalize_dir(constants.automatic_seg_dir, dataset= 'whisper')
 
 transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir, write_only_operations=True)
 
 audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_seg_dir, constants.audio_automatic_align_dir, constants.sample_rate)
-
-# vad.

@@ -1,8 +1,9 @@
 import numpy as np
 import utils.file as utils
-from pathlib import Path
+import utils.constants as constants
 from progress.bar import ChargingBar
 import tasks.transcript_cleanup as pre
+import os
 
 # operations needed to transform 'ref' to 'hyp'
 # operations are: 
@@ -115,9 +116,8 @@ def align_file(manual_source, automatic_source, operations_desination, write_onl
 
 
 def align_dir(manual_dir, automatic_dir, destination_dir, write_only_operations=False) :
-
-    files = utils.get_dir_tuples([ (manual_dir, "txt", lambda s : not 'Speech' in s), (automatic_dir, "txt", lambda s : True) ], lambda s1, s2: s1 == s2)
-    files = [(f1, f2[0][1]) for (s, f1), f2 in files]
+    files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if (not 'Speech' in f.stem) and (not f.stem[2:6] in constants.ignore_files)]
+    files = [ (f, utils.repath(f, manual_dir, automatic_dir)) for f in files]
 
     for manual_file, automatic_file in ChargingBar("Align Transcripts").iter(files) :
         operations_file = utils.repath(manual_file, manual_dir, destination_dir)
