@@ -141,6 +141,7 @@ def merge_words(segments, separator="|"):
     return words
 
 
+# the higher the score the worse
 def ctc(emission, transcript, labels) :
     trellis, tokens = get_trellis(emission, transcript, labels)
     # Find the most likely path

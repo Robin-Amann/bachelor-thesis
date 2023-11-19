@@ -3,25 +3,77 @@ import utils.constants as constants
 from progress.bar import ChargingBar
 
 
+# rules:
+# seg between min and max
+# split seg at first max silence gap
+# split seg over max in middle third
+
+
+MIN_LENGTH = 10
+MAX_LENGTH = 30 # at least 2 * MIN_LENGTH
+PADDING = 0.5
+MAX_SILENCE = 5 # at least 2 * PADDING
+
 JOIN_GAP = 0.5  # in sec
 
 # transcript list of at least {start, end} in seconds (float)
+def subsegment(segment, time) : # list of words; dict
+    if time['end'] - time['start'] < MAX_LENGTH :
+        return [segment], [time]
+    
+    segments_rest = [] 
+    timestamps_rest = []
+
+    start_index = segment.index( next( (x for x in segment if x['end'] - time['start'] > MIN_LENGTH), segment[-1] ))
+    end_index = segment.index( next( (x for x in segment if x['end'] - time['start'] > MAX_LENGTH), segment[-1] ))
+
+    # can't slice between same element
+    if start_index == end_index :
+        return [segment], [time]
+
+    max_gap = (0, 0) # index, gap
+    for i in range(start_index, end_index) :
+        gap = segment[i + 1]['start'] - segment[i]['end']
+        if gap > max_gap[1] :
+            max_gap = (i+1, gap)
+    
+    seg = segment[ : max_gap[0]] # list of words
+    rest = segment[max_gap[0] : ] # list of words
+    time_seg = {'start': time['start'], 'end' : min(seg[-1]['end'] + PADDING, rest[0]['start'])}
+    segments_rest, timestamps_rest = subsegment(rest, {'start' : max(seg[-1]['end'], rest[0]['start'] - PADDING), 'end' : time['end']} )
+            
+    return [seg] + segments_rest, [time_seg] + timestamps_rest
+
+
 def segment(transcript_p) :
     transcript = transcript_p.copy()
     segments = []
     end = 1
     while end <= len(transcript) :
         start = end - 1
-        while end < len(transcript) and transcript[end]['start'] - transcript[end - 1]['end'] < JOIN_GAP :
+        while end < len(transcript) and transcript[end]['start'] - transcript[end - 1]['end'] < MAX_SILENCE :
             end += 1
         segments.append(transcript[start : end])
         end += 1
     
-    timestamps = [{'start' : segment[0]['start'], 'end' : segment[-1]['end']} for segment in segments]
+    timestamps = [{'start' : segment[0]['start'] - PADDING, 'end' : segment[-1]['end'] + PADDING} for segment in segments]
 
-    for segment in segments :
-        start = segment[0]['start']
-        for word in segment:
+    if timestamps[0]['start'] < 0 :
+        timestamps[0]['start'] = 0
+    timestamps[-1]['end'] = segments[-1][-1]['end']
+
+    temp_segments = []
+    temp_timestamps = []
+    for s, t in zip(segments, timestamps) :
+        x, y = subsegment(s, t)
+        temp_segments += x
+        temp_timestamps += y
+    segments = temp_segments
+    timestamps = temp_timestamps
+
+    for s in segments :
+        start = s[0]['start']
+        for word in s:
             word['start'] -= start
             word['end'] -= start
     return segments, timestamps

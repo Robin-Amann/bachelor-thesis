@@ -87,9 +87,11 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
     trans_A = annotations.merge_abbreviations(trans_A)  
     trans_B = annotations.merge_abbreviations(trans_B)
     
+    
+
     # list of words. also contains -- , . ? ! and stuff like this  -- always appears as -- --
-    trans_A = [x for x in trans_A if not x['annotation'] in [':', '.', ',']]
-    trans_B = [x for x in trans_B if not x['annotation'] in [':', '.', ',']]
+    trans_A = [x for x in trans_A if re.search("[a-zA-Z]", x['word'])]
+    trans_B = [x for x in trans_B if re.search("[a-zA-Z]", x['word'])]
     
     # timings
     timing_A = timing.extract_timing(timing_A_content, timing_patterns)

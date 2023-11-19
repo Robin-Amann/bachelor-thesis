@@ -4,6 +4,7 @@ from progress.bar import ChargingBar
 from contextlib import contextmanager
 import sys, os
 
+
 @contextmanager
 def suppress_stdout():
     with open(os.devnull, "w") as devnull:
@@ -21,6 +22,8 @@ def normalize_file(file_path, normalizer = None, filename_extention = None, data
     
     if dataset == 'whisper' :
         transcript = utils.read_file(file_path)
+        if not set("$%&0123456789ß").intersection(set(transcript)) :
+            return
         transcript = normalizer.normalize(transcript, punct_post_process=True)
         write = utils.write_file
     elif dataset == 'switchboard' :

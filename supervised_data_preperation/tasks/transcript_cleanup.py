@@ -3,7 +3,7 @@ import re
 def process(transcript, start = "", end = "", patterns = [], additional_trim_chars = "", additional_clean_chars = "", additional_remove_space_before = "", additional_remove_space_after = "") :
 
     clean_chars = set("abcdefghijklmnopqrstuvwxyz' " + additional_clean_chars)
-    remove_space_before = set("'.:,;!?)]>" + additional_remove_space_after)
+    remove_space_before = set(".:,;!?)]>" + additional_remove_space_after)
     remove_space_after = set("([<" + additional_remove_space_before)
     trim_chars = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ" + additional_trim_chars).union(clean_chars, remove_space_after, remove_space_before)
 

@@ -1,38 +1,110 @@
 import utils.statistics as stats
 import utils.constants as constants
+import matplotlib.pyplot as plt
+import numpy as np
+
+def round(number) :
+    return int(number * 1000) / 1000
 
 
-stats.sb_hesitation_translation(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir)
+def plot_hesitation_translation(with_rep, no_rep) :
+    species = ("With Repetitions", "Without Repetitions")
+    penguin_means = {
+        'word': (with_rep[1][0], no_rep[1][0]),
+        'hesitation': (with_rep[1][1], no_rep[1][1]),
+        'silence': (with_rep[1][2], no_rep[1][2]),
+    }
+
+    x = np.arange(len(species))  # the label locations
+    width = 0.2  # the width of the bars
+
+    fig, ax = plt.subplots(layout='constrained')
+    for multiplier, (attribute, measurement) in enumerate(penguin_means.items()):
+        offset = width * multiplier
+        rects = ax.bar(x + offset, measurement, width, label=attribute)
+        ax.bar_label(rects, padding=3)
+
+    ax.set_title('Hesitations translated as')
+    ax.set_xticks(x + width, species)
+    ax.legend(loc='upper left', ncols=3)
+    # ax.set_ylim(0, 1)
+
+    plt.show()
+
+def plot_lengths_wer_alignment(lengths_word, lengths_time, wer, wer_no_rep, wer_clean, alignments) :
+    n_bins = 50
+    dist = list( zip( [lengths_word, lengths_time, wer, wer_no_rep, wer_clean, alignments], ['lengths (word)', 'lengths (time)', 'wer (all)', 'wer (no repetitions)', 'wer (clean)', 'transcript alignment (metric)'] ) )
+    fig, axs = plt.subplots(1, len(dist), tight_layout=True)
+    for index, distribution, title in dist :
+        axs[index].hist(distribution, bins=n_bins)
+        axs[index].set_title(title)
+    plt.show()
+
+def to_bins(dist, n_bins = 100, lower_bound = None, upper_bound = None) :
+    if lower_bound == None :
+        lower_bound = int(min(dist)) - 0.1
+    if upper_bound == None :
+        upper_bound = int(max(dist)) + 0.1
+        if max(dist) >= upper_bound :
+            upper_bound = int(upper_bound + 1)
+    
+    bins = [0] * n_bins
+    l = upper_bound - lower_bound
+
+    for d in dist :
+        pos = int((d - lower_bound) / l * n_bins)
+        bins[pos] += 1
+    return [[lower_bound + i / n_bins * (upper_bound - lower_bound) for i in range(n_bins)], bins]
 
 
-# timing_dir = "D:\\Robin_dataset\\Switchboard\\Switchboard-1 Release 2 Transcripts"
-# disfluencies_dir = "D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd" 
-# audio_dir = "D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2"
+for minimum_length in [] : # [1, 10, 50] :
+    translation_with_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir, min_len=minimum_length)
+    translation_no_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir, with_repetitions=False, min_len=minimum_length)
 
-# disfluencies_files = [f.stem for f in utils.get_directory_files(disfluencies_dir, 'mgd')]
-# timing_files = [f.stem[:7] for f in utils.get_directory_files(timing_dir, 'text') if f.stem.endswith('word')]
-# audio_files_A = [f.stem[:2] + f.stem[3:7] for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('A') ]
-# audio_files_B = [f.stem[:2] + f.stem[3:7] for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('B') ]
-# audio_files = [f for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('B') or f.stem.endswith('A') ]
+    lengths, total_length = stats.segment_length(constants.manual_seg_dir, min_len=minimum_length)
+    lengths_word, lengths_time = list(map(list, zip(*lengths)))
+    wers, wers_whole = stats.wer(constants.manual_seg_dir, constants.transcript_align_dir, min_len=minimum_length)
+    wer_all, wer_speech, wer_rep, wer_pauses, wer_rep_and_pauses, wer_hesitations = list(map(list, zip(*wers)))
 
-# corrupt_files = []
-# for f in ChargingBar("Read Audio").iter(audio_files)  :
-#     try :
-#         utils.read_audio(f, 8000)
-#     except Exception :
-#         corrupt_files.append(f.stem[0:2] + f.stem[3:7])
 
-# missing_files = []
-# for stem in disfluencies_files :
-#     if not (stem + "A") in timing_files :
-#         missing_files.append(stem)
-#     if not (stem + "B") in timing_files :
-#         missing_files.append(stem)
-#     if not stem in audio_files_A :
-#         missing_files.append(stem)
-#     if not stem in audio_files_B :
-#         missing_files.append(stem)
+    alignments, gaps = stats.transcript_alignment(constants.manual_seg_dir, constants.audio_automatic_align_dir, constants.transcript_align_dir, min_len=minimum_length)
+    filled_pauses_per, repetitions_per, r_and_fp_per, hesitations_per = stats.percentage(constants.manual_seg_dir, min_len=minimum_length)
 
-# print("missing:", missing_files)
-# print("corrupt:", corrupt_files)
-# print("ignore: ", [f[2:] for f in list(set(missing_files + corrupt_files))] )
+    print('# minimum length =', minimum_length)
+    print('# hesitation translation')
+    # print('translation_of_repetitions =')
+    # print('translation_of_filled pauses =')
+    # print('translation_of_repetitions_and_filled_pauses =')
+    # print('translation_of_hesitations_R_or_FP =')
+    print('translation_with_rep =              ', translation_with_rep)
+    print('translation_no_rep =                ', translation_no_rep)
+    print()
+    print('# segments length')
+    print('segments_word_lengths =             ', to_bins(lengths_word))
+    print('segments_time_lengths =             ', to_bins(lengths_time))
+    print()
+    print('# WER')
+    print('wer_all =                           ', to_bins(wer_all))
+    print('wer_speech =                        ', to_bins(wer_speech))
+    print('wer_repetitions =                   ', to_bins(wer_rep))
+    print('wer_filled_pauses =                 ', to_bins(wer_pauses))
+    print('wer_repetitions_and_filled_pauses = ', to_bins(wer_rep_and_pauses))
+    print('wer_hesitations_R_or_FP =           ', to_bins(wer_hesitations))
+    print('# wer (all, speech, repetitions, filled pauses, repetitions and filled pauses, hesitations)', [round(x) for x in wers_whole])
+    print()
+    print('# rest')
+    print('word_alignments =                   ', to_bins(alignments))
+    print('gaps =                              ', to_bins(gaps))
+    print('# total length (hours):', round(total_length / 3600))
+    print('# percentage of repetitions:', round(repetitions_per))
+    print('# percentage of filled pauses:', round(filled_pauses_per))
+    print('# percentage of repetitions and filled pauses:', round(r_and_fp_per))
+    print('# percentage of hesitations (R or FP):', round(hesitations_per))
+
+
+for minimum_length in [1, 10, 50] :
+    lengths, total_length = stats.segment_length(constants.manual_seg_dir, min_len=minimum_length)
+    lengths_word, lengths_time = list(map(list, zip(*lengths)))
+    print('segments_word_lengths =             ', to_bins(lengths_word))
+    print('segments_time_lengths =             ', to_bins(lengths_time))
+    print('# total length (hours):', round(total_length / 3600))

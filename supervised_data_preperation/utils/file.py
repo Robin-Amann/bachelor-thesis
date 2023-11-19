@@ -8,15 +8,6 @@ def get_directory_files(directory, filetype) :
     files = [f for f in pathlib.Path(directory).glob(pattern + filetype)]    
     return files
 
-# def get_single_dir_tuples(dir_list, type_list, names, condition) :
-#     all_files = []
-#     all_files.append([f for f in get_directory_files(dir_list[0], type_list[0]) if condition(f)])
-    
-#     for dir, t, name in zip(dir_list[1:], type_list[1:], names) :
-#         all_files.append([repath(f, dir_list[0], dir, stem = name(f) ,suffix=t) for f in all_files[0] ])
-    
-#     return list(zip(*all_files))
-
 def _get_dir_tuples(dir_list, type_list, conditions, merge_condition) :
     all_files = []
     for d, t, c in zip(dir_list, type_list, conditions) :
@@ -104,7 +95,7 @@ def write_file(file_path, content, mode='w') :
 def read_obj_from_file(file_path, keys, types = [], separator='<|>') :
     content = read_file(file_path)
     lines = content.split('\n')
-    data = [dict(zip(keys, line.split(separator))) for line in lines]
+    data = [dict(zip(keys, line.split(separator))) for line in lines if line]     ## if line --> for empty lines (empty file)
     if types :
         bundle = list(zip(keys, types))
         for value in data :
@@ -122,6 +113,7 @@ def write_obj_to_file(file_path, data_p, separator='<|>') :
             value[key] = str(value[key])
     data = [separator.join(list(value.values())) for value in data]
     write_file(file_path, '\n'.join(data))
+
 
 ### ----- Read / Write Objects ----- ###
 
@@ -142,7 +134,7 @@ from enum import Enum
 LABELS = Enum('Label', ['SILENCE', 'SPEECH', 'HESITATION'])
 
 def read_words_from_file(file_path) :
-    return read_obj_from_file(file_path, keys=['transcript', 'start', 'end', 'score'], types=[str, int, int, float])
+    return read_obj_from_file(file_path, keys=['word', 'start', 'end', 'score'], types=[str, float, float, float])
 
 def write_words_to_file(file_path, data) :
     write_obj_to_file(file_path, data)
@@ -160,5 +152,3 @@ def read_timestamps_from_file(file_path) :
     
 def write_timestamps_to_file(file_path, data) :
     write_obj_to_file(file_path, data)
-
-

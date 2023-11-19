@@ -7,6 +7,7 @@ import torch
 import re
 
 download_root = str(constants.model_dir / 'whisper')
+pattern = "(?<!\S)[^A-Za-z\s]+(?!\S)"
 
 def load_model(model) :
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -68,6 +69,9 @@ def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=
 
                 os.remove(temp_audio_file)
 
+
+                if re.search(pattern, transcript) :
+                    transcript = ' '.join(re.sub(pattern, '', transcript).split())
                 if not re.search("[a-zA-Z]", transcript) :
                     transcript = ""
                 
