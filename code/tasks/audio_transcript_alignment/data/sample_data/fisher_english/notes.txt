@@ -1,9 +1,0 @@
-1:  317 - 325 Something is missing
-3:  242: missing --> in California. Are you in California? I'm
-
-Diffrences:
-- fifty dollar -- $50
-- um 
-- some words don't match
-- in transcript some things are missing
-- whisper is pretty good (maybe too good)

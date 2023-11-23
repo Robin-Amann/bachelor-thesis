@@ -1,1 +1,0 @@
-could not align D:\Robin_dataset\fisher english\speech segmented\training speech 1\d1\audio\000\fe_03_00038\B_97.wav D:\Robin_dataset\fisher english\transcripts segmented\training transcripts 1\data\trans\000\fe_03_00038\B_97.txt
