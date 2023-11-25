@@ -13,6 +13,7 @@ import utils.constants as constants
 segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
 
 # transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_seg_dir, constants.sample_rate, 'whisper')
+# transcriptor.transcribe_and_time_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_seg_dir, constants.sample_rate, 'whisper-tiny')
 
 # # normalizer.normalize_dir(constants.manual_seg_dir, dataset= 'switchboard')
 

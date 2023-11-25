@@ -2,6 +2,7 @@ import utils.statistics as stats
 import utils.constants as constants
 import matplotlib.pyplot as plt
 import numpy as np
+import supervised_data_preperation.visualization.visualize as visual
 
 def round(number) :
     return int(number * 1000) / 1000
@@ -59,8 +60,8 @@ def to_bins(dist, n_bins = 100, lower_bound = None, upper_bound = None) :
     
 def print_full_statistics(min_len=[]) :
     for minimum_length in min_len :
-        translation_with_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir, min_len=minimum_length)
-        translation_no_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.automatic_seg_dir, constants.transcript_align_dir, with_repetitions=False, min_len=minimum_length)
+        translation_with_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.audio_automatic_align_dir, constants.transcript_align_dir, min_len=minimum_length)
+        translation_no_rep = stats.sb_hesitation_translation(constants.manual_seg_dir, constants.audio_automatic_align_dir, constants.transcript_align_dir, with_repetitions=False, min_len=minimum_length)
 
         lengths, total_length = stats.segment_length(constants.manual_seg_dir, min_len=minimum_length)
         lengths_word, lengths_time = list(map(list, zip(*lengths)))
@@ -70,32 +71,45 @@ def print_full_statistics(min_len=[]) :
         alignments, gaps = stats.transcript_alignment(constants.manual_seg_dir, constants.audio_automatic_align_dir, constants.transcript_align_dir, min_len=minimum_length)
         filled_pauses_per, repetitions_per, r_and_fp_per, hesitations_per = stats.percentage(constants.manual_seg_dir, min_len=minimum_length)
 
-
+        visual.plot_hesitation_translation(translation_with_rep, translation_no_rep)
+        # * --> (bins, distribution)
+        visual.plot_all(
+            [*to_bins(lengths_word), 'segment length (word)'],
+            [*to_bins(lengths_time), 'segment length (time)'],
+            [*to_bins(alignments), 'word alignments'],
+            [*to_bins(wer_all), 'wer all'],
+            [*to_bins(wer_speech), 'wer speech'],
+            [*to_bins(wer_rep), 'wer repetitions'],
+            [*to_bins(wer_pauses), 'wer filled pauses'],
+            [*to_bins(wer_rep_and_pauses), 'wer repetitions and filled pauses'],
+            [*to_bins(wer_hesitations), 'wer hesitations'],
+            [*to_bins(gaps), 'gaps']
+        )
         print('# minimum length =', minimum_length)
-        print('# hesitation translation')
+        # print('# hesitation translation')
         # print('translation_of_repetitions =')
         # print('translation_of_filled pauses =')
         # print('translation_of_repetitions_and_filled_pauses =')
         # print('translation_of_hesitations_R_or_FP =')
-        print('translation_with_rep =              ', translation_with_rep)
-        print('translation_no_rep =                ', translation_no_rep)
-        print()
-        print('# segments length')
-        print('segments_word_lengths =             ', to_bins(lengths_word))
-        print('segments_time_lengths =             ', to_bins(lengths_time))
-        print()
-        print('# WER')
-        print('wer_all =                           ', to_bins(wer_all))
-        print('wer_speech =                        ', to_bins(wer_speech))
-        print('wer_repetitions =                   ', to_bins(wer_rep))
-        print('wer_filled_pauses =                 ', to_bins(wer_pauses))
-        print('wer_repetitions_and_filled_pauses = ', to_bins(wer_rep_and_pauses))
-        print('wer_hesitations_R_or_FP =           ', to_bins(wer_hesitations))
+        # print('translation_with_rep =              ', translation_with_rep)
+        # print('translation_no_rep =                ', translation_no_rep)
+        # print()
+        # print('# segments length')
+        # print('segments_word_lengths =             ', to_bins(lengths_word))
+        # print('segments_time_lengths =             ', to_bins(lengths_time))
+        # print()
+        # print('# WER')
+        # print('wer_all =                           ', to_bins(wer_all))
+        # print('wer_speech =                        ', to_bins(wer_speech))
+        # print('wer_repetitions =                   ', to_bins(wer_rep))
+        # print('wer_filled_pauses =                 ', to_bins(wer_pauses))
+        # print('wer_repetitions_and_filled_pauses = ', to_bins(wer_rep_and_pauses))
+        # print('wer_hesitations_R_or_FP =           ', to_bins(wer_hesitations))
         print('# wer (all, speech, repetitions, filled pauses, repetitions and filled pauses, hesitations)', [round(x) for x in wers_whole])
-        print()
-        print('# rest')
-        print('word_alignments =                   ', to_bins(alignments))
-        print('gaps =                              ', to_bins(gaps))
+        # print()
+        # print('# rest')
+        # print('word_alignments =                   ', to_bins(alignments))
+        # print('gaps =                              ', to_bins(gaps))
         print('# total length (hours):', round(total_length / 3600))
         print('# percentage of repetitions:', round(repetitions_per))
         print('# percentage of filled pauses:', round(filled_pauses_per))

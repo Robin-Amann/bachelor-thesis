@@ -2,3 +2,4 @@
 /transcripts/
 __pycache__
 audioclient/
+supervised_data_preperation/data/models/

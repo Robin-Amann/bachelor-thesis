@@ -14,8 +14,6 @@ MAX_LENGTH = 30 # at least 2 * MIN_LENGTH
 PADDING = 0.5
 MAX_SILENCE = 5 # at least 2 * PADDING
 
-JOIN_GAP = 0.5  # in sec
-
 # transcript list of at least {start, end} in seconds (float)
 def subsegment(segment, time) : # list of words; dict
     if time['end'] - time['start'] < MAX_LENGTH :
@@ -39,8 +37,20 @@ def subsegment(segment, time) : # list of words; dict
     
     seg = segment[ : max_gap[0]] # list of words
     rest = segment[max_gap[0] : ] # list of words
-    time_seg = {'start': time['start'], 'end' : min(seg[-1]['end'] + PADDING, rest[0]['start'])}
-    segments_rest, timestamps_rest = subsegment(rest, {'start' : max(seg[-1]['end'], rest[0]['start'] - PADDING), 'end' : time['end']} )
+    padding_between = max(rest[0]['start'] - seg[-1]['end'], PADDING)
+    time_seg = {
+        'start': time['start'], 
+        'end' : seg[-1]['end'] + padding_between, 
+        'padding start' : time['padding start'], 
+        'padding end' : padding_between
+        }
+    time_rest = {
+        'start' : rest[0]['start'] - padding_between, 
+        'end' : time['end'], 
+        'padding start' : padding_between, 
+        'padding end' : time['padding end']
+    }
+    segments_rest, timestamps_rest = subsegment(rest, time_rest)
             
     return [seg] + segments_rest, [time_seg] + timestamps_rest
 
@@ -56,11 +66,14 @@ def segment(transcript_p) :
         segments.append(transcript[start : end])
         end += 1
     
-    timestamps = [{'start' : segment[0]['start'] - PADDING, 'end' : segment[-1]['end'] + PADDING} for segment in segments]
+    timestamps = [{'start' : segment[0]['start'] - PADDING, 'end' : segment[-1]['end'] + PADDING, 'padding start' : PADDING, 'padding end' : PADDING } for segment in segments]
 
     if timestamps[0]['start'] < 0 :
         timestamps[0]['start'] = 0
+        timestamps[0]['padding start'] = segments[0][0]['start']
+        
     timestamps[-1]['end'] = segments[-1][-1]['end']
+    timestamps[-1]['padding end'] = 0
 
     temp_segments = []
     temp_timestamps = []
@@ -71,8 +84,10 @@ def segment(transcript_p) :
     segments = temp_segments
     timestamps = temp_timestamps
 
-    for s in segments :
-        start = s[0]['start']
+    for s, t in zip(segments, timestamps) :
+        start = s[0]['start'] - t['padding start']
+        t.pop('padding start', None)
+        t.pop('padding end', None)
         for word in s:
             word['start'] -= start
             word['end'] -= start
@@ -82,6 +97,7 @@ def segment(transcript_p) :
 def segment_dir(transcript_dir, segmented_transcript_dir) :
     manual_transcript_files = [ (f.stem, f) for f in utils.get_directory_files(transcript_dir, 'txt') if not f.stem[2:6] in constants.ignore_files]
 
+    print(len(manual_transcript_files))
     for stem, transcript_file in ChargingBar("Segment Audio and Transcripts").iter(manual_transcript_files) :
         number = stem[2:6]
         speaker = stem[6]

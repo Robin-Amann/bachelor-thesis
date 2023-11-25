@@ -20,7 +20,7 @@ def sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir, hesitati
         manual_full = [ [w | {'word': wi} for wi in  w['word'].split()] for w in manual_full]
         manual_full = [item for sublist in manual_full for item in sublist]           
         operations = utils.read_file(alignment_file).split()
-        automatic = utils.read_file(automatic_file)
+        automatic = ' '.join( [ w['word'] for w in utils.read_words_from_file(automatic_file) ] )
         manual = ' '.join([w['word'] for w in manual_full])
         _, manual = pre.process(transcript=manual.lower())
         _, whisper = pre.process(transcript=automatic.lower())
@@ -156,3 +156,6 @@ def percentage(seg_dir, min_len=1) :
         repetitions_and_filled_pauses += len([ w for w in content if w['pause_type'] and w['is_restart']])
         hesitations += len([ w for w in content if w['pause_type'] or w['is_restart']])
     return filled_pauses / words, repetitions / words, repetitions_and_filled_pauses / words, hesitations / words
+
+
+
