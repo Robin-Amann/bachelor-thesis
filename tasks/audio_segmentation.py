@@ -26,7 +26,11 @@ def subsegment(segment, time) : # list of words; dict
     end_index = segment.index( next( (x for x in segment if x['end'] - time['start'] > MAX_LENGTH), segment[-1] ))
 
     # can't slice between same element
+    # should not occour
     if start_index == end_index :
+        print("segmentation error")
+        print(segment)
+        print(time)
         return [segment], [time]
 
     max_gap = (0, 0) # index, gap
@@ -37,18 +41,14 @@ def subsegment(segment, time) : # list of words; dict
     
     seg = segment[ : max_gap[0]] # list of words
     rest = segment[max_gap[0] : ] # list of words
-    padding_between = max(rest[0]['start'] - seg[-1]['end'], PADDING)
+    padding_between = min(rest[0]['start'] - seg[-1]['end'], PADDING)
     time_seg = {
         'start': time['start'], 
-        'end' : seg[-1]['end'] + padding_between, 
-        'padding start' : time['padding start'], 
-        'padding end' : padding_between
+        'end' : seg[-1]['end'] + padding_between
         }
     time_rest = {
         'start' : rest[0]['start'] - padding_between, 
-        'end' : time['end'], 
-        'padding start' : padding_between, 
-        'padding end' : time['padding end']
+        'end' : time['end']
     }
     segments_rest, timestamps_rest = subsegment(rest, time_rest)
             
@@ -66,14 +66,12 @@ def segment(transcript_p) :
         segments.append(transcript[start : end])
         end += 1
     
-    timestamps = [{'start' : segment[0]['start'] - PADDING, 'end' : segment[-1]['end'] + PADDING, 'padding start' : PADDING, 'padding end' : PADDING } for segment in segments]
+    timestamps = [{'start' : segment[0]['start'] - PADDING, 'end' : segment[-1]['end'] + PADDING} for segment in segments]
 
     if timestamps[0]['start'] < 0 :
         timestamps[0]['start'] = 0
-        timestamps[0]['padding start'] = segments[0][0]['start']
         
     timestamps[-1]['end'] = segments[-1][-1]['end']
-    timestamps[-1]['padding end'] = 0
 
     temp_segments = []
     temp_timestamps = []
@@ -85,12 +83,9 @@ def segment(transcript_p) :
     timestamps = temp_timestamps
 
     for s, t in zip(segments, timestamps) :
-        start = s[0]['start'] - t['padding start']
-        t.pop('padding start', None)
-        t.pop('padding end', None)
         for word in s:
-            word['start'] -= start
-            word['end'] -= start
+            word['start'] -= t['start']
+            word['end'] -= t['start']
     return segments, timestamps
 
 

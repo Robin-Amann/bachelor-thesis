@@ -14,7 +14,7 @@ data_base = Path("D:\\Robin_dataset\\Switchboard Computed")
 
 timing_dir = data_base / "Timings"
 disfluencies_dir = data_base / "Disfluencies"
-audio_dir = data_base / "Speech"
+audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2") # data_base / "Speech"
 
 # # Cluster
 # data_base = Path("/export/data3/bachelor_theses/ramann/data")
@@ -30,7 +30,7 @@ manual_seg_dir = data_base / "Manual_Segmented"
 automatic_seg_dir = data_base /  "Automatic_Segmented_And_Timed" # "Automatic_Segmented"
 transcript_align_dir = data_base / "Manual_Automatic_Alignment"
 audio_automatic_align_dir = data_base / "Audio_Whisper_Alignment"
-hesitation_dir = data_base / "Automatic_Segmented_Retranscribed"
+hesitation_dir = data_base / "Automatic_Segmented_Retranscribed_ctc"
 
 model_dir = Path('supervised_data_preperation/data/models')
 error_dir = Path('supervised_data_preperation/data/errors')

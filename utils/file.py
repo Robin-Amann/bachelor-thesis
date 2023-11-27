@@ -154,3 +154,10 @@ def read_timestamps_from_file(file_path) :
     
 def write_timestamps_to_file(file_path, data) :
     write_obj_to_file(file_path, data)
+
+
+def read_complementary_words_from_file(file_path) :
+    return read_obj_from_file(file_path, keys=['word', 'start', 'end'], types=[str, float, float])
+
+def write_complementary_words_to_file(file_path, data) :
+    write_obj_to_file(file_path, data)

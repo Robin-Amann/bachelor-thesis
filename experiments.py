@@ -1,56 +1,92 @@
-import utils.file as utils
-import matplotlib
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-import utils.constants as c
+# # Speech Recognition
+# import torch
+# import torchaudio
+# from torchaudio.utils import download_asset
 
-print(len(c.controversial_files))
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# print(device)
 
-print('manual                               ', len(utils.get_directory_files(c.manual_dir, 'txt')))
-print('manual segmented                     ', len([ f for f in utils.get_directory_files(c.manual_seg_dir, 'txt') if not 'Speech' in f.stem]))
-print('automatic segmented                  ', len(utils.get_directory_files(c.automatic_seg_dir, 'txt')))
-print('audio whisper aligned                ', len(utils.get_directory_files(c.audio_automatic_align_dir, 'txt')))
-print('automatic segmented retranscribed    ', len(utils.get_directory_files(c.hesitation_dir, 'txt')))
-print('manual automatic aligned             ', len(utils.get_directory_files(c.transcript_align_dir, 'txt')))
+# SPEECH_FILE = download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
+# bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H
+# model = bundle.get_model().to(device)
 
-# def plot_alignments(manual, automatic) :    
-#     if not automatic :
-#         return
+# waveform, sample_rate = torchaudio.load(SPEECH_FILE)
+# waveform = waveform.to(device)
+
+# if sample_rate != bundle.sample_rate:
+#     waveform = torchaudio.functional.resample(waveform, sample_rate, bundle.sample_rate)
+
+# with torch.inference_mode():
+#     features, _ = model.extract_features(waveform)
+
+# with torch.inference_mode():
+#     emission, _ = model(waveform)
+
+# class GreedyCTCDecoder(torch.nn.Module):
+#     def __init__(self, labels, blank=0):
+#         super().__init__()
+#         self.labels = labels
+#         self.blank = blank
+
+#     def forward(self, emission: torch.Tensor) -> str:
+#         indices = torch.argmax(emission, dim=-1)  # [num_seq,]
+#         indices = torch.unique_consecutive(indices, dim=-1)
+#         indices = [i for i in indices if i != self.blank]
+#         return "".join([self.labels[i] for i in indices])
     
-#     start = 0
-#     end = max(manual[-1]['end'], automatic[-1]['end']) + 0.5
-#     y_manual = 0.7
-#     y_automatic = 0.3
-#     height = 0.2
-#     font_size = 12
+# decoder = GreedyCTCDecoder(labels=bundle.get_labels())
+# transcript = decoder(emission[0])
 
-#     matplotlib.rcParams["figure.figsize"] = [18, 6]
+# print(transcript)
 
-#     fig, ax = plt.subplots()
-#     fig.tight_layout()
-#     ax.set_xlim((start, end))
-#     ax.set_ylim((0, 1))
 
-#     ax.plot([start, end], [y_manual, y_manual], color="red", zorder=0)
-#     for w in manual :
-#         width = w['end'] - w['start']
-#         ax.add_patch(Rectangle((w['start'], y_manual - height / 2), width, height))
-#         ax.annotate(w['word'], (w['start'] + width / 2, y_manual), color='black', fontsize=font_size, ha='center', va='center')
+import torchaudio
+from torchaudio.models.decoder import ctc_decoder
+from torchaudio.utils import download_asset
+from torchaudio.models.decoder import download_pretrained_files
 
-#     ax.plot([start, end], [y_automatic, y_automatic], color="red", zorder=0)
-#     for w in automatic :
-#         width = w['end'] - w['start']
-#         ax.add_patch(Rectangle((w['start'], y_automatic - height / 2), width, height, color= 'blue' if w['original'] else 'red'))
-#         ax.annotate(w['word'], (w['start'] + width / 2, y_automatic), color='black', fontsize=font_size, ha='center', va='center')
+# load model
+bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_10M
+acoustic_model = bundle.get_model()
+tokens = [label.lower() for label in bundle.get_labels()]
 
-#     plt.show()
-    
-# # picture gaps
-# manual_f = "D:\\Robin_dataset\\Switchboard Computed\\Manual_Segmented\\20\\2008\\A\\sw2008A003.txt"
-# automatic_f = "D:\\Robin_dataset\\Switchboard Computed\\Audio_Whisper_Alignment\\20\\2008\\A\\sw2008A003.txt"
-# retranscribed_f = "D:\\Robin_dataset\\Switchboard Computed\\Automatic_Segmented_Retranscribed\\20\\2022\\A\\sw2022A005.txt"
+# load speech file
+speech_file = download_asset("tutorial-assets/ctc-decoding/1688-142285-0007.wav")
+waveform, sample_rate = torchaudio.load(speech_file)
+if sample_rate != bundle.sample_rate:
+    waveform = torchaudio.functional.resample(waveform, sample_rate, bundle.sample_rate)
 
-# manual = utils.read_label_timings_from_file(manual_f)
-# automatic = [ w | {'original' : True} for w in utils.read_words_from_file(automatic_f) ]
+# language model
+files = download_pretrained_files("librispeech-4-gram")
 
-# plot_alignments(manual, automatic)
+# decoder
+LM_WEIGHT = 3.23
+WORD_SCORE = -0.26
+
+beam_search_decoder = ctc_decoder(
+    lexicon=files.lexicon,
+    tokens=files.tokens,
+    lm=files.lm,
+    nbest=3,
+    beam_size=1500,
+    lm_weight=LM_WEIGHT,
+    word_score=WORD_SCORE,
+)
+
+
+emission, _ = acoustic_model(waveform)
+
+beam_search_result = beam_search_decoder(emission)
+beam_search_transcript = " ".join(beam_search_result[0][0].words).strip()
+predicted_tokens = beam_search_decoder.idxs_to_tokens(beam_search_result[0][0].tokens)
+
+print(f"Transcript: {beam_search_transcript}")
+
+tokens_str = "".join(predicted_tokens)
+transcript = " ".join(tokens_str.split("|"))
+
+
+timesteps = beam_search_result[0][0].timesteps
+
+print(predicted_tokens, len(predicted_tokens))
+print(timesteps, timesteps.shape[0])

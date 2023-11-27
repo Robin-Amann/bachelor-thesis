@@ -6,51 +6,66 @@ import utils.constants as constants
 import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
 import numpy as np
+from transformers import AutoTokenizer, AutoFeatureExtractor, AutoModelForCTC
+import torch
 
-download_root = str(constants.model_dir / 'whisper')
-MIN_GAP = 1
+MIN_GAP = 0.1
+
 
 def load_model(model) :
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("device:", device)
+    print("os:", os.name)
     if model == 'whisper' :
-            transcription_model = whisper.load_model('base', device=device, download_root=download_root)
-            print("os:", os.name)
+        transcription_model = whisper.load_model('base', device=device, download_root=str(constants.model_dir / 'whisper'))
+        return transcription_model
+    elif model == 'ctc' :
+        transcription_model = AutoModelForCTC.from_pretrained("facebook/wav2vec2-base-960h")
+        tokenizer = AutoTokenizer.from_pretrained("facebook/wav2vec2-base-960h")
+        feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base-960h")
+        return (transcription_model, tokenizer, feature_extractor)
     else :
         raise NameError(model, "not available")
-    return transcription_model
-
-def transcribe_part(start, end, audio_file, speech, sample_rate, model) :
-    transcript = ""
-    if start - end > MIN_GAP :
-        utils.write_audio(audio_file, speech[int(start*sample_rate) : int(end*sample_rate)], sample_rate)
-        # transcript = model.transcribe(str(audio_file), language='en', fp16 = False)
-        data = np.asarray([ speech[int(start*sample_rate) : int(end*sample_rate)] ]).astype(np.float32)
-        transcript = model.transcribe(data, language='en', fp16 = False)
-        transcript = cleanup.remove_non_words(transcript['text'])
-        os.remove(audio_file)
-        if transcript and not transcript.isspace() :
-            print("additional transcript (", audio_file.stem, "): '", transcript, "'", sep='')
-    return transcript
 
 
-def predict_file(transcript_file, speech, destination_file, sample_rate, model = None) :
-    if model == None or model == 'whisper':
-        model = load_model('whisper')
-    audio_file = transcript_file.with_suffix('.wav')
+def transcribe_part_whisper(start, end, speech, sample_rate, model) :
+    data = np.asarray([ speech[int(start*sample_rate) : int(end*sample_rate)] ]).astype(np.float32)
+    transcript = model.transcribe(data, language='en', fp16 = False)
+    transcript = cleanup.remove_non_words(transcript['text'])
+    return [ { "word": transcript.lower(), "start": start, "end": end } ] 
+
+
+def transcribe_part_ctc(start, end, speech, sample_rate, model) :
+    transcription_model, tokenizer, feature_extractor = model
+    data = np.asarray(speech[int(start*sample_rate) : int(end*sample_rate)]).astype(np.float32)
+    input_values = feature_extractor(data, return_tensors="pt", sampling_rate=sample_rate).input_values
+    logits = transcription_model(input_values).logits[0]
+    pred_ids = torch.argmax(logits, axis=-1)
+
+    outputs = tokenizer.decode(pred_ids, output_word_offsets=True)
+    time_offset = transcription_model.config.inputs_to_logits_ratio / feature_extractor.sampling_rate
+    words = [ { "word": d["word"].lower(), "start": round(d["start_offset"] * time_offset, 2) + start, "end": round(d["end_offset"] * time_offset, 2) + start } for d in outputs.word_offsets ]
+    return words
+
+
+def predict_file(transcript_file, speech, destination_file, sample_rate, transcription_function, model) :
     transcript_old = utils.read_words_from_file(transcript_file)
-    transcript_new = ""
+    transcript_new = []
     start = 0
     if len(transcript_old) == 0 :
         end = len(speech) / sample_rate
     for word in transcript_old :
         end = word['start']
-        transcript_new += " " + transcribe_part(start, end, audio_file, speech, sample_rate, model) + " " + word['word']
+        if end - start > MIN_GAP :
+            transcript_new = transcript_new + transcription_function(start, end, speech, sample_rate, model)
         start = word['end']
-
-    transcript_new += " " + transcribe_part(start, len(speech) / sample_rate, audio_file, speech, sample_rate, model)
-    transcript_new = ' '.join(transcript_new.split())
-    utils.write_file(destination_file, transcript_new)
+    end = len(speech) / sample_rate
+    if end - start > MIN_GAP :
+        transcript_new = transcript_new + transcription_function(start, end, speech, sample_rate, model)
+    t = ' '.join(w['word'] for w in transcript_new)
+    if t and not t.isspace() :
+        print(t)
+    utils.write_words_to_file(destination_file, transcript_new)
 
 
 def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, model) :
@@ -62,17 +77,12 @@ def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sampl
         (transcript_dir, 'txt', lambda s : True, lambda s1, s3 : s1[2:7] in s3)                     # n
     ])
     files = [(f1, f2[0][1], [f for _, f in f3]) for (s, f1), f2, f3 in files if not s in constants.controversial_files and not s[2:6] in constants.ignore_files]
-
+    files = files[:1]
     # group files
     s = 1
-    grouped = dict()
-    for f in files :
-        p = int(f[0].parts[-3])
-        if p in grouped :
-            grouped[p].append(f)
-        else :
-             grouped[p] = [f]       
-    ps = [x for x in grouped.keys() if x >= s]
+    grouped = list(map(lambda f :  {int(f[0].parts[-3]) : f}, files))                                               # map files to (parent, file)
+    grouped = { k : [f[k] for f in grouped if k in f.keys() ] for k in set([list(g.keys())[0] for g in grouped])}   # group files by parent
+    ps = [x for x in grouped.keys() if x >= s]                                                                      # get keys greater than starting point
     ps.sort()
 
     for p in ps :
@@ -89,5 +99,8 @@ def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sampl
                 start = segment['start']
                 end = segment['end']
 
-                predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcription_model)
-                
+                if model == 'whisper' :
+                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper, transcription_model)
+                elif model == 'ctc' :
+                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc, transcription_model)
+                                
