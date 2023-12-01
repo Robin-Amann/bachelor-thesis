@@ -2,11 +2,27 @@ from pathlib import Path
 
 # General
 sample_rate = 16000
+# preprocessing
 manual_annotation_patterns = ['<+[^<>]*>+', '``/``', "''/''"]
-
-AUDIO_SEGMENT_GAP = 1 # in sec
-SPEECH_GAP = 0.25       # in sec (minimum legth of audio to be counted as silence)
+# transcription
 ALLOWED_CHARS = frozenset("ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789" + " '.,:;!?-" + "\"$%&*") # "ÄÖÜäöüáéíóúñ" 
+
+
+# data_base
+# ├ manual
+# │ ├ long
+# │ ├ segmented
+# │ └ segmented_old
+# ├ automatic
+# │ ├ unaligned (empty)
+# │ ├ aligned
+# │ └ retranscribed
+# │   ├ whisper
+# │   ├ wav2vec2
+# │   ├ wav2vec2_LM
+# │   ├ wav2vec2_custom_LM (empty)
+# │   └ wav2vec2_custom_LM_hesitations (empty)
+# └ alignment
 
 
 # # Home PC 
@@ -25,16 +41,17 @@ audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release
 
 
 # General
-manual_dir = data_base / "Manual"
-manual_seg_dir = data_base / "Manual_Segmented"
-automatic_seg_dir = data_base /  "Automatic_Segmented_And_Timed" # "Automatic_Segmented"
-transcript_align_dir = data_base / "Manual_Automatic_Alignment"
-audio_automatic_align_dir = data_base / "Audio_Whisper_Alignment"
-hesitation_dir = data_base / "Automatic_Segmented_Retranscribed_ctc"
+manual_dir = data_base / 'manual' / 'long'
+manual_seg_dir = data_base / 'manual' / 'segmented'
+automatic_dir = data_base / 'automatic' / 'unaligned'
+automatic_align_dir = data_base / 'automatic' / 'aligned'
+retranscibed_dir = data_base / 'automatic' / 'retranscribed'
+transcript_align_dir = data_base / "alignment"
 
-model_dir = Path('supervised_data_preperation/data/models')
-error_dir = Path('supervised_data_preperation/data/errors')
-hesitations_file = Path('supervised_data_preperation/data/hesitations/hesitations.txt')
+
+model_dir = Path('data/models')
+error_dir = Path('data/supervised_data_preperation/errors')
+hesitations_file = Path('data/data_preperation/hesitations/hesitations.txt')
 
 
 # corrupt, missing files, wrong length, switch timing

@@ -5,21 +5,21 @@ import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
 import os
 import torch
-import re
 from transformers import AutoProcessor, WhisperForConditionalGeneration
+from enum import Enum
 
-download_root = str(constants.model_dir / 'whisper')
+MODELS = Enum('Model', ['whisper', 'whisper_tiny', 'wav2vec2LM', 'wav2vec2_custom_LM'])
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_model(model) :
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("device:", device)
-    if model == 'whisper' :
-        transcription_model = whisper.load_model('base', device=device, download_root=download_root)
+    if model == MODELS.whisper :
+        transcription_model = whisper.load_model('base', device=device, download_root=str(constants.model_dir / 'whisper')).to(device)
         print("os:", os.name)
         return transcription_model
-    elif model == 'whisper-tiny' :
-        processor = AutoProcessor.from_pretrained("openai/whisper-tiny.en", cache_dir = str(constants.model_dir / "Whisper-Base"))
-        transcription_model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-tiny.en", cache_dir = str(constants.model_dir / "Whisper-Base"))    
+    elif model == MODELS.whisper_tiny :
+        processor = AutoProcessor.from_pretrained("openai/whisper-tiny.en", cache_dir = str(constants.model_dir / "whisper_tiny")).to(device)
+        transcription_model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-tiny.en", cache_dir = str(constants.model_dir / "whisper_tiny")).to(device)
         print("os:", os.name)
         return processor, transcription_model
     else :
@@ -38,7 +38,7 @@ def group(tokens, timestamps) :
 
 
 def transcribe_and_time(processor, transcription_model, speech, sample_rate) :
-    input_features = processor(speech, return_tensors="pt", sampling_rate=sample_rate).input_features
+    input_features = processor(speech, return_tensors="pt", sampling_rate=sample_rate).input_features.to(device)
     generated_ids = transcription_model.generate(inputs=input_features, return_token_timestamps=True)
 
     tokens = [ processor.decode([token], skip_special_tokens=True) for token in generated_ids.sequences[0].tolist()]
@@ -47,7 +47,7 @@ def transcribe_and_time(processor, transcription_model, speech, sample_rate) :
     return group(tokens, timestamps)
 
 
-def transcribe_and_time_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model="whisper-tiny", s=1) :
+def transcribe_and_time_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=MODELS.whisper_tiny, s=1) :
     processor, transcription_model = load_model(model)
     
     files = utils.get_dir_tuples([segments_dir, speech_dir], ['txt', 'wav'], [ lambda s : 'Speech' in s, lambda s : True ], lambda s1, s2 : s1[2:7] in s2 )
@@ -72,22 +72,16 @@ def transcribe_and_time_dir(segments_dir, speech_dir, transcript_dir, sample_rat
                 utils.write_words_to_file(transcript_file, transcript)
 
 
-def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model="whisper") :
+def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=MODELS.whisper) :
     transcription_model = load_model(model)
     
     files = utils.get_dir_tuples([segments_dir, speech_dir], ['txt', 'wav'], [ lambda s : 'Speech' in s, lambda s : True ], lambda s1, s2 : s1[2:7] in s2 )
     files = [(s, f1, f2[0][1]) for (s, f1), f2 in files if not s[2:6] in constants.ignore_files]
     
-    # group files
     s = 1
-    grouped = dict()
-    for f in files :
-        p = int(f[1].parts[-3])
-        if p in grouped :
-            grouped[p].append(f)
-        else :
-             grouped[p] = [f]       
-    ps = [x for x in grouped.keys() if x >= s]
+    grouped = list(map(lambda f :  {int(f[1].parts[-3]) : f}, files))                           # map files to (parent, file)
+    grouped = { k : [f[k] for f in grouped if k in f.keys() ] for k in set([list(g.keys())[0] for g in grouped])}  # group files by parent
+    ps = [x for x in grouped.keys() if x >= s]                                                  # get keys greater than starting point
     ps.sort()
 
     for p in ps :

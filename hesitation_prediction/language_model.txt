@@ -1,0 +1,95 @@
+# 1. install prerecreits
+!pip install https://github.com/kpu/kenlm/archive/master.zip 
+!pip install pyctcdecode==0.3.0
+!pip install datasets==2.0.0
+!pip install transformers==4.18.0
+
+!sudo apt install build-essential cmake libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev libeigen3-dev zlib1g-dev libbz2-dev liblzma-dev
+!wget -O - https://kheafield.com/code/kenlm.tar.gz | tar xz
+!mkdir kenlm/build && cd kenlm/build && cmake .. && make -j2
+!ls kenlm/build/bin
+
+
+# 2. Getting data for your language model
+from datasets import Dataset
+import utils.file as utils
+import utils.constants as c
+
+files = [ f for f in utils.get_directory_files(c.manual_seg_dir, 'txt') if not 'Speech' in f.stem ]
+
+def gen():
+  for file in files :
+    yield {'text' : ' '.join( w['word'].lower() for w in utils.read_label_timings_from_file(file) ) }
+
+ds = Dataset.from_generator(gen)
+
+# store dataset in txt file
+with open("text.txt", "w") as file:
+  file.write(" ".join([t for t in ds["text"] if t]))
+
+
+# 3. Build an n-gram with KenLM
+# build n-gram
+!kenlm/build/bin/lmplz -o 5 <"text.txt" > "5gram.arpa"
+
+# fix things
+with open("5gram.arpa", "r") as read_file, open("5gram_correct.arpa", "w") as write_file:
+  has_added_eos = False
+  for line in read_file:
+    if not has_added_eos and "ngram 1=" in line:
+      count=line.strip().split("=")[-1]
+      write_file.write(line.replace(f"{count}", f"{int(count)+1}"))
+    elif not has_added_eos and "<s>" in line:
+      write_file.write(line)
+      write_file.write(line.replace("<s>", "</s>"))
+      has_added_eos = True
+    else:
+      write_file.write(line)
+
+
+# 4. Combine an n-gram with Wav2Vec2
+from transformers import Wav2Vec2Processor, Wav2Vec2ProcessorWithLM
+from pyctcdecode import build_ctcdecoder
+
+model_name = "jonatasgrosman/wav2vec2-large-xlsr-53-english"
+# download preprocessor of model without language model
+processor = Wav2Vec2Processor.from_pretrained(model_name)
+# excract labels
+vocab_dict = {k.lower(): v for k, v in sorted(processor.tokenizer.get_vocab().items(), key=lambda item: item[1])}
+# build decoder
+decoder = build_ctcdecoder(
+    labels=list(vocab_dict.keys()),
+    kenlm_model_path="5gram_correct.arpa",
+)
+# wrap in one class
+processor_with_lm = Wav2Vec2ProcessorWithLM(
+    feature_extractor=processor.feature_extractor,
+    tokenizer=processor.tokenizer,
+    decoder=decoder
+)
+
+
+# 5. save model
+import os
+
+processor_with_lm.save_pretrained('model')
+!kenlm/build/bin/build_binary model/language_model/5gram_correct.arpa model/language_model/5gram.bin
+
+os.remove('model/language_model/5gram_correct.arpa')
+
+
+# 6. use model
+from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
+
+processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-100h")
+model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-100h")
+inputs = processor(audio_sample["audio"]["array"], sampling_rate=16_000, return_tensors="pt")
+import torch
+
+with torch.no_grad():
+  logits = model(**inputs).logits
+predicted_ids = torch.argmax(logits, dim=-1)
+transcription = processor.batch_decode(predicted_ids)
+
+transcription[0].lower()
+

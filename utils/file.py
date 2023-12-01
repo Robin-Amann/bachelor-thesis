@@ -2,6 +2,8 @@ import torchaudio
 import pathlib
 import os
 from pathlib import Path
+import utils.constants as c
+
 
 def get_directory_files(directory, filetype) :
     pattern = "**\*." if os.name == 'nt' else "**/*."
@@ -19,7 +21,6 @@ def _get_dir_tuples(dir_list, type_list, conditions, merge_condition) :
             mc = [merge_condition] * len(dir_list)
     else :
         mc = merge_condition
-    i = 0
     for f in all_files[0] :
         suitable = []
         for files, m in zip(all_files[1 : ], mc[1 : ]) :
@@ -43,6 +44,22 @@ def get_dir_tuples(*args) :
         conditions = [d[2] for d in args[0]]
         merge_condition = [d[3] for d in args[0]]
         return _get_dir_tuples(dir_list, type_list, conditions, merge_condition)
+
+
+def dir_tuples_simple(dirs, condition = lambda f : True, filter = lambda f : not (f.stem in c.controversial_files or f.stem[2:6] in c.ignore_files) ) :
+    if type(dirs[0]) != list : dirs = [ [d] for d in dirs]
+    for d in dirs :
+        if len(d) == 1 : d.append('txt')
+        if len(d) == 2 : d.append(lambda s: s)
+    # dir, fileype, name_translation
+    all_files = [[f] for f in get_directory_files(dirs[0][0], dirs[0][1]) if condition(f) and filter(f)]
+    for dir in dirs[1:] :
+        for files in all_files :
+            files.append( repath(files[0], dirs[0][0], dir[0], stem=dir[2](files[0].stem), suffix= '.' + dir[1]) )
+    all_files = [ files for files in all_files if all( [ os.path.isfile(str(f)) for f in files ] )]
+    if len(all_files[0]) == 1 :
+        all_files = [ f[0] for f in all_files ]
+    return all_files
         
 
 def repath(file, old_grand_dir_p, new_grad_dir_p, sub_dir=[], stem=None, suffix=None) :
@@ -131,9 +148,6 @@ def write_vocabulary(file_path, vocabulary) :
     file_content = '\n'.join([ w + '<|>' + str(c) for w, c in sorted_vocabulary])
     write_file(file_path, file_content)
 
-
-from enum import Enum
-LABELS = Enum('Label', ['SILENCE', 'SPEECH', 'HESITATION'])
 
 def read_words_from_file(file_path) :
     return read_obj_from_file(file_path, keys=['word', 'start', 'end', 'score'], types=[str, float, float, float])

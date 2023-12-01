@@ -21,6 +21,4 @@ Transcript-Alignment    sw2005A001.txt    Transcript-Alignment\20\2005\A    sw  
 -                                         --------------------
 
 
-
-
 manual transcript --> speech --> segmented --> manual transcript, speech

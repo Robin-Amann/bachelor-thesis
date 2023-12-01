@@ -1,6 +1,5 @@
 import torch
 import torchaudio
-import utils.constants as constants
 
 USE_ONNX = False # change this to True if you want to test onnx model
 
@@ -29,7 +28,7 @@ def voice_activation_detection(file_path, desired_sample_rate) :
 
 
 def get_untranscribed_audio(waveform, words, speech_timestamps, sample_rate) :
-    minimum_gap = constants.SPEECH_GAP * sample_rate
+    minimum_gap = 0.25 * sample_rate
     untranscribed_audio = []
     if words[0]["start"] > 0 :
         untranscribed_audio.append({"start": 0, "end": words[0]["start"] - 1})
