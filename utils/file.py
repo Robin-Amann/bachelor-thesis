@@ -3,6 +3,7 @@ import pathlib
 import os
 from pathlib import Path
 import utils.constants as c
+from pydoc import locate 
 
 
 def get_directory_files(directory, filetype) :
@@ -132,6 +133,39 @@ def write_obj_to_file(file_path, data_p, separator='<|>') :
             value[key] = str(value[key])
     data = [separator.join(list(value.values())) for value in data]
     write_file(file_path, '\n'.join(data))
+
+
+def write_dict(file_path, data_p, separator='<|>') :
+    data = data_p.copy()
+    if type(data) != list or not all(type(item) == dict for item in data) :
+        return
+    if len(data) == 0 :
+        write_file(file_path, '')
+
+    keys = list(data[0].keys())
+    types = [type(data[0][key]).__name__ for key in keys ]
+    lines = [separator.join(keys), separator.join(types)]
+    for value in data :
+        line = []
+        for key in keys :
+            line.append(str(value[key]))
+        lines.append( separator.join(line) )
+    write_file(file_path, '\n'.join(lines))
+
+
+def read_dict(file_path, seperator='<|>') :
+    dictionary = []
+    lines = read_file(file_path)
+    if not lines :
+        return dictionary
+    lines = lines.split('\n')
+    keys, types = lines[:2]
+    keys = keys.split(seperator)
+    types = [ locate(t) for t in types.split(seperator)]
+    data = lines[2:]
+    for d in data :
+        dictionary.append( dict(zip(keys, [ t(v) if t != bool else v == 'True' for t, v in zip(types, d.split(seperator)) ])) )
+    return dictionary
 
 
 ### ----- Read / Write Objects ----- ###

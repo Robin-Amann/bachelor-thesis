@@ -45,11 +45,11 @@ def load_model(model) :
         )
         return (bundle.get_model().to(device), bundle.sample_rate, beam_search_decoder)
     elif model == MODELS.wav2vec2_custom_LM :
-        processor = Wav2Vec2ProcessorWithLM.from_pretrained(constants.model_dir / 'wav2vec2_custom_LM')
+        processor = Wav2Vec2ProcessorWithLM.from_pretrained(constants.model_dir / 'wav2vec2_custom_LM_2')
         transcription_model = Wav2Vec2ForCTC.from_pretrained("jonatasgrosman/wav2vec2-large-xlsr-53-english").to(device)
         return (processor, transcription_model)
     elif model == MODELS.wav2vec2_custom_LM_hesitations :
-        processor = Wav2Vec2ProcessorWithLM.from_pretrained(constants.model_dir / 'wav2vec2_custom_LM_hesitations')
+        processor = Wav2Vec2ProcessorWithLM.from_pretrained(constants.model_dir / 'wav2vec2_custom_LM_hesitations_2')
         transcription_model = Wav2Vec2ForCTC.from_pretrained("jonatasgrosman/wav2vec2-large-xlsr-53-english").to(device)
         return (processor, transcription_model)
     else :
@@ -57,7 +57,7 @@ def load_model(model) :
 
 
 def transcribe_part_whisper(start, end, speech, sample_rate, model) :
-    data = np.asarray([ speech[int(start*sample_rate) : int(end*sample_rate)] ]).astype(np.float32)
+    data = speech[int(start*sample_rate) : int(end*sample_rate)].to(device)
     transcript = model.transcribe(data, language='en', fp16 = False)
     transcript = cleanup.remove_non_words(transcript['text'])
     return [ { "word": transcript.lower(), "start": start, "end": end } ] 
@@ -77,8 +77,8 @@ def transcribe_part_ctc(start, end, speech, sample_rate, model) :
 
 def transcribe_part_ctc_language(start, end, speech, sample_rate, model) :
     acoustic_model, sample_rate, beam_search_decoder = model
-    if sample_rate != sample_rate:
-        speech = torchaudio.functional.resample(speech, sample_rate, sample_rate)
+    if sample_rate != sample_rate:                                                                  # TODO : makes no sense
+        speech = torchaudio.functional.resample(speech, sample_rate, sample_rate)   
     speech = speech[None, int(start*sample_rate) : int(end*sample_rate)].to(device)
     with torch.no_grad():
         emission, _ = acoustic_model(speech)
@@ -94,7 +94,7 @@ def transcribe_part_ctc_language(start, end, speech, sample_rate, model) :
 
 def transcribe_part_ctc_custom_language(start, end, speech, sample_rate, model) :
     processor, transcription_model = model
-    if sample_rate != sample_rate:
+    if sample_rate != sample_rate:                                                                  # TODO : makes no sense
         speech = torchaudio.functional.resample(speech, sample_rate, sample_rate)
     speech = speech[int(start*sample_rate) : int(end*sample_rate)]
     inputs = processor(speech, sampling_rate=sample_rate, return_tensors="pt").to(device)

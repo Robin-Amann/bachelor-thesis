@@ -8,25 +8,23 @@ import os
 import tasks.transcript_cleanup as cleanup
 
 
-def sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir, retranscribe_dir = None, hesitations_file = constants.hesitations_file, min_len=1) :
+def sb_hesitation_translation(manual_dir, automatic_dir, retranscribe_dir = None, hesitations_file = constants.hesitations_file, min_len=1) :
     hesitations = list( utils.read_vocabulary(hesitations_file).keys() )
 
     # sw2005A000.txt, sw2005A000.txt, sw2005A000.txt  (names are equal)
     if retranscribe_dir:
-        files = utils.dir_tuples_simple([manual_dir, automatic_dir, retranscribe_dir, alignment_dir], lambda f : not 'Speech' in f.stem )
-        files = [ (f1, (f2, f3), f4) for f1, f2, f3, f4 in files ]
+        files = utils.dir_tuples_simple([manual_dir, automatic_dir, retranscribe_dir], lambda f : not 'Speech' in f.stem )
+        files = [ (f1, (f2, f3)) for f1, f2, f3 in files ]
     else :
-        files = utils.dir_tuples_simple([manual_dir, automatic_dir, alignment_dir], lambda f : not 'Speech' in f.stem )
+        files = utils.dir_tuples_simple([manual_dir, automatic_dir], lambda f : not 'Speech' in f.stem )
     
-
     numbers = [[0, 0, 0], [0, 0, 0]]
-    for manual_file, automatic_file, alignment_file in ChargingBar("Hesitation Transcription").iter(files) :
+    for manual_file, automatic_file in ChargingBar("Hesitation Transcription").iter(files) :
         manual_full = utils.read_label_timings_from_file(manual_file)
         if len(manual_full) < min_len :
             continue
         manual_full = [ [w | {'word': wi} for wi in  w['word'].split()] for w in manual_full]
-        manual_full = [item for sublist in manual_full for item in sublist]           
-        operations = utils.read_file(alignment_file).split()
+        manual_full = [item for sublist in manual_full for item in sublist]
         if retranscribe_dir :
             automatic_file, retranscribe_file = automatic_file
             t = utils.read_words_from_file(automatic_file) + [ w for w in utils.read_complementary_words_from_file(retranscribe_file) if w['word']]
@@ -37,7 +35,7 @@ def sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir, retransc
         manual = ' '.join([w['word'] for w in manual_full])
         _, manual = pre.process(transcript=manual.lower())
         _, whisper = pre.process(transcript=automatic.lower())
-        manual, whisper = alignment.align(manual.split(), whisper.split(), operations)
+        manual, whisper = alignment.full_align(manual.split(), whisper.split())
         for i, x in enumerate(manual) :
             if not x :
                 manual_full.insert(i, {'word' : ''})
@@ -49,7 +47,7 @@ def sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir, retransc
         for m, w in zip(manual, whisper) :
             if not m['word'] :
                 continue
-            if m['pause_type']  :  # pause type and maybe restart
+            if m['pause_type'] :  # pause type and maybe restart
                 i = 0
             elif m['is_restart'] : # just restart
                 i = 1
@@ -57,7 +55,7 @@ def sb_hesitation_translation(manual_dir, automatic_dir, alignment_dir, retransc
                 continue
             if not w :  # nothing
                 numbers[i][2] += 1
-            elif w in hesitations or w[0] == '-' or w[-1] == '-' or (i == 1 and m == w):  # hesitation
+            elif w in hesitations or w[0] == '-' or w[-1] == '-' or m == w:  # hesitation
                 numbers[i][1] += 1
             else :  # word
                 numbers[i][0] += 1

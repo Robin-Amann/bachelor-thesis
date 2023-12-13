@@ -40,7 +40,7 @@ audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release
 # audio_dir = Path("/project/data_asr/LDC/LDC97S62")
 
 
-# General
+# # General
 manual_dir = data_base / 'manual' / 'long'
 manual_seg_dir = data_base / 'manual' / 'segmented'
 automatic_dir = data_base / 'automatic' / 'unaligned'

@@ -4,95 +4,86 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import os
 
-def plot_alignments(manual, automatic) :    
-    if not automatic :
+def plot_alignments(manual, automatic, title, start=0, default_color = 'cornflowerblue', hesitation_color = 'orange', retranscribe_color = 'tomato', border = 'black') :    
+    if not automatic or not manual:
         return
-    
-    start = 0
+
+    # setup
+    matplotlib.rcParams["figure.figsize"] = [18, 6]        
     end = max(manual[-1]['end'], automatic[-1]['end']) + 0.5
-    y_manual = 0.7
-    y_automatic = 0.3
+    y_offset = 0.2
     height = 0.2
     font_size = 12
-    my_cmap = matplotlib.colormaps['RdYlGn']
 
-    matplotlib.rcParams["figure.figsize"] = [18, 6]
-
-    fig, ax = plt.subplots()
-    fig.tight_layout()
+    fig, ax = plt.subplots(num=title)
     ax.set_xlim((start, end))
     ax.set_ylim((0, 1))
-
-    ax.plot([start, end], [y_manual, y_manual], color="red", zorder=0)
+    ax.set_xlabel('time (s)')
+    plt.tick_params(left = False, right = False , labelleft = False) 
+    
+    # time axes
+    ax.plot([start, end], [0.5 + y_offset, 0.5 + y_offset], color="red", zorder=0)
+    ax.plot([start, end], [0.5 - y_offset, 0.5 - y_offset], color="red", zorder=0)
+    
+    # plot words
     for w in manual :
         width = w['end'] - w['start']
-        if w['pause_type'] :
-            c = 'orange'
-        elif w['is_restart'] :
-            c = 'yellow'
-        else :
-            c = 'c'
-        ax.add_patch(Rectangle((w['start'], y_manual - height / 2), width, height, color= c))
-        ax.annotate(w['word'], (w['start'] + width / 2, y_manual), color='black', fontsize=font_size, ha='center', va='center')
+        c = hesitation_color if w['pause_type'] or w['is_restart'] else default_color
+        ax.add_patch(Rectangle((w['start'], 0.5 + y_offset - height / 2), width, height, facecolor= c, edgecolor = border, linewidth=1))
+        ax.annotate(w['word'], (w['start'] + width / 2, 0.5 + y_offset), color='black', fontsize=font_size, ha='center', va='center')
 
-    ax.plot([start, end], [y_automatic, y_automatic], color="red", zorder=0)
     for w in automatic :
         width = w['end'] - w['start']
-        ax.add_patch(Rectangle((w['start'], y_automatic - height / 2), width, height, color= my_cmap(w['score']) if w['original'] else 'red'))
-        ax.annotate(w['word'] + (('\n' + str(w['score'])) if w['original'] else ''), (w['start'] + width / 2, y_automatic), color='black', fontsize=font_size, ha='center', va='center')
+        c = default_color if w['original'] else retranscribe_color
+        ax.add_patch(Rectangle((w['start'], 0.5 - y_offset - height / 2), width, height, facecolor= c, edgecolor = border, linewidth=1))
+        ax.annotate(w['word'], (w['start'] + width / 2, 0.5 - y_offset), color='black', fontsize=font_size, ha='center', va='center')
 
+    ax.text(-0.01, 0.5 + y_offset, 'manual', rotation = 90, ha='center', va='center', transform=ax.get_yaxis_transform())
+    ax.text(-0.01, 0.5 - y_offset, 'automatic', rotation = 90, ha='center', va='center', transform=ax.get_yaxis_transform())
+
+    fig.tight_layout()    
     plt.show()
     
 
-def show_alignments(manual_dir, automatic_dir, hesitation_dir, n=10) :
+import random
+import utils.constants as c 
+
+def show_alignments(manual_dir, automatic_dir, hesitation_dir, audio_dir = c.audio_dir, n=10) :
     files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if not 'Speech' in f.stem ]
     files = [ (f, utils.repath(f, manual_dir, automatic_dir), utils.repath(f, manual_dir, hesitation_dir)) for f in files ]
+    random.shuffle(files)    
     alignments = []
+    segment_files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if 'Speech' in f.stem ]
+    audio_files = [ f for f in utils.get_directory_files(audio_dir, 'wav') if f.stem[3:8] in [ f.stem[2:7] for f in segment_files] ]
+
     for manual_f, automatic_f, hesitation_f in files :
         if not (os.path.isfile(automatic_f) and os.path.isfile(hesitation_f)) :
             continue
+        segment = utils.read_timestamps_from_file( next( f for f in segment_files if manual_f.stem[2:7] in f.stem ) )[int(manual_f.stem[7:10])]
+        audio = utils.read_audio( next( f for f in audio_files if manual_f.stem[2:7] in f.stem), c.sample_rate)[0]
+        audio = audio[int(c.sample_rate*segment['start']) : int(c.sample_rate*segment['end'])]
+        
         manual = utils.read_label_timings_from_file(manual_f)
         automatic = [ w | {'original' : True} for w in utils.read_words_from_file(automatic_f) ] + [ w | {'original' : False} for w in utils.read_complementary_words_from_file(hesitation_f) ]
-        automatic = sorted(automatic, key=lambda w : w['start'])
+        automatic = [ dict( (k, w[k]) for k in ('word', 'original', 'start', 'end')) for w in automatic ]
 
-        alignments.append( (manual, automatic))
-        print(automatic_f.stem)
+        automatic = sorted(automatic, key=lambda w : w['start'])
+        alignments.append( (manual, automatic, manual_f.stem, audio))
         if len(alignments) >= n :
             break
 
-    for manual, automatic in alignments :
-        plot_alignments(manual, automatic)
-
-# alignments = []
-# for retranscribed_f, automatic_f, manual_f in files[:50] :
-#     manual = utils.read_label_timings_from_file(manual_f)
-#     automatic = [ w | {'original' : True} for w in utils.read_words_from_file(automatic_f) ]
-#     retranscribed = utils.read_file(retranscribed_f)
-    
-#     ### bring automatic and retranscribed together
-#     # align
-#     _, auto = cleanup.process(' '.join([w['word'] for w in automatic]))
-#     _, re = cleanup.process(retranscribed)
-#     auto, re = align.full_align(auto.split(), re.split())
-
-#     # get indices of gaps
-#     spots = list(zip([ i for i, (sec, first) in enumerate(zip(auto + ['placeholder'], ['placeholder'] + auto)) if (not sec) and first], [ i for i, (sec, first) in enumerate(zip(auto + ['placeholder'], ['placeholder'] + auto)) if sec and (not first)]))
-#     additional_words = [{ 'word' : ' '.join(re[s:e]), 'original' : False } for s, e in spots]
-#     for s, e in spots[::-1] :
-#         auto[s : e] = ['']
-
-#     # merge    
-#     complete = [ {'word' : 'start', 'original' : True, 'end' : 0} ]
-#     for w in auto :
-#         complete.append( automatic.pop(0) if w else additional_words.pop(0))
-#     complete.append( {'word' : 'start', 'original' : True, 'start' : manual[-1]['end']} )
-#     complete = [ w if w['original'] or i == 0 or i == len(complete)-1 else w | { 'start' : complete[i-1]['end'], 'end' : complete[i+1]['start'] } for i, w in enumerate(complete)]
-    
-#     # insert large gaps with no transcript
-#     for i in reversed(range(1, len(complete))) :
-#         if complete[i]['start'] - complete[i-1]['end'] > 0.1 :
-#             complete.insert(i, { 'word' : '', 'original' : False, 'start' : complete[i-1]['end'], 'end' : complete[i]['start']})
-#     complete = complete[1 : -1]
-#     alignments.append( (manual, complete) )
+    base = c.data_base / 'example'
+    for manual, automatic, title, audio in alignments :
+        utils.write_dict( base / (title + '_manual.txt'), manual)
+        utils.write_dict( base / (title + '_automatic.txt'), automatic)
+        utils.write_audio( base / (title + '_audio.wav'), audio, c.sample_rate)
 
 
+import tasks.transcript_alignment as align
+
+def a(base = c.data_base / 'example') :
+    files = [ f.stem[:10] for f in utils.get_directory_files(base, 'txt') if 'manual' in f.stem]
+    for file in files :
+        manual = utils.read_dict(base / ( file + '_manual.txt'))
+        automatic = utils.read_dict(base / ( file + '_automatic.txt'))
+        plot_alignments(manual, automatic, file)
