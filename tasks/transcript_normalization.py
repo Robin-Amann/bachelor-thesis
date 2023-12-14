@@ -27,13 +27,13 @@ def normalize_file(file_path, normalizer = None, filename_extention = None, data
         transcript = normalizer.normalize(transcript, punct_post_process=True)
         write = utils.write_file
     elif dataset == 'switchboard' :
-        content = utils.read_label_timings_from_file(file_path)
+        content = utils.read_dict(file_path)
         transcript = [w['word'] for w in content]
         transcript = normalizer.normalize_list(transcript, punct_post_process=True)
         for c, t in zip(content, transcript) :
             c['word'] = t
         transcript = content
-        write = utils.write_label_timings_to_file
+        write = utils.write_dict
 
     if filename_extention != None:
         write(file_path[:-4] + "_" + filename_extention + ".txt", transcript)
@@ -43,7 +43,7 @@ def normalize_file(file_path, normalizer = None, filename_extention = None, data
     
 
 def normalize_dir(directory_path, dataset, filename_extention = None) :
-    files = [f for f in utils.get_directory_files(directory_path, "txt") if not 'Speech' in f.stem]
+    files = [ f for f in utils.get_dir_files(directory_path, "txt") if not 'Speech' in f.stem ]
     normalizer = Normalizer(input_case='cased', lang='en')
     for file in ChargingBar("Normalize Transcript").iter(files) :
         with suppress_stdout():

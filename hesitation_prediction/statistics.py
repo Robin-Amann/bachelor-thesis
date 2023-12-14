@@ -3,6 +3,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import os
+import random
+import utils.constants as c 
+
 
 def plot_alignments(manual, automatic, title, start=0, default_color = 'cornflowerblue', hesitation_color = 'orange', retranscribe_color = 'tomato', border = 'black') :    
     if not automatic or not manual:
@@ -43,28 +46,25 @@ def plot_alignments(manual, automatic, title, start=0, default_color = 'cornflow
 
     fig.tight_layout()    
     plt.show()
-    
 
-import random
-import utils.constants as c 
 
 def show_alignments(manual_dir, automatic_dir, hesitation_dir, audio_dir = c.audio_dir, n=10) :
-    files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if not 'Speech' in f.stem ]
-    files = [ (f, utils.repath(f, manual_dir, automatic_dir), utils.repath(f, manual_dir, hesitation_dir)) for f in files ]
+    files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, hesitation_dir])
     random.shuffle(files)    
     alignments = []
-    segment_files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if 'Speech' in f.stem ]
-    audio_files = [ f for f in utils.get_directory_files(audio_dir, 'wav') if f.stem[3:8] in [ f.stem[2:7] for f in segment_files] ]
+
+    segment_files = [ f for f in utils.get_dir_files(manual_dir, 'txt') if 'Speech' in f.stem ]
+    audio_files = [ f for f in utils.get_dir_files(audio_dir, 'wav') if f.stem[3:8] in [ f.stem[2:7] for f in segment_files] ]
 
     for manual_f, automatic_f, hesitation_f in files :
         if not (os.path.isfile(automatic_f) and os.path.isfile(hesitation_f)) :
             continue
-        segment = utils.read_timestamps_from_file( next( f for f in segment_files if manual_f.stem[2:7] in f.stem ) )[int(manual_f.stem[7:10])]
+        segment = utils.read_dict( next( f for f in segment_files if manual_f.stem[2:7] in f.stem ) )[int(manual_f.stem[7:10])]
         audio = utils.read_audio( next( f for f in audio_files if manual_f.stem[2:7] in f.stem), c.sample_rate)[0]
         audio = audio[int(c.sample_rate*segment['start']) : int(c.sample_rate*segment['end'])]
         
-        manual = utils.read_label_timings_from_file(manual_f)
-        automatic = [ w | {'original' : True} for w in utils.read_words_from_file(automatic_f) ] + [ w | {'original' : False} for w in utils.read_complementary_words_from_file(hesitation_f) ]
+        manual = utils.read_dict(manual_f)
+        automatic = [ w | {'original' : True} for w in utils.read_dict(automatic_f) ] + [ w | {'original' : False} for w in utils.read_dict(hesitation_f) ]
         automatic = [ dict( (k, w[k]) for k in ('word', 'original', 'start', 'end')) for w in automatic ]
 
         automatic = sorted(automatic, key=lambda w : w['start'])
@@ -82,7 +82,7 @@ def show_alignments(manual_dir, automatic_dir, hesitation_dir, audio_dir = c.aud
 import tasks.transcript_alignment as align
 
 def a(base = c.data_base / 'example') :
-    files = [ f.stem[:10] for f in utils.get_directory_files(base, 'txt') if 'manual' in f.stem]
+    files = [ f.stem[:10] for f in utils.get_dir_files(base, 'txt') if 'manual' in f.stem]
     for file in files :
         manual = utils.read_dict(base / ( file + '_manual.txt'))
         automatic = utils.read_dict(base / ( file + '_automatic.txt'))

@@ -90,18 +90,17 @@ def segment(transcript_p) :
 
 
 def segment_dir(transcript_dir, segmented_transcript_dir) :
-    manual_transcript_files = [ (f.stem, f) for f in utils.get_directory_files(transcript_dir, 'txt') if not f.stem[2:6] in constants.ignore_files]
+    manual_transcript_files = [ (f.stem, f) for f in utils.get_dir_files(transcript_dir, 'txt') if not f.stem[2:6] in constants.ignore_files ]
 
-    print(len(manual_transcript_files))
     for stem, transcript_file in ChargingBar("Segment Audio and Transcripts").iter(manual_transcript_files) :
         number = stem[2:6]
         speaker = stem[6]
 
-        transcript = utils.read_label_timings_from_file(transcript_file)
+        transcript = utils.read_dict(transcript_file)
         segments, timestamps = segment(transcript)
         for index, seg in enumerate(segments) :
             seg_file = utils.repath(transcript_file, transcript_dir, segmented_transcript_dir, [number, speaker], stem= stem + "{:03d}".format(index))
-            utils.write_label_timings_to_file(seg_file, seg)
+            utils.write_dict(seg_file, seg)
         timestamps_file = utils.repath(transcript_file, transcript_dir, segmented_transcript_dir, [number], stem= stem + "Speech")
-        utils.write_timestamps_to_file(timestamps_file, timestamps)
+        utils.write_dict(timestamps_file, timestamps)
         

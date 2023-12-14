@@ -158,7 +158,7 @@ def write_to_file_wer(path, hand_snips, machine_snips, words_per_line) :
 
 def align_file(manual_source, automatic_source, operations_desination, write_only_operations=False) :
     machine_transcript_messy = utils.read_file(automatic_source)
-    hand_transcript_messy = ' '.join([w['word'] for w in utils.read_label_timings_from_file(manual_source)])
+    hand_transcript_messy = ' '.join([w['word'] for w in utils.read_dict(manual_source)])
     hand_trimmed, hand_clean = pre.process(transcript=hand_transcript_messy)
     machine_trimmed, machine_clean = pre.process(transcript=machine_transcript_messy)
 
@@ -171,9 +171,7 @@ def align_file(manual_source, automatic_source, operations_desination, write_onl
 
 
 def align_dir(manual_dir, automatic_dir, destination_dir, write_only_operations=False) :
-    files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if (not 'Speech' in f.stem) and (not f.stem[2:6] in constants.ignore_files)]
-    files = [ (f, utils.repath(f, manual_dir, automatic_dir)) for f in files]
-
+    files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir], filter_condition= lambda f : not f.stem[2:6] in constants.ignore_files )
     for manual_file, automatic_file in ChargingBar("Align Transcripts").iter(files) :
         operations_file = utils.repath(manual_file, manual_dir, destination_dir)
         align_file(manual_file, automatic_file, operations_file, write_only_operations)
@@ -186,14 +184,13 @@ def wer(operations) :
 
 
 def dir_wer(manual_dir, automatic_dir) :
-    files = [ f for f in utils.get_directory_files(manual_dir, 'txt') if (not 'Speech' in f.stem) and (not f.stem[2:6] in constants.ignore_files) and not f.stem in constants.controversial_files ]
-    files = [ (f, utils.repath(f, manual_dir, automatic_dir)) for f in files ] 
+    files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir] )
     w = 0
     l = 0
     for manual_file, automatic_file in ChargingBar("Align Transcripts").iter(files) :
         if os.path.isfile(manual_file) and os.path.isfile(automatic_file) :
             automatic = utils.read_file(automatic_file)
-            manual = ' '.join([w['word'] for w in utils.read_label_timings_from_file(manual_file)])
+            manual = ' '.join([w['word'] for w in utils.read_dict(manual_file)])
             _, manual = pre.process(manual)
             _, automatic = pre.process(automatic)
             operations = get_operations(manual.split(), automatic.split())

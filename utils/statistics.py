@@ -13,25 +13,25 @@ def sb_hesitation_translation(manual_dir, automatic_dir, retranscribe_dir = None
 
     # sw2005A000.txt, sw2005A000.txt, sw2005A000.txt  (names are equal)
     if retranscribe_dir:
-        files = utils.dir_tuples_simple([manual_dir, automatic_dir, retranscribe_dir], lambda f : not 'Speech' in f.stem )
+        files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, retranscribe_dir])
         files = [ (f1, (f2, f3)) for f1, f2, f3 in files ]
     else :
-        files = utils.dir_tuples_simple([manual_dir, automatic_dir], lambda f : not 'Speech' in f.stem )
+        files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
     
     numbers = [[0, 0, 0], [0, 0, 0]]
     for manual_file, automatic_file in ChargingBar("Hesitation Transcription").iter(files) :
-        manual_full = utils.read_label_timings_from_file(manual_file)
+        manual_full = utils.read_dict(manual_file)
         if len(manual_full) < min_len :
             continue
         manual_full = [ [w | {'word': wi} for wi in  w['word'].split()] for w in manual_full]
         manual_full = [item for sublist in manual_full for item in sublist]
         if retranscribe_dir :
             automatic_file, retranscribe_file = automatic_file
-            t = utils.read_words_from_file(automatic_file) + [ w for w in utils.read_complementary_words_from_file(retranscribe_file) if w['word']]
+            t = utils.read_dict(automatic_file) + [ w for w in utils.read_dict(retranscribe_file) if w['word']]
             t = sorted(t, key=lambda w: w['start'])
             automatic = ' '.join( w['word'] for w in t) 
         else :
-            automatic = ' '.join( w['word'] for w in utils.read_words_from_file(automatic_file) )
+            automatic = ' '.join( w['word'] for w in utils.read_dict(automatic_file) )
         manual = ' '.join([w['word'] for w in manual_full])
         _, manual = pre.process(transcript=manual.lower())
         _, whisper = pre.process(transcript=automatic.lower())
@@ -67,11 +67,11 @@ def sb_hesitation_translation(manual_dir, automatic_dir, retranscribe_dir = None
 
 # return list of (number of words, length of segment)
 def segment_length(seg_dir, min_len=1) :
-    files = utils.dir_tuples_simple([seg_dir], lambda f : not 'Speech' in f.stem )
+    files = [ f for f in utils.get_dir_files(seg_dir, 'txt') if not 'Speech' in f.stem ]
     data = []
     total_length = 0 # in sec
     for f in files :
-        content = utils.read_label_timings_from_file(f)
+        content = utils.read_dict(f)
         if len(content) < min_len :
             continue
         data.append((len(content), content[-1]['end']))
@@ -81,22 +81,22 @@ def segment_length(seg_dir, min_len=1) :
 
 # all
 def wer(manual_dir, automatic_dir, retranscribe_dir=None, min_len=1) :
-    files = utils.dir_tuples_simple([manual_dir, automatic_dir], lambda f : not 'Speech' in f.stem)
+    files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
     data = []
 
     for manual_f, automatic_f in files :
-        manual = ' '.join( w['word'] for w in utils.read_label_timings_from_file(manual_f) )
+        manual = ' '.join( w['word'] for w in utils.read_dict(manual_f) )
         if len(manual.split()) < min_len :
             continue
         if retranscribe_dir :
             retranscribe_f = utils.repath(manual_f, manual_dir, retranscribe_dir)
             if not os.path.isfile(retranscribe_f) :
                 continue
-            t = utils.read_words_from_file(automatic_f) + [ w for w in utils.read_complementary_words_from_file(retranscribe_f) if w['word']]
+            t = utils.read_dict(automatic_f) + [ w for w in utils.read_dict(retranscribe_f) if w['word']]
             t = sorted(t, key=lambda w: w['start'])
             automatic = ' '.join( w['word'] for w in t)
         else :
-            automatic = ' '.join( w['word'] for w in utils.read_words_from_file(automatic_f) )
+            automatic = ' '.join( w['word'] for w in utils.read_dict(automatic_f) )
 
         _, manual = cleanup.process(manual)
         _, automatic = cleanup.process(automatic)
@@ -117,17 +117,16 @@ def wer(manual_dir, automatic_dir, retranscribe_dir=None, min_len=1) :
 
 # manual and automatic dir need alignment to audio information
 def transcript_alignment(manual_dir, automatic_dir, align_dir, min_len=1) :
-    files = utils.dir_tuples_simple([manual_dir, automatic_dir, align_dir], lambda f : not 'Speech' in f.stem)
-
+    files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, align_dir])
     data = []
     gaps = []
     empty_word = dict({'word' : '', 'start' : -1, 'end' : -1})
     for manual_file, automatic_file, align_file in files :
         operations = utils.read_file(align_file).split()
-        manual = utils.read_label_timings_from_file(manual_file)
+        manual = utils.read_dict(manual_file)
         if len(manual) < min_len :
             continue
-        automatic = utils.read_words_from_file(automatic_file)
+        automatic = utils.read_dict(automatic_file)
         if len(automatic) > 1 :
             for i in range(len(automatic) - 1) :
                 gap = automatic[i+1]['start'] - automatic[i]['end']
@@ -142,14 +141,14 @@ def transcript_alignment(manual_dir, automatic_dir, align_dir, min_len=1) :
     return data, gaps
 
 def percentage(seg_dir, min_len=1) :
-    files = utils.dir_tuples_simple([seg_dir], lambda f : not 'Speech' in f.stem )
+    files = [ f for f in utils.get_dir_files(seg_dir, 'txt') if not 'Speech' in f.stem ]
     words = 0
     filled_pauses = 0
     repetitions = 0
     repetitions_and_filled_pauses = 0
     hesitations = 0
     for f in files :
-        content = utils.read_label_timings_from_file(f)
+        content = utils.read_dict(f)
         if len(content) < min_len :
             continue
         words += len(content)

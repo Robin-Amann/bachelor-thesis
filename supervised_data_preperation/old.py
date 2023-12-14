@@ -11,11 +11,11 @@ timing_dir = "D:\\Robin_dataset\\Switchboard\\Switchboard-1 Release 2 Transcript
 disfluencies_dir = "D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd" 
 audio_dir = "D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2"
 
-disfluencies_files = [f.stem for f in utils.get_directory_files(disfluencies_dir, 'mgd')]
-timing_files = [f.stem[:7] for f in utils.get_directory_files(timing_dir, 'text') if f.stem.endswith('word')]
-audio_files_A = [f.stem[:2] + f.stem[3:7] for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('A') ]
-audio_files_B = [f.stem[:2] + f.stem[3:7] for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('B') ]
-audio_files = [f for f in utils.get_directory_files(audio_dir, 'wav') if f.stem.endswith('B') or f.stem.endswith('A') ]
+disfluencies_files = [f.stem for f in utils.get_dir_files(disfluencies_dir, 'mgd')]
+timing_files = [f.stem[:7] for f in utils.get_dir_files(timing_dir, 'text') if f.stem.endswith('word')]
+audio_files_A = [f.stem[:2] + f.stem[3:7] for f in utils.get_dir_files(audio_dir, 'wav') if f.stem.endswith('A') ]
+audio_files_B = [f.stem[:2] + f.stem[3:7] for f in utils.get_dir_files(audio_dir, 'wav') if f.stem.endswith('B') ]
+audio_files = [f for f in utils.get_dir_files(audio_dir, 'wav') if f.stem.endswith('B') or f.stem.endswith('A') ]
 
 corrupt_files = []
 for f in ChargingBar("Read Audio").iter(audio_files)  :
@@ -88,8 +88,8 @@ files = [(f, utils.repath(f, c.manual_seg_dir, c.audio_automatic_align_dir), uti
 data = []
 corrupt = set()
 for manual_f, automatic_f, operations_f in files :
-    m = len(utils.read_label_timings_from_file(manual_f))
-    a = len(utils.read_words_from_file(automatic_f))
+    m = len(utils.read_dict(manual_f))
+    a = len(utils.read_dict(automatic_f))
     operations = utils.read_file(operations_f).split()
     if len(operations) >= 5 and ((operations.count('i') + operations.count('d') + operations.count('r')) / len(operations)) > 0.5:
         corrupt.add(manual_f.stem[2:6])
@@ -134,8 +134,8 @@ files = [(f, utils.repath(f, c.manual_seg_dir, c.audio_automatic_align_dir), uti
 data = []
 
 for manual_f, automatic_f, operations_f in files :
-    x = len(utils.read_label_timings_from_file(manual_f))
-    y = len(utils.read_words_from_file(automatic_f))
+    x = len(utils.read_dict(manual_f))
+    y = len(utils.read_dict(automatic_f))
     data.append( (x, y) )
 
 data = list(set(data))

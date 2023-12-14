@@ -1,12 +1,10 @@
 import tasks.preprocessing.annotations as annotations
 import tasks.preprocessing.timings as timing
 import utils.file as utils
-import utils.constants as constants
 from progress.bar import ChargingBar
-from pathlib import Path
 import re
 import tasks.transcript_alignment as wer
-
+from pathlib import Path
 
 def align(trans_p, timing_p) :
     trans = trans_p.copy()
@@ -111,18 +109,14 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
 def process_dir(annotation_dir, timing_dir, desination_dir, annotation_type='mgd', timing_type='text', ann_patterns=[], timing_patterns=[]) :
 
     files = utils.get_dir_tuples(
-        [annotation_dir, timing_dir, timing_dir], 
-        [annotation_type, timing_type, timing_type], 
-        [
-            lambda s : True, 
-            lambda s : s.endswith('A-ms98-a-word'), 
-            lambda s : s.endswith('B-ms98-a-word')
-        ], 
-        lambda s, sn : sn.startswith(s) 
-    )    
-    files = [ (s, f0, f1[0][1], f2[0][1]) for (s, f0), f1, f2 in files if not s[2:6] in constants.ignore_files]
+        [(annotation_dir, annotation_type), (timing_dir, timing_type), (timing_dir, timing_type)], 
+        lambda base : True, 
+        [lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('A-ms98-a-word'), lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('B-ms98-a-word')]
+        )
+  
 
-    for stem, annotation_file, timing_file_A, timing_file_B in ChargingBar("Prepare Transcripts").iter(files) :
+    for annotation_file, timing_file_A, timing_file_B in ChargingBar("Prepare Transcripts").iter(files) :
         a, b = process_file(str(annotation_file), str(timing_file_A), str(timing_file_B), ann_patterns, timing_patterns)
-        # utils.write_label_timings_to_file(Path(desination_dir) / stem[2 : 4] / (stem + "A.txt"), a)
-        # utils.write_label_timings_to_file(Path(desination_dir) / stem[2 : 4] / (stem + "B.txt"), b)
+        stem = annotation_file.stem
+        utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "A.txt"), a)
+        utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "B.txt"), b)

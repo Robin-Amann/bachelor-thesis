@@ -1,12 +1,12 @@
+import os
+from enum import Enum
+import torch
 import whisper
 import utils.file as utils
 import utils.constants as constants
 import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
-import os
-import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-from enum import Enum
 
 MODELS = Enum('Model', ['whisper', 'whisper_large_v3'])
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -56,27 +56,22 @@ def transcribe_whisper(transcription_model, speech, transcript_file) :
 def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=MODELS.whisper) :
     transcription_model = load_model(model)
     
-    files = utils.get_dir_tuples([segments_dir, speech_dir], ['txt', 'wav'], [ lambda s : 'Speech' in s, lambda s : True ], lambda s1, s2 : s1[2:7] in s2 )
-    files = [(s, f1, f2[0][1]) for (s, f1), f2 in files if not s[2:6] in constants.ignore_files]
-    
-    s = 1
-    grouped = list(map(lambda f :  {int(f[1].parts[-3]) : f}, files))                           # map files to (parent, file)
-    grouped = { k : [f[k] for f in grouped if k in f.keys() ] for k in set([list(g.keys())[0] for g in grouped])}  # group files by parent
-    ps = [x for x in grouped.keys() if x >= s]                                                  # get keys greater than starting point
-    ps.sort()
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[2:7], None, 'wav')])
+    grouped = utils.group_files(files, 3)
 
-    for p in ps :
+    for p in grouped.keys() :
         print("Transcribe dir", p)
-        for stem, segment_file, speech_file in ChargingBar("Transcribe Audio").iter(grouped[p]) :
-            segments = utils.read_timestamps_from_file(str(segment_file))
+        for segment_file, speech_file in ChargingBar("Transcribe Audio").iter(grouped[p]) :
+            stem = segment_file.stem
+
+            segments = utils.read_dict(str(segment_file))
             speech = utils.read_audio(str(speech_file), sample_rate)[0]
-            
+         
             for index, segment in enumerate(segments) :
                 transcript_file = utils.repath(segment_file, segments_dir, transcript_dir, [stem[6]], stem= stem[:7] + "{:03d}".format(index))
 
                 start = segment['start']
                 end = segment['end']
-
                 if model == MODELS.whisper :
                     transcribe_whisper(transcription_model, speech[int(start*sample_rate) : int(end*sample_rate)].to(device), transcript_file)
                 elif model == MODELS.whisper_large_v3 :

@@ -1,5 +1,6 @@
 import os
 import torch
+import torchaudio
 import whisper
 import utils.file as utils
 import utils.constants as constants
@@ -7,7 +8,6 @@ import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
 import numpy as np
 from transformers import AutoTokenizer, AutoFeatureExtractor, AutoModelForCTC, Wav2Vec2ProcessorWithLM, Wav2Vec2ForCTC
-import torchaudio
 from torchaudio.models.decoder import download_pretrained_files, ctc_decoder
 from enum import Enum
 
@@ -107,7 +107,7 @@ def transcribe_part_ctc_custom_language(start, end, speech, sample_rate, model) 
 
 
 def predict_file(transcript_file, speech, destination_file, sample_rate, transcription_function, model) :
-    transcript_old = utils.read_words_from_file(transcript_file)
+    transcript_old = utils.read_dict(transcript_file)
     transcript_new = []
     start = 0
     for word in transcript_old :
@@ -118,29 +118,19 @@ def predict_file(transcript_file, speech, destination_file, sample_rate, transcr
     end = len(speech) / sample_rate
     if end - start > MIN_GAP :
         transcript_new = transcript_new + transcription_function(start, end, speech, sample_rate, model)
-    utils.write_words_to_file(destination_file, transcript_new)
+    utils.write_dict(destination_file, transcript_new)
 
 
 def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, model) :
     transcription_model = load_model(model)
 
-    files = utils.get_dir_tuples([
-        (segments_dir, 'txt', lambda s : 'Speech' in s, lambda s, s1 : True),                       # 1
-        (speech_dir, 'wav', lambda s : True, lambda s1, s2 : s1[2:7] in s2),  # number + speaker    # 1
-        (transcript_dir, 'txt', lambda s : True, lambda s1, s3 : s1[2:7] in s3)                     # n
-    ])
-    files = [(f1, f2[0][1], [f for _, f in f3]) for (s, f1), f2, f3 in files if not s in constants.controversial_files and not s[2:6] in constants.ignore_files]
-    # group files
-    s = 1
-    grouped = list(map(lambda f :  {int(f[0].parts[-3]) : f}, files))                                               # map files to (parent, file)
-    grouped = { k : [f[k] for f in grouped if k in f.keys() ] for k in set([list(g.keys())[0] for g in grouped])}   # group files by parent
-    ps = [x for x in grouped.keys() if x >= s]                                                                      # get keys greater than starting point
-    ps.sort()
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[2:7], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])])
+    grouped = utils.group_files(files, 3)
 
-    for p in ps :
+    for p in grouped.keys() :
         print("Hesitation Translation dir", p)
         for segment_file, speech_file, transcript_files in ChargingBar("Hesitation Translation").iter(grouped[p]) :
-            segments = utils.read_timestamps_from_file(str(segment_file))
+            segments = utils.read_dict(str(segment_file))
             speech = utils.read_audio(str(speech_file), sample_rate)[0]
             
             for index, segment in enumerate(segments) :

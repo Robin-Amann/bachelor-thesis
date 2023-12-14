@@ -82,33 +82,18 @@ def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir, sample_r
     print('device:', device)
     print('os:', os.name)
 
-    files = utils.get_dir_tuples([ 
-        (segments_dir, "txt", lambda s : 'Speech' in s), 
-        (audio_dir, "wav", lambda s : 'A' in s or 'B' in s), 
-        (transcript_dir, "txt", lambda s : True) ], 
-        lambda s1, s2: s1[2:7] in s2  # number and speaker
-    )
-    files = [(s, f1, f2[0][1], [f for _, f in f3]) for (s, f1), f2, f3 in files if not s[2:6] in constants.ignore_files]
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (audio_dir, lambda f : f.stem[2:7], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])] )
+    grouped = utils.group_files(files, 3)
 
-    s = 1
-    grouped = dict()
-    for f in files :
-        p = int(f[1].parts[-3])
-        if p in grouped :
-            grouped[p].append(f)
-        else :
-             grouped[p] = [f]
-    ps = [x for x in grouped.keys() if x >= s]
-    ps.sort()
-    for p in ps :
+    for p in grouped.keys() :
         print("Align dir", p)
-        for stem, segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(grouped[p]) :
-            segments = utils.read_timestamps_from_file(str(segment_file))
-            
+        for segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(grouped[p]) :
+            stem = segment_file.stem
+            segments = utils.read_dict(str(segment_file))
             for index, segment in enumerate(segments) :
                 transcript_file = next(f for f in transcript_files if (stem[6] + "{:03d}".format(index)) in f.stem)
 
                 destination_file = utils.repath(segment_file, segments_dir, destination_dir, [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
 
                 words = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'])
-                utils.write_words_to_file(destination_file, words)
+                utils.write_dict(destination_file, words)

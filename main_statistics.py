@@ -48,7 +48,7 @@ stat.plot_alignments(no_rep, rep, labels)
 # plt.xlim((0, 150))
 # plt.ylim((0, 150))
 # for manual_f, automatic_F in files :
-#     manual = utils.read_label_timings_from_file(manual_f)
+#     manual = utils.read_dict(manual_f)
 #     automatic = utils.read_file(automatic_F).split()
 #     data .append ( (len(manual), len(automatic)) )
 

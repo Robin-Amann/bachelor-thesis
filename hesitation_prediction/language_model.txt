@@ -19,7 +19,7 @@ files = [ f for f in utils.get_directory_files(c.manual_seg_dir, 'txt') if not '
 
 def gen():
   for file in files :
-    yield {'text' : ' '.join( w['word'].lower() for w in utils.read_label_timings_from_file(file) ) }
+    yield {'text' : ' '.join( w['word'].lower() for w in utils.read_dict(file) ) }
 
 ds = Dataset.from_generator(gen)
 
