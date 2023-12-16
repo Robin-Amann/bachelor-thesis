@@ -10,6 +10,7 @@ import numpy as np
 from transformers import AutoTokenizer, AutoFeatureExtractor, AutoModelForCTC, Wav2Vec2ProcessorWithLM, Wav2Vec2ForCTC
 from torchaudio.models.decoder import download_pretrained_files, ctc_decoder
 from enum import Enum
+import utils.transcript as word_utils
 
 MIN_GAP = 0.1
 
@@ -59,7 +60,7 @@ def load_model(model) :
 def transcribe_part_whisper(start, end, speech, sample_rate, model) :
     data = speech[int(start*sample_rate) : int(end*sample_rate)].to(device)
     transcript = model.transcribe(data, language='en', fp16 = False)
-    transcript = cleanup.remove_non_words(transcript['text'])
+    transcript = ' '.join([ word for word in transcript['text'].split() if word_utils.is_word(word)])
     return [ { "word": transcript.lower(), "start": start, "end": end } ] 
 
 

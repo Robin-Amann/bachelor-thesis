@@ -8,16 +8,19 @@ import tasks.voice_detection_silero_vad as vad
 import utils.constants as constants
 
 
-pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
+# pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
 
-segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
+# segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
 
-transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir , constants.sample_rate, transcriptor.MODELS.whisper)
-transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.data_base / 'automatic' / 'version3', constants.sample_rate, transcriptor.MODELS.whisper_large_v3)
+# transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir , constants.sample_rate, transcriptor.MODELS.whisper)
+# transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.data_base / 'automatic' / 'version3', constants.sample_rate, transcriptor.MODELS.whisper_large_v3)
 
-# normalizer.normalize_dir(constants.manual_seg_dir, dataset= 'switchboard')
-normalizer.normalize_dir(constants.automatic_dir, dataset= 'whisper')
-
-transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_dir, constants.transcript_align_dir, write_only_operations=True)
+# # normalizer.normalize_dir(constants.manual_seg_dir, dataset= 'switchboard')
+# normalizer.normalize_dir(constants.automatic_dir, dataset= 'whisper')
 
 audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate)
+
+# deprecated
+# transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_align_dir, write_only_operations=True)
+# transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_v3_dir, write_only_operations=True)
+

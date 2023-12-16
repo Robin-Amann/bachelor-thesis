@@ -20,28 +20,6 @@ def get_multiple_dir_files(directories : list[tuple | Path | str], filter_condit
         if type(dir) != tuple :
             directories[i] = (dir, 'txt')
     return [ get_dir_files(dir, filetype, filter_condition) for dir, filetype in directories ]
-
-
-# def get_dir_tuples(directories : list[tuple | Path | str], base_condition, merge_conditions : list, filter_condition = base_filter) -> list[tuple]:
-#     all_dirs_files = get_multiple_dir_files(directories, filter_condition)
-#     # if all( [ len(all_dirs_files[0]) == len(all_dirs_files[i]) for i in range(1, len(all_dirs_files))] ) :
-#     #     all_dirs_files = [ sorted(x) for x in all_dirs_files ]
-#     #     return list(zip(*all_dirs_files))
-#     base_dir_files = [ f for f in all_dirs_files[0] if base_condition(f) ]
-#     other_dirs_files = all_dirs_files[1:]
-#     result = []
-#     for base_file in base_dir_files :
-#         suitable_files = []
-#         for files, condition in zip(other_dirs_files, merge_conditions) :
-#             suitable = [ f for f in files if condition(base_file, f)]
-#             if len(suitable) > 0 :
-#                 if len(suitable) == 1 :
-#                     suitable_files.append(suitable[0])
-#                 else :
-#                     suitable_files.append(suitable)
-#         if len(suitable_files) == len(other_dirs_files) :
-#             result.append( [base_file] + suitable_files)            
-#     return result
                 
 
 # (dir) | (dir, merge) | (dir, merge, filter) | (dir, merge, filter, filetype)
@@ -57,6 +35,7 @@ def get_dir_tuples(dirs : list[tuple | Path | str], filter_condition=base_filter
     for index, dir in enumerate(dirs) :
         if type(dir) != tuple :
             dirs[index] = (dir, None, None, 'txt')
+            continue
         if len(dir) == 2 : dirs[index] = (dir[0], dir[1], None, 'txt')
         if len(dir) == 3 : dirs[index] = (dir[0], dir[1], dir[2], 'txt')
     all_files = get_multiple_dir_files([ (d[0], d[3]) for d in dirs], filter_condition)
@@ -155,9 +134,15 @@ def read_dict(file_path, seperator='<|>') :
     keys, types = lines[:2]
     keys = keys.split(seperator)
     types = [ locate(t) for t in types.split(seperator)]
+    if len(keys) != len(types) :
+        raise KeyError('wrong number of keys to types')
     types = [ t if t != int else float for t in types ]
+    if any( t == None for t in types) :
+        raise KeyError('file probably had no header and only two items')
     data = lines[2:]
     for d in data :
+        if 'None' in d :            # TODO is for version 3. if last timestep not found set to end of file
+            continue
         dictionary.append( dict(zip(keys, [ t(v) if t != bool else v == 'True' for t, v in zip(types, d.split(seperator)) ])) )
     return dictionary
 

@@ -3,7 +3,7 @@ import tasks.preprocessing.timings as timing
 import utils.file as utils
 from progress.bar import ChargingBar
 import re
-import tasks.transcript_alignment as wer
+import utils.wer_alignment as wer
 from pathlib import Path
 
 def align(trans_p, timing_p) :
@@ -95,9 +95,9 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
 
     # that I even have to add this is stupid
     operations = wer.get_operations([w['word'].lower() for w in trans_A], [w['word'].lower() for w in timing_A])
-    if wer.wer(operations) > 0.5 :
+    if wer.calculate_wer(operations) > 0.5 :
         operations = wer.get_operations([w['word'].lower() for w in trans_A], [w['word'].lower() for w in timing_B])
-        if wer.wer(operations) > 0.5 :
+        if wer.calculate_wer(operations) > 0.5 :
             raise ValueError("preprocessing error: transcript and timing does not match")
         else :
             print("preprocessing: swap transcripts", annotated_file)

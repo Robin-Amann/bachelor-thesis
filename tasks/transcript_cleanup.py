@@ -51,9 +51,3 @@ def process(transcript, start = "", end = "", patterns = [], additional_trim_cha
         print("trimmed: ", trimmed)
         print("clean:   ", clean)
     return trimmed, clean
-
-
-def remove_non_words(transcript, chars_regex="[^A-Za-z0-9\s]") :
-    pattern = "(?<!\S)" + chars_regex + "+(?!\S)"
-    transcript = ' '.join(re.sub(pattern, '', transcript).split())
-    return transcript

@@ -3,6 +3,7 @@ from enum import Enum
 import torch
 import whisper
 import utils.file as utils
+import utils.transcript as word_utils
 import utils.constants as constants
 import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
@@ -34,22 +35,34 @@ def load_model(model) :
         raise NameError(model, "not available")
 
 
-def transcribe_whisper_large_v3(pipe, speech, transcript_file) :
+def transcribe_whisper_large_v3(pipe, speech, end, transcript_file) :
+    # transcribe audio
     result = pipe(speech.numpy())['chunks']
     result = [ tuple(x.values()) for x in result ]
+    # bring to custom format
     result = [ { 'word' : text.strip(), 'start' : start, 'end' : end } for text, (start, end) in result ]
+    if len(result) > 0 and result[-1]['end'] == None :
+        result[-1]['end'] = end
+    # remove noise
+    for word in result :
+        word['word'] = word_utils.replace_anomalies(word['word'])
+    result = [ w for w in result if word_utils.is_word(w['word']) ]
     utils.write_dict(transcript_file, result)
 
 
 def transcribe_whisper(transcription_model, speech, transcript_file) :
+    # transcribe audio
     transcript = transcription_model.transcribe(speech, language='en', fp16 = False)
     transcript = transcript['text'].strip()
-    transcript = transcript.replace('…', '...')
+    # remove noise
+    words = transcript.split()
+    words = [ word_utils.replace_anomalies(word) for word in words ]
+    words = [ word for word in words if word_utils.is_word(word) ]
+    transcript = ' '.join(words)
 
-    if len(set(transcript) - constants.ALLOWED_CHARS) > 0 :
+    if word_utils.contains_special_chars(transcript, additional=' ') :
         utils.write_file(constants.error_dir / 'audio_transcription.txt', "Could not transcribe properly " + transcript_file.stem + "\nTranscript: " + transcript + "\n", 'a')
 
-    transcript = cleanup.remove_non_words(transcript)
     utils.write_file(transcript_file, transcript)
 
 
@@ -75,5 +88,5 @@ def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=
                 if model == MODELS.whisper :
                     transcribe_whisper(transcription_model, speech[int(start*sample_rate) : int(end*sample_rate)].to(device), transcript_file)
                 elif model == MODELS.whisper_large_v3 :
-                    transcribe_whisper_large_v3(transcription_model, speech[int(start*sample_rate) : int(end*sample_rate)], transcript_file)
+                    transcribe_whisper_large_v3(transcription_model, speech[int(start*sample_rate) : int(end*sample_rate)], end, transcript_file)
                                     

@@ -1,23 +1,32 @@
-import supervised_data_preperation.statistics as stat
-import hesitation_prediction.statistics as hes_stat
+import statistics_complete.data_gatering as data
+import statistics_complete.visualization as visual
+import statistics_complete.statistical_package as stat
 import utils.constants as c
-import utils.file as utils
+
+retranscribe_dirs = [None, c.retranscibed_dir / 'whisper', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new']
+labels = ['no model', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchboard LM', 'wav2vec2\nsb-hesitation LM']
+
+# # # # data preperation # # #
+# visual.plot_manual_automatic_word_lengths(c.manual_seg_dir, c.automatic_align_dir)
+# visual.plot_manual_automatic_word_lengths(c.manual_seg_dir, c.automatic_v3_dir)
+
+# # # hesitation prediction # # #
+# stat.plot_alignment_examples(c.manual_seg_dir, c.automatic_align_dir, c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new', c.audio_dir, n = 5)
+
+# # # # general # # #
+# stat.statistic_dataset_complete(min_len=[1, 5])
+# stat.plot_hesitation_transcription_comparison(retranscribe_dirs, labels)
+# stat.plot_wer_comparison(retranscribe_dirs, labels)
 
 
-labels = ['base', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchboard LM', 'wav2vec2\nsb-hesitation LM']
-# stat.statistic_complete(
-#     min_len=[1, 5], 
-#     retranscribe_dirs=[None, c.retranscibed_dir / 'whisper', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new'], 
-#     labels=labels
-#     )
+# no_rep = [[84286, 5625, 48722], [114138, 7999, 16494], [106551, 11576, 20506], [102337, 7745, 28551], [111298, 10887, 16446], [111877, 11413, 15341]]
+# rep = [[152056, 5715, 85151], [204584, 8279, 30057], [189684, 12356, 40882], [181512, 9173, 52237], [199282, 11810, 31828], [201632, 12471, 28818]]
+# wers = [0.22501259674842097, 0.41134835556515637, 0.27140468203379886, 0.26109359316670827, 0.3217505825144362, 0.34412229079948325]
 
-# hes_stat.show_alignments(c.manual_seg_dir, c.automatic_align_dir, c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new', n = 5)
+# no_rep = [[17551, 1112, 4576], [17861, 1940, 3437], [15970, 1154, 6113], [17427, 1598, 4214], [17342, 1925, 3971]]
+# rep = [[31136, 1156, 8578], [31913, 2078, 6878], [28308, 1360, 11200], [30887, 1735, 8248], [30918, 2277, 7673]]
+# wers = [0.22501348290367815, 0.339073597844722, 0.27140428132357963, 0.3389603517750908, 0.33952660683875163, 0.33989085122596263]
 
-# hes_stat.a()
-no_rep = [[84286, 5625, 48722], [114138, 7999, 16494], [106551, 11576, 20506], [102337, 7745, 28551], [111298, 10887, 16446], [111877, 11413, 15341]]
-rep = [[152056, 5715, 85151], [204584, 8279, 30057], [189684, 12356, 40882], [181512, 9173, 52237], [199282, 11810, 31828], [201632, 12471, 28818]]
-# [0.22501259674842097, 0.41134835556515637, 0.27140468203379886, 0.26109359316670827, 0.3217505825144362, 0.34412229079948325]
-stat.plot_alignments(no_rep, rep, labels)
 # minimum length = 1
 # total length: 128.18 hours
 # percentage of
@@ -34,34 +43,17 @@ stat.plot_alignments(no_rep, rep, labels)
 # - repetitions and filled pauses: 0.01 %
 # - hesitations (R or FP):         0.20 %
 
+import matplotlib.pyplot as plt
 
-## length of automatic and manual
-# import utils.file as utils
-# import matplotlib
-# import matplotlib.pyplot as plt
-# import os
-# import utils.constants as c
-
-# files = utils.dir_tuples_simple([c.manual_seg_dir, c.automatic_dir], filter=lambda f : True )
-# data = [(1, 1)]
-# matplotlib.rcParams["figure.figsize"] = [10, 10]
-# plt.xlim((0, 150))
-# plt.ylim((0, 150))
-# for manual_f, automatic_F in files :
-#     manual = utils.read_dict(manual_f)
-#     automatic = utils.read_file(automatic_F).split()
-#     data .append ( (len(manual), len(automatic)) )
-
-# x, y = zip(*data)
-# plt.scatter(x,y)
-# plt.xlabel('Manual (Ground Truth)')
-# plt.ylabel('Automatic (Whisper)')
+alignments0 = data.transcript_alignment(c.manual_seg_dir, c.automatic_align_dir, only_around_hesitations=True, min_len=5)
+alignments1 = data.transcript_alignment(c.manual_seg_dir, c.automatic_v3_dir, only_around_hesitations=True, min_len=5)
 
 
-# p = -25
-# b = 8
+fig, axs = plt.subplots(1, 2, figsize=(8, 4))
+axs[0].hist(alignments0, bins=100)
+axs[0].set_title('ctc')
 
-# plt.plot([0, 150], [b,  (p-b) / p * 150 + b], color='red')
-# plt.plot([0, 150], [-p / (p-b) * b ,  p / (p-b) * 150 - p / (p-b) * b], color='red')
-# plt.tight_layout()
-# plt.show()
+axs[1].hist(alignments1, bins=100)
+axs[1].set_title('whisper')
+
+plt.show()
