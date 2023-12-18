@@ -68,51 +68,58 @@ def plot_wer_comparison(wers, labels) :
 
 
 # show examples
-def plot_word_positions(manual, automatic, title, start=0, default_color = 'cornflowerblue', hesitation_color = 'orange', retranscribe_color = 'tomato', border = 'black') :    
-    if not automatic or not manual:
-        return
-
+def plot_word_positions(transcripts : list[list[dict]], title, labels, start=0, default_color = 'cornflowerblue', hesitation_color = 'orange', retranscribe_color = 'tomato', border = 'black') :    
     # setup
     matplotlib.rcParams["figure.figsize"] = [18, 6]        
-    end = max(manual[-1]['end'], automatic[-1]['end'])
-    y_offset = 0.2
-    height = 0.2
+    end = max( transcrpt[-1]['end'] for transcrpt in transcripts )
+ 
     font_size = 12
-
+    n = len(transcripts) + 1
+    y_offsets = [ x / n for x in range(1, n) ]
+    height = min( y_offsets[0] * 0.75, 0.2)
+ 
     fig, ax = plt.subplots(num=title)
     ax.set_xlim((start, end))
     ax.set_ylim((0, 1))
     ax.set_xlabel('time (s)')
     plt.tick_params(left = False, right = False , labelleft = False) 
-    
+
     # time axes
-    ax.plot([start, end], [0.5 + y_offset, 0.5 + y_offset], color="red", zorder=0)
-    ax.plot([start, end], [0.5 - y_offset, 0.5 - y_offset], color="red", zorder=0)
+    for y_offset in y_offsets :
+        ax.plot([start, end], [y_offset, y_offset], color="red", zorder=0)
     
     # plot words
-    for w in manual :
-        width = w['end'] - w['start']
-        c = hesitation_color if w['pause_type'] or w['is_restart'] else default_color
-        ax.add_patch(Rectangle((w['start'], 0.5 + y_offset - height / 2), width, height, facecolor= c, edgecolor = border, linewidth=1))
-        ax.annotate(w['word'], (w['start'] + width / 2, 0.5 + y_offset), color='black', fontsize=font_size, ha='center', va='center')
+    for transcrpt, y_offset, label in zip(transcripts, reversed(y_offsets), labels) :
+        for w in transcrpt :
+            width = w['end'] - w['start']
+            if 'pause_type' in w : c = hesitation_color if w['pause_type'] or w['is_restart'] else default_color
+            if 'original' in w : c = default_color if w['original'] else retranscribe_color
+            ax.add_patch(Rectangle((w['start'], y_offset - height / 2), width, height, facecolor= c, edgecolor = border, linewidth=1))
+            ax.text(w['start'] + width / 2, y_offset, w['word'], color='black', fontsize=font_size, ha='center', va='center', clip_on=True)
+        ax.text(-0.01, y_offset, label, rotation = 90, ha='center', va='center', transform=ax.get_yaxis_transform())
 
-    for w in automatic :
-        width = w['end'] - w['start']
-        c = default_color if w['original'] else retranscribe_color
-        ax.add_patch(Rectangle((w['start'], 0.5 - y_offset - height / 2), width, height, facecolor= c, edgecolor = border, linewidth=1))
-        ax.annotate(w['word'], (w['start'] + width / 2, 0.5 - y_offset), color='black', fontsize=font_size, ha='center', va='center')
-
-    ax.text(-0.01, 0.5 + y_offset, 'manual', rotation = 90, ha='center', va='center', transform=ax.get_yaxis_transform())
-    ax.text(-0.01, 0.5 - y_offset, 'automatic', rotation = 90, ha='center', va='center', transform=ax.get_yaxis_transform())
-
-    fig.tight_layout()    
+    fig.tight_layout()
     plt.show()
 
 
 # go throught examples
-def plot_alignment_examples(base = c.data_base / 'example') :
-    files = [ f.stem[:10] for f in utils.get_dir_files(base, 'txt') if 'manual' in f.stem]
-    for file in files :
-        manual = utils.read_dict(base / ( file + '_manual.txt'))
-        automatic = utils.read_dict(base / ( file + '_automatic.txt'))
-        plot_word_positions(manual, automatic, file)
+def plot_alignment_examples(labels, base = c.data_base / 'examples') :
+    all_files = utils.get_dir_files(base, 'txt')
+    for title in set( [ f.stem[:10] for f in all_files ] ) :
+        manual = utils.read_dict( next ( f for f in all_files if (title + '_manual') in f.stem ) )
+        automatic_files = [ f for f in all_files if (title + '_automatic') in f.stem ]
+        automatic_files.sort()
+        transcripts = [ manual ] + [ utils.read_dict(f) for f in automatic_files ]
+        plot_word_positions(transcripts, title, labels)
+
+# [WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_automatic0.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_automatic1.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_manual.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_automatic0.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_automatic1.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_manual.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_automatic0.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_automatic1.txt'), 
+#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_manual.txt')]
+
+# sw2340A007

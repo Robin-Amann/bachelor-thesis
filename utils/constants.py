@@ -6,22 +6,22 @@ sample_rate = 16000
 manual_annotation_patterns = ['<+[^<>]*>+', '``/``', "''/''"]
 
 
-# dataset (16.12.23):	                    number of files 	name                    object								                                
-# data_base				                                        data_base
+# dataset (16.12.23):	                    number of files   total             name                    object								                                
+# data_base				                                                        data_base
 # ├ manual									                                                                    
-# │ ├ long									2062                manual_dir              word, annotation, pause_type, is_restart, start, end				
-# │ └ segmented								2062 | 36837        manual_seg_dir          start, end | word, annotation, pause_type, is_restart, start, end	
+# │ ├ long									2062              2230              manual_dir              word, annotation, pause_type, is_restart, start, end				
+# │ └ segmented								2062 | 36837      2062 | 39321      manual_seg_dir          start, end | word, annotation, pause_type, is_restart, start, end	
 # └ automatic								                                                                    
-#   ├ unaligned								36837               automatic_dir           text																
-#   ├ aligned								36837               automatic_align_dir     word, start, end, score                                             
-#   ├ version3								6187                automatic_v3_dir        word, start, end													
-#   └ retranscribed						                        retranscibed_dir
-#     ├ whisper								6187                                        word, start, end													
-#     ├ wav2vec2							36837                                       word, start, end													
-#     ├ wav2vec2_LM							36837                                       word, start, end													
-#     ├ wav2vec2_custom_LM 					6187                                        word, start, end													
-#     ├ wav2vec2_custom_LM_hesitations		6187                                        word, start, end													
-#     └ wav2vec2_custom_LM_hesitations_new	8349                                        word, start, end
+#   ├ unaligned								36837                               automatic_dir           text																
+#   ├ aligned								36837             43418             automatic_align_dir     word, start, end, score                                             
+#   ├ version3								6187              6628              automatic_v3_dir        word, start, end													
+#   └ retranscribed						                      100584            retranscibed_dir
+#     ├ whisper								6187                                                        word, start, end													
+#     ├ wav2vec2							36837                                                       word, start, end													
+#     ├ wav2vec2_LM							36837                                                       word, start, end													
+#     ├ wav2vec2_custom_LM 					6187                                                        word, start, end													
+#     ├ wav2vec2_custom_LM_hesitations		6187                                                        word, start, end													
+#     └ wav2vec2_custom_LM_hesitations_new	8349                                                        word, start, end
 # files that are not in ignore_files or contoversial_files can be read with read_dict(path)
 
 

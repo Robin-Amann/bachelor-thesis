@@ -5,8 +5,6 @@ import tasks.audio_transcript_alignment.ctc as ctc
 from progress.bar import ChargingBar
 import os
 import utils.constants as constants
-import utils.transcript as word_utils
-
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
@@ -24,6 +22,7 @@ def transform_result(ratio, words, sample_rate) :
     return result
 
 
+import utils.transcript as word_utils
 def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, end=-1) :
     audio = utils.read_audio(audio_file, sample_rate)  # [ [...] ]
     transcript = utils.read_file(transcript_file)
@@ -38,9 +37,9 @@ def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, en
     simple = [ word_utils.simplify(w) for w in transcript ]
     if not all(simple) : # if simple contains empty words
         raise ValueError('transcript contains non words', transcript_file.stem)
-    transcript = '|' + simple.upper().replace(' ', '|') + '|'
+    transcript = simple.upper().replace(' ', '|')
     labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
-    words, trellis_width = ctc.ctc(emission, transcript, labels)
+    words, _, trellis_width = ctc.ctc(emission, transcript, labels)
     ratio = audio[0].size(0) / trellis_width
     words = transform_result(ratio, words, sample_rate)
     if words :

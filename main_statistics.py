@@ -11,8 +11,8 @@ labels = ['no model', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2ve
 # visual.plot_manual_automatic_word_lengths(c.manual_seg_dir, c.automatic_v3_dir)
 
 # # # hesitation prediction # # #
-# stat.plot_alignment_examples(c.manual_seg_dir, c.automatic_align_dir, c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new', c.audio_dir, n = 5)
-
+# stat.plot_alignment_examples(c.manual_seg_dir, [(c.automatic_align_dir, c.retranscibed_dir / 'whisper'), (c.automatic_v3_dir, None)], ['manual', 'whisper + whisper', 'whisper v3'], c.audio_dir, n = 2)
+visual.plot_alignment_examples(['manual', 'whisper\nwhisper', 'whisper v3'])
 # # # # general # # #
 # stat.statistic_dataset_complete(min_len=[1, 5])
 # stat.plot_hesitation_transcription_comparison(retranscribe_dirs, labels)
@@ -43,17 +43,19 @@ labels = ['no model', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2ve
 # - repetitions and filled pauses: 0.01 %
 # - hesitations (R or FP):         0.20 %
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-alignments0 = data.transcript_alignment(c.manual_seg_dir, c.automatic_align_dir, only_around_hesitations=True, min_len=5)
-alignments1 = data.transcript_alignment(c.manual_seg_dir, c.automatic_v3_dir, only_around_hesitations=True, min_len=5)
+# alignments0 = data.transcript_alignment(c.manual_seg_dir, c.automatic_align_dir, hesitation_radius=0, min_len=5)
+# alignments1 = data.transcript_alignment(c.manual_seg_dir, c.automatic_v3_dir, hesitation_radius=0, min_len=5)
 
 
-fig, axs = plt.subplots(1, 2, figsize=(8, 4))
-axs[0].hist(alignments0, bins=100)
-axs[0].set_title('ctc')
+# fig, axs = plt.subplots(1, 1, figsize=(8, 8))
+# axs.hist(alignments0, bins=100)
+# axs.hist(alignments1, bins=100)
+# # axs[0].hist(alignments0, bins=100)
+# # axs[0].set_title('ctc') 
 
-axs[1].hist(alignments1, bins=100)
-axs[1].set_title('whisper')
+# # axs[1].hist(alignments1, bins=100)
+# # axs[1].set_title('whisper')
 
-plt.show()
+# plt.show()

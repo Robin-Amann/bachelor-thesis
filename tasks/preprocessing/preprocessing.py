@@ -109,10 +109,10 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
 def process_dir(annotation_dir, timing_dir, desination_dir, annotation_type='mgd', timing_type='text', ann_patterns=[], timing_patterns=[]) :
 
     files = utils.get_dir_tuples(
-        [(annotation_dir, annotation_type), (timing_dir, timing_type), (timing_dir, timing_type)], 
-        lambda base : True, 
-        [lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('A-ms98-a-word'), lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('B-ms98-a-word')]
-        )
+        [(annotation_dir, lambda f: f.stem[2:6], None, annotation_type), 
+         (timing_dir, lambda f: f.stem[2:6], lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('A-ms98-a-word'), timing_type), 
+         (timing_dir, lambda f: f.stem[2:6], lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('B-ms98-a-word'), timing_type)], 
+        lambda f : True)
   
 
     for annotation_file, timing_file_A, timing_file_B in ChargingBar("Prepare Transcripts").iter(files) :

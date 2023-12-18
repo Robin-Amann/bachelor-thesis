@@ -1,7 +1,6 @@
 import numpy as np
 import utils.file as utils
 from progress.bar import ChargingBar
-import tasks.transcript_cleanup as pre
 import os
 
 # calculate operations
@@ -56,9 +55,9 @@ def get_operations(from_words, to_words):
     d = levenshtein_matrix(from_words, to_words)
     return backtrack(from_words, to_words, d)
 
-
+import typing
 # align lists
-def align(start : list[str], end : list[str], operations : list = None, insertion_obj='') :
+def align(start : list, end : list, operations : list = None, insertion_obj : typing.Any='') -> tuple[list, list]:
     '''
     if operations are not supplied, start and end are beeing simplified before calculating the operations.
 
@@ -110,18 +109,18 @@ def print_words(start : list[str], end : list[str]) :
         print("")
 
 
-def dir_wer(manual_dir, automatic_dir) :
+# not in use
+def dir_wer(manual_dir, automatic_dir, automatic_has_timing_info=True) :
     files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir] )
-    w = 0
-    l = 0
+    wer = 0
+    length = 0
     for manual_file, automatic_file in ChargingBar("Align Transcripts").iter(files) :
-        if os.path.isfile(manual_file) and os.path.isfile(automatic_file) :
-            automatic = utils.read_file(automatic_file)
-            manual = ' '.join([w['word'] for w in utils.read_dict(manual_file)])
-            _, manual = pre.process(manual)
-            _, automatic = pre.process(automatic)
-            operations = get_operations(manual.split(), automatic.split())
-            wer_value = calculate_wer(operations)
-            l += len(operations)
-            w += wer_value * len(operations)
-    return w / l
+        if automatic_has_timing_info :
+            automatic = [ w['word'] for w in utils.read_dict(automatic_file) ]
+        else :
+            automatic = utils.read_file(automatic_file).split()
+        manual = [ w['word'] for w in utils.read_dict(manual_file) ]
+        wer_value, ops = wer_and_ops(manual, automatic)
+        length += len(ops)
+        wer += wer_value * len(ops)
+    return wer / length

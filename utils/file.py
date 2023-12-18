@@ -131,6 +131,8 @@ def read_dict(file_path, seperator='<|>') :
     if not lines :
         return dictionary
     lines = lines.split('\n')
+    if len(lines) == 2 :
+        raise KeyError('file probably had no header and only two items')
     keys, types = lines[:2]
     keys = keys.split(seperator)
     types = [ locate(t) for t in types.split(seperator)]
@@ -138,7 +140,7 @@ def read_dict(file_path, seperator='<|>') :
         raise KeyError('wrong number of keys to types')
     types = [ t if t != int else float for t in types ]
     if any( t == None for t in types) :
-        raise KeyError('file probably had no header and only two items')
+        raise KeyError('keys are None')
     data = lines[2:]
     for d in data :
         if 'None' in d :            # TODO is for version 3. if last timestep not found set to end of file

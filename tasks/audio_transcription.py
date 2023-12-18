@@ -5,7 +5,6 @@ import whisper
 import utils.file as utils
 import utils.transcript as word_utils
 import utils.constants as constants
-import tasks.transcript_cleanup as cleanup
 from progress.bar import ChargingBar
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 

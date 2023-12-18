@@ -6,11 +6,11 @@ def is_word(word : str) :
     a word is a collection of characters without whitespace that contains
     - letters : A-Za-z or
     - numbers : 0-9 or
-    - literals : %&$€@\"*
+    - literals : %&$€@
 
     and maybe additional characters
     '''
-    bool( re.search('[A-Za-z0-9%&$€@\"*]', word) )
+    return bool( re.search('[A-Za-z0-9%&$€@]', word) )
 
 
 def contains_special_chars(word : str, additional='') :
@@ -21,7 +21,7 @@ def contains_special_chars(word : str, additional='') :
     - literals : %&$€@\"*
     - punctuation : '.,:;!?-
     '''
-    bool( re.search('[^A-Za-z0-9%&$€@\"*\'.,:;!?-' + additional + ']', word) )
+    return bool( re.search('[^A-Za-z0-9%&$€@\"*\'.,:;!?-' + additional + ']', word) )
 
 
 def replace_anomalies(word : str) :
@@ -31,12 +31,15 @@ def replace_anomalies(word : str) :
     '''
     return word.replace('…', '...')
 
-# from cleanup
-def remove_non_words(transcript, chars_regex="[^A-Za-z0-9\s]") :
-    pattern = "(?<!\S)" + chars_regex + "+(?!\S)"
-    transcript = ' '.join(re.sub(pattern, '', transcript).split())
-    return transcript
-
 
 def simplify(word, additional='') :
+    'removes every character except [A-Za-z\'] and additional. also lowers word'
     return re.sub('[^A-Za-z\'' + additional + ']', '', word).lower()
+
+
+# currently not used, maybe deprecated
+# # from cleanup
+# def remove_non_words(transcript, chars_regex="[^A-Za-z0-9\s]") :
+#     pattern = "(?<!\S)" + chars_regex + "+(?!\S)"
+#     transcript = ' '.join(re.sub(pattern, '', transcript).split())
+#     return transcript

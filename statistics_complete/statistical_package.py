@@ -59,7 +59,10 @@ def plot_hesitation_transcription_comparison(retranscribe_dirs=[None], labels=['
 
     visual.plot_alignments(no_rep, rep, labels)
 
-
-def plot_alignment_examples(manual_dir, automatic_dir, hesitation_dir, audio_dir, n, save_dir = c.data_base / 'examples') :
-    data.collect_alignment_examples(manual_dir, automatic_dir, hesitation_dir, audio_dir, n, save_dir)
-    visual.plot_alignment_examples(save_dir)
+from pathlib import Path
+import os
+def plot_alignment_examples(manual_dir : Path, automatic_dirs : list[tuple[Path, Path | None]], labels : list[str], audio_dir, n, save_dir = c.data_base / 'examples') :
+    for file in [ f for f in save_dir.iterdir() if f.is_file() ] :
+        os.remove(file)
+    data.collect_alignment_examples(manual_dir, automatic_dirs, audio_dir, n, save_dir)
+    visual.plot_alignment_examples(labels, save_dir)

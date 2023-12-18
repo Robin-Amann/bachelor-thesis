@@ -50,14 +50,15 @@ def plot_alignments(trellis, word_segments, waveform):
    # plt.subplots_adjust(left=0.05, right=0.95, top=0.9, bottom=0.1)
     plt.show()
     
-
+    
 def plot_trellis_path_probabilities(trellis, path, legend = "") :
     matplotlib.rcParams["figure.figsize"] = [width, height]
     x = list(range(len(path)))
-    y = [trellis[p.time_index, p.token_index] for p in path]
+    y = [trellis[p.time_index + 1, p.token_index + 1] for p in path]
     plt.plot(x, y)
     plt.legend([legend])
     plt.show()
+
 
 
 def plot_alignment_probabilities(probabilities, legend) :
