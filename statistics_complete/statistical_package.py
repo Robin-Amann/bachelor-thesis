@@ -66,3 +66,17 @@ def plot_alignment_examples(manual_dir : Path, automatic_dirs : list[tuple[Path,
         os.remove(file)
     data.collect_alignment_examples(manual_dir, automatic_dirs, audio_dir, n, save_dir)
     visual.plot_alignment_examples(labels, save_dir)
+
+
+
+def alignment_comparison(dirs : list, labels : list, radius = -1) :
+    import matplotlib.pyplot as plt
+    alignments = []
+    for dir in dirs  :
+        a = data.transcript_alignment(c.manual_seg_dir, dir, hesitation_radius=radius, min_len=5)
+        alignments.append(a)
+
+    fig, axs = plt.subplots(1, 1, figsize=(8, 8))
+    axs.hist(alignments, bins=100, label=labels)
+    axs.legend(loc='upper right')
+    plt.show()

@@ -20,7 +20,3 @@ import utils.constants as constants
 
 audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate)
 
-# deprecated
-# transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_align_dir, write_only_operations=True)
-# transcript_alignment.align_dir(constants.manual_seg_dir, constants.automatic_v3_dir, write_only_operations=True)
-

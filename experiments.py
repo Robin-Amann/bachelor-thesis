@@ -1,249 +1,101 @@
-import torch
-import torchaudio
-import matplotlib
-from dataclasses import dataclass
-import matplotlib.pyplot as plt
-import utils.file as utils
+success_rate = [[33027, 29276, 27940], 
+                [33913, 37664, 39000]] 
 
-matplotlib.rcParams["figure.figsize"] = [16, 8]
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-# SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
-# transcript = "|I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT|"
-# transcript = "|I|HAD|THAT|BESIDE|ME|MOMENT|"
-
-waveform = utils.read_audio('D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2\\02\\SWB1\\sw02220A.wav', 16000)
-waveform = waveform[:, int(49.36*16000) : int(66.36*16000) ]
-transcript = "|MY|TRUCK|IS|BROKEN|YEAH|THERE|THERE'S|A|GUY|HAVE|YOU|EVER|HEARD|OF|GEORGE|MINSTON|HE|PLAYS|PIANO|I|THINK|HE'S|DEAD|NOW|BUT|HE|PLAYS|WONDERFULLY|I|LIKE|THAT|"
-# 0.8425   my version
-# 0.8177   tutorial
-# transcript = "|MY|TRUCK|IS|BROKEN|THERE|A|GUY|HAVE|YOU|EVER|HEARD|OF|GEORGE|MINSTON|HE|PLAYS|PIANO|I|THINK|HE'S|DEAD|NOW|BUT|HE|PLAYS|WONDERFULLY|I|LIKE|THAT|"
-# 0.8345   my version   -5
-# 0.8437   my version   -2
-# 0.8750                -1
-# 0.8034    tutorial
-
-bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H
-model = bundle.get_model().to(device)
-labels = bundle.get_labels()
-with torch.inference_mode():
-    # waveform, _ = torchaudio.load(SPEECH_FILE)
-    emissions, _ = model(waveform.to(device))
-    emissions = torch.log_softmax(emissions, dim=-1)
-
-emission = emissions[0].cpu().detach()
-
-dictionary = {c: i for i, c in enumerate(labels)}
-tokens = [dictionary[c] for c in transcript]
-
-def get_trellis(emission, tokens, blank_id=0):
-    num_frame = emission.size(0)
-    num_tokens = len(tokens)
-
-    trellis = torch.zeros((num_frame, num_tokens))
-    trellis[1:, 0] = torch.cumsum(emission[1:, blank_id], 0)
-    trellis[0, 1:] = -float("inf")
-    trellis[-num_tokens + 1 :, 0] = float("inf")
-
-    blank_token = dictionary['|']
-    for t in range(num_frame - 1):
-        for i in range(1, len(transcript)) :
-            if tokens[i] == blank_token :
-                trellis[t + 1, i] = max(trellis[t, i] + max(emission[t, blank_id], -1), trellis[t, i-1] + emission[t, tokens[i]])
-            else :
-                trellis[t + 1, i] = max(trellis[t, i] + emission[t, blank_id], trellis[t, i-1] + emission[t, tokens[i]])
-        # trellis[t + 1, 1:] = torch.maximum(
-        #     # Score for staying at the same token
-        #     trellis[t, 1:] + emission[t, blank_id],
-        #     # Score for changing to the next token
-        #     trellis[t, :-1] + emission[t, tokens[1:]],
-        # )
-    return trellis
-trellis = get_trellis(emission, tokens)
-
-@dataclass
-class Point:
-    token_index: int
-    time_index: int
-    score: float
-
-def backtrack(trellis, emission, tokens, blank_id=0):
-    t, j = trellis.size(0) - 1, trellis.size(1) - 1
-    blank_token = dictionary['|']
-
-    path = [Point(j, t, emission[t, blank_id].exp().item())]
-    while j > 0:
-        # Should not happen but just in case
-        assert t > 0
-
-        # 1. Figure out if the current position was stay or change
-        # Frame-wise score of stay vs change
-        if tokens[j] == blank_token :
-            p_stay = torch.tensor(max(emission[t-1, blank_id], -1))
-        else :
-            p_stay = emission[t - 1, blank_id]
-        p_change = emission[t - 1, tokens[j]]
-
-        # Context-aware score for stay vs change
-        stayed = trellis[t - 1, j] + p_stay
-        changed = trellis[t - 1, j - 1] + p_change
-        
-        # Update position
-        t -= 1
-        if changed > stayed:
-            j -= 1
-            
-        # Store the path with frame-wise probability.
-        prob = (p_change if changed > stayed else p_stay).exp().item()
-        path.append(Point(j, t, prob))
-
-    # Now j == 0, which means, it reached the SoS.
-    # Fill up the rest for the sake of visualization
-    while t > 0:
-        prob = emission[t - 1, blank_id].exp().item()
-        path.append(Point(j, t - 1, prob))
-        t -= 1
-
-    return path[::-1]
-
-path = backtrack(trellis, emission, tokens)
-for i, p in enumerate(path[:70]) :
-    print(i, p, trellis[p.time_index, p.token_index])
-
-for i in reversed(range(9, 14)) :
-    print(trellis[61, i], trellis[62, i], trellis[63, i], trellis[64, i], trellis[65, i])
-
-import tasks.audio_transcript_alignment.visualization as visual
-visual.plot_trellis_path_probabilities(trellis, path)
-
-def plot_trellis_with_path(trellis, path):
-    # To plot trellis with path, we take advantage of 'nan' value
-    trellis_with_path = trellis.clone()
-    for _, p in enumerate(path):
-        trellis_with_path[p.time_index, p.token_index] = float("nan")
-    plt.imshow(trellis_with_path.T, origin="lower")
-    plt.title("The path found by backtracking")
-    plt.tight_layout()
-    plt.show()
-plot_trellis_with_path(trellis, path)
-
-# Merge the labels
-@dataclass
-class Segment:
-    label: str
-    start: int
-    end: int
-    score: float
-
-    def __repr__(self):
-        return f"{self.label}\t({self.score:4.2f}): [{self.start:5d}, {self.end:5d})"
-
-    @property
-    def length(self):
-        return self.end - self.start
-
-def merge_repeats(path):
-    i1, i2 = 0, 0
-    segments = []
-    while i1 < len(path):
-        while i2 < len(path) and path[i1].token_index == path[i2].token_index:
-            i2 += 1
-        score = sum(path[k].score for k in range(i1, i2)) / (i2 - i1)
-        segments.append(
-            Segment(
-                transcript[path[i1].token_index],
-                path[i1].time_index,
-                path[i2 - 1].time_index + 1,
-                score,
-            )
-        )
-        i1 = i2
-    return segments
-
-segments = merge_repeats(path)
-
-# Merge words
-def merge_words(segments, separator="|"):
-    words = []
-    i1, i2 = 0, 0
-    while i1 < len(segments):
-        if i2 >= len(segments) or segments[i2].label == separator:
-            if i1 != i2:
-                segs = segments[i1:i2]
-                word = "".join([seg.label for seg in segs])
-                score = sum(seg.score * seg.length for seg in segs) / sum(seg.length for seg in segs)
-                words.append(Segment(word, segments[i1].start, segments[i2 - 1].end, score))
-            i1 = i2 + 1
-            i2 = i1
-        else:
-            i2 += 1
-    return words
-
-word_segments = merge_words(segments)
-
-def plot_alignments(trellis, segments, word_segments, waveform, sample_rate=bundle.sample_rate):
-    trellis_with_path = trellis.clone()
-    for i, seg in enumerate(segments):
-        if seg.label != "|":
-            trellis_with_path[seg.start : seg.end, i] = float("nan")
-
-    fig, [ax1, ax2] = plt.subplots(2, 1)
-
-    ax1.imshow(trellis_with_path.T, origin="lower", aspect="auto")
-    ax1.set_facecolor("lightgray")
-    ax1.set_xticks([])
-    ax1.set_yticks([])
-
-    for word in word_segments:
-        ax1.axvspan(word.start - 0.5, word.end - 0.5, edgecolor="white", facecolor="none")
-
-    for i, seg in enumerate(segments):
-        if seg.label != "|":
-            ax1.annotate(seg.label, (seg.start, i - 0.7), size="small")
-            ax1.annotate(f"{seg.score:.2f}", (seg.start, i + 3), size="small")
-
-    # The original waveform
-    ratio = waveform.size(0) / sample_rate / trellis.size(0)
-    ax2.specgram(waveform, Fs=sample_rate)
-    for word in word_segments:
-        x0 = ratio * word.start
-        x1 = ratio * word.end
-        ax2.axvspan(x0, x1, facecolor="none", edgecolor="white", hatch="/")
-        ax2.annotate(f"{word.score:.2f}", (x0, sample_rate * 0.51), annotation_clip=False)
-
-    for seg in segments:
-        if seg.label != "|":
-            ax2.annotate(seg.label, (seg.start * ratio, sample_rate * 0.55), annotation_clip=False)
-    ax2.set_xlabel("time [second]")
-    ax2.set_yticks([])
-    fig.tight_layout()
-    plt.show()
-
-plot_alignments(
-    trellis,
-    segments,
-    word_segments,
-    waveform[0],
-)
+for i in range(3) :
+    print( round( 100 * success_rate[0][i] / ( success_rate[0][i] + success_rate[1][i] ), 2) )
 
 
 
+result = [
+    [
+        [[21020, 9335, 6627], 
+         [30757, 12134, 8482], 
+         [30219, 41904, 44612]], 
+         [28101, 12093, 8482]], 
+    [
+        [[17209, 8550, 6448], 
+         [25771, 11317, 8296], 
+         [19126, 27785, 29887]], 
+         [24235, 11284, 8296]], 
+    [
+        [[14733, 7550, 5961], 
+         [22187, 10162, 7778], 
+         [14913, 22096, 23685]], 
+         [21126, 10136, 7778]], 
+    [
+        [[12519, 6482, 5236], 
+         [18835, 8809, 6934], 
+         [11837, 17874, 19120]], 
+         [18114, 8790, 6934]], 
+    [
+        [[10634, 5682, 4672], 
+         [16099, 7782, 6250], 
+         [9514, 14466, 15476]], 
+         [15590, 7770, 6250]], 
+    [
+        [[8989, 4965, 4143], 
+         [13731, 6872, 5614], 
+         [7514, 11538, 12360]], 
+         [13354, 6865, 5614]], 
+    [
+        [[7527, 4332, 3650], 
+         [11612, 6035, 4977], 
+         [5962, 9157, 9839]], 
+         [11340, 6030, 4977]], 
+    [
+        [[6230, 3761, 3216], 
+         [9766, 5304, 4436], 
+         [4787, 7256, 7801]], 
+         [9575, 5301, 4436]], 
+    [
+        [[5141, 3222, 2801], 
+         [8208, 4597, 3905], 
+         [3867, 5786, 6207]], 
+         [8068, 4595, 3905]], 
+    [
+        [[4252, 2724, 2394], 
+         [6878, 3954, 3393], 
+         [3134, 4662, 4992]], 
+         [6776, 3954, 3393]]
+]
 
-word_alignments = []
-ratio = waveform.size(1) / 16000 / trellis.size(0)
-for word in word_segments:
-    word_alignments.append({
-        'word' : word.label,
-        'start' : word.start * ratio,
-        'end' : word.end * ratio
-    })
-print(word_alignments)
-true_alignment = utils.read_dict('D:\\Robin_dataset\\Switchboard Computed\\manual\\segmented\\22\\2220\\A\\sw2220A003.txt')
-import utils.wer_alignment as align
+total_hesitations = 54968
+# success rate
+# len   part    50      total  
+# 0.2   49.34   43.73   41.74
 
-true_alignment, word_alignments, _ = align.align_words(true_alignment, word_alignments, insertion_obj={'word': '', 'start':-1, 'end':-1})
-import utils.alignment_metric as metric
+# percentage of hesitations reachable :
+# len   part    50      total  
+# 0.1   51.12   22.0    15.43
+# 0.2   44.09   20.53   15.09
+# 0.3   38.43   18.44   14.15
+# 0.4   32.95   15.99   12.61
+# 0.5   28.36   14.14   11.37
+# 0.6   24.29   12.49   10.21
+# 0.7   20.63   10.97    9.05
+# 0.8   17.42    9.64    8.07
+# 0.9   14.68    8.36    7.1
+# 1.0   12.33    7.19    6.17
 
-score = metric.alignment_error(true_alignment, word_alignments)
-print(score)
 
+# percentage of gaps containing hesitations :
+# len   part    50      total  
+# 0.1   41.02   18.22   12.93
+# 0.2   47.36   23.53   17.75
+# 0.3   49.7    25.47   20.11
+# 0.4   51.4    26.61   21.5
+# 0.5   52.78   28.2    23.19
+# 0.6   54.47   30.09   25.1
+# 0.7   55.8    32.12   27.06
+# 0.8   56.55   34.14   29.19
+# 0.9   57.07   35.77   31.09
+# 1.0   57.57   36.88   32.41
+
+
+for gap0, gap1 in result :
+    for i in range(3) :
+        print( str( round( 100 * gap1[i] / total_hesitations, 2) ).ljust(6), end='  ' )
+    print('     ', end='')
+    for i in range(3) :
+        print( str( round( 100 * gap0[0][i] / ( gap0[0][i] + gap0[2][i] ), 2) ).ljust(6) , end='  ' )
+    print()

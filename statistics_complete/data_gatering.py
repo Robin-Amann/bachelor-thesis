@@ -73,7 +73,9 @@ def transcript_alignment(manual_dir, automatic_dir, hesitation_dir=None, hesitat
         x = [ (m, a) for m, a in zip(manual, automatic) if m['word'] and a['word']]
         if len(x) > 0 :
             manual, automatic = list(map(list, zip(*x)))
-            data.append(metric.alignment_error(manual, automatic))
+            # this also includes replacements [ simplify(w_manual) != simplify(w_automatic) ] but this is alright
+            # data.append(metric.alignment_error(manual, automatic))
+            data += metric.alignment_error_per_word(manual, automatic)
 
     return data
 
@@ -223,37 +225,113 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
             return
 
 
-# deprecated
-# def collect_alignment_examples(manual_dir, automatic_dir, hesitation_dir, audio_dir = constants.audio_dir, n=10, save_dir=constants.data_base / 'examples') :
-#     files = utils.get_dir_tuples([
-#         (audio_dir, lambda f : f.stem[3:8], None, 'wav'),
-#         (manual_dir, lambda f : f.stem[2:7], lambda f: 'Speech' in f.stem),
-#         (manual_dir, lambda f : f.stem[2:7], lambda f : not 'Speech' in f.stem),
-#         (automatic_dir, lambda f : f.stem[2:7]),
-#         (hesitation_dir, lambda f : f.stem[2:7])
-#     ])
-#     random.shuffle(files)    
-#     alignments = []
+def overlap(gap, word):
+    return max(0, min(gap[1], word['end']) - max(gap[0], word['start']))
+        
+def hesitation_gaps(manual_dir, automatic_dir, retranscibed_dir, gaps = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]) -> list[list]:
+    'returns list of [correct, not correct]'
 
-#     for audio_f, segment_f, manual_files, automatic_files, hesitation_files in files :
-#         segments = utils.read_dict(segment_f)
-#         audio = utils.read_audio(audio_f, constants.sample_rate)[0]
-#         segment = random.choice(segments)
-#         index = segments.index(segment)
-#         manual_f = next( iter( f for f in manual_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)
-#         if not manual_f : continue    # is a contraversial file
-#         automatic_f = next( f for f in automatic_files if (segment_f.stem[2:7] +  "{:03d}".format(index)) in f.stem )
-#         hesitation_f = next( f for f in hesitation_files if (segment_f.stem[2:7] +  "{:03d}".format(index)) in f.stem )
-#         speech = audio[int(constants.sample_rate*segment['start']) : int(constants.sample_rate*segment['end'])]
+    # for each gap size: in what percentage of gaps are hesitations
+    result = []
+    files = utils.get_dir_tuples([(manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, retranscibed_dir])
+    number_of_hesitations = 0
+    for manual_f, automatic_f, retranscribe_f in ChargingBar('number of hesitations').iter(files) :
+        manual = [ w for w in utils.read_dict(manual_f) if w['pause_type'] or w['is_restart'] ]
+        number_of_hesitations += len(manual)
+    print(number_of_hesitations)
+    for GAP in gaps :
+        data = [[0, 0, 0],  # gap contained hesitation
+                [0, 0, 0],  # gap contained no hesitation
+                [0, 0, 0]]  # number of hesitations
+        captured = [0, 0, 0]
+        for manual_f, automatic_f, retranscribe_f in ChargingBar('gaps ' + str(GAP)).iter(files) :
+            manual = [ w for w in utils.read_dict(manual_f) if w['pause_type'] or w['is_restart'] ]
+            automatic = utils.read_dict(automatic_f)
+            all_partial = set()
+            all_partial_50 = set()
+            all_total = set()
+            for pre, post in zip(automatic[:-1], automatic[1:]) :
+                if post['start'] - pre['end'] > GAP :
+                    gap = [pre['end'], post['start']]
+                    partial = [ w for w in manual if overlap(gap, w) > 0 ]
+                    partial_50 = [ w for w in manual if overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
+                    total = [ w for w in manual if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
+                    for i, x in enumerate([partial, partial_50, total]) :
+                        if x :
+                            data[0][i] += 1
+                            data[1][i] += len(x)
+                        else :                      
+                            data[2][i] += 1
+                    all_partial.update([ (w['start'], w['end']) for w in partial ])
+                    all_partial_50.update([ (w['start'], w['end']) for w in partial_50 ])
+                    all_total.update([ (w['start'], w['end']) for w in total ])
+            captured[0] += len(all_partial)
+            captured[1] += len(all_partial_50)
+            captured[2] += len(all_total)
+        result.append([data, captured])
+    
+    # for dataset: what is success rate of retranscription (assuming words are correct)
+    success_rate = [[0, 0, 0], 
+                     [0, 0, 0]]
+    for manual_f, automatic_f, retranscribe_f in ChargingBar('GAPS').iter(files) :
+        manual = [ w for w in utils.read_dict(manual_f) if w['pause_type'] or w['is_restart'] ]
+        retranscribe = utils.read_dict(retranscribe_f)
 
-#         manual = utils.read_dict(manual_f)
-#         automatic = [ w | {'original' : True} for w in utils.read_dict(automatic_f) ] + [ w | {'original' : False} for w in utils.read_dict(hesitation_f) ]
-#         automatic = [ dict( (k, w[k]) for k in ('word', 'original', 'start', 'end')) for w in automatic ]
-#         alignments.append( (manual, automatic, manual_f.stem, speech))
+        for gap in retranscribe :
+            partial = [ w for w in manual if overlap([gap['start'], gap['end']], w) > 0 ]
+            partial_50 = [ w for w in manual if overlap([gap['start'], gap['end']], w) >= (w['end'] - w['start']) / 2 ]
+            total = [ w for w in manual if gap['start'] <= w['start'] <= w['end'] <= gap['end'] ]
+            for i, x in enumerate([partial, partial_50, total]) :
+                if (x and gap['word']) or (not x and not gap['word']) :
+                    success_rate[0][i] += 1
+                else :                      
+                    success_rate[1][i] += 1
 
-#         if len(alignments) >= n :
-#             for manual, automatic, title, audio in alignments :
-#                 utils.write_dict( save_dir / (title + '_manual.txt'), manual)
-#                 utils.write_dict( save_dir / (title + '_automatic.txt'), automatic)
-#                 utils.write_audio( save_dir / (title + '_audio.wav'), audio, constants.sample_rate)
-#             return
+    return success_rate, result
+
+
+# # GAP: 0.1
+# # partial: 95690 / 223589 = 42.8 %
+# # partial_50: 43811 / 223589 = 19.59 %
+# # total: 31478 / 223589 = 14.08 %
+# # GAP: 0.2
+# # partial: 79006 / 159473 = 49.54 %
+# # partial_50: 40509 / 159473 = 25.4 %
+# # total: 30797 / 159473 = 19.31 %
+# # GAP: 0.3
+# # partial: 68070 / 130814 = 52.04 %
+# # partial_50: 36034 / 130814 = 27.55 %
+# # total: 28615 / 130814 = 21.87 %
+# # GAP: 0.4
+# # partial: 58449 / 108766 = 53.74 %
+# # partial_50: 31384 / 108766 = 28.85 %
+# # total: 25536 / 108766 = 23.48 %
+# # GAP: 0.5
+# # partial: 49978 / 90246 = 55.38 %
+# # partial_50: 27447 / 90246 = 30.41 %
+# # total: 22645 / 90246 = 25.09 %
+# # GAP: 0.6
+# # partial: 42626 / 74575 = 57.16 %
+# # partial_50: 24121 / 74575 = 32.34 %
+# # total: 20164 / 74575 = 27.04 %
+# # GAP: 0.7
+# # partial: 35905 / 61213 = 58.66 %
+# # partial_50: 21052 / 61213 = 34.39 %
+# # total: 17780 / 61213 = 29.05 %
+# # GAP: 0.8
+# # partial: 30030 / 50298 = 59.7 %
+# # partial_50: 18277 / 50298 = 36.34 %
+# # total: 15632 / 50298 = 31.08 %
+# # GAP: 0.9
+# # partial: 24974 / 41359 = 60.38 %
+# # partial_50: 15752 / 41359 = 38.09 %
+# # total: 13608 / 41359 = 32.9 %
+# # GAP: 1
+# # partial: 20678 / 34072 = 60.69 %
+# # partial_50: 13431 / 34072 = 39.42 %
+# # total: 11730 / 34072 = 34.43 %
+
+# [[24826, 11721, 8493], [42114, 55219, 58447]]
+# 37.09 %
+# 17.51 %
+# 12.69 %

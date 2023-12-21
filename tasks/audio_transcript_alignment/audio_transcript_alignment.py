@@ -26,25 +26,25 @@ def transform_result(ratio, words, sample_rate) :
 
 def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, end=-1) :
     audio = utils.read_audio(audio_file, sample_rate)  # [ [...] ]
-    transcript = utils.read_file(transcript_file)
+    original_transcript = utils.read_file(transcript_file)
     if start >= 0 and end > 0 and start < end :
         audio = audio[:, start : end]
         if (end - start) / sample_rate < 0.5 :
             print("\naudio too small:", (end - start) / sample_rate)
-            print("transcript:     ", transcript)
+            print("transcript:     ", original_transcript)
             print(audio_file)
             return []
-    transcript = transcript.split()
+    transcript = original_transcript.split()
     simple = [ word_utils.simplify(w) for w in transcript ]
     if not all(simple) : # if simple contains empty words
         raise ValueError('transcript contains non words', transcript_file.stem)
-    transcript = '|' + simple.upper().replace(' ', '|') + '|'
+    transcript = '|' + '|'.join(simple).upper() + '|'
     labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
     words, trellis_width = ctc.ctc(emission, transcript, labels)
     ratio = audio[0].size(0) / trellis_width
     words = transform_result(ratio, words, sample_rate)
     if words :
-        for word, t in zip(words, transcript) :
+        for word, t in zip(words, original_transcript.split()) :
             word['transcript'] = t
     return words
 
@@ -85,18 +85,17 @@ def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir, sample_r
     print('device:', device)
     print('os:', os.name)
 
-    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (audio_dir, lambda f : f.stem[2:7], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])] )
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (audio_dir, lambda f : f.stem[3:8], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])] )
     grouped = utils.group_files(files, 3)
 
-    for p in grouped.keys() :
+    for p in [ k for k in grouped.keys() if int(k) >= 8] :
         print("Align dir", p)
         for segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(grouped[p]) :
             stem = segment_file.stem
             segments = utils.read_dict(str(segment_file))
-            for index, segment in enumerate(segments) :
-                transcript_file = next(f for f in transcript_files if (stem[6] + "{:03d}".format(index)) in f.stem)
-
+            for transcript_file in transcript_files :
+                index = int( transcript_file.stem[7:10] )
+                segment = segments[index]
                 destination_file = utils.repath(segment_file, segments_dir, destination_dir, [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
-
                 words = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'])
                 utils.write_dict(destination_file, words)

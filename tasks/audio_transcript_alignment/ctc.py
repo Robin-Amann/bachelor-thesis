@@ -146,7 +146,7 @@ def ctc(emission, transcript, labels) :
     trellis, tokens = get_trellis(emission, transcript, labels)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
-        return [], float("inf"), trellis.size(0)
+        return [], trellis.size(0)
     path = backtrack(trellis, emission, tokens)
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)

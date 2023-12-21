@@ -69,7 +69,7 @@ def get_dir_tuples(dirs : list[tuple | Path | str], filter_condition=base_filter
 
 
 def group_files(files, level) :
-    grouped = list(map(lambda f :  {f[1].parts[- level] : f}, files))                       # map files to (parent, file)
+    grouped = list(map(lambda f :  {f[0].parts[- level] : f}, files))                       # map files to (parent, file)
     all_keys = [ list(g.keys())[0] for g in grouped ]
     all_keys = [ key for index, key in enumerate(all_keys) if not key in all_keys[:index] ]
     grouped = { key : [f[key] for f in grouped if key in f.keys() ] for key in all_keys}    # group files by parent
