@@ -1,101 +1,23 @@
-success_rate = [[33027, 29276, 27940], 
-                [33913, 37664, 39000]] 
+# # do interference
+# from datasets import load_dataset, Audio
 
-for i in range(3) :
-    print( round( 100 * success_rate[0][i] / ( success_rate[0][i] + success_rate[1][i] ), 2) )
+# dataset = load_dataset("PolyAI/minds14", name="en-US", split="train")
+# dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+# sampling_rate = dataset.features["audio"].sampling_rate
+# audio_file = dataset[0]["audio"]["path"]
 
+# from transformers import pipeline
 
+# classifier = pipeline("audio-classification", model="stevhliu/my_awesome_minds_model")
 
-result = [
-    [
-        [[21020, 9335, 6627], 
-         [30757, 12134, 8482], 
-         [30219, 41904, 44612]], 
-         [28101, 12093, 8482]], 
-    [
-        [[17209, 8550, 6448], 
-         [25771, 11317, 8296], 
-         [19126, 27785, 29887]], 
-         [24235, 11284, 8296]], 
-    [
-        [[14733, 7550, 5961], 
-         [22187, 10162, 7778], 
-         [14913, 22096, 23685]], 
-         [21126, 10136, 7778]], 
-    [
-        [[12519, 6482, 5236], 
-         [18835, 8809, 6934], 
-         [11837, 17874, 19120]], 
-         [18114, 8790, 6934]], 
-    [
-        [[10634, 5682, 4672], 
-         [16099, 7782, 6250], 
-         [9514, 14466, 15476]], 
-         [15590, 7770, 6250]], 
-    [
-        [[8989, 4965, 4143], 
-         [13731, 6872, 5614], 
-         [7514, 11538, 12360]], 
-         [13354, 6865, 5614]], 
-    [
-        [[7527, 4332, 3650], 
-         [11612, 6035, 4977], 
-         [5962, 9157, 9839]], 
-         [11340, 6030, 4977]], 
-    [
-        [[6230, 3761, 3216], 
-         [9766, 5304, 4436], 
-         [4787, 7256, 7801]], 
-         [9575, 5301, 4436]], 
-    [
-        [[5141, 3222, 2801], 
-         [8208, 4597, 3905], 
-         [3867, 5786, 6207]], 
-         [8068, 4595, 3905]], 
-    [
-        [[4252, 2724, 2394], 
-         [6878, 3954, 3393], 
-         [3134, 4662, 4992]], 
-         [6776, 3954, 3393]]
-]
+# result = classifier(audio_file)
 
-total_hesitations = 54968
-# success rate
-# len   part    50      total  
-# 0.2   49.34   43.73   41.74
+# print(result)
 
-# percentage of hesitations reachable :
-# len   part    50      total  
-# 0.1   51.12   22.0    15.43
-# 0.2   44.09   20.53   15.09
-# 0.3   38.43   18.44   14.15
-# 0.4   32.95   15.99   12.61
-# 0.5   28.36   14.14   11.37
-# 0.6   24.29   12.49   10.21
-# 0.7   20.63   10.97    9.05
-# 0.8   17.42    9.64    8.07
-# 0.9   14.68    8.36    7.1
-# 1.0   12.33    7.19    6.17
+import evaluate
 
+accuracy_metric = evaluate.load('accuracy')
+precision_metric = evaluate.load('precision')
+recall_metric = evaluate.load('recall')
 
-# percentage of gaps containing hesitations :
-# len   part    50      total  
-# 0.1   41.02   18.22   12.93
-# 0.2   47.36   23.53   17.75
-# 0.3   49.7    25.47   20.11
-# 0.4   51.4    26.61   21.5
-# 0.5   52.78   28.2    23.19
-# 0.6   54.47   30.09   25.1
-# 0.7   55.8    32.12   27.06
-# 0.8   56.55   34.14   29.19
-# 0.9   57.07   35.77   31.09
-# 1.0   57.57   36.88   32.41
-
-
-for gap0, gap1 in result :
-    for i in range(3) :
-        print( str( round( 100 * gap1[i] / total_hesitations, 2) ).ljust(6), end='  ' )
-    print('     ', end='')
-    for i in range(3) :
-        print( str( round( 100 * gap0[0][i] / ( gap0[0][i] + gap0[2][i] ), 2) ).ljust(6) , end='  ' )
-    print()
+print(accuracy_metric)

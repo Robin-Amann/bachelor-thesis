@@ -68,19 +68,23 @@ def transcribe_whisper(transcription_model, speech, transcript_file) :
 def transcribe_dir(segments_dir, speech_dir, transcript_dir, sample_rate, model=MODELS.whisper) :
     transcription_model = load_model(model)
     
-    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[2:7], None, 'wav')])
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[3:8], None, 'wav')] )
     grouped = utils.group_files(files, 3)
 
-    for p in grouped.keys() :
+    for p in [ 0 < x < 100 for x in grouped.keys() ] :
         print("Transcribe dir", p)
         for segment_file, speech_file in ChargingBar("Transcribe Audio").iter(grouped[p]) :
             stem = segment_file.stem
 
             segments = utils.read_dict(str(segment_file))
             speech = utils.read_audio(str(speech_file), sample_rate)[0]
-         
+            if segments[-1]['end'] > speech.size(0) / sample_rate :
+                print('Ignore (to short)', stem)
+                continue
             for index, segment in enumerate(segments) :
                 transcript_file = utils.repath(segment_file, segments_dir, transcript_dir, [stem[6]], stem= stem[:7] + "{:03d}".format(index))
+                if os.path.isfile(transcript_file) :
+                    continue
 
                 start = segment['start']
                 end = segment['end']

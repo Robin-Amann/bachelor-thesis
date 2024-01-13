@@ -27,6 +27,8 @@ def get_dir_tuples(dirs : list[tuple | Path | str], filter_condition=base_filter
     ''' 
     dirs -> list of: dir | (dir, merge) | (dir, merge, filter) | (dir, merge, filter, filetype)
 
+    filter_condition is applied first when collecting the files. Then the filter_condition of each directory is applied to itself
+
     defaults: 
     - merge = lambda f: f.stem[2:10] dddd + A/B + ddd
     - filer = lambda f: True 
@@ -87,6 +89,8 @@ def repath(file, old_grand_dir_p, new_grad_dir_p, sub_dir=[], stem=None, suffix=
         stem = file.stem
     if suffix == None :
         suffix = file.suffix
+    if suffix[0] != '.' :
+        suffix = '.' + suffix
 
     n = len(old_grand_dir.parts)
     return new_grad_dir / Path('/'.join(list(file.parts[n : -1]) + sub_dir)) / (stem + suffix)

@@ -15,14 +15,14 @@ def plot_wer_comparison(retranscribe_dirs=[None], labels=['no model']) :
 
 
 # segment lengths and alignment
-def statistic_dataset_complete(min_len=[1]) :
+def statistic_dataset_complete(min_len=[1], manual_dir = c.manual_seg_dir, automatic_dir = c.automatic_align_dir) :
     for minimum_length in min_len :
-        lengths, total_length = data.segment_length(c.manual_seg_dir, c.automatic_align_dir, min_len=minimum_length)
+        lengths, total_length = data.segment_length(manual_dir, automatic_dir, min_len=minimum_length)
         lengths = [ (x[0], y) for x, y in lengths ]
         lengths_word, lengths_time = list(map(list, zip(*lengths)))
-        alignments = data.transcript_alignment(c.manual_seg_dir, c.automatic_align_dir, min_len=minimum_length)
-        wer, _ = data.calculate_wer(c.manual_seg_dir, c.automatic_align_dir, min_len=minimum_length)
-        filled_pauses_per, repetitions_per, r_and_fp_per, hesitations_per = data.percentage(c.manual_seg_dir, min_len=minimum_length)
+        alignments = data.transcript_alignment(manual_dir, automatic_dir, min_len=minimum_length)
+        wer, _ = data.calculate_wer(manual_dir, automatic_dir, min_len=minimum_length)
+        filled_pauses_per, repetitions_per, r_and_fp_per, hesitations_per = data.percentage(manual_dir, min_len=minimum_length)
         print('# minimum length =', minimum_length)
         print('# total length:', round(total_length / 3600, 2), 'hours')
         print('# percentage of')
@@ -40,11 +40,11 @@ def statistic_dataset_complete(min_len=[1]) :
 
 
 # hesitation transcription
-def plot_hesitation_transcription_comparison(retranscribe_dirs=[None], labels=['no model']) :
+def plot_hesitation_transcription_comparison(retranscribe_dirs=[None], labels=['no model'], manual_dir=c.manual_seg_dir, automatic_dir=c.automatic_align_dir) :
     no_rep = []
     rep = []
     for retranscribe_dir in retranscribe_dirs :
-        translation_no_rep, translation_with_rep = data.hesitation_translation(c.manual_seg_dir, c.automatic_align_dir, hesitation_dir=retranscribe_dir)
+        translation_no_rep, translation_with_rep = data.hesitation_translation(manual_dir, automatic_dir, hesitation_dir=retranscribe_dir)
         no_rep.append(translation_no_rep)
         rep.append(translation_with_rep)
 
@@ -69,14 +69,37 @@ def plot_alignment_examples(manual_dir : Path, automatic_dirs : list[tuple[Path,
 
 
 
-def alignment_comparison(dirs : list, labels : list, radius = -1) :
+def alignment_comparison(dirs : list, labels : list, radius = -1, position=True, length=True) :
     import matplotlib.pyplot as plt
     alignments = []
     for dir in dirs  :
-        a = data.transcript_alignment(c.manual_seg_dir, dir, hesitation_radius=radius, min_len=5)
+        a = data.transcript_alignment(c.manual_seg_dir, dir, hesitation_radius=radius, min_len=5, position=position, length=length)
         alignments.append(a)
 
     fig, axs = plt.subplots(1, 1, figsize=(8, 8))
     axs.hist(alignments, bins=100, label=labels)
     axs.legend(loc='upper right')
     plt.show()
+
+
+def manual_hesitation_gaps(manual_dir, automatic_dir) :
+    data_all, data_not_trans = data.manual_hesitation_gaps(manual_dir, automatic_dir)
+    visual.plot_gaps(data_all, data_not_trans)
+
+
+def alignment_metric_comparison(manual_dir, ctc_dir, custom_ctc_dir, cross_attention_dir) :
+    all_data = [[[], [], []], [[], [], []]]
+    for i, dir in enumerate([ctc_dir, custom_ctc_dir, cross_attention_dir]) :
+        dist = data.transcript_alignment_full_package(manual_dir, dir)
+        all_data[0][i] = dist[0]
+        all_data[1][i] = dist[1]
+    visual.plot_alignment_metric(all_data)
+
+
+def plot_ctc_comparison(manual_dir, automatic_dirs, labels) :
+    dists = []
+    for automatic_dir in automatic_dirs :
+        dists.append(data.transcript_alignment(manual_dir, automatic_dir))
+    for dist in dists :
+        print( sum(dist) / len(dist))
+    visual.plot_ctc_comparison(dists, labels)

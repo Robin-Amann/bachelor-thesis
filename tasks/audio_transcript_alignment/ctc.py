@@ -5,7 +5,6 @@ import tasks.audio_transcript_alignment.visualization as visual
 import utils.constants as constants
 
 model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
-whitespace_stay_default_value = -1
 
 def get_emission(waveform, device, wav2vec2_model=None) :
     if wav2vec2_model == None :
@@ -27,26 +26,32 @@ def get_tokens(transcript, labels) :
     return tokens
 
 
-def get_trellis(emission, transcript, labels, blank_id=0) :
+def get_trellis(emission, transcript, labels, blank_id=0, whitespace_stay_default_value=0) :
     tokens = get_tokens(transcript, labels)
     num_frame = emission.size(0)
     num_tokens = len(tokens)
 
     whitespace_token = tokens[0]
     trellis = torch.zeros((num_frame, num_tokens))
-    trellis[1:, 0] = torch.cumsum(emission[1:, blank_id], 0)
+    if whitespace_stay_default_value != 0 :
+        trellis[1:, 0] = torch.cumsum(torch.maximum(emission[1:, blank_id], torch.Tensor( [ whitespace_stay_default_value for _ in range(num_frame-1) ] )), 0)
+    else :
+        trellis[1:, 0] = torch.cumsum(emission[1:, blank_id], 0)
     trellis[0, 1:] = -float("inf")
     trellis[-num_tokens + 1 :, 0] = float("inf")
-    
-    for t in range(num_frame - 1):
-        for i in range(1, len(transcript)) :
-            if tokens[i] == whitespace_token :
-                stay = trellis[t, i] + max(emission[t, blank_id], whitespace_stay_default_value)
-            else :
-                stay = trellis[t, i] + emission[t, blank_id]
-            change = trellis[t, i-1] + emission[t, tokens[i]]
 
-            trellis[t + 1, i] = max(stay, change)
+  
+    if whitespace_stay_default_value != 0 :
+        mask = torch.Tensor( [ whitespace_stay_default_value if tokens[i] == whitespace_token else -float('inf') for i in range(1, len(transcript))] )
+    for t in range(num_frame - 1):
+        if whitespace_stay_default_value != 0 :
+            stay = torch.maximum(emission[t, blank_id], mask)
+        else :
+            stay = emission[t, blank_id]
+        trellis[t + 1, 1:] = torch.maximum(
+            trellis[t, 1:] + stay, 
+            trellis[t, :-1] + emission[t, tokens[1:]]
+        )          
     return trellis, tokens
 
 
@@ -57,16 +62,16 @@ class Point:
     score: float
 
 
-def backtrack(trellis, emission, tokens, blank_id=0):
+def backtrack(trellis, emission, tokens, blank_id=0, whitespace_stay_default_value=0):
     t, j = trellis.size(0) - 1, trellis.size(1) - 1
     whitespace_token = tokens[0]
-
     path = [Point(j, t, emission[t, blank_id].exp().item())]
+        
     while j > 0:
         # Should not happen but just in case
         assert t > 0
 
-        if tokens[j] == whitespace_token :
+        if whitespace_stay_default_value != 0 and tokens[j] == whitespace_token :
             p_stay = torch.tensor(max(emission[t-1, blank_id], whitespace_stay_default_value))
         else :
             p_stay = emission[t - 1, blank_id]
@@ -87,7 +92,7 @@ def backtrack(trellis, emission, tokens, blank_id=0):
         path.append(Point(j, t - 1, prob))
         t -= 1
 
-    return path[::-1]   # in reverse order
+    return path[::-1]
 
 
 @dataclass
@@ -142,12 +147,12 @@ def merge_words(segments, separator="|"):
 
 
 # the higher the score the worse
-def ctc(emission, transcript, labels) :
-    trellis, tokens = get_trellis(emission, transcript, labels)
+def ctc(emission, transcript, labels, whitespace_stay_default_value=0) :
+    trellis, tokens = get_trellis(emission, transcript, labels, whitespace_stay_default_value=whitespace_stay_default_value)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
         return [], trellis.size(0)
-    path = backtrack(trellis, emission, tokens)
+    path = backtrack(trellis, emission, tokens, whitespace_stay_default_value=whitespace_stay_default_value)
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)
     return words, trellis.size(0)

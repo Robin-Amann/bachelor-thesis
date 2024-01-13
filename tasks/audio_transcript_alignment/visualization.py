@@ -16,7 +16,7 @@ def plot_framewise_label_probability(emission) :
 
 def plot_trellis(trellis) :
     matplotlib.rcParams["figure.figsize"] = [width, height]
-    plt.imshow(trellis[1:, 1:].T, origin="lower")
+    plt.imshow(trellis[:, :].T, origin="lower")
     plt.annotate("- Inf", (trellis.size(1) / 5, trellis.size(1) / 1.5))
     plt.colorbar()
     plt.show()
@@ -28,7 +28,7 @@ def plot_trellis_with_path(trellis, path):
     trellis_with_path = trellis.clone()
     for _, p in enumerate(path):
         trellis_with_path[p.time_index, p.token_index] = float("nan")
-    plt.imshow(trellis_with_path[1:, 1:].T, origin="lower")
+    plt.imshow(trellis_with_path[ : , : ].T, origin="lower")
     plt.title("The path found by backtracking")
     plt.show()
     

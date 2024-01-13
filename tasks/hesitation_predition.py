@@ -10,10 +10,11 @@ from transformers import AutoTokenizer, AutoFeatureExtractor, AutoModelForCTC, W
 from torchaudio.models.decoder import download_pretrained_files, ctc_decoder
 from enum import Enum
 import utils.transcript as word_utils
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 
 MIN_GAP = 0.1
 
-MODELS = Enum('Model', ['whisper', 'wav2vec2', 'wav2vec2LM', 'wav2vec2_custom_LM', 'wav2vec2_custom_LM_hesitations'])
+MODELS = Enum('Model', ['whisper', 'whisper_large', 'wav2vec2', 'wav2vec2LM', 'wav2vec2_custom_LM', 'wav2vec2_custom_LM_hesitations'])
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_model(model) :
@@ -23,6 +24,19 @@ def load_model(model) :
         transcription_model = whisper.load_model('base', device=device, download_root=str(constants.model_dir / 'whisper'))
         transcription_model.to(device)
         return (transcription_model, 16000)
+    elif model == MODELS.whisper_large :
+        model_id = "openai/whisper-large-v3"
+        torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        model = AutoModelForSpeechSeq2Seq.from_pretrained(
+            model_id, torch_dtype=torch_dtype, use_safetensors=True, cache_dir = str(constants.model_dir / "whisper_timing")
+        )
+        model.to(device)
+        processor = AutoProcessor.from_pretrained(model_id, cache_dir = str(constants.model_dir / "whisper_timing"))
+        pipe = pipeline(
+            "automatic-speech-recognition", model=model, tokenizer=processor.tokenizer, feature_extractor=processor.feature_extractor,
+            max_new_tokens=128, batch_size=1, chunk_length_s=35,
+            return_timestamps='word', torch_dtype=torch_dtype, device=device)
+        return (pipe, 16000)
     elif model == MODELS.wav2vec2 :
         transcription_model = AutoModelForCTC.from_pretrained("facebook/wav2vec2-base-960h").to(device)
         tokenizer = AutoTokenizer.from_pretrained("facebook/wav2vec2-base-960h").to(device)
@@ -64,6 +78,24 @@ def transcribe_part_whisper(start, end, speech, sample_rate, model) :
     transcript = transcription_model.transcribe(data, language='en', fp16 = False)
     transcript = ' '.join([ word for word in transcript['text'].split() if word_utils.is_word(word)])
     return [ { "word": transcript.lower(), "start": start, "end": end } ] 
+
+
+def transcribe_part_whisper_large(start, end, speech, sample_rate, model) :
+    pipe, model_sample_rate = model
+    if sample_rate != model_sample_rate:
+        speech = torchaudio.functional.resample(speech, sample_rate, model_sample_rate)
+    data = speech[int(start*model_sample_rate) : int(end*model_sample_rate)]
+    # transcribe audio
+    result = pipe(data.numpy())['chunks']
+    result = [ tuple(x.values()) for x in result ]
+    # bring to custom format
+    result = [ (t, (s, e)) if e else (t, (s, end-start)) for t, (s, e) in result ]
+    result = [ { 'word' : text.strip(), 'start' : start + start_i, 'end' : start + end_i } for text, (start_i, end_i) in result ]
+    # remove noise
+    for word in result :
+        word['word'] = word_utils.replace_anomalies(word['word'])
+    result = [ w for w in result if word_utils.is_word(w['word']) ]
+    return result
 
 
 def transcribe_part_ctc(start, end, speech, sample_rate, model) :
@@ -122,10 +154,16 @@ def predict_file(transcript_file, speech, destination_file, sample_rate, transcr
 
 
 def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, model) :
+    print(segments_dir)
+    print(speech_dir)
+    print(transcript_dir)
+    print(destination_dir)
     transcription_model = load_model(model)
 
-    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[2:7], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])])
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[3:8], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])])
+    print(len(files))
     grouped = utils.group_files(files, 3)
+    print(len(grouped.keys()))
 
     for p in grouped.keys() :
         print("Hesitation Translation dir", p)
@@ -143,6 +181,8 @@ def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sampl
 
                 if model == MODELS.whisper :
                     predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper, transcription_model)
+                elif model == MODELS.whisper_large :
+                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper_large, transcription_model)
                 elif model == MODELS.wav2vec2 :
                     predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc, transcription_model)
                 elif model == MODELS.wav2vec2LM :

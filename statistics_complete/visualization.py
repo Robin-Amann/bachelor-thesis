@@ -7,21 +7,25 @@ import utils.constants as c
 import statistics_complete.data_gatering as data
 
 # length of automatic and manual
-def plot_manual_automatic_word_lengths(manual_dir, automatic_dir, hesitation_dir=None) :
+def plot_manual_automatic_word_lengths(manual_dir, automatic_dir, filter_condition, hesitation_dir=None) :
     matplotlib.rcParams["figure.figsize"] = [10, 10]
+    p = -25
+    b = 8
     plt.xlim((0, 150))
     plt.ylim((0, 150))
-    len_data, _ = data.segment_length(manual_dir, automatic_dir, hesitation_dir, 1)
+    len_data, _ = data.segment_length(manual_dir, automatic_dir, hesitation_dir, 1, filter_condition=filter_condition)
     len_data = [ x for x, _ in len_data]
-    x, y = list(zip(*len_data))
+    len_data_out = [ (x, y) for x, y in len_data if y > (p-b) / p * x + b or x > (p-b) / p * y + b ]
+    len_data_in = [ p for p in len_data if not p in len_data_out ]
+    x, y = list(zip(*len_data_in))
     plt.scatter(x,y)
+    x, y = list(zip(*len_data_out))
+    plt.scatter(x,y, color='red')
     plt.xlabel('Manual (Ground Truth)')
     plt.ylabel('Automatic (Whisper)')
 
-    p = -25
-    b = 8
-    plt.plot([0, 150], [b,  (p-b) / p * 150 + b], color='red')
-    plt.plot([0, 150], [-p / (p-b) * b ,  p / (p-b) * 150 - p / (p-b) * b], color='red')
+    # plt.plot([0, 150], [b,  (p-b) / p * 150 + b], color='red')
+    # plt.plot([0, 150], [-p / (p-b) * b ,  p / (p-b) * 150 - p / (p-b) * b], color='red')
     plt.tight_layout()
     plt.show()
 
@@ -71,7 +75,7 @@ def plot_wer_comparison(wers, labels) :
 def plot_word_positions(transcripts : list[list[dict]], title, labels, start=0, default_color = 'cornflowerblue', hesitation_color = 'orange', retranscribe_color = 'tomato', border = 'black') :    
     # setup
     matplotlib.rcParams["figure.figsize"] = [18, 6]        
-    end = max( transcrpt[-1]['end'] for transcrpt in transcripts )
+    end = max( transcript[-1]['end'] for transcript in transcripts if transcript )
  
     font_size = 12
     n = len(transcripts) + 1
@@ -112,14 +116,104 @@ def plot_alignment_examples(labels, base = c.data_base / 'examples') :
         transcripts = [ manual ] + [ utils.read_dict(f) for f in automatic_files ]
         plot_word_positions(transcripts, title, labels)
 
-# [WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_automatic0.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_automatic1.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2330B000_manual.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_automatic0.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_automatic1.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2340A007_manual.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_automatic0.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_automatic1.txt'), 
-#  WindowsPath('D:/Robin_dataset/Switchboard Computed/examples/sw2349B012_manual.txt')]
 
-# sw2340A007
+def plot_gaps(hes_gaps, hes_gaps_not_trans) :
+    fig, axs = plt.subplots(1, 1, figsize=(8, 8), tight_layout=True)
+    axs.hist(hes_gaps, bins=100, label='all hesitation gaps')
+    axs.hist(hes_gaps_not_trans, bins=100, label='not translated hesitation gaps')
+    axs.legend(loc='upper right')
+    plt.show()
+
+
+
+import decimal
+
+def to_5d(x) :
+    x = decimal.Decimal(x).quantize(decimal.Decimal('0.00'))
+    x = str(x).rjust(5)
+    return x
+
+def show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable, success_rate=None) :
+    # sum up over gaps to get total
+    for i in reversed(range(9)) :
+        for j in range(3) :
+            for k in range(2) :
+                data_containing[i][j][k] += data_containing[i+1][j][k]        
+            data_reachable[i][j] += data_reachable[i+1][j]
+
+    width = 10
+    print('# percentage of hesitations reachable:')
+    print('# len'.ljust(width), 'part'.ljust(width), '50'.ljust(width), 'total'.ljust(width), sep='')
+    for i in range(10) :
+        print(('# ' + str((i+1)/10)).ljust(width), sep='', end='')
+        for j in range(3) :
+            x = data_reachable[i][j] / number_of_hesitations * 100
+            print( to_5d(x).ljust(width), sep='', end='')
+        print()
+    print()
+
+    print('# percentage of gaps containing hesitations:')
+    print('# len'.ljust(width), 'part'.ljust(width), '50'.ljust(width), 'total'.ljust(width), sep='')
+    for i in range(10) :
+        print(('# ' + str((i+1)/10)).ljust(width), sep='', end='')
+        for j in range(3) :
+            x = data_containing[i][j][0] / ( data_containing[i][j][0] + data_containing[i][j][1]) * 100
+            print( to_5d(x).ljust(width), sep='', end='')
+        print()
+    print()
+
+    if not success_rate :
+        return
+    
+    print('# success rate')
+    print('# type'.ljust(width), 'part'.ljust(width), '50'.ljust(width), 'total'.ljust(width), sep='')
+    for label, x in zip(['TP', 'FP', 'TN', 'FN'], success_rate) :
+        print(('# ' + label).ljust(width), end='')
+        for i in range(3) :
+            print( str(x[i]).rjust(5).ljust(width) , end='')
+        print()
+    print()
+
+    print('# hesitation prediction')
+    print('# metric'.ljust(14), 'part'.ljust(width), '50'.ljust(width), 'total'.ljust(width), sep='')
+    print('# accuracy'.ljust(14), end='')
+    for i in range(3) :
+        x = ( success_rate[0][i] + success_rate[2][i] ) / ( success_rate[0][i] + success_rate[1][i] + success_rate[2][i] + success_rate[3][i] )
+        print( to_5d(x).ljust(width), end='')
+    print()
+    print('# precision'.ljust(14), end='')
+    for i in range(3) :
+        x = ( success_rate[0][i]) / ( success_rate[0][i] + success_rate[1][i])
+        print( to_5d(x).ljust(width), end='')
+    print()
+    print('# recall'.ljust(14), end='')
+    for i in range(3) :
+        x = ( success_rate[0][i]) / ( success_rate[0][i] + success_rate[3][i] )
+        print( to_5d(x).ljust(width), end='')
+    print()
+    print('# f-score'.ljust(14), end='')
+    for i in range(3) :
+        x = ( 2* success_rate[0][i] ) / ( 2* success_rate[0][i] + success_rate[1][i] + success_rate[3][i] )
+        print( to_5d(x).ljust(width), end='')
+
+
+def plot_alignment_metric(all_data) :
+    fig, axs = plt.subplots(2, 3, figsize=(18, 12), tight_layout=True)
+
+    for j, row in enumerate(all_data) :
+        for dist, label in zip(row, ['wav2vec2 ctc', 'wav2vec2 custom ctc', 'whisper-large cross attention']) :
+            for i, d in enumerate([dist[0], dist[1], [ a * b for a, b in zip(dist[0], dist[1])]]) :
+                axs[j][i].hist(d, bins=100, label=label) 
+
+    for j, t1 in enumerate(['all: ', 'around hesitations: ']) :
+        for i, t2 in enumerate(['position', 'length', 'position and length']) :
+            axs[j][i].legend(loc='upper left')
+            axs[j][i].title.set_text(t1 + t2)
+    plt.show()
+
+
+def plot_ctc_comparison(dists, labels) :
+    fig, ax= plt.subplots(1, 1, figsize=(8, 8), tight_layout=True, num='ctc comparison')
+    ax.hist(dists, bins=100, label=labels)
+    ax.legend(loc='best')
+    plt.show()

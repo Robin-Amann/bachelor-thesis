@@ -100,8 +100,7 @@ def process_file(annotated_file, word_timing_file_A, word_timing_file_B, ann_pat
         if wer.calculate_wer(operations) > 0.5 :
             raise ValueError("preprocessing error: transcript and timing does not match")
         else :
-            print("preprocessing: swap transcripts", annotated_file)
-            return "", ""
+            return annotated_file.stem[2:6], annotated_file.stem[2:6]
 
     return align(trans_A, timing_A), align(trans_B, timing_B)
 
@@ -110,13 +109,18 @@ def process_dir(annotation_dir, timing_dir, desination_dir, annotation_type='mgd
 
     files = utils.get_dir_tuples(
         [(annotation_dir, lambda f: f.stem[2:6], None, annotation_type), 
-         (timing_dir, lambda f: f.stem[2:6], lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('A-ms98-a-word'), timing_type), 
-         (timing_dir, lambda f: f.stem[2:6], lambda base, f : f.stem.startswith(base.stem) and f.stem.endswith('B-ms98-a-word'), timing_type)], 
+         (timing_dir, lambda f: f.stem[2:6], lambda f : f.stem.endswith('A-ms98-a-word'), timing_type), 
+         (timing_dir, lambda f: f.stem[2:6], lambda f : f.stem.endswith('B-ms98-a-word'), timing_type)], 
         lambda f : True)
   
-
+    swapped = []
     for annotation_file, timing_file_A, timing_file_B in ChargingBar("Prepare Transcripts").iter(files) :
-        a, b = process_file(str(annotation_file), str(timing_file_A), str(timing_file_B), ann_patterns, timing_patterns)
+        a, b = process_file(annotation_file, timing_file_A, timing_file_B, ann_patterns, timing_patterns)
         stem = annotation_file.stem
-        utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "A.txt"), a)
-        utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "B.txt"), b)
+        if type(a) == str :
+            swapped.append(a)
+        else :
+            utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "A.txt"), a)
+            utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "B.txt"), b)
+    
+    print("preprocessing: swap transcripts", swapped)

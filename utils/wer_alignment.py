@@ -79,6 +79,7 @@ def align(start : list, end : list, operations : list = None, insertion_obj : ty
 
 import utils.transcript as word_utils
 def align_words(start : list[dict], end : list[dict], insertion_obj : dict) :
+    'returns start aligned, end aligned, operations'
     op = get_operations([word_utils.simplify(word['word']) for word in start], [word_utils.simplify(word['word']) for word in end])
     x, y = align(start, end, op, insertion_obj)
     return x, y, op
@@ -98,16 +99,15 @@ def calculate_wer(operations : list) :
 
 
 # rest
-def print_words(start : list[str], end : list[str]) :
-    alignments = [zip(start, end), zip(end, start)]
-    for alignment in alignments :
-        for word, ref in alignment :
-            if len(word) < len(ref) :
-                print(word + (len(ref) - len(word)) * " " + " ", end="")
-            else :
-                print(word + " ", end="")
-        print("")
-
+def print_words(start : list[str], end : list[str], word_per_line=30) :
+    for i in range(0, len(start), word_per_line) :
+        alignments = [zip(start[i:i+word_per_line], end[i:i+word_per_line]), zip(end[i:i+word_per_line], start[i:i+word_per_line])]
+        for alignment, speaker in zip(alignments, ['A: ', 'B: ']) :
+            print(speaker, end='')
+            for word, ref in alignment :
+                    print(word.ljust(len(ref)), end=' ')
+            print()
+        print()
 
 # not in use
 def dir_wer(manual_dir, automatic_dir, automatic_has_timing_info=True) :
