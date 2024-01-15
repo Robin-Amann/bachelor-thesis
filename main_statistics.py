@@ -10,25 +10,25 @@ labels = ['no model', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2ve
 visual.plot_manual_automatic_word_lengths(c.manual_seg_dir, c.automatic_v3_dir, filter_condition=lambda f: True)
 
 # # hesitation prediction # # #
-# stat.plot_alignment_examples(c.manual_seg_dir, [(c.automatic_align_dir, c.retranscibed_dir / 'whisper'), (c.automatic_v3_dir, None)], ['manual', 'whisper + whisper', 'whisper v3'], c.audio_dir, n = 2)
-# visual.plot_alignment_examples(['manual', 'whisper\nwhisper', 'whisper v3'])
-# stat.plot_alignment_examples(c.manual_seg_dir, [(c.data_base / 'data', None)], ['manual', 'whisper'], c.audio_dir, n = 5)
-# visual.plot_alignment_examples(['manual', 'whisper v3'])
+stat.plot_alignment_examples(c.manual_seg_dir, [(c.automatic_align_dir, c.retranscibed_dir / 'whisper'), (c.automatic_v3_dir, None)], ['manual', 'whisper + whisper', 'whisper v3'], c.audio_dir, n = 2)
+visual.plot_alignment_examples(['manual', 'whisper\nwhisper', 'whisper v3'])
+stat.plot_alignment_examples(c.manual_seg_dir, [(c.data_base / 'data', None)], ['manual', 'whisper'], c.audio_dir, n = 5)
+visual.plot_alignment_examples(['manual', 'whisper v3'])
 
 # # # general # # #
 stat.manual_hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0')
 stat.statistic_dataset_complete(min_len=[1, 5], automatic_dir= c.automatic_align_dir / '0')
-# stat.plot_hesitation_transcription_comparison(retranscribe_dirs, labels)
-# stat.plot_hesitation_transcription_comparison([None], ['none'], automatic_dir=c.data_base / 'data')
-# stat.plot_wer_comparison(retranscribe_dirs, labels)
+stat.plot_hesitation_transcription_comparison(retranscribe_dirs, labels)
+stat.plot_hesitation_transcription_comparison([None], ['none'], automatic_dir=c.data_base / 'data')
+stat.plot_wer_comparison(retranscribe_dirs, labels)
 stat.alignment_comparison([c.automatic_align_dir / '0', c.automatic_v3_dir, c.automatic_align_dir / '1'], ['ctc old', 'whisper v3', 'ctc new'], 1, position = False)
 stat.alignment_comparison([c.automatic_align_dir / '0', c.automatic_v3_dir, c.automatic_align_dir / '1'], ['ctc old', 'whisper v3', 'ctc new'], 1, length = False)
 stat.alignment_metric_comparison(c.manual_seg_dir, c.automatic_align_dir / '0', c.automatic_align_dir / '1', c.automatic_v3_dir)
 
-# data_containing, data_reachable, success_rate, number_of_hesitations = data.hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new' )
+data_containing, data_reachable, success_rate, number_of_hesitations = data.hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new' )
 data_containing, data_reachable, success_rate, number_of_hesitations = data.hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0')
 visual.show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable)
-# visual.show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable, success_rate)
+visual.show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable, success_rate)
 stat.plot_ctc_comparison(c.manual_seg_dir, [ c.automatic_align_dir / '0', c.automatic_align_dir / '1', c.automatic_align_dir / '5', c.automatic_align_dir / '10'], ['base'] + [ 'c = -1', 'c = -5', 'c = -10'])
 
 
@@ -69,8 +69,6 @@ stat.plot_ctc_comparison(c.manual_seg_dir, [ c.automatic_align_dir / '0', c.auto
 # 0.8     23.05     14.34      7.71
 # 0.9     22.38     14.37      7.94
 # 1.0     21.27     14.21      8.20
-
-
 
 
 # minimum length = 1

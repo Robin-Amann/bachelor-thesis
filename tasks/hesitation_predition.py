@@ -39,8 +39,8 @@ def load_model(model) :
         return (pipe, 16000)
     elif model == MODELS.wav2vec2 :
         transcription_model = AutoModelForCTC.from_pretrained("facebook/wav2vec2-base-960h").to(device)
-        tokenizer = AutoTokenizer.from_pretrained("facebook/wav2vec2-base-960h").to(device)
-        feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base-960h").to(device)
+        tokenizer = AutoTokenizer.from_pretrained("facebook/wav2vec2-base-960h")
+        feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base-960h")
         return (transcription_model, tokenizer, feature_extractor, 16000)
     elif model == MODELS.wav2vec2LM :
         bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_10M
