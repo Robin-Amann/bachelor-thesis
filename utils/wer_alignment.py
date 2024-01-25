@@ -51,7 +51,7 @@ def levenshtein_matrix(from_words, to_words) :
                 d[i, j] = min(substitution, insertion, deletion)
     return d
 
-def get_operations(from_words, to_words):
+def get_operations(from_words : list[str], to_words : list[str]):
     d = levenshtein_matrix(from_words, to_words)
     return backtrack(from_words, to_words, d)
 

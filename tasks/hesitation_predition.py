@@ -138,56 +138,63 @@ def transcribe_part_ctc_custom_language(start, end, speech, sample_rate, model) 
     return [ { "word": transcript['text'][0], "start": start, "end": end } ]
 
 
-def predict_file(transcript_file, speech, destination_file, sample_rate, transcription_function, model) :
-    transcript_old = utils.read_dict(transcript_file)
-    transcript_new = []
+def predict_file(gaps_file, speech, destination_file, sample_rate, transcription_function, model) :
+    gaps = utils.read_dict(gaps_file)
     start = 0
-    for word in transcript_old :
-        end = word['start']
-        if end - start > MIN_GAP :
-            transcript_new = transcript_new + transcription_function(start, end, speech, sample_rate, model)
-        start = word['end']
-    end = len(speech) / sample_rate
-    if end - start > MIN_GAP :
-        transcript_new = transcript_new + transcription_function(start, end, speech, sample_rate, model)
-    utils.write_dict(destination_file, transcript_new)
+    transcript = []
+    for gap in gaps :
+        start, end = gap.values()
+        transcript += transcription_function(start, end, speech, sample_rate, model)
+    utils.write_dict(destination_file, transcript)
 
 
-def predict_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, model) :
-    print(segments_dir)
-    print(speech_dir)
-    print(transcript_dir)
-    print(destination_dir)
+def predict_dir(segments_dir, speech_dir, gaps_dir, destination_dir, sample_rate, model) :
     transcription_model = load_model(model)
 
-    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[3:8], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])])
-    print(len(files))
+    files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[3:8], None, 'wav'), (gaps_dir, lambda f : f.stem[2:7])])
     grouped = utils.group_files(files, 3)
-    print(len(grouped.keys()))
 
     for p in grouped.keys() :
         print("Hesitation Translation dir", p)
-        for segment_file, speech_file, transcript_files in ChargingBar("Hesitation Translation").iter(grouped[p]) :
+        for segment_file, speech_file, gaps_files in ChargingBar("Hesitation Translation").iter(grouped[p]) :
+
             segments = utils.read_dict(str(segment_file))
             speech = utils.read_audio(str(speech_file), sample_rate)[0]
             
             for index, segment in enumerate(segments) :
                 if segment_file.stem[:7] + "{:03d}".format(index) in constants.controversial_files :
                     continue
-                transcript_file = next(f for f in transcript_files if segment_file.stem[2:7] + "{:03d}".format(index) in f.stem )
-                destination_file = utils.repath(transcript_file, transcript_dir, destination_dir)                
+                gaps_file = next(f for f in gaps_files if segment_file.stem[2:7] + "{:03d}".format(index) in f.stem )
+                destination_file = utils.repath(gaps_file, gaps_dir, destination_dir)                
                 start = segment['start']
                 end = segment['end']
 
                 if model == MODELS.whisper :
-                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper, transcription_model)
+                    predict_file(gaps_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper, transcription_model)
                 elif model == MODELS.whisper_large :
-                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper_large, transcription_model)
+                    predict_file(gaps_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_whisper_large, transcription_model)
                 elif model == MODELS.wav2vec2 :
-                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc, transcription_model)
+                    predict_file(gaps_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc, transcription_model)
                 elif model == MODELS.wav2vec2LM :
-                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc_language, transcription_model)
+                    predict_file(gaps_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc_language, transcription_model)
                 elif model == MODELS.wav2vec2_custom_LM or model == MODELS.wav2vec2_custom_LM_hesitations :
-                    predict_file(transcript_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc_custom_language, transcription_model)
+                    predict_file(gaps_file, speech[int(start*sample_rate) : int(end*sample_rate)], destination_file, sample_rate, transcribe_part_ctc_custom_language, transcription_model)
 
 
+# # # if everything was already transcribed, limit to classified gaps
+                
+# import utils.file as utils
+# import utils.constants as c
+# from pathlib import Path
+
+# for model in ['wav2vec2_custom_LM_hesitations', 'whisper_large'] :
+#     old_retranscribe_dir = c.data_base / 'automatic' / 'retranscribed_old (all)' / model
+#     files = utils.get_dir_tuples([old_retranscribe_dir, c.classification_dir], filter_condition=lambda f: True)
+
+#     for automatic_f, classification_f in files :
+#         automatic = utils.read_dict(automatic_f)
+#         result = []
+#         for gap in utils.read_dict(classification_f) :
+#             result += [ w for w in automatic if gap['start'] - 0.1 <= w['start'] and w['end'] <= gap['end'] + 0.1 ]
+#         destination_file = utils.repath(automatic_f, old_retranscribe_dir, c.retranscibed_dir / model)
+#         utils.write_dict(destination_file, result)

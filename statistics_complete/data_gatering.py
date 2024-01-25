@@ -4,7 +4,11 @@ from progress.bar import ChargingBar
 import utils.constants as constants
 import utils.alignment_metric as metric
 import random
-
+import utils.transcript as word_utils
+import random
+from pathlib import Path
+import shutil
+import os
 
 def segment_length(manual_dir, automatic_dir, hesitation_dir = None, min_len=1, filter_condition = utils.base_filter) -> tuple[list[tuple[tuple[int, int], float]], float]:
     'returns list of ( ( length manual, length automatic), audio length) and total audio length'
@@ -172,8 +176,6 @@ def percentage(seg_dir, min_len=1) :
     return filled_pauses / words, repetitions / words, repetitions_and_filled_pauses / words, hesitations / words
 
 
-import utils.transcript as word_utils
-
 def hesitation_translation(manual_dir, automatic_dir, hesitation_dir = None, hesitations_file = constants.hesitations_file, min_len=1) :
     hesitations = list( utils.read_vocabulary(hesitations_file).keys() )
     files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
@@ -212,10 +214,6 @@ def hesitation_translation(manual_dir, automatic_dir, hesitation_dir = None, hes
     return numbers
 
 
-import random
-from pathlib import Path
-import shutil
-import os
 def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Path | None]], audio_dir = constants.audio_dir, n=10, save_dir=constants.data_base / 'examples') :
     args = [ (automatic_dir[0], lambda f : f.stem[2:7]) for automatic_dir in automatic_dirs ] + [ (automatic_dir[1], lambda f : f.stem[2:7]) for automatic_dir in automatic_dirs if automatic_dir[1] ]
     all_files = utils.get_dir_tuples([
@@ -272,10 +270,7 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
                 for i, a in enumerate(automatic_files) :
                     utils.write_dict( save_dir / (title + '_automatic' + str(i) + '.txt'), a)
             return
-
-
-def overlap(gap, word):
-    return max(0, min(gap[1], word['end']) - max(gap[0], word['start']))
+        
 
 def hesitation_gaps(manual_dir, automatic_dir, retranscibed_dir=None, gaps = [0.1, 10, 0.1]) -> list[list]:
     'gaps=[start, number of buckets, increment], returns list of [correct, not correct]'
@@ -304,8 +299,8 @@ def hesitation_gaps(manual_dir, automatic_dir, retranscibed_dir=None, gaps = [0.
                 gap = [pre['end'], post['start']]
                 bucket = min( int( (gap[1] - gap[0] - gaps[0]) / gaps[2]), gaps[1] - 1)
                 
-                partial = [ w for w in manual if overlap(gap, w) > 0 ]
-                partial_50 = [ w for w in manual if overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
+                partial = [ w for w in manual if word_utils.overlap(gap, w) > 0 ]
+                partial_50 = [ w for w in manual if word_utils.overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
                 total = [ w for w in manual if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
                 for i, x in enumerate([partial, partial_50, total]) :
                     if x :  data_containing[bucket][i][0] += 1
@@ -319,8 +314,8 @@ def hesitation_gaps(manual_dir, automatic_dir, retranscibed_dir=None, gaps = [0.
         if retranscibed_dir :
             retranscribe = utils.read_dict(retranscribe_f)
             for gap in retranscribe :
-                partial = [ w for w in manual if overlap([gap['start'], gap['end']], w) > 0 ]
-                partial_50 = [ w for w in manual if overlap([gap['start'], gap['end']], w) >= (w['end'] - w['start']) / 2 ]
+                partial = [ w for w in manual if word_utils.overlap([gap['start'], gap['end']], w) > 0 ]
+                partial_50 = [ w for w in manual if word_utils.overlap([gap['start'], gap['end']], w) >= (w['end'] - w['start']) / 2 ]
                 total = [ w for w in manual if gap['start'] <= w['start'] <= w['end'] <= gap['end'] ]
                 for i, x in enumerate([partial, partial_50, total]) :
                     if   gap['word'] and x :         success_rate[0][i] += 1    # TP
@@ -329,7 +324,6 @@ def hesitation_gaps(manual_dir, automatic_dir, retranscibed_dir=None, gaps = [0.
                     else :                           success_rate[3][i] += 1    # FN
                 
     return data_containing, data_reachable, success_rate, number_of_hesitations
-
 
 
 def get_gaps(words) :
@@ -359,3 +353,60 @@ def manual_hesitation_gaps(manual_dir, automatic_dir) :
         manual = [ word_m if not word_a['word'] else word_m | {'is_restart' : False, 'pause_type' : ''}  for word_m, word_a in zip(manual, automatic) if word_m['word'] ]
         data_not_trans += get_gaps(manual)
     return data_all, data_not_trans
+
+
+def best_possible_solution() :
+    import utils.constants as c
+
+    files = utils.get_dir_tuples([(c.manual_seg_dir, None, lambda f: not 'Speech' in f.stem), c.automatic_align_dir / '0'])
+
+    print(len(files))
+
+    data = [ [ 0 for _ in range(4) ] for _ in range(4) ]
+    for manual_f, automatic_f in ChargingBar('wer').iter(files) :
+        manual = utils.read_dict(manual_f)
+        automatic = utils.read_dict(automatic_f)
+        new_automatic = [ [] for _ in range(3) ]
+        for pre, post in zip(automatic[:-1], automatic[1:]) :
+            for i in range(3) :
+                new_automatic[i].append(pre)
+            if post['start'] - pre['end'] > 0.5 :
+                gap = [pre['end'], post['start']]
+                partial = [ w for w in manual if word_utils.overlap(gap, w) > 0 ]
+                partial_50 = [ w for w in manual if word_utils.overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
+                total = [ w for w in manual if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
+                new_automatic[0] += partial
+                new_automatic[1] += partial_50
+                new_automatic[2] += total
+        if automatic :
+            for i in range(3) :
+                new_automatic[i].append(automatic[-1])
+        
+        for i, a in enumerate( [automatic] + new_automatic ) :
+            ops = alignment.get_operations([word_utils.simplify(word['word']) for word in manual], [word_utils.simplify(word['word']) for word in a])
+            data[i][0] += ops.count('i')
+            data[i][1] += ops.count('d')
+            data[i][2] += ops.count('r')
+            data[i][3] += ops.count('n')
+
+    print(data)
+    for i in range(4) :
+        print(data[i], round( sum(data[i][:3]) / sum( data[i] ), 4))
+
+    # d should go down and n up
+    # i should stay the same
+
+    # 0.2
+    #               i       d      r        n        l    wer
+    # base    [ 91.125, 121.739, 61.065, 1.032.183, 1.306.112] 0.2097             i        d       r        n 
+    # partial [343.071,  46.076, 53.740, 1.115.171, 1.558.058] 0.2843      [+251.946, -75.663, -7.325, +82.988]
+    # 50      [144.654,  62.371, 61.194, 1.091.422, 1.359.641] 0.1973      [ +53.529, -59.368,   +129, +59.239]
+    # total   [101.027,  77.545, 60.880, 1.076.562, 1.316.014] 0.182       [  +9.902, -44.194,   -185, +44.379]
+
+    # 0.5
+    #               i       d      r        n        l    wer
+    # base    [ 91.125, 121.739, 61.065, 1.032.183, 1.306.112] 0.2097             i        d       r        n
+    # partial [236.493,  66.330, 58.188, 1.090.469, 1.451.480] 0.2487      [+145.368, -55.409, -2.877, +58.286]
+    # 50      [122.623,  78.361, 61.007, 1.075.619, 1.337.610] 0.1959      [ +31.498, -43.378,    -58, +43.436]
+    # total   [ 97.940,  86.420, 60.382, 1.068.185, 1.312.927] 0.1864      [  +6.815, -35.319,   -683, +36.002]
+

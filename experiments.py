@@ -1,23 +1,31 @@
-# # do interference
-# from datasets import load_dataset, Audio
+    # 0.2
+    #               i       d      r        n        l    wer
+    # base    [ 91125, 121739, 61065, 1032183, 1306112] 0.2097
+    # partial [343071,  46076, 53740, 1115171, 1558058] 0.2843
+    # 50      [144654,  62371, 61194, 1091422, 1359641] 0.1973
+    # total   [101027,  77545, 60880, 1076562, 1316014] 0.182
+    
+    # 0.5
+    #               i       d      r        n        l    wer
+    # base    [ 91125, 121739, 61065, 1032183, 1306112] 0.2097
+    # partial [236493,  66330, 58188, 1090469, 1451480] 0.2487
+    # 50      [122623,  78361, 61007, 1075619, 1337610] 0.1959
+    # total   [ 97940,  86420, 60382, 1068185, 1312927] 0.1864
 
-# dataset = load_dataset("PolyAI/minds14", name="en-US", split="train")
-# dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
-# sampling_rate = dataset.features["audio"].sampling_rate
-# audio_file = dataset[0]["audio"]["path"]
+two = [[ 91125, 121739, 61065, 1032183, 1306112], [343071,  46076, 53740, 1115171, 1558058], [144654,  62371, 61194, 1091422, 1359641], [101027,  77545, 60880, 1076562, 1316014]]
+five = [[ 91125, 121739, 61065, 1032183, 1306112], [236493,  66330, 58188, 1090469, 1451480], [122623,  78361, 61007, 1075619, 1337610], [ 97940,  86420, 60382, 1068185, 1312927]]
 
-# from transformers import pipeline
+for i in range(4) :
+    print( [ two[i][j] - two[0][j] for j in range(4) ])
 
-# classifier = pipeline("audio-classification", model="stevhliu/my_awesome_minds_model")
+for i in range(4) :
+    print( [ five[i][j] - five[0][j] for j in range(4) ])
 
-# result = classifier(audio_file)
-
-# print(result)
-
-import evaluate
-
-accuracy_metric = evaluate.load('accuracy')
-precision_metric = evaluate.load('precision')
-recall_metric = evaluate.load('recall')
-
-print(accuracy_metric)
+[0, 0, 0, 0]
+[251946, -75663, -7325, 82988]
+[53529, -59368, 129, 59239]
+[9902, -44194, -185, 44379]
+[0, 0, 0, 0]
+[145368, -55409, -2877, 58286]
+[31498, -43378, -58, 43436]
+[6815, -35319, -683, 36002]

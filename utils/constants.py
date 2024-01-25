@@ -49,6 +49,7 @@ manual_seg_dir = data_base / 'manual' / 'segmented'
 automatic_dir = data_base / 'automatic' / 'unaligned'
 automatic_align_dir = data_base / 'automatic' / 'aligned'
 automatic_v3_dir = data_base / 'automatic' / 'version3'
+classification_dir = data_base / 'automatic' / 'classification'
 retranscibed_dir = data_base / 'automatic' / 'retranscribed'
 
 

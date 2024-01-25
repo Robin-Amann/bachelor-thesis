@@ -37,6 +37,9 @@ def simplify(word, additional='') :
     return re.sub('[^A-Za-z\'' + additional + ']', '', word).lower()
 
 
+def overlap(gap : tuple[float, float], word : dict):
+    return max(0, min(gap[1], word['end']) - max(gap[0], word['start']))
+
 # currently not used, maybe deprecated
 # # from cleanup
 # def remove_non_words(transcript, chars_regex="[^A-Za-z0-9\s]") :
