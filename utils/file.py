@@ -138,17 +138,15 @@ def read_dict(file_path, seperator='<|>') :
     if len(lines) == 2 :
         raise KeyError('file probably had no header and only two items')
     keys, types = lines[:2]
-    keys = keys.split(seperator)
+    keys = keys.split(seperator)    
     types = [ locate(t) for t in types.split(seperator)]
     if len(keys) != len(types) :
         raise KeyError('wrong number of keys to types')
     types = [ t if t != int else float for t in types ]
     if any( t == None for t in types) :
-        raise KeyError('keys are None')
+        raise KeyError( str(file_path) + ' keys are None or not suitable ' + str(types))
     data = lines[2:]
     for d in data :
-        if 'None' in d :            # TODO is for version 3. if last timestep not found set to end of file
-            continue
         dictionary.append( dict(zip(keys, [ t(v) if t != bool else v == 'True' for t, v in zip(types, d.split(seperator)) ])) )
     return dictionary
 

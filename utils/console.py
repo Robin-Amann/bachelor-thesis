@@ -1,4 +1,16 @@
-data = [[ +251.946, -75.663, -7.325, +82.988, 1306112], [343071,  46076, 53740, 1115171, 1558058], [144654,  62371, 61194, 1091422, 1359641], [101027,  77545, 60880, 1076562, 1316014]]
+
+
+def format_number(x, decimal_places=2, thousands=True, length=-1, force_sign=False) :
+    if int(x) == x :
+        x = int(x)
+    include_force_sign = '+' if force_sign else ''
+    include_decimal_place = '0' if type(x) == int else str(decimal_places)
+    include_thousands = '' if not thousands else ',' 
+    include_length = '' if length <= 0 else str(length)
+
+    format_string = '{:' + include_force_sign + include_length + include_thousands + '.' + include_decimal_place + 'f}'
+
+    return format_string.format(x)
 
 
 def create_table_representation(table, distance=3, first_left=True, seperator=True, print_comment=True) :
@@ -33,13 +45,18 @@ def print_table(table, distance=3, first_left=True, seperator=True, print_commen
         print(row)
 
 
+def print_tables(tables, table_seperation=10, distance=3, first_left=True, seperator=True, print_comment=True) :
+    representations = []
 
+    representations.append( create_table_representation(tables[0], distance, first_left, seperator, print_comment) )
+    for table in tables[1:] :
+        representations.append( create_table_representation(table, distance, first_left, seperator, print_comment=False) )
+    
+    max_len = max( len(table) for table in representations )
 
-print('# min len =', 0.2)
-print_table([
-        ['', 'insert', 'delete', 'replace', 'nothing', 'all', 'wer'],
-    ] + [
-        [ label ] + [ f'{x:+,}' for x in data_t] + ['{:6.4f}'.format(sum(data_t[:3]) / data_t[4])] for label, data_t in zip(['base', 'partial', '50', 'total'], data)
-    ])
-print()
+    for table in representations :
+        table += [ ' '* len(table[0]) ] * max(0, max_len - len(table) )
 
+    representation = list(map(list, zip(*representations)))
+    for row in representation :
+        print((' ' * table_seperation).join(row))

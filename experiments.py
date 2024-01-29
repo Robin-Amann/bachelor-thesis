@@ -1,31 +1,19 @@
-    # 0.2
-    #               i       d      r        n        l    wer
-    # base    [ 91125, 121739, 61065, 1032183, 1306112] 0.2097
-    # partial [343071,  46076, 53740, 1115171, 1558058] 0.2843
-    # 50      [144654,  62371, 61194, 1091422, 1359641] 0.1973
-    # total   [101027,  77545, 60880, 1076562, 1316014] 0.182
-    
-    # 0.5
-    #               i       d      r        n        l    wer
-    # base    [ 91125, 121739, 61065, 1032183, 1306112] 0.2097
-    # partial [236493,  66330, 58188, 1090469, 1451480] 0.2487
-    # 50      [122623,  78361, 61007, 1075619, 1337610] 0.1959
-    # total   [ 97940,  86420, 60382, 1068185, 1312927] 0.1864
+import utils.file as utils
+import utils.constants as c
+import utils.wer_alignment as alignment
+from progress.bar import ChargingBar
+import utils.transcript as word_utils
+import utils.console as console
 
-two = [[ 91125, 121739, 61065, 1032183, 1306112], [343071,  46076, 53740, 1115171, 1558058], [144654,  62371, 61194, 1091422, 1359641], [101027,  77545, 60880, 1076562, 1316014]]
-five = [[ 91125, 121739, 61065, 1032183, 1306112], [236493,  66330, 58188, 1090469, 1451480], [122623,  78361, 61007, 1075619, 1337610], [ 97940,  86420, 60382, 1068185, 1312927]]
+# retranscribe_dirs = [c.retranscibed_dir / 'whisper_large', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations']
 
-for i in range(4) :
-    print( [ two[i][j] - two[0][j] for j in range(4) ])
+# for d in retranscribe_dirs :
+#     files = utils.get_dir_files(d)
+#     print(len(files))
 
-for i in range(4) :
-    print( [ five[i][j] - five[0][j] for j in range(4) ])
 
-[0, 0, 0, 0]
-[251946, -75663, -7325, 82988]
-[53529, -59368, 129, 59239]
-[9902, -44194, -185, 44379]
-[0, 0, 0, 0]
-[145368, -55409, -2877, 58286]
-[31498, -43378, -58, 43436]
-[6815, -35319, -683, 36002]
+files = utils.get_dir_files(c.retranscibed_dir / 'wav2vec2' )
+
+for file in files :
+    x = utils.read_dict(file)
+    utils.write_dict(file, x)

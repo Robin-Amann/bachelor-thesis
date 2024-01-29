@@ -1,6 +1,4 @@
-import tasks.preprocessing.preprocessing as pre
 import utils.constants as c
-import tasks.transcript_alignment as wer
 import utils.file as utils
 from pathlib import Path
 from progress.bar import ChargingBar

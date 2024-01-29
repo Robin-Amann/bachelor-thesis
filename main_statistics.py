@@ -3,33 +3,49 @@ import statistics_complete.visualization as visual
 import statistics_complete.statistical_package as stat
 import utils.constants as c
 
-retranscribe_dirs = [None, c.retranscibed_dir / 'whisper', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new']
-labels = ['no model', 'whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchboard LM', 'wav2vec2\nsb-hesitation LM']
+retranscribe_dirs = [c.retranscibed_dir / 'whisper_large', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations']
+labels = ['whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchboard LM', 'wav2vec2\nsb-hesitation LM']
 
-# # # data preperation # # #
-visual.plot_manual_automatic_word_lengths(c.manual_seg_dir, c.automatic_v3_dir, filter_condition=lambda f: True)
+# # #   after preprocessing    # # #
+# stat.dataset_statistic(min_len=[1, 5])
 
-# # hesitation prediction # # #
-stat.plot_alignment_examples(c.manual_seg_dir, [(c.automatic_align_dir, c.retranscibed_dir / 'whisper'), (c.automatic_v3_dir, None)], ['manual', 'whisper + whisper', 'whisper v3'], c.audio_dir, n = 2)
-visual.plot_alignment_examples(['manual', 'whisper\nwhisper', 'whisper v3'])
-stat.plot_alignment_examples(c.manual_seg_dir, [(c.data_base / 'data', None)], ['manual', 'whisper'], c.audio_dir, n = 5)
-visual.plot_alignment_examples(['manual', 'whisper v3'])
+# # #   after transcription    # # #
+# stat.manual_automatic_segment_length_by_word_comparison()
+# stat.percentage_not_transcribed_speech()
+# stat.wer_per_segment(min_lens=[1, 5])
+# stat.gaps_containing_speech_manual_time_distribution()
 
-# # # general # # #
-stat.manual_hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0')
-stat.statistic_dataset_complete(min_len=[1, 5], automatic_dir= c.automatic_align_dir / '0')
-stat.plot_hesitation_transcription_comparison(retranscribe_dirs, labels)
-stat.plot_hesitation_transcription_comparison([None], ['none'], automatic_dir=c.data_base / 'data')
-stat.plot_wer_comparison(retranscribe_dirs, labels)
-stat.alignment_comparison([c.automatic_align_dir / '0', c.automatic_v3_dir, c.automatic_align_dir / '1'], ['ctc old', 'whisper v3', 'ctc new'], 1, position = False)
-stat.alignment_comparison([c.automatic_align_dir / '0', c.automatic_v3_dir, c.automatic_align_dir / '1'], ['ctc old', 'whisper v3', 'ctc new'], 1, length = False)
-stat.alignment_metric_comparison(c.manual_seg_dir, c.automatic_align_dir / '0', c.automatic_align_dir / '1', c.automatic_v3_dir)
+# # #     after alignment      # # #
+# stat.gaps_containing_speech_automatic_time_distribution()
+# stat.ctc_default_probability_comparison([ c.automatic_align_dir / str(i) for i in range(1, 11) ], [ 'c = ' + str(-i) for i in range(1, 11) ])
+stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / '0', c.automatic_align_dir / '10'], ['whisper-large cross attention', 'wav2vec2 ctc', 'wav2vec2 custom ctc (c = -10)'])
+# stat.best_case_scenario(min_lens=[0.1, 0.2, 0.5, 1])
 
-data_containing, data_reachable, success_rate, number_of_hesitations = data.hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations_new' )
-data_containing, data_reachable, success_rate, number_of_hesitations = data.hesitation_gaps(c.manual_seg_dir, c.automatic_align_dir / '0')
-visual.show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable)
-visual.show_hesitation_gaps_and_success_rate(number_of_hesitations, data_containing, data_reachable, success_rate)
-stat.plot_ctc_comparison(c.manual_seg_dir, [ c.automatic_align_dir / '0', c.automatic_align_dir / '1', c.automatic_align_dir / '5', c.automatic_align_dir / '10'], ['base'] + [ 'c = -1', 'c = -5', 'c = -10'])
+# # # # after gap classification # # #
+# stat.classification_model_statistics()
+# stat.not_transcribed_speech_labelling_statistics()
+
+# # # #  after retranscription   # # #
+# stat.retranscription_models_comparison(retranscribe_dirs, labels)
+
+# # # #         general          # # #
+# stat.alignment_visualisation([(c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2', 'automatic ctc'), (c.automatic_v3_dir, None, 'automatic\ncross attention')], 5)
+# visual.plot_alignment_examples( ['manual', 'automatic ctc', 'automatic\ncross attention' ] )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Results ###
