@@ -1,45 +1,49 @@
-data = [[ +251.946, -75.663, -7.325, +82.988, 1306112], [343071,  46076, 53740, 1115171, 1558058], [144654,  62371, 61194, 1091422, 1359641], [101027,  77545, 60880, 1076562, 1316014]]
 
 
-def create_table_representation(table, distance=3, first_left=True, seperator=True, print_comment=True) :
-    table_representation = []    
-    colum_widths = [ max( [ len(str(row[cell])) for row in table] ) for cell in range(len(table[0])) ]
+# # # # # # # # # # # # # check why words are beeing wrongfully transcribed # # # # # # # # # # # # #
 
-    for row in table :
-        table_representation.append( [ 
-            str(cell).ljust(width) if first_left and i == 0 else str(cell).rjust(width) for i, (cell, width) in enumerate(zip(row, colum_widths))
-        ] )
+import utils.file as utils
+import utils.constants as c
+import utils.wer_alignment as alignment
+import utils.transcript as word_utils
+files = utils.get_dir_tuples([(c.manual_seg_dir, None, lambda f: not 'Speech' in f.stem), c.automatic_align_dir / '0'])
 
-    if seperator :
-        for row in table_representation :
-            row.insert(1, '│')
+print(files[0])
+i = 0
+for manual_f, automatic_f in files :
+    manual = utils.read_dict(manual_f)
 
-    for i in range(len(table_representation)) :
-        table_representation[i] = (' '*distance).join(table_representation[i])
+    if len(manual) < 50 :
+        continue
+    automatic = utils.read_dict(automatic_f)
+    manual, automatic, _ = alignment.align_words(manual, automatic, {'word' : ''})
 
-    if seperator :
-        table_representation.insert(1, '─' * (colum_widths[0] + distance) + '┼' + '─' * (sum(colum_widths[1:]) + distance * len(colum_widths[1:]))) 
+    snips = []
+    x = 0
+    while x < len(manual) :
+        m = manual[x]
+        a = automatic[x]
+        if m['word'] and a['word'] and word_utils.simplify(m['word']) != word_utils.simplify(a['word']) :
+            y = x + 1
+            while y < len(manual) and manual[y]['word'] and automatic[y]['word'] and word_utils.simplify(manual[y]['word']) != word_utils.simplify(automatic[y]['word']) :
+                y += 1
+            
+            snips.append( ( manual[max(0, x-2):min(len(manual), y+2)], automatic[max(0, x-2):min(len(manual), y+2)]) )
 
-    if print_comment :
-        for i in range(len(table_representation)) :
-            table_representation[i] = '#' + ' '*distance + table_representation[i]
-    
-    return table_representation
+            x = y + 1
+        x += 1
 
+    if snips :
+        manual_s = []
+        automatic_s = []
+        for snip in snips :
+            manual_s += [ w['word'] for w in snip[0] ] + ['|']
+            automatic_s += [ w['word'] for w in snip[1] ] + ['|']
 
-def print_table(table, distance=3, first_left=True, seperator=True, print_comment=True) :
-    table_representation = create_table_representation(table, distance, first_left, seperator, print_comment)
-    for row in table_representation :
-        print(row)
+        alignment.print_words(manual_s[:-1], automatic_s[:-1])
+        i += 1
 
+    if i == 10 :
+        break
 
-
-
-print('# min len =', 0.2)
-print_table([
-        ['', 'insert', 'delete', 'replace', 'nothing', 'all', 'wer'],
-    ] + [
-        [ label ] + [ f'{x:+,}' for x in data_t] + ['{:6.4f}'.format(sum(data_t[:3]) / data_t[4])] for label, data_t in zip(['base', 'partial', '50', 'total'], data)
-    ])
-print()
 

@@ -11,9 +11,3 @@ import utils.console as console
 #     files = utils.get_dir_files(d)
 #     print(len(files))
 
-
-files = utils.get_dir_files(c.retranscibed_dir / 'wav2vec2' )
-
-for file in files :
-    x = utils.read_dict(file)
-    utils.write_dict(file, x)

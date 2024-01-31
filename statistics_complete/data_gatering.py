@@ -117,6 +117,43 @@ def calculate_wer(manual_dir, automatic_dir, automatic_aligned=False, min_len=1,
     return wer_data , sum( [wer * len(ops) for wer, ops in wer_data] ) / sum( [len(ops) for wer, ops in wer_data] )
 
 
+def untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, automatic_aligned=False, min_len=1, hesitation_dir=None) :
+    'returns [ (wer, ops) for segment ], wer'
+    if hesitation_dir :
+        files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, hesitation_dir])
+        files = [ (f1, (f2, f3)) for f1, f2, f3 in files ]
+    else :
+        files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
+
+    wer_data = []
+    number_of_words = 0
+    number_of_untranscribed_words = 0
+    number_of_untranscribed_hesitations = 0
+    for manual_f, automatic_f in ChargingBar('WER').iter(files) :
+        manual = utils.read_dict(manual_f)
+        if len(manual) < min_len :
+            continue
+        number_of_words += len(manual)
+        if hesitation_dir :
+            automatic_f, hesitation_f = automatic_f
+        if automatic_aligned :
+            automatic = utils.read_dict(automatic_f)
+            if hesitation_dir :
+                automatic += utils.read_dict(hesitation_f)
+                automatic.sort(key=lambda w : w['start'])
+        else :
+            automatic = [ {'word' : w} for w in utils.read_file(automatic_f).split() ]
+
+        manual, automatic, _ = alignment.align_words(manual, automatic, {'word' : ''})
+        for m, a in zip(manual, automatic) :
+            if m['word'] and not a['word'] :
+                number_of_untranscribed_words += 1
+                if m['is_restart'] or m['pause_type'] :
+                    number_of_untranscribed_hesitations += 1
+    
+    return number_of_words, number_of_untranscribed_words, number_of_untranscribed_hesitations
+
+
 def gaps_containing_speech_manual_time(manual_dir, automatic_dir) :
     files = utils.get_dir_tuples([(manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
     gaps = []
@@ -455,8 +492,8 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
 def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir) :
     files = utils.get_dir_tuples([(manual_dir, None, lambda f: not 'Speech' in f.stem), automatic_dir, retranscibe_dir])
 
-    transcribed = 0
-    untranscribed = 0
+    all_data = [ [ 0 for _ in range(3) ] for _ in range(3) ]
+    
     for manual_f, automatic_f, retranscribe_f in ChargingBar('retranscription percentage').iter(files) :
         manual = utils.read_dict(manual_f)
         automatic = utils.read_dict(automatic_f)
@@ -465,19 +502,16 @@ def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir) :
         manual_aligned, automatic_aligned, _ = alignment.align_words(manual, automatic, {'word' : ''})
         manual_labeled = [ m | {'transcribed' : True} if a['word'] else m | {'transcribed' : False} for m, a in zip(manual_aligned, automatic_aligned) if m['word'] ]
         
-        automatic_whole = automatic + retranscribed
+        automatic_whole = [ w | {'new' : False} for w in automatic ] + [ w | {'new' : True} for w in retranscribed if w['word'] ]
         automatic_whole.sort(key=lambda w : w['start'])
         manual_aligned, automatic_aligned, _ = alignment.align_words(manual_labeled, automatic_whole, {'word' : ''})
 
         for m, a in zip(manual_aligned, automatic_aligned) :
-            if not 'transcribed' in m or m['transcribed'] :
-                continue
-            if a['word'] :
-                transcribed += 1
-            else :
-                untranscribed += 1
-
-    return transcribed, untranscribed
+            i = 0 if not m['word'] else 1 if m['transcribed'] else 2
+            j = 0 if not a['word'] else 1 if a['new'] else 2
+            all_data[i][j] += 1
+    
+    return all_data
     
 
 # # #         general          # # #

@@ -19,7 +19,11 @@
 
 # # #   after transcription    # # #
 
-# percentage of not transcribed speech: 10.02 %
+#                                 │       total   per words   per untranscribed
+#   ──────────────────────────────┼────────────────────────────────────────────
+#   number of words words         │   1,214,987
+#   not transcribed words         │     121,730     10.02 %                      WER --> 0.10
+#   nottranscribed disfluencies   │      89,799      7.39 %             73.77 %  WER --> 0.12
 
 # WER = 0.2097 for minimum length 1 
 # - insert:      91,127
@@ -142,14 +146,21 @@
 
 # # #  after retranscription   # # #
 
-#                               │       initially          transcribed        untranscribed      WER
-#                               │   untranscribed                                                           
-#   ────────────────────────────┼───────────────────────────────────────────────────────────────────
-#   whisper                     │           20880   12,523 ( 59.98 % )    8,357 ( 40.02 % )   0.2425
-#   wav2vec2                    │           20880    9,297 ( 44.53 % )   11,583 ( 55.47 % )   0.2049
-#   wav2vec2 libriSpeech LM     │           20880    6,077 ( 29.10 % )   14,803 ( 70.90 % )   0.2392
-#   wav2vec2 Switchboard LM     │           20880    8,891 ( 42.58 % )   11,989 ( 57.42 % )   0.2362
-#   wav2vec2 sb-hesitation LM   │           20880    8,962 ( 42.92 % )   11,918 ( 57.08 % )   0.2359
+#   whisper       │   empty      new   not new          wav2vec2      │    empty     new   not new          libriSpeech LM   │    empty     new   not new          Switchboard LM   │    empty     new   not new          sb-hesitation LM   │    empty     new   not new
+#   ──────────────┼───────────────────────────          ──────────────┼───────────────────────────          ─────────────────┼───────────────────────────          ─────────────────┼───────────────────────────          ───────────────────┼───────────────────────────
+#   empty         │       0   18,733    10,988          empty         │        0   4,744     9,263          empty            │        0   1,748     8,827          empty            │        0   6,688     9,621          empty              │        0   6,908     9,636
+#   transcribed   │     427    4,634   163,196          transcribed   │      334   1,773   166,150          transcribed      │      488     834   166,935          transcribed      │      613   2,191   165,453          transcribed        │      623   2,231   165,403
+#   not trans.    │   8,357    9,851     2,672          not trans.    │   11,583   7,854     1,443          not trans.       │   15,576   4,210     1,094          not trans.       │   12,151   6,947     1,782          not trans.         │   12,054   7,009     1,817
+
+# initially untranscribed: 20,880
+
+#                               │      WER
+#   ────────────────────────────┼─────────
+#   whisper                     │   0.2425
+#   wav2vec2                    │   0.2049
+#   wav2vec2 libriSpeech LM     │   0.2392
+#   wav2vec2 Switchboard LM     │   0.2362
+#   wav2vec2 sb-hesitation LM   │   0.2359
 
 
 # # #         general          # # #

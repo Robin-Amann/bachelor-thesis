@@ -41,12 +41,22 @@ def manual_automatic_segment_length_by_word_comparison(manual_dir=manual_dir_p, 
     visual.plot_manual_automatic_word_lengths(len_data)
 
 
+# number of words:                                 1,214,987
+# number of not transcribed words:                   121,730   10.02 %
+# - in percent to number of words:                   
+# number of not transcribed disfluencies:             89,799   7.39 %    73.77 %
+# - in percent to number of words:                    
+# - in percent to number of not transcribed words:   
+    
 def percentage_not_transcribed_speech(manual_dir=manual_dir_p, automatic_dir=automatic_dir_p) :
-    wer_and_ops, wer = data.calculate_wer(manual_dir, automatic_dir, min_len=1)
-    wers, ops = list(map(list, zip(*wer_and_ops)))
-    d = sum( [ op.count('d') for op in ops ] )
-    drn = d + sum( [ op.count('r') + op.count('n') for op in ops ] )
-    print('# percentage of not transcribed speech:', round( 100 * d / drn, 2), '%')
+    words, untranscribed_words, untranscribed_hesitations = data.untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, min_len=1)
+    table = [
+        ['',                            'total',                                          'per words',                                                          'per untranscribed'],
+        ['number of words words',       console.format_number(words),                     '',                                                                   ''],
+        ['not transcribed words',       console.format_number(untranscribed_words),       console.format_number(untranscribed_words / words * 100) + ' %',      ''],
+        ['nottranscribed disfluencies', console.format_number(untranscribed_hesitations), console.format_number(untranscribed_hesitations / words * 100)+ ' %', console.format_number(untranscribed_hesitations / untranscribed_words * 100) + ' %']
+    ]
+    console.print_table(table)
 
 
 def wer_per_segment(manual_dir=manual_dir_p, automatic_dir=automatic_dir_p, min_lens=[1]) :
@@ -159,19 +169,17 @@ def not_transcribed_speech_labelling_statistics(manual_dir=manual_dir_p, automat
 
 # # #  after retranscription   # # #
 def retranscription_models_comparison(retranscribe_dirs, labels, manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p) :
-    table = []
-    table.append(['', 'initially', 'transcribed untranscribed', 'untranscribed', 'WER'])
+    tables = []
     for retranscibe_dir, label in zip(retranscribe_dirs, labels) :
-        transcribed, untranscribed =  1, 1 #data.percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir)
-        initially = transcribed + untranscribed
-        transcribed_percent = console.format_number( 100*(transcribed / initially), length=5)
-        untranscribed_percent = console.format_number( 100*(untranscribed / initially), length=5)
-        transcribed = console.format_number(transcribed)
-        untranscribed = console.format_number(untranscribed)
-        _, wer = data.calculate_wer(manual_dir, automatic_dir, automatic_aligned=True, hesitation_dir=retranscibe_dir)
-        wer = console.format_number(wer, decimal_places=4, length=6)
-        table.append( [ label, initially, transcribed + ' ( ' + transcribed_percent + ' % )', untranscribed + ' ( ' + untranscribed_percent + ' % )', wer ] )
-    console.print_table(table)
+        x = data.percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir)
+        table = []
+        table.append([label, 'empty', 'new', 'not new'])
+        table.append(['empty'] + [ console.format_number(a) for a in x[0]])
+        table.append(['transcribed'] + [ console.format_number(a) for a in x[1]])
+        table.append(['not trans.'] + [ console.format_number(a) for a in x[2]])
+        tables.append(table)
+    console.print_tables(tables)
+
 
 # # #         general          # # #
 example_dir_p = c.data_base / 'examples'

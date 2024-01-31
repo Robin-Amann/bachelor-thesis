@@ -5,7 +5,6 @@ import utils.constants as c
 
 retranscribe_dirs = [c.retranscibed_dir / 'whisper_large', c.retranscibed_dir / 'wav2vec2', c.retranscibed_dir / 'wav2vec2_LM', c.retranscibed_dir / 'wav2vec2_custom_LM', c.retranscibed_dir / 'wav2vec2_custom_LM_hesitations']
 labels = ['whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchboard LM', 'wav2vec2\nsb-hesitation LM']
-
 # # #   after preprocessing    # # #
 # stat.dataset_statistic(min_len=[1, 5])
 
@@ -18,7 +17,7 @@ labels = ['whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchbo
 # # #     after alignment      # # #
 # stat.gaps_containing_speech_automatic_time_distribution()
 # stat.ctc_default_probability_comparison([ c.automatic_align_dir / str(i) for i in range(1, 11) ], [ 'c = ' + str(-i) for i in range(1, 11) ])
-stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / '0', c.automatic_align_dir / '10'], ['whisper-large cross attention', 'wav2vec2 ctc', 'wav2vec2 custom ctc (c = -10)'])
+# stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / '0', c.automatic_align_dir / '10'], ['whisper-large cross attention', 'wav2vec2 ctc', 'wav2vec2 custom ctc (c = -10)'])
 # stat.best_case_scenario(min_lens=[0.1, 0.2, 0.5, 1])
 
 # # # # after gap classification # # #
@@ -31,21 +30,6 @@ stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / '0
 # # # #         general          # # #
 # stat.alignment_visualisation([(c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2', 'automatic ctc'), (c.automatic_v3_dir, None, 'automatic\ncross attention')], 5)
 # visual.plot_alignment_examples( ['manual', 'automatic ctc', 'automatic\ncross attention' ] )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### Results ###
