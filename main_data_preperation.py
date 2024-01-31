@@ -9,7 +9,7 @@ import tasks.voice_detection_silero_vad as vad
 import utils.constants as constants
 
 
-# pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
+pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
 
 # segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
 
@@ -22,6 +22,6 @@ import utils.constants as constants
 #     normalizer.normalize_dir(constants.automatic_dir / str(i))
 
 # audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate)
-custom_audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate, whitespace_stay_default_value=[ -i for i in range(11)])
+# custom_audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate, whitespace_stay_default_value=[ -i for i in range(11)])
     
 

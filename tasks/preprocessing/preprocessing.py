@@ -9,18 +9,19 @@ from pathlib import Path
 def align(trans_p, timing_p) :
     trans = trans_p.copy()
     timing = timing_p.copy()
-    operations = wer.get_operations([w['word'].lower() for w in trans], [w['word'].lower() for w in timing])
-    trans_aligned, timing_aligned = wer.align(trans, timing, operations, insertion_obj=dict())
-    
+    trans_aligned, timing_aligned, operations = wer.align_words(trans, timing, {})
+
     start = 0
     end = 0
-    while start < len(trans_aligned) :
-        while start < len(trans_aligned) and 'word' in trans_aligned[start] and 'word' in timing_aligned[start] :
+    while start < len(operations) :
+        # find not machting part
+        while start < len(operations) and operations[start] == 'n' :
             start += 1
         end = start
-        while end < len(trans_aligned) and ( not 'word' in trans_aligned[end] or not 'word' in timing_aligned[end] ) :
+        while end < len(operations) and operations[end] != 'n' :
             end += 1
 
+        # extract not matching part
         xi = [w['word'] for w in trans_aligned[start:end] if 'word' in w]
         yi = [w['word'] for w in timing_aligned[start:end] if 'word' in w]
 
@@ -28,6 +29,7 @@ def align(trans_p, timing_p) :
         if (not ''.join(xi)) or (not ''.join(yi)) :
             trans_aligned = trans_aligned[ : start] + trans_aligned[end : ]
             timing_aligned = timing_aligned[ : start] + timing_aligned[end : ]
+            operations = operations[ : start] + operations[end : ]
 
         # interruption --> same word
         elif len(xi) == 1 and len(yi) == 1 and (xi[0].endswith('-')  and yi[0].endswith('-') or re.sub('\[.*\]', '', xi[0]).replace('-', '') == re.sub('\[.*\]', '', yi[0]).replace('-', ''))  :
@@ -50,6 +52,7 @@ def align(trans_p, timing_p) :
             }
             trans_aligned = trans_aligned[ : start] + [trans_i ] + trans_aligned[end : ]
             timing_aligned = timing_aligned[ : start] + [timing_i] + timing_aligned[end : ]
+            operations = operations[ : start] + ['n'] + operations[end : ]
             start += 1
 
         # same amount of non empty words (can not be 0) --> missunderstanding, treat as same words
@@ -60,7 +63,8 @@ def align(trans_p, timing_p) :
         else :
             trans_aligned = trans_aligned[ : start] + trans_aligned[end : ]
             timing_aligned = timing_aligned[ : start] + timing_aligned[end : ]
-
+            operations = operations[ : start] + operations[end : ]
+    
     return [{'word' : a['word'], 'annotation' : a['annotation'], 'pause_type' : a['pause_type'], 'is_restart' : a['is_restart'], 'start' : b['start'], 'end' : b['end']} for a, b in zip(trans_aligned, timing_aligned)]  
 
 
@@ -124,3 +128,9 @@ def process_dir(annotation_dir, timing_dir, desination_dir, annotation_type='mgd
             utils.write_dict(Path(desination_dir) / stem[2 : 4] / (stem + "B.txt"), b)
     
     print("preprocessing: swap transcripts", swapped)
+
+
+# example
+# annotation: Okay Uh first um I need to know uh        how do you feel about uh about sending uh an elderly uh family member to a nursing home Yes Yeah Uh-huh Yeah Yeah Yeah Yeah   Yeah Uh-huh Uh-huh Yeah Probably the hardest thing in in my family uh my grandmother she had to be put in a nursing home and um she had used the walker for for quite some     time probably about six to nine months And um she had a fall and uh finally uh she had    Parkinson's disease and it got so much that she could not take care of her house        Then she lived in an apartment and uh that was even harder actually Because it was you know it was just a change of change of location and it was very disturbing for her because she had been so used to traveling I mean she tr-         she had she had children all across the United States and you know she spent nine months out of the year just visiting her children And um that was pretty heart-rending for her I think when she finally came to the realization that you know no I can    not I can    not take care of myself Yeah I mean for somebody who is you know for most of their life has has uh not just merely had a farm but had ten children had a farm ran everything because her husband was away in the coal mines And you know facing that situation it's it's quite a dilemma I think Yeah Well my uh my uh probably one of the biggest decisions I think that was very strengthening for our family was rather than have one child make that decision than just delegate it I think that they they had a great deal of um all the brothers and sisters got together and they actually had a conference And I mean it was just it was probably one of the most strengthening things for our family getting down together and doing that And and just the children were involved in the decision because it involved just them And you know making that decision and then finding a place and everybody had duties to perform You know whether it was just you know giving money or whether it was actually taking part    in a lot of the decision making you know like finding   a proper nursing home And they I know They and well they had well they had they had seen it coming So so I mean it I mean I I I I har-      I I truly wish that if something like that were to happen that my children would do something like that for me Yeah Yeah Well we we Yeah Uh-huh Yeah Uh-huh Um Yeah Yeah Well with my with my grandmother I think it was it was such that uh that she did not have the problem with she was very
+# timing:     okay uh first um i need to know uh h[ow]- how do you feel about uh about sending um an elderly uh family member to a nursing home yes yeah um-hum yes  yeah yeah um-hum                    yeah probably the hardest thing in in my family uh my grandmother she had to be put in   nursing home and um she had used a   walker for for quite sometime      probably about six to nine months and um she had a fall and uh finally uh she had uh Parkinson's Disease and it got so much that she could not take care of her house sh[e]- then she lived in an apartment and um that was even harder actually because it was you know it was just a change of change of location and it was very disturbing for her because she had been so used to traveling i mean she tr[aveled]- she had she had children all across the United States and you know she spent nine months out of the year just visiting her children and um that was pretty heartrending  for her i think when she finally came to the realization that you know no i cannot     i cannot     take care of myself yeah i mean for somebody who is you know for most of their life has has uh not just merely had a farm but had ten children had a farm ran everything because her husband was away in the coal mines and you know facing that situation it   it's quite a dilemma i think yeah well my uh my uh probably one of the biggest decisions i think that was very strengthened  for our family was rather than have one child make that decision than just delegate it i think that they they had a great deal of um all the brothers and sisters got together and they actually had a conference and i mean it was just it was probably one of the most strengthening things for our family getting down together and doing that and and just the children were involved in the decision because it involved just them and you know making that decision and then finding a place and everybody had duties to perform you know whether it was just you know giving money or whether it was actually taking part in in a lot of the decision making you know like finding a a proper nursing home and they i know they and well they had well they had they had seen it coming so so i mean it i mean i i i i hard[ly]- i i truly wish that if something like that were to happen that my children would do something like that for me yeah yeah well we we yeah um-hum yeah um-hum    yeah yeah well with my with my grandmother i think it was it was such that uh that she did not have the problem with she was very
+# result:     Okay Uh first um I need to know uh        how do you feel about uh about sending uh an elderly uh family member to a nursing home Yes Yeah Uh-huh Yeah Yeah Yeah                           Yeah Probably the hardest thing in in my family uh my grandmother she had to be put in   nursing home and um she had used the walker for for quite sometime      probably about six to nine months And um she had a fall and uh finally uh she had    Parkinson's disease and it got so much that she could not take care of her house        Then she lived in an apartment and uh that was even harder actually Because it was you know it was just a change of change of location and it was very disturbing for her because she had been so used to traveling I mean she tr-         she had she had children all across the United States and you know she spent nine months out of the year just visiting her children And um that was pretty heart-rending for her I think when she finally came to the realization that you know no I cannot     I cannot     take care of myself Yeah I mean for somebody who is you know for most of their life has has uh not just merely had a farm but had ten children had a farm ran everything because her husband was away in the coal mines And you know facing that situation it's it's quite a dilemma I think Yeah Well my uh my uh probably one of the biggest decisions I think that was very strengthening for our family was rather than have one child make that decision than just delegate it I think that they they had a great deal of um all the brothers and sisters got together and they actually had a conference And I mean it was just it was probably one of the most strengthening things for our family getting down together and doing that And and just the children were involved in the decision because it involved just them And you know making that decision and then finding a place and everybody had duties to perform You know whether it was just you know giving money or whether it was actually taking part    in a lot of the decision making you know like finding   a proper nursing home And they I know They and well they had well they had they had seen it coming So so I mean it I mean I I I I har-      I I truly wish that if something like that were to happen that my children would do something like that for me Yeah Yeah Well we we Yeah Uh-huh Yeah           Yeah Yeah Well with my with my grandmother I think it was it was such that uh that she did not have the problem with she was very
