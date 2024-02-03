@@ -95,6 +95,7 @@ def transcribe_part_whisper_large(start, end, speech, sample_rate, model) :
     for word in result :
         word['word'] = word_utils.replace_anomalies(word['word'])
     result = [ w for w in result if word_utils.is_word(w['word']) ]
+    result = [ { 'word' : ' '.join( w['word'] for w in result), 'start' : start, 'end' : end } ]
     return result
 
 
@@ -109,8 +110,10 @@ def transcribe_part_ctc(start, end, speech, sample_rate, model) :
 
     outputs = tokenizer.decode(pred_ids, output_word_offsets=True)
     time_offset = transcription_model.config.inputs_to_logits_ratio / feature_extractor.sampling_rate
-    words = [ { "word": d["word"].lower(), "start": round(d["start_offset"] * time_offset, 2) + start, "end": round(d["end_offset"] * time_offset, 2) + start } for d in outputs.word_offsets ]
-    return words
+    words = [ { "word": d["word"], "start": round(d["start_offset"] * time_offset, 2) + start, "end": round(d["end_offset"] * time_offset, 2) + start } for d in outputs.word_offsets ]
+    result = [ { 'word' : ' '.join( w['word'] for w in words), 'start' : start, 'end' : end } ]
+    return result
+
 
 def transcribe_part_ctc_language(start, end, speech, sample_rate, model) :
     acoustic_model, beam_search_decoder, model_sample_rate = model

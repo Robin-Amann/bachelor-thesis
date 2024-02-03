@@ -41,41 +41,59 @@ def plot_ctc_comparison(dists, labels) :
     plt.show()
 
 
-def show_hesitation_gaps(number_of_hesitations, data_containing, data_reachable, model) :
-    # sum up over gaps to get total
+def show_hesitation_gaps(all_data, model) :
+    tables = []
+    print('# percentage of')
+    print('# untranscribed speech reachable, gaps containing untranscribed speech, untranscribed hesitations reachable, gaps containing untranscribed hesitaions')
+    print('# for', model)
+    for data_containing, data_reachable, total in all_data :
+        # sum up over gaps to get total
         for i in reversed(range(9)) :
             for j in range(3) :
                 for k in range(2) :
                     data_containing[i][j][k] += data_containing[i+1][j][k]        
                 data_reachable[i][j] += data_reachable[i+1][j]
 
-        print('# percentage of hesitations reachable / gaps containing hesitations for', model + ':')
-        console.print_tables([
-            [
+        tables.append([
                 ['len', 'part', '50', 'total']] + [
-                [ (i+1)/10 ] + [ to_5d(data_reachable[i][j] / number_of_hesitations * 100) for j in range(3) ] for i in range(10)
-            ],
-            [
+                [ (i+1)/10 ] + [ to_5d(data_reachable[i][j] / total * 100) for j in range(3) ] for i in range(10)
+            ])
+        tables.append([
                 ['len', 'part', '50', 'total']] + [
                 [ (i+1)/10 ] + [ to_5d(data_containing[i][j][0] / ( data_containing[i][j][0] + data_containing[i][j][1]) * 100) for j in range(3) ] for i in range(10)
-            ]
-        ])
+            ])
+
+    console.print_tables(tables)
 
 
 def plot_alignment_metric(all_data, labels) :
     fig, axs = plt.subplots(2, 3, figsize=(18, 12), tight_layout=True, num='alignment metric comparison')
 
     hists = [[[],[],[]],[[],[],[]]]
-    for j, row in enumerate(all_data) :
-        for dist, label in zip(row, labels) :
-            for i, d in enumerate([dist[0], dist[1], [ a * b for a, b in zip(dist[0], dist[1])]]) :
-                hists[j][i].append(d)
-                # axs[j][i].hist(d, bins=100, label=label) 
+    for all_position, all_length, radius_psition, radius_length in all_data :
+        hists[0][0].append(all_position)
+        hists[0][1].append(all_length)
+        hists[0][2].append([ a * b for a, b in zip(all_position, all_length)])
+        hists[1][0].append(radius_psition)
+        hists[1][1].append(radius_length)
+        hists[1][2].append([ a * b for a, b in zip(radius_psition, radius_length)])
 
-    for j, t1 in enumerate(['all: ', 'around hesitations: ']) :
+    table_all = []
+    table_all.append(['all'] + labels)
+    for i, label in enumerate(['position', 'length', 'position and length']) :
+        table_all.append([label] + [ console.format_number(sum(d) / len(d), 4) for d in hists[0][i] ])
+    
+    table_around = []
+    table_around.append(['around untranscribed'] + labels)
+    for i, label in enumerate(['position', 'length', 'position and length']) :
+        table_around.append([label] + [ console.format_number(sum(d) / len(d), 4) for d in hists[1][i] ])
+    
+    console.print_tables([table_all, table_around])
+
+    for j, t1 in enumerate(['all: ', 'around untranscribed: ']) :
         for i, t2 in enumerate(['position', 'length', 'position and length']) :
-            axs[j][i].hist(hists[j][i], bins=100, label=labels)
-            axs[j][i].legend(loc='upper left')
+            axs[j][i].hist(hists[j][i], bins=50, label=labels)
+            axs[j][i].legend(loc='best')
             axs[j][i].title.set_text(t1 + t2)
     plt.show()
 

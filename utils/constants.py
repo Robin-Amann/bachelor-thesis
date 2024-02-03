@@ -27,8 +27,8 @@ manual_annotation_patterns = ['<+[^<>]*>+', '``/``', "''/''"]
 # files that are not in ignore_files or contoversial_files can be read with read_dict(path)
 
 
-# # Home PC 
-data_base = Path("D:\\Robin_dataset\\Switchboard Computed Final")
+# Home PC 
+data_base = Path("D:\\Robin_dataset\\Switchboard Computed")
 
 timing_dir = Path("D:\\Robin_dataset\\Switchboard\\Switchboard-1 Release 2 Transcripts\\word alignments")
 disfluencies_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd") 
@@ -46,9 +46,9 @@ audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release
 # # General
 manual_dir = data_base / 'manual' / 'long'
 manual_seg_dir = data_base / 'manual' / 'segmented'
-automatic_dir = data_base / 'automatic' / 'unaligned'
-automatic_align_dir = data_base / 'automatic' / 'aligned'
-automatic_v3_dir = data_base / 'automatic' / 'version3'
+automatic_dir = data_base / 'automatic' / 'unaligned' / 'correct'
+automatic_align_dir = data_base / 'automatic' / 'aligned'                       
+automatic_v3_dir = data_base / 'automatic' / 'aligned' / 'version3'
 classification_dir = data_base / 'automatic' / 'classification'
 retranscibed_dir = data_base / 'automatic' / 'retranscribed'
 

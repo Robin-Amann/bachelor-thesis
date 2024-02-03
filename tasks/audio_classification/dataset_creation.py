@@ -59,7 +59,7 @@ def create_dataset_files(total_length_h = 0, min_gap = 0.2, upper_bound=3916) :
         (c.manual_seg_dir, lambda f: f.stem[2:7], lambda f: 'Speech' in f.stem), 
         (c.audio_dir, lambda f: f.stem[3:8], None, 'wav'), 
         (c.manual_seg_dir, lambda f: f.stem[2:7], lambda f: not 'Speech' in f.stem), 
-        (c.automatic_align_dir / '0', lambda f: f.stem[2:7])
+        (c.automatic_align_dir / 'custom ctc' / '0', lambda f: f.stem[2:7])
         ])
 
     # total = 0

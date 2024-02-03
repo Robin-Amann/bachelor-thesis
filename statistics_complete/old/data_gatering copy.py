@@ -358,7 +358,7 @@ def manual_hesitation_gaps(manual_dir, automatic_dir) :
 def best_possible_solution() :
     import utils.constants as c
 
-    files = utils.get_dir_tuples([(c.manual_seg_dir, None, lambda f: not 'Speech' in f.stem), c.automatic_align_dir / '0'])
+    files = utils.get_dir_tuples([(c.manual_seg_dir, None, lambda f: not 'Speech' in f.stem), c.automatic_align_dir / 'ctc' ])
 
     print(len(files))
 

@@ -99,11 +99,12 @@ def calculate_wer(operations : list) :
 
 
 # rest
-def print_words(start : list[str], end : list[str], word_per_line=30) :
+def print_words(start : list[str], end : list[str], word_per_line=30, speakers=['A:', 'B:']) :
+    speaker_len = max( len(x) for x in speakers ) + 1
     for i in range(0, len(start), word_per_line) :
         alignments = [zip(start[i:i+word_per_line], end[i:i+word_per_line]), zip(end[i:i+word_per_line], start[i:i+word_per_line])]
-        for alignment, speaker in zip(alignments, ['A: ', 'B: ']) :
-            print(speaker, end='')
+        for alignment, speaker in zip(alignments, speakers) :
+            print(speaker.ljust(speaker_len), end='')
             for word, ref in alignment :
                     print(word.ljust(len(ref)), end=' ')
             print()

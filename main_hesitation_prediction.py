@@ -13,11 +13,8 @@ DATA_SPLIT = 3916
 # # classify gaps
 # encoded_ds, labels = finetune.preprocess_dataset()
 # finetune.train_model(encoded_ds, labels)
-classification.classify_audio_dir(c.manual_seg_dir, c.audio_dir, c.automatic_align_dir / '0', c.classification_dir, c.sample_rate, lower_bound=DATA_SPLIT)
+classification.classify_audio_dir(c.manual_seg_dir, c.audio_dir, c.automatic_align_dir / 'custom ctc' / '1', c.classification_dir / 'custom ctc', c.sample_rate, lower_bound=DATA_SPLIT)
 
 # retranscribe
 for model in [prediction.MODELS.whisper_large, prediction.MODELS.wav2vec2, prediction.MODELS.wav2vec2LM, prediction.MODELS.wav2vec2_custom_LM, prediction.MODELS.wav2vec2_custom_LM_hesitations] :
-    # whisper_large and wav2vec2_custom_LM_hesitations is already retranscribed
-    if model == prediction.MODELS.whisper_large or model == prediction.MODELS.wav2vec2_custom_LM_hesitations :
-        continue
-    prediction.predict_dir(c.manual_seg_dir, c.audio_dir, c.classification_dir, c.retranscibed_dir / model.name, c.sample_rate, model=model)
+    prediction.predict_dir(c.manual_seg_dir, c.audio_dir, c.classification_dir / 'custom ctc', c.retranscibed_dir / 'custom ctc' / model.name, c.sample_rate, model=model)

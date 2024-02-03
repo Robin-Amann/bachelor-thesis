@@ -1,11 +1,10 @@
-
-
-# # # # # # # # # # # # # check why words are beeing wrongfully transcribed # # # # # # # # # # # # #
-
 import utils.file as utils
 import utils.constants as c
 import utils.wer_alignment as alignment
 import utils.transcript as word_utils
+
+# # # # # # # # # # # # # check why words are beeing wrongfully transcribed # # # # # # # # # # # # #
+
 files = utils.get_dir_tuples([(c.manual_seg_dir, None, lambda f: not 'Speech' in f.stem), c.automatic_align_dir / '0'])
 
 print(files[0])
@@ -47,3 +46,26 @@ for manual_f, automatic_f in files :
         break
 
 
+
+# # # # # # # # # # # # # look at how automatic + retranscribed are aligned by WER # # # # # # # # # # # # #
+
+files = utils.get_dir_tuples([
+    (c.manual_seg_dir, None, lambda f: 'Speech' not in f.stem), 
+    c.automatic_align_dir / '0', 
+    c.retranscibed_dir / 'wav2vec2_LM'
+])
+
+for m, a, h in files[:5] :
+    print(m.stem)
+    manual = utils.read_dict(m)
+    automatic = utils.read_dict(a)
+    hesitation = utils.read_dict(h)
+
+    ma, aa = alignment.align([ w['word'] for w in  manual], [ w['word'] for w in automatic ])
+    alignment.print_words(ma, aa, speakers=['M:', 'A:'], word_per_line=50)
+
+    ah = automatic + hesitation
+    ah.sort(key=lambda w : w['start'])
+
+    ma, aa = alignment.align([ w['word'] for w in manual ], [ w['word'] for w in ah ])
+    alignment.print_words(ma, aa, speakers=['M:', 'A:'], word_per_line=50)

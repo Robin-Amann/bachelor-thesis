@@ -49,13 +49,14 @@ def manual_automatic_segment_length_by_word_comparison(manual_dir=manual_dir_p, 
 # - in percent to number of not transcribed words:   
     
 def percentage_not_transcribed_speech(manual_dir=manual_dir_p, automatic_dir=automatic_dir_p) :
-    words, untranscribed_words, untranscribed_hesitations = data.untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, min_len=1)
+    transcribed_words, untranscribed_words, transcribed_disf, untranscribed_disf = data.untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, min_len=1)
+
     table = [
-        ['',                            'total',                                          'per words',                                                          'per untranscribed'],
-        ['number of words words',       console.format_number(words),                     '',                                                                   ''],
-        ['not transcribed words',       console.format_number(untranscribed_words),       console.format_number(untranscribed_words / words * 100) + ' %',      ''],
-        ['nottranscribed disfluencies', console.format_number(untranscribed_hesitations), console.format_number(untranscribed_hesitations / words * 100)+ ' %', console.format_number(untranscribed_hesitations / untranscribed_words * 100) + ' %']
+        ['m \\ a', 'trans.', 'untrans.'],
+        ['fluent', console.format_number(transcribed_words), console.format_number(untranscribed_words)],
+        ['disfluent.', console.format_number(transcribed_disf), console.format_number(untranscribed_disf)],
     ]
+
     console.print_table(table)
 
 
@@ -88,7 +89,7 @@ def gaps_containing_speech_manual_time_distribution(manual_dir=manual_dir_p, aut
     
 
 # # #     after alignment      # # #
-automatic_align_dir_p = c.automatic_align_dir / '0'
+automatic_align_dir_p = c.automatic_align_dir / 'custom ctc' / '1'
 
 def gaps_containing_speech_automatic_time_distribution(manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p) :
     gaps = data.gaps_containing_speech_automatic_time(manual_dir, automatic_dir)
@@ -98,10 +99,10 @@ def gaps_containing_speech_automatic_time_distribution(manual_dir=manual_dir_p, 
     plt.show()
 
 
-def ctc_default_probability_comparison(automatic_dirs, labels, manual_dir=manual_dir_p) :
+def ctc_default_probability_comparison(automatic_dirs, labels, manual_dir=manual_dir_p, radius=1, position=False, length=True) :
     dists = []
     for automatic_dir in automatic_dirs :
-        dists.append(data.transcript_alignment(manual_dir, automatic_dir))
+        dists.append(data.transcript_alignment(manual_dir, automatic_dir, hesitation_radius=radius, position=position, length=length))
     print('# CTC default probability comparison')
     for dist, label in zip(dists, labels) :
         print('#', label + ':', console.format_number(sum(dist) / len(dist), 4))
@@ -110,14 +111,13 @@ def ctc_default_probability_comparison(automatic_dirs, labels, manual_dir=manual
 
 def alignment_method_comparison(automatic_dirs, labels, manual_dir=manual_dir_p) :
     for automatic_dir, label in zip(automatic_dirs, labels) :
-        data_containing, data_reachable, number_of_hesitations = data.untranscribed_speech_reachable(manual_dir, automatic_dir)
-        visual.show_hesitation_gaps(number_of_hesitations, data_containing, data_reachable, label)
+        all_data = data.untranscribed_speech_reachable(manual_dir, automatic_dir)
+        visual.show_hesitation_gaps(all_data, label)
  
-    all_data = [[[], [], []], [[], [], []]]
-    for i, dir in enumerate(automatic_dirs) :
-        dist = data.transcript_alignment_full_package(manual_dir, dir)
-        all_data[0][i] = dist[0]
-        all_data[1][i] = dist[1]
+    all_data = []
+    for dir in automatic_dirs :
+        all_position, all_length, radius_psition, radius_length = data.transcript_alignment_full_package(manual_dir, dir)
+        all_data.append( (all_position, all_length, radius_psition, radius_length) )
     visual.plot_alignment_metric(all_data, labels)
  
 
@@ -126,28 +126,35 @@ def best_case_scenario(min_lens, manual_dir=manual_dir_p, automatic_dir=automati
     for min_len, len_data in zip(min_lens, all_data) :
         print('# minimum gap size =', min_len)
         table = []
+        # transcript = i, d, r, n, all, disf. trans., disf. untrans. 
         table.append([
-            '', 'insert', 'delete', 'replace', 'nothing', 'all', 'WER'
+            '', 'insert', 'delete', 'replace', 'nothing', 'all', 'WER', 'disf. trans.', 'disf. untrans.', 'disf. trans. %' 
         ])
         base = len_data[0]
         table.append(
-            ['base'] + [ console.format_number(x, force_sign=True) for x in base] + [ console.format_number(sum(base[:3]) / base[4], 4, length=6) ]
+            ['base'] + 
+            [ console.format_number(x) for x in base[:5] ] + 
+            [ console.format_number(sum(base[:3]) / base[4], 4, length=6) ] + 
+            [ console.format_number(x) for x in base[5:7] ] + [ console.format_number(100 * base[5] / sum(base[5:7]), length=5) ]
         )
         for label, row in zip(['partial', '50', 'total'], len_data[1:]) :
             table.append(
-                [label] + [ console.format_number(x, force_sign=True) for x in row] + [ console.format_number((sum(row[:3]) + sum(base[:3])) / (row[4] + base[4]), 4, length=6) ]
+                [label] + 
+                [ console.format_number(x, force_sign=True) for x in row[:5] ] + 
+                [ console.format_number((sum(row[:3] + base[:3])) / (row[4] + base[4]), 4, length=6) ] + 
+                [ console.format_number(x, force_sign=True) for x in row[5:7] ] + [ console.format_number( 100 * (base[5] + row[5]) / sum(base[5:7] + row[5:7]), length=5) ]
             )
         console.print_table(table)
         print()
 
 
 # # # after gap classification # # #
-classification_dir_p = c.classification_dir
+classification_dir_p = c.classification_dir / 'custom ctc'
 
 DATA_SPLIT = 3916
 def classification_model_statistics(manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p, classification_dir=classification_dir_p) :
     TP, FP, TN, FN = data.classification_metrics(manual_dir, automatic_dir, classification_dir)
-    print(TP, FP, TN, FN)
+    print('# TP, FP, TN, FN =', TP, FP, TN, FN)
     accuracy = ( TP + TN ) / ( TP + FP + TN + FN )
     precision = ( TP ) / ( TP + FP )
     recall = ( TP ) / ( TP + FN )
@@ -158,14 +165,37 @@ def classification_model_statistics(manual_dir=manual_dir_p, automatic_dir=autom
 
 
 def not_transcribed_speech_labelling_statistics(manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p, classification_dir=classification_dir_p) :
-    (untranscribed_words, missed_words), (correct_labels, incorrect_labls) = data.untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir)
-    print('# labeling statistics:')
-    print('# untranscribed words:', console.format_number(untranscribed_words, length=6))
-    print('# - captured words    ', console.format_number(untranscribed_words - missed_words, length=6), '(', round(100 * (untranscribed_words - missed_words) / untranscribed_words, 2), '% )')
-    print('# - missed words:     ', console.format_number(missed_words, length=6), '(', round(100 * missed_words / untranscribed_words, 2), '% )')
-    print('# correct labels:     ', console.format_number(correct_labels, length=6), '(', round(100 * correct_labels / (correct_labels + incorrect_labls), 2), '% )')
-    print('# incorrect labls:    ', console.format_number(incorrect_labls, length=6), '(', round(100 * incorrect_labls / (correct_labels + incorrect_labls), 2), '% )')
+    data_labels, data_gaps = data.untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir)
+    console.print_tables([
+        [
+            ['', 'transcribed', 'not transcribed', 'sum'],
+            ['predicted', console.format_number( data_labels[1][1][1] ), console.format_number( data_labels[1][1][0] ), console.format_number( sum(data_labels[1][1])) ],
+            ['not predicted', console.format_number( data_labels[1][0][1] ), console.format_number( data_labels[1][0][0] ), console.format_number( sum(data_labels[1][0])) ],
+            ['not in gap', console.format_number( data_labels[0][1] ), console.format_number( data_labels[0][0] ), console.format_number( sum(data_labels[0]) ) ],
+            ['sum', console.format_number( data_labels[1][1][1] + data_labels[1][0][1] + data_labels[0][1] ), console.format_number( data_labels[1][1][0] + data_labels[1][0][0] + data_labels[0][0]), '' ]
+        ],
+        [
+            ['not predicted', 'no untrans.', 'untrans.'],
+            ['no trans,'] + data_gaps[0][0],  
+            ['trans.'] + data_gaps[0][1]
+        ],
+        [
+            ['predicted', 'no untrans.', 'untrans.'],
+            ['no trans.'] + data_gaps[1][0],  
+            ['trans.'] + data_gaps[1][1]
+        ],
+    ])
+    print()
+    print('# number of gaps')
+    print('# - total        ', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1] + data_gaps[0][0] + data_gaps[0][1]), length=7 ))
+    print('# - predicted    ', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1]), length=7 ))
+    print('# - not predicted', console.format_number( sum(data_gaps[0][0] + data_gaps[0][1]), length=7 ))
+    print()
+    print('# number of words')
+    print('# - total                ', console.format_number( sum(data_labels[1][1] + data_labels[1][0]) + sum(data_labels[0]), length=7 ))
+    print('# - in gaps              ', console.format_number( sum(data_labels[1][1] + data_labels[1][0]), length=7 ))
 
+    
 
 # # #  after retranscription   # # #
 def retranscription_models_comparison(retranscribe_dirs, labels, manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p) :

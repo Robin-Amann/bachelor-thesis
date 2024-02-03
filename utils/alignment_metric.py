@@ -4,14 +4,14 @@ def alignment_error_per_word(true_alignment : list, alignment : list, position=T
     'true_alignment and alignment need to contain lists of at least \'start\' \'end\' and \'word\''
     errors = []
     for one, two in zip(true_alignment, alignment) :
-        if (not one['word']) or (not two['word']) :
+        if (not one['word']) or (not two['word']) or (one['end'] - one['start']) == 0 :
             continue
 
-        if position :
-            size = ( abs( (one['end'] - one['start']) - ( two['end'] - two['start'] ) )  + 1 )
+        if length :
+            size = ( abs( (one['end'] - one['start']) - ( two['end'] - two['start'] ) ) /  (one['end'] - one['start'])  + 1 )
         else :
             size = 1
-        if length :
+        if position :
             distance = ( abs( (one['end'] + one['start']) / 2 - ( two['end'] + two['start'] ) / 2 )  + 1 )
         else :
             distance = 1
