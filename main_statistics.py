@@ -22,7 +22,7 @@ labels = ['whisper', 'wav2vec2', 'wav2vec2\nlibriSpeech LM', 'wav2vec2\nSwitchbo
 # stat.best_case_scenario(min_lens=[0.1, 0.2, 0.5, 1])
 
 # # # after gap classification # # #
-stat.classification_model_statistics()
+# stat.classification_model_statistics()
 stat.not_transcribed_speech_labelling_statistics()
 
 # # #  after retranscription   # # #

@@ -449,7 +449,7 @@ def classification_metrics(manual_dir, automatic_dir, classification_dir) :
                 gap_start = pre['end']
                 gap_end = post['start']
                 if gap_end - gap_start > MIN_GAP :
-                    label = bool( len([w for w in manual if word_utils.overlap((gap_start, gap_end), w) >= (w['end'] - w['start']) / 2]) > 0 )
+                    label = bool( len([w for w in manual if word_utils.overlap((gap_start, gap_end), w) > (w['end'] - w['start']) / 2]) > 0 )
                     prediction = bool( {'start' : gap_start, 'end' : gap_end} in classification )
                 
                     if       label and prediction     : predictions[0] += 1
@@ -468,7 +468,7 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
     ])
     data_labels = [[0, 0], [[0, 0], [0, 0]]]
     data_gaps = [ [ [ 0 for _ in range(2) ] for _ in range(2) ] for _ in range(2) ]
-
+    data_hesitations = [[0, 0], [0, 0]]
     for segment_f, manual_files, automatic_files, classification_files in ChargingBar('speech labelling').iter(files) :
         segments = utils.read_dict(segment_f)
         for index, segment in enumerate(segments) :
@@ -484,7 +484,8 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
             automatic = utils.read_dict(automatic_f)
             manual_aligned, automatic_aligned, _ = alignment.align_words(manual, automatic, {'word' : ''})
             manual_labeled = [ m | {'trans' : True } if a['word'] else m | {'trans' : False}  for m, a in zip(manual_aligned, automatic_aligned) if m['word'] ]
-            manual_not_in_gap = set( (w['start'], w['end'], w['trans']) for w in manual_labeled )
+            manual_not_in_gap = set( (w['start'], w['end'], w['trans'], w['is_restart'] or w['pause_type']) for w in manual_labeled )
+
             classification = utils.read_dict(classification_f)
 
             for pre, post in zip( [{'end' : 0}] + automatic, automatic + [{'start' : end - start}]) :
@@ -494,7 +495,7 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
                     continue
                 prediction = bool( {'start' : gap_start, 'end' : gap_end} in classification )
                 manual_in_gap = [ w for w in manual_labeled if word_utils.overlap((gap_start, gap_end), w) > (w['end'] - w['start']) / 2 ]
-                manual_not_in_gap -= set( (w['start'], w['end'], w['trans']) for w in manual_in_gap )
+                manual_not_in_gap -= set( (w['start'], w['end'], w['trans'], w['is_restart'] or w['pause_type']) for w in manual_in_gap )
                 trans = len( [ w for w in manual_in_gap if w['trans'] ] )
                 untrans = len( [ w for w in manual_in_gap if not w['trans'] ] )
                 
@@ -502,10 +503,17 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
                 data_labels[1][int(prediction)][1] += trans
                 data_labels[1][int(prediction)][0] += untrans
             
+            not_in_gap_hesitations = set([ w for w in manual_not_in_gap if w[3] ])
+            in_gap_hesitations = set( (w['start'], w['end'], w['trans'], w['is_restart'] or w['pause_type']) for w in manual_labeled if w['is_restart'] or w['pause_type'] ) - not_in_gap_hesitations
+            data_hesitations[0][0] += len( [ w for w in not_in_gap_hesitations if not w[2] ] )
+            data_hesitations[0][1] += len( [ w for w in not_in_gap_hesitations if w[2] ] )
+            data_hesitations[1][0] += len( [ w for w in in_gap_hesitations if not w[2] ] )
+            data_hesitations[1][1] += len( [ w for w in in_gap_hesitations if w[2] ] )
+  
             data_labels[0][1] += len([ w for w in manual_not_in_gap if w[2] ])
             data_labels[0][0] += len([ w for w in manual_not_in_gap if not w[2] ])
 
-    return data_labels, data_gaps         
+    return data_labels, data_gaps, data_hesitations
 
 
 # # #  after retranscription   # # #

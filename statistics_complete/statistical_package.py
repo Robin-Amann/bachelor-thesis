@@ -165,7 +165,7 @@ def classification_model_statistics(manual_dir=manual_dir_p, automatic_dir=autom
 
 
 def not_transcribed_speech_labelling_statistics(manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p, classification_dir=classification_dir_p) :
-    data_labels, data_gaps = data.untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir)
+    data_labels, data_gaps, data_hesitations = data.untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir)
     console.print_tables([
         [
             ['', 'transcribed', 'not transcribed', 'sum'],
@@ -176,26 +176,33 @@ def not_transcribed_speech_labelling_statistics(manual_dir=manual_dir_p, automat
         ],
         [
             ['not predicted', 'no untrans.', 'untrans.'],
-            ['no trans,'] + data_gaps[0][0],  
-            ['trans.'] + data_gaps[0][1]
+            ['no trans,'] + [ console.format_number(x) for x in data_gaps[0][0] ],  
+            ['trans.'] + [ console.format_number(x) for x in data_gaps[0][1] ]
         ],
         [
             ['predicted', 'no untrans.', 'untrans.'],
-            ['no trans.'] + data_gaps[1][0],  
-            ['trans.'] + data_gaps[1][1]
-        ],
+            ['no trans.'] + [ console.format_number(x) for x in data_gaps[1][0] ],  
+            ['trans.'] + [ console.format_number(x) for x in data_gaps[1][1] ]
+        ]
     ])
-    print()
-    print('# number of gaps')
-    print('# - total        ', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1] + data_gaps[0][0] + data_gaps[0][1]), length=7 ))
-    print('# - predicted    ', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1]), length=7 ))
-    print('# - not predicted', console.format_number( sum(data_gaps[0][0] + data_gaps[0][1]), length=7 ))
-    print()
-    print('# number of words')
-    print('# - total                ', console.format_number( sum(data_labels[1][1] + data_labels[1][0]) + sum(data_labels[0]), length=7 ))
-    print('# - in gaps              ', console.format_number( sum(data_labels[1][1] + data_labels[1][0]), length=7 ))
-
-    
+    console.print_tables([
+        [
+            ['gaps', 'amount'],
+            ['total', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1] + data_gaps[0][0] + data_gaps[0][1]))],
+            ['predicted', console.format_number( sum(data_gaps[1][0] + data_gaps[1][1]))],
+            ['not predicted', console.format_number( sum(data_gaps[0][0] + data_gaps[0][1]))]
+        ],
+        [
+            ['words', 'amount'],
+            ['total', console.format_number( sum(data_labels[1][1] + data_labels[1][0]) + sum(data_labels[0]))],
+            ['in gaps', console.format_number( sum(data_labels[1][1] + data_labels[1][0]))]
+        ],
+        [
+            ['hesitations', 'not transcribed', 'transcribed'],
+            ['not labelled'] + [ console.format_number(x) for x in data_hesitations[0] ],
+            ['labelled'] + [ console.format_number(x) for x in data_hesitations[1] ]
+        ]  
+    ])    
 
 # # #  after retranscription   # # #
 def retranscription_models_comparison(retranscribe_dirs, labels, manual_dir=manual_dir_p, automatic_dir=automatic_align_dir_p) :

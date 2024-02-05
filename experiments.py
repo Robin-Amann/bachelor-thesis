@@ -8,3 +8,4 @@ import statistics_complete.visualization as visual
 import utils.alignment_metric as metric
 
 
+print(int(bool(0)))

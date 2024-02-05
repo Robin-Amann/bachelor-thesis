@@ -124,7 +124,7 @@
 #   ──────────┼────────────────────────────────────────────────────────────────────────────────────────────────
 #   base      │     91,125   121,739    61,065   1,032,183   1,306,112   0.2097        151,959            62.86
 #   partial   │   +316,180   -97,768   -20,047    +117,815    +316,180   0.2911        +79,787            95.86
-#   50        │    +71,752   -92,556    -7,973    +100,529     +71,752   0.1779        +77,082            94.74
+#   50        │    +71,752   -92,556    -7,973    +100,529     +71,752   0.1779        +77,082            94.74     <-- 0.2 is used and 50 is most realistic
 #   total     │    +11,064   -74,145    -4,211     +78,356     +11,064   0.1569        +62,634            88.76
 
 # minimum gap size = 0.5
@@ -152,24 +152,22 @@
 #   ────────────┼─────────
 #   accuracy    │   0.7477
 #   precision   │   0.9100
-#   recall      │   0.6760
+#   recall      │   0.6760  <-- recall is low, therefore a lot of empty gaps are prediction
 #   f score     │   0.7757
+
 
 #                   │   transcribed   not transcribed       sum          not predicted   │   no untrans.   untrans.          predicted   │   no untrans.   untrans.
 #   ────────────────┼──────────────────────────────────────────          ────────────────┼─────────────────────────          ────────────┼─────────────────────────
-#   predicted       │        13,202            15,478    28,680          no trans,       │         12787        696          no trans.   │          8607       5967
-#   not predicted   │         1,079             1,450     2,529          trans.          │          1000         44          trans.      │          7467       4412
+#   predicted       │        13,202            15,478    28,680          no trans,       │        12,787        696          no trans.   │         8,607      5,967
+#   not predicted   │         1,079             1,450     2,529          trans.          │         1,000         44          trans.      │         7,467      4,412
 #   not in gap      │       153,975             3,952   157,927
 #   sum             │       168,256            20,880
 
-# number of gaps
-# - total          40,980
-# - predicted      26,453
-# - not predicted  14,527
+#   gaps            │   amount          words     │    amount          hesitations    │   not transcribed   transcribed
+#   ────────────────┼─────────          ──────────┼──────────          ───────────────┼────────────────────────────────
+#   total           │   40,980          total     │   189,136          not labelled   │             2,651        17,014
+#   predicted       │   26,453          in gaps   │    31,209          labelled       │            14,009         6,444
 
-# number of words
-# - total         189,136
-# - in gaps        31,209
 
 # # #  after retranscription   # # #
 
