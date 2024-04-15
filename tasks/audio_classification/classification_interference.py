@@ -4,8 +4,6 @@ from progress.bar import ChargingBar
 import utils.constants as c
 import os
 
-MIN_GAP = 0.2
-
 def classify_audio_file(transcript_file, speech, destination_file, sample_rate, pipe) :
     transcript = utils.read_dict(transcript_file)
     audio_file = destination_file.with_suffix('.wav')
@@ -13,24 +11,24 @@ def classify_audio_file(transcript_file, speech, destination_file, sample_rate, 
     for pre, post in zip( [{'end' : 0}] + transcript, transcript + [{'start' : len(speech) / sample_rate}]) :
         start = pre['end']
         end = post['start']
-        if end - start > MIN_GAP :
+        if end - start >= c.MIN_GAP :
             utils.write_audio(audio_file, speech[int(start * sample_rate) : int(end * sample_rate)], sample_rate)
             probabilities = pipe(str(audio_file))
-            label = max(probabilities, key=lambda p: p['score'])['label']
-            if label == 'hesitation' :
-                gaps.append({'start' : start, 'end' : end})
+            prediction = max(probabilities, key=lambda p: p['score'])
+            if prediction['label'] == 'hesitation' :
+                gaps.append({'start' : start, 'end' : end, 'score' : prediction['score']})
             os.remove(audio_file)
                 
     utils.write_dict(destination_file, gaps)
 
 
-def classify_audio_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, lower_bound=3916) :
+def classify_audio_dir(segments_dir, speech_dir, transcript_dir, destination_dir, sample_rate, lower_bound=3916, start_dir=0, end_dir=100) :
     pipe = pipeline("audio-classification", model="Robin-Amann/classification_model")
 
     files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (speech_dir, lambda f : f.stem[3:8], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])])
     grouped = utils.group_files(files, 3)
 
-    for p in grouped.keys() :
+    for p in [ p for p in grouped.keys() if start_dir <= int(p) <= end_dir ] :
         if (int(p) + 1) * 100 < lower_bound : 
             continue 
         print("Classification dir", p)

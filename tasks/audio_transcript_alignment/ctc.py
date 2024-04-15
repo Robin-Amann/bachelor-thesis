@@ -40,7 +40,6 @@ def get_trellis(emission, transcript, labels, blank_id=0, whitespace_stay_defaul
     trellis[0, 1:] = -float("inf")
     trellis[-num_tokens + 1 :, 0] = float("inf")
 
-  
     if whitespace_stay_default_value != 0 :
         mask = torch.Tensor( [ whitespace_stay_default_value if tokens[i] == whitespace_token else -float('inf') for i in range(1, len(transcript))] )
     for t in range(num_frame - 1):
@@ -148,13 +147,16 @@ def merge_words(segments, separator="|"):
 
 # the higher the score the worse
 def ctc(emission, transcript, labels, whitespace_stay_default_value=0) :
+    # visual.plot_framewise_label_probability(emission)
     trellis, tokens = get_trellis(emission, transcript, labels, whitespace_stay_default_value=whitespace_stay_default_value)
+    # visual.plot_trellis(trellis)
     # Find the most likely path
     if len(trellis[0, :]) >= len(trellis[:, 0]) :
         return [], trellis.size(0)
     path = backtrack(trellis, emission, tokens, whitespace_stay_default_value=whitespace_stay_default_value)
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)
+    # visual.plot_trellis_with_path(trellis, path)
     return words, trellis.size(0)
 
 

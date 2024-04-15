@@ -9,19 +9,17 @@ import tasks.voice_detection_silero_vad as vad
 import utils.constants as constants
 
 
-pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
+# pre.process_dir(constants.disfluencies_dir, constants.timing_dir, constants.manual_dir, ann_patterns=constants.manual_annotation_patterns)
 
 # segmentation.segment_dir(constants.manual_dir, constants.manual_seg_dir)
 
 # transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir , constants.sample_rate, transcriptor.MODELS.whisper)
 # transcriptor.transcribe_dir(constants.manual_seg_dir, constants.audio_dir, constants.data_base / 'automatic' / 'version3', constants.sample_rate, transcriptor.MODELS.whisper_large_v3)
 
-# for i in range(20, 33) :
-#     normalizer.normalize_dir(constants.automatic_dir / str(i))
-# for i in range(33, 50) :
-#     normalizer.normalize_dir(constants.automatic_dir / str(i))
+# normalizer.normalize_dir(constants.automatic_dir)
 
 # audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate)
 # custom_audio_transcript_alignment.align_dir(constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate, whitespace_stay_default_value=[ -i for i in range(11)])
-    
-
+custom_audio_transcript_alignment.align_dir(
+    constants.manual_seg_dir, constants.audio_dir, constants.automatic_dir, constants.automatic_align_dir, constants.sample_rate, 
+    whitespace_stay_default_values=[ 0, -0.01, -0.1, -0.5 ] + [ -i for i in range(1, 6)])

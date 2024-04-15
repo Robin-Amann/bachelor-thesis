@@ -51,7 +51,7 @@ def calculate_gap(manual, start_a, end_a, total_end) :
     return start, end
 
 # 3917 is 80% of dataset
-def create_dataset_files(total_length_h = 0, min_gap = 0.2, upper_bound=3916) :
+def create_dataset_files(total_length_h = 0, upper_bound=3916) :
     if os.path.isdir(ds_dir) :
         shutil.rmtree(ds_dir)
 
@@ -77,7 +77,7 @@ def create_dataset_files(total_length_h = 0, min_gap = 0.2, upper_bound=3916) :
             for pre, post in zip([{'end' : 0}] + automatic, automatic + [{'start' : audio_end - audio_start}]) :
                 start = pre['end']
                 end = post['start']
-                if end - start > min_gap :
+                if end - start >= c.MIN_GAP :
                     gap_transcript = ' '.join( [ w['word'] for w in manual if word_utils.overlap((start, end), w) >= (w['end'] - w['start']) / 2 ] )
                     audio_segment = audio[ int( (audio_start + start) * sample_rate ) : int( ( audio_start + end ) * sample_rate ) ]
 

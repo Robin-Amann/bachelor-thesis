@@ -12,7 +12,7 @@ def alignment_error_per_word(true_alignment : list, alignment : list, position=T
         else :
             size = 1
         if position :
-            distance = ( abs( (one['end'] + one['start']) / 2 - ( two['end'] + two['start'] ) / 2 )  + 1 )
+            distance = ( abs( (one['end'] + one['start']) / 2 - ( two['end'] + two['start'] ) / 2 ) /  (one['end'] - one['start']) + 1 )
         else :
             distance = 1
         

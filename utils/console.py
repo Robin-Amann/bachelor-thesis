@@ -13,7 +13,7 @@ def format_number(x, decimal_places=2, thousands=True, length=-1, force_sign=Fal
     return format_string.format(x)
 
 
-def create_table_representation(table, distance=3, first_left=True, seperator=True, print_comment=True) :
+def create_table_representation(table, distance=3, first_left=True, seperator=True, print_comment=True) -> list[str] :
     table_representation = []    
     colum_widths = [ max( [ len(str(row[cell])) for row in table] ) for cell in range(len(table[0])) ]
 

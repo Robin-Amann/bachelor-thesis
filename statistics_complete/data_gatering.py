@@ -118,15 +118,14 @@ def calculate_wer(manual_dir, automatic_dir, automatic_aligned=False, min_len=1,
 
 
 def untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, automatic_aligned=False, min_len=1, hesitation_dir=None) :
-    'returns [ (wer, ops) for segment ], wer'
     if hesitation_dir :
         files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir, hesitation_dir])
         files = [ (f1, (f2, f3)) for f1, f2, f3 in files ]
     else :
         files = utils.get_dir_tuples([ (manual_dir, None, lambda f : not 'Speech' in f.stem), automatic_dir])
 
-    transcribed_words, untranscribed_words = 0, 0
-    transcribed_disf, untranscribed_disf = 0, 0
+    correct_transcribed_words, incorrect_transcribed_words, untranscribed_words = 0, 0, 0
+    correct_transcribed_disf, incorrect_transcribed_disf, untranscribed_disf = 0, 0, 0
     
     for manual_f, automatic_f in ChargingBar('Unstranscribed Speech').iter(files) :
         manual = utils.read_dict(manual_f)
@@ -142,18 +141,22 @@ def untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, auto
         else :
             automatic = [ {'word' : w} for w in utils.read_file(automatic_f).split() ]
 
-        manual, automatic, _ = alignment.align_words(manual, automatic, {'word' : ''})
-        for m, a in zip(manual, automatic) :
+        manual, automatic, ops = alignment.align_words(manual, automatic, {'word' : ''})
+        for m, a, op in zip(manual, automatic, ops) :
             if not m['word'] : continue
 
             if m['is_restart'] or m['pause_type'] :
-                if a['word'] :  transcribed_disf += 1
-                else :          untranscribed_disf += 1
+                if a['word'] :
+                    if op == 'n' : correct_transcribed_disf += 1
+                    else         : incorrect_transcribed_disf += 1
+                else :             untranscribed_disf += 1
             else :
-                if a['word'] :  transcribed_words += 1
-                else :          untranscribed_words += 1
+                if a['word'] :
+                    if op == 'n' : correct_transcribed_words += 1
+                    else         : incorrect_transcribed_words += 1
+                else :             untranscribed_words += 1
     
-    return transcribed_words, untranscribed_words, transcribed_disf, untranscribed_disf
+    return (correct_transcribed_words, incorrect_transcribed_words, untranscribed_words), (correct_transcribed_disf, incorrect_transcribed_disf, untranscribed_disf)
 
 
 def gaps_containing_speech_manual_time(manual_dir, automatic_dir) :
@@ -262,12 +265,12 @@ def transcript_alignment(manual_dir, automatic_dir, hesitation_dir=None, hesitat
 def untranscribed_speech_reachable(manual_dir, automatic_dir, gaps = [0.1, 10, 0.1]) :
     'gaps=[start, number of buckets, increment], returns list of [correct, not correct]'
 
-    data_containing = [ [ [ [ 0 for _ in range(2) ] for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(2) ]   # 2 x buckets x 3 x 2
-    data_reachable = [ [  [ 0 for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(2) ]                         # 2 x buckets x 3
-    number_of_s, number_of_h = 0, 0
+    data_containing = [ [ [ [ 0 for _ in range(2) ] for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(3) ]   # 3 x buckets x 3 x 2
+    data_reachable = [ [  [ 0 for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(3) ]                         # 3 x buckets x 3
+    number_of_words = [ 0, 0, 0 ]
 
     files = utils.get_dir_tuples([(manual_dir, lambda f: f.stem[2:7], lambda f: 'Speech' in f.stem), (manual_dir, lambda f: f.stem[2:7], lambda f: not 'Speech' in f.stem), (automatic_dir, lambda f: f.stem[2:7])])
-        
+
     for segment_f, manual_files, automatic_files in ChargingBar('untranscribed speech').iter(files) :                                   # this block of code occurs a couple of times
         segments = utils.read_dict(segment_f)                                                                                           #
         for index, segment in enumerate(segments) :                                                                                     #
@@ -280,45 +283,34 @@ def untranscribed_speech_reachable(manual_dir, automatic_dir, gaps = [0.1, 10, 0
                                                                                                                                         #
             manual = utils.read_dict(manual_f)                                                                                          #
             automatic = utils.read_dict(automatic_f)                                                                                    #
-
             manual_aligned, automatic_aligned, _ = alignment.align_words(manual, automatic, {'word': '' })
-
-            manual_untranscribed_s = [ m for m, a in zip(manual_aligned, automatic_aligned) if m['word'] and not a['word'] ]
-            manual_untranscribed_h = [ m for m in manual_untranscribed_s if m['is_restart'] or m['pause_type'] ]
-            number_of_s += len(manual_untranscribed_s)
-            number_of_h += len(manual_untranscribed_h)
-            reachable = [ [  [ set() for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(2) ]
+            reachable = [ [  [ set() for _ in range(3) ] for _ in range(gaps[1]) ] for _ in range(3) ]
+            #                                     transcribed                            untranscribed                              untranscribed disfluency
+            for step, manual_filter in enumerate([ lambda m, a : m['word'] and a['word'], lambda m, a: m['word'] and not a['word'], lambda m, a: m['word'] and not a['word'] and (m['is_restart'] or m['pause_type']) ] ) :
+                manual_step = [ m for m, a in zip(manual_aligned, automatic_aligned) if manual_filter(m, a) ]
+                number_of_words[step] += len(manual_step)
             
-            # for each gap size: in what percentage of gaps are hesitations
-            for pre, post in zip([{'end' : 0}] + automatic, automatic + [{'start' : end - start}]) :
-                if post['start'] - pre['end'] > gaps[0] :
-                    gap = [pre['end'], post['start']]
-                    bucket = min( int( (gap[1] - gap[0] - gaps[0]) / gaps[2]), gaps[1] - 1)
-                    
-                    # for speech
-                    partial_s = [ w for w in manual_untranscribed_s if word_utils.overlap(gap, w) > 0 ]
-                    partial_50_s = [ w for w in manual_untranscribed_s if word_utils.overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
-                    total_s = [ w for w in manual_untranscribed_s if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
-                    for i, evaluation in enumerate([partial_s, partial_50_s, total_s]) :
-                        if evaluation :  data_containing[0][bucket][i][0] += 1
-                        else :  data_containing[0][bucket][i][1] += 1
-                        reachable[0][bucket][i].update( [ (w['start'], w['end']) for w in evaluation ] )
+                # for each gap size: in what percentage of gaps are hesitations
+                for pre, post in zip([{'end' : 0}] + automatic, automatic + [{'start' : end - start}]) :
+                    if post['start'] - pre['end'] > gaps[0] :
+                        gap = [pre['end'], post['start']]
+                        bucket = min( int( (gap[1] - gap[0] - gaps[0]) / gaps[2]), gaps[1] - 1)
 
-                    # for hesitations
-                    partial_h = [ w for w in manual_untranscribed_h if word_utils.overlap(gap, w) > 0 ]
-                    partial_50_h = [ w for w in manual_untranscribed_h if word_utils.overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
-                    total_h = [ w for w in manual_untranscribed_h if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
-                    for i, evaluation in enumerate([partial_h, partial_50_h, total_h]) :
-                        if evaluation :  data_containing[1][bucket][i][0] += 1
-                        else :  data_containing[1][bucket][i][1] += 1
-                        reachable[1][bucket][i].update( [ (w['start'], w['end']) for w in evaluation ] )
+                        partial = [ w for w in manual_step if word_utils.overlap(gap, w) > 0 ]
+                        partial_50 = [ w for w in manual_step if word_utils.overlap(gap, w) >= (w['end'] - w['start']) / 2 ]
+                        total = [ w for w in manual_step if pre['end'] <= w['start'] <= w['end'] <= post['start'] ]
+                        for i, evaluation in enumerate([partial, partial_50, total]) :
+                            if evaluation :  data_containing[step][bucket][i][0] += 1
+                            else :  data_containing[step][bucket][i][1] += 1
+                            reachable[step][bucket][i].update( [ (w['start'], w['end']) for w in evaluation ] )
 
-            for x in range(2) :
+            for x in range(3) :
                 for bucket, reaachable_words_list in enumerate(reachable[x]) :
                     for i, reaachable_words in enumerate(reaachable_words_list) :
                         data_reachable[x][bucket][i] += len(reaachable_words)
-                    
-    return (data_containing[0], data_reachable[0], number_of_s), (data_containing[1], data_reachable[1], number_of_h), 
+
+    return [ (data_containing[i], data_reachable[i], number_of_words[i]) for i in range(3) ]         
+
 
 
 def transcript_alignment_full_package(manual_dir, automatic_dir, hesitation_dir=None, min_len=1) :
@@ -374,8 +366,9 @@ def best_case_scenario(manual_dir, automatic_dir, min_lens=[0.2]) :
     files = utils.get_dir_tuples([(manual_dir, None, lambda f: not 'Speech' in f.stem), automatic_dir])
     # [min_len] x [base, partial, 50, total] x [i, d, r, n, disf. trans., disf. untrans.]
     data = [ [ [ 0 for _ in range(6) ] for _ in range(4) ] for _ in min_lens ]
-    for i, min_len in enumerate(min_lens) :
-        for manual_f, automatic_f in ChargingBar('best case scenario').iter(files) :
+    for manual_f, automatic_f in ChargingBar('best case scenario').iter(files) :
+        if int(manual_f.stem[2:6]) < c.DATA_SPLIT : continue
+        for i, min_len in enumerate(min_lens) :
             manual = utils.read_dict(manual_f)
             automatic = utils.read_dict(automatic_f)
             new_automatic = [ [] for _ in range(3) ]
@@ -418,9 +411,8 @@ def best_case_scenario(manual_dir, automatic_dir, min_lens=[0.2]) :
     return final_data
 
 # # # after gap classification # # #
-from tasks.audio_classification.classification_interference import MIN_GAP
 
-def classification_metrics(manual_dir, automatic_dir, classification_dir) :
+def classification_metrics(manual_dir, automatic_dir, classification_dir, threashold, min_gap) :
     'returns TP FP TN FN'
     files = utils.get_dir_tuples([
         (manual_dir, lambda f: f.stem[2:7], lambda f: 'Speech' in f.stem), 
@@ -443,23 +435,23 @@ def classification_metrics(manual_dir, automatic_dir, classification_dir) :
 
             manual = utils.read_dict(manual_f)
             automatic = utils.read_dict(automatic_f)
-            classification = utils.read_dict(classification_f)
+            classification = [ { 'start' : gap['start'], 'end' : gap['end'] } for gap in utils.read_dict(classification_f) if gap['score'] >= threashold ]
 
             for pre, post in zip( [{'end' : 0}] + automatic, automatic + [{'start' : end - start}]) :
                 gap_start = pre['end']
                 gap_end = post['start']
-                if gap_end - gap_start > MIN_GAP :
+                if gap_end - gap_start >= min_gap :
                     label = bool( len([w for w in manual if word_utils.overlap((gap_start, gap_end), w) > (w['end'] - w['start']) / 2]) > 0 )
                     prediction = bool( {'start' : gap_start, 'end' : gap_end} in classification )
                 
-                    if       label and prediction     : predictions[0] += 1
-                    elif     label and not prediction : predictions[1] += 1
+                    if       label and     prediction : predictions[0] += 1
+                    elif not label and     prediction : predictions[1] += 1
                     elif not label and not prediction : predictions[2] += 1
                     else                              : predictions[3] += 1
     return predictions                
                 
 
-def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir) :
+def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir, threashold, min_gap) :
     files = utils.get_dir_tuples([
         (manual_dir, lambda f: f.stem[2:7], lambda f: 'Speech' in f.stem), 
         (manual_dir, lambda f: f.stem[2:7], lambda f: not 'Speech' in f.stem), 
@@ -486,12 +478,12 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
             manual_labeled = [ m | {'trans' : True } if a['word'] else m | {'trans' : False}  for m, a in zip(manual_aligned, automatic_aligned) if m['word'] ]
             manual_not_in_gap = set( (w['start'], w['end'], w['trans'], w['is_restart'] or w['pause_type']) for w in manual_labeled )
 
-            classification = utils.read_dict(classification_f)
+            classification = [ { 'start' : gap['start'], 'end' : gap['end'] } for gap in utils.read_dict(classification_f) if gap['score'] >= threashold ]
 
             for pre, post in zip( [{'end' : 0}] + automatic, automatic + [{'start' : end - start}]) :
                 gap_start = pre['end']
                 gap_end = post['start']
-                if gap_end - gap_start <= MIN_GAP :
+                if gap_end - gap_start < min_gap :
                     continue
                 prediction = bool( {'start' : gap_start, 'end' : gap_end} in classification )
                 manual_in_gap = [ w for w in manual_labeled if word_utils.overlap((gap_start, gap_end), w) > (w['end'] - w['start']) / 2 ]
@@ -517,7 +509,7 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
 
 
 # # #  after retranscription   # # #
-def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir) :
+def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir, threshold) :
     files = utils.get_dir_tuples([(manual_dir, None, lambda f: not 'Speech' in f.stem), automatic_dir, retranscibe_dir])
 
     all_data = [ [ 0 for _ in range(3) ] for _ in range(3) ]
@@ -530,7 +522,7 @@ def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir) :
         manual_aligned, automatic_aligned, _ = alignment.align_words(manual, automatic, {'word' : ''})
         manual_labeled = [ m | {'transcribed' : True} if a['word'] else m | {'transcribed' : False} for m, a in zip(manual_aligned, automatic_aligned) if m['word'] ]
         
-        automatic_whole = [ w | {'new' : False} for w in automatic ] + [ w | {'new' : True} for w in retranscribed if w['word'] ]
+        automatic_whole = [ w | {'new' : False} for w in automatic ] + [ w | {'new' : True} for w in retranscribed if w['word'] and w['score'] >= threshold ]
         automatic_whole.sort(key=lambda w : w['start'])
         manual_aligned, automatic_aligned, _ = alignment.align_words(manual_labeled, automatic_whole, {'word' : ''})
 
@@ -541,6 +533,89 @@ def percentage_of_captured_words(manual_dir, automatic_dir, retranscibe_dir) :
     
     return all_data
     
+
+def final_statistic(manual_dir, automatic_dir, retranscribe_dirs, min_lens, threshold) :
+    files = utils.get_dir_tuples([manual_dir, automatic_dir, retranscribe_dirs[0]])
+    # i d r n
+    # disf. trans., disf. untrans.
+    wer_data_base = [ 0 for _ in range(4) ]
+    disf_data_base = [ 0, 0 ]
+
+    for manual_f, automatic_f, _ in ChargingBar('final: base').iter(files) :
+            manual = utils.read_dict(manual_f)
+            automatic = utils.read_dict(automatic_f)
+            manual, automatic, ops = alignment.align_words(manual, automatic, {'word' : ''})
+            wer_data_base[0] += ops.count('i')
+            wer_data_base[1] += ops.count('d')
+            wer_data_base[2] += ops.count('r')
+            wer_data_base[3] += ops.count('n')
+            disf_data_base[0] += len( [ m for m, a in zip(manual, automatic) if m['word'] and (m['is_restart'] or m['pause_type']) and a['word']])
+            disf_data_base[1] += len( [ m for m, a in zip(manual, automatic) if m['word'] and (m['is_restart'] or m['pause_type']) and not a['word']])
+
+
+    wer_data = [ [ [ 0 for _ in range(4) ] for _ in min_lens ] for _ in retranscribe_dirs ]
+    disf_data = [ [ [ 0, 0 ] for _ in min_lens ] for _ in retranscribe_dirs ]
+
+    for retranscribe_dir, wer_data_dir, disf_data_dir in zip(retranscribe_dirs, wer_data, disf_data) :
+        files = utils.get_dir_tuples([manual_dir, automatic_dir, retranscribe_dir])
+        
+        for manual_f, automatic_f, retranscribe_f in ChargingBar('final: retranscribe dir').iter(files) :
+            for min_len, wer, disf in zip(min_lens, wer_data_dir, disf_data_dir) :
+                manual = utils.read_dict(manual_f)
+                automatic = utils.read_dict(automatic_f)
+                retranscribe = [ w for w in utils.read_dict(retranscribe_f) if w['end'] - w['start'] >= min_len and w['score'] >= threshold ] + automatic 
+                retranscribe.sort(key=lambda w: w['start'])
+
+                manual, retranscribe, ops = alignment.align_words(manual, retranscribe, {'word' : ''})
+                wer[0] += ops.count('i')
+                wer[1] += ops.count('d')
+                wer[2] += ops.count('r')
+                wer[3] += ops.count('n')
+                disf[0] += len( [ m for m, a in zip(manual, retranscribe) if m['word'] and (m['is_restart'] or m['pause_type']) and a['word']])
+                disf[1] += len( [ m for m, a in zip(manual, retranscribe) if m['word'] and (m['is_restart'] or m['pause_type']) and not a['word']])
+                
+    print('# wer_data_base =', wer_data_base)
+    print('# disf_data_base =', disf_data_base)
+    print('# wer_data =', wer_data)
+    print('# disf_data =', disf_data)
+    return (wer_data_base, disf_data_base), (wer_data, disf_data)
+
+
+def transcript_comparison(retranscribe_dir, manual_dir, automatic_dir, min_len, threshold, number_of_examples) :
+    files = utils.get_dir_tuples([manual_dir, automatic_dir, retranscribe_dir])
+    examples = [] # (manual, automatic, retranscribed)
+    for manual_f, automatic_f, retranscribe_f in files :
+        manual = utils.read_dict(manual_f)
+        automatic_simple = [ w | {'original' : False } for w in utils.read_dict(retranscribe_f) if w['end'] - w['start'] >= min_len and w['score'] >= threshold ] + [ w | {'original' : True } for w in utils.read_dict(automatic_f) ] 
+        automatic_simple.sort(key=lambda w: w['start'])
+        automatic = []
+        for w in automatic_simple :
+            if ' ' not in w['word'] :
+                automatic.append( w )
+            else :
+                automatic += [ w | {'word' : wi} for wi in w['word'].split() ]
+        
+        manual, automatic, _ = alignment.align_words(manual, automatic, { 'word' : '' })
+
+        indices = [ i for i, a in enumerate(automatic) if a['word'] and not a['original']]
+        starts = [ s for s in indices if s - 1 not in indices ]
+        ends = [ e for e in indices if e + 1 not in indices ]
+        indices = [ (s, e) for s, e in zip(starts, ends) ]
+        i = 0
+        while i < len(indices) - 1 :
+            if indices[i+1][0] - indices[i][1] <= 5 :
+                indices[i : i+2] = [ (indices[i][0], indices[i+1][1]) ]
+            else :
+                i += 1
+        indices = [ ( max(0, start-2), min(len(manual) - 1, end+2) ) for start, end in indices ]
+        for start, end in indices :
+            if manual[start]['word'] and manual[end]['word'] and automatic[start]['word'] and automatic[end]['word']:
+                examples.append( (manual[start : end + 1], automatic[start : end + 1]) )
+                
+            if len(examples) == number_of_examples :
+                return examples
+    return examples
+
 
 # # #         general          # # #
 def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Path | None]], audio_dir = c.audio_dir, n=10, save_dir=c.data_base / 'examples') :
@@ -571,6 +646,8 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
         segments = utils.read_dict(segment_f)
         audio = utils.read_audio(audio_f, c.sample_rate)[0]
         segment = random.choice(segments)
+        if segment['end'] - segment['start'] < 3 or segment['end'] - segment['start'] > 5 :
+            continue
         index = segments.index(segment)
     
         manual_f = next( iter( f for f in manual_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)

@@ -16,7 +16,7 @@ def transform_result(ratio, words, sample_rate) :
     decimals = 3
     for w in words :
         result.append( {
-            "transcript": w.label, 
+            "word": w.label, 
             "start": w.start * ratio / sample_rate, 
             "end": w.end * ratio / sample_rate, 
             "score": round(w.score, decimals)
@@ -39,8 +39,14 @@ def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, en
     if not all(simple) : # if simple contains empty words
         raise ValueError('transcript contains non words', transcript_file.stem)
     transcript = '|' + '|'.join(simple).upper() + '|'
+    # transcript = "|I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT|"
+    # transcript = "|I|HAD|THAT|CURIOSITY|AT|THIS|MOMENT|"
     labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
-    words, trellis_width = ctc.ctc(emission, transcript, labels)
+    words, trellis_width = ctc.ctc(emission, transcript, labels, whitespace_stay_default_value=0)
+    # import tasks.audio_transcript_alignment.visualization as visual
+    # trellis, tokens = ctc.get_trellis(emission, transcript, labels, whitespace_stay_default_value=1)
+    # visual.plot_alignments(trellis, words, audio[0], sample_rate)
+
     ratio = audio[0].size(0) / trellis_width
     words = transform_result(ratio, words, sample_rate)
     if words :
@@ -68,7 +74,7 @@ def align_file(audio_file, transcript_file, sample_rate, wav2vec2_model=None, st
             l = end - start
             for i, t in  enumerate(transcript):
                 words.append( {
-                    "transcript": t, 
+                    "word": t, 
                     "start": i/n * l, 
                     "end": (i+1)/n * l, 
                     "score": float('inf')

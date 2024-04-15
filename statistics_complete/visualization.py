@@ -15,7 +15,7 @@ from matplotlib.patches import Rectangle
 # # #   after transcription    # # #
 # length of automatic and manual
 def plot_manual_automatic_word_lengths(len_data) :
-    fig, ax = plt.subplots(1, 1, figsize=(10, 10), tight_layout=True, num='Manual Automatic Segment Length Comparison by Word')
+    fig, ax = plt.subplots(1, 1, figsize=(6, 6), tight_layout=True, num='Manual Automatic Segment Length Comparison by Word')
     p, b = -25, 8
     ax.set_xlim((0, 150))
     ax.set_ylim((0, 150))
@@ -25,15 +25,62 @@ def plot_manual_automatic_word_lengths(len_data) :
     ax.scatter(x,y)
     x, y = list(zip(*len_data_out))
     ax.scatter(x,y, color='red')
-    ax.set_xlabel('Manual (Ground Truth)')
-    ax.set_ylabel('Automatic (Whisper)')
+    ax.set_xlabel('Manual (Ground Truth)', fontsize=16)
+    ax.set_ylabel('Automatic (Whisper)', fontsize=16)
 
     # plt.plot([0, 150], [b,  (p-b) / p * 150 + b], color='red')
     # plt.plot([0, 150], [-p / (p-b) * b ,  p / (p-b) * 150 - p / (p-b) * b], color='red')
     plt.show()
 
-
+from matplotlib.lines import Line2D
 # # #     after alignment      # # #
+def plot_ctc_default_probability_comparison(around_dists, full_dists, labels, all_data) :
+    print('# CTC default probability comparison around untranscribed speech')
+    for dist, label in zip(around_dists, labels) :
+        print('#', label + ':', console.format_number(sum(dist) / len(dist), 4))
+#    visual.plot_ctc_comparison(dists, labels)
+    print()
+    print('# CTC default probability comparison')
+    for dist, label in zip(full_dists, labels) :
+        print('#', label + ':', console.format_number(sum(dist) / len(dist), 4))
+
+    for speech_t, speech_u, disf_u in all_data :
+        for i in reversed(range(len(speech_t[0]) -1 )) :
+            speech_t[0][i] += speech_t[0][i+1]
+            speech_u[0][i] += speech_u[0][i+1]
+            disf_u[0][i] += disf_u[0][i+1]
+    print(all_data)
+
+    plt.figure(figsize=(6, 6), tight_layout=True)
+    handles = []
+    line = Line2D([0,1],[0,1],linestyle='solid', color='black')
+    line1 = Line2D([0,1],[0,1],linestyle='dotted', color='black')
+    line2 = Line2D([0,1],[0,1],linestyle='dashdot', color='black')
+    for (speech_t, speech_u, _), color in zip(all_data, ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'cyan']) :
+        plt.plot([ i / 10 for i in range(1, 11)], speech_u[0], color=color, linestyle='solid')
+        plt.plot([ i / 10 for i in range(1, 11)], speech_t[0], color=color, linestyle='dotted')
+        handles.append(Line2D([0,1],[0,1],ls='', marker='o', color=color))
+    plt.axhline(y=all_data[0][1][1], color='black', linestyle='dashdot')
+    plt.legend(handles + [line, line1, line2], c.custom_ctc_labels + ['untranscribed words', 'transcribe words', 'total \nuntranscribed words'])
+    plt.xlabel('minimum length for gap in sec.', fontsize=16)
+    plt.ylabel('words reachable', fontsize=16)
+    plt.tight_layout()
+    plt.show()
+
+    plt.figure(figsize=(6, 6), tight_layout=True)
+    handles = []
+    line2 = Line2D([0,1],[0,1],linestyle='dashdot', color='black')
+    for (_, _, disf_u), color in zip(all_data, ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'cyan']) :
+        plt.plot([ j / 10 for j in range(1, 11)], disf_u[0])
+        handles.append(Line2D([0,1],[0,1],ls='', marker='o', color=color))
+    plt.axhline(y=all_data[0][2][1], color='black', linestyle='dashdot')
+    plt.legend(handles + [line], c.custom_ctc_labels + ['total untranscribed \ndisfluencies'])
+    plt.xlabel('minimum length for gap in sec.', fontsize=16)
+    plt.ylabel('untranscribed disfluencies reachable', fontsize=16)
+    plt.tight_layout()
+    plt.show()
+
+
 def plot_ctc_comparison(dists, labels) :
     fig, ax= plt.subplots(1, 1, figsize=(8, 8), tight_layout=True, num='ctc comparison')
     ax.hist(dists, bins=100, label=labels)
@@ -44,7 +91,7 @@ def plot_ctc_comparison(dists, labels) :
 def show_hesitation_gaps(all_data, model) :
     tables = []
     print('# percentage of')
-    print('# untranscribed speech reachable, gaps containing untranscribed speech, untranscribed hesitations reachable, gaps containing untranscribed hesitaions')
+    print('# transcribed speech reachable, gaps containing transcribed speech, untranscribed speech reachable, gaps containing untranscribed speech, untranscribed hesitations reachable, gaps containing untranscribed hesitaions')
     print('# for', model)
     for data_containing, data_reachable, total in all_data :
         # sum up over gaps to get total
@@ -64,6 +111,28 @@ def show_hesitation_gaps(all_data, model) :
             ])
 
     console.print_tables(tables)
+    print('# data 50 speech')
+    data_containing, data_reachable, total = all_data[1]
+    print('# containing =', [ x[1][0] / (x[1][0] + x[1][1]) for x in data_containing ])
+    print('# reachable =', [ x[1] / total for x in data_reachable ])
+
+
+def plot_methods_reachable_comparison(gap_sizes, all_data, labels) :
+    plt.figure(figsize=(6, 6), tight_layout=True)
+    handles = []
+    line = Line2D([0,1],[0,1],linestyle='solid', color='black')     # untranscribed speech
+    line1 = Line2D([0,1],[0,1],linestyle='dotted', color='black')   # transcribed speech
+    line2 = Line2D([0,1],[0,1],linestyle='dashdot', color='black')  # total untranscribed
+    print(all_data[0])
+    for ((transcribed, t_total), (untranscribed, ut_total)), color in zip(all_data, ['blue', 'orange', 'green']) :
+        plt.plot(gap_sizes, untranscribed, color=color, linestyle='solid')
+        plt.plot(gap_sizes, transcribed, color=color, linestyle='dotted')
+        handles.append(Line2D([0,1],[0,1],ls='', marker='o', color=color))
+    plt.axhline(y=all_data[0][1][1], color='black', linestyle='dashdot')
+    plt.legend(handles + [line, line1, line2], labels + ['untranscribed words', 'transcribed words', 'total untranscribed words'])
+    plt.xlabel('minimum length for gap in sec.', fontsize=16)
+    plt.ylabel('speech reachable', fontsize=16)
+    plt.show()
 
 
 def plot_alignment_metric(all_data, labels) :
@@ -102,6 +171,62 @@ def plot_alignment_metric(all_data, labels) :
 
 
 # # #  after retranscription   # # #
+def final_statistics(labels, min_lens, wer_data_base, disf_data_base, wer_data, disf_data) :
+    # for label, wer_lens, disf_lens in zip(labels, wer_data, disf_data) : 
+    #     table = [[label, 'insert', 'delete', 'replace', 'nothing', 'all', 'WER', 'disf. trans.', 'disf. untrans.', 'disf. trans. %']]
+    #     table.append(
+    #         [ 'base' ] + 
+    #         [ console.format_number(x) for x in wer_data_base ] + 
+    #         [ console.format_number( sum(wer_data_base) ), console.format_number( sum(wer_data_base[:3]) / sum(wer_data_base), 4 ) ] + 
+    #         [ console.format_number(x) for x in disf_data_base ] +
+    #         [ console.format_number( disf_data_base[0] / sum(disf_data_base), 4)]
+    #     )
+    #     for min_len, wer, disf in zip(min_lens, wer_lens, disf_lens) :
+    #         table.append(
+    #             [ min_len ] + 
+    #             [ console.format_number(x-y, force_sign=True) for x, y in zip(wer, wer_data_base) ] + 
+    #             [ console.format_number( sum(wer) - sum(wer_data_base), force_sign=True), console.format_number( sum(wer[:3])  / sum(wer), 4 ) ] + 
+    #             [ console.format_number(x-y, force_sign=True) for x, y in zip(disf, disf_data_base) ] +
+    #             [ console.format_number( disf[0] / sum(disf), 4)]
+    #         )
+    #     console.print_table(table)
+    #     print()
+
+    #show insertions vs deletions
+    plt.figure(figsize=(6, 6), tight_layout=True)
+    handles = []
+    line = Line2D([0,1],[0,1],linestyle='solid', color='black')     # untranscribed speech
+    line1 = Line2D([0,1],[0,1],linestyle='dotted', color='black')   # transcribed speech
+    line2 = Line2D([0,1],[0,1],linestyle='dashdot', color='black')  # total untranscribed
+    for wer_dir, color in zip(wer_data, ['b', 'g', 'r', 'm', 'y']) :
+        insert = [ (x[0] - wer_data_base[0]) for x in wer_dir ]
+        delete = [ -(x[1] - wer_data_base[1]) for x in wer_dir ]
+        plt.plot(min_lens, insert, color=color)
+        plt.plot(min_lens, delete, color=color, linestyle='dotted')
+        handles.append(Line2D([0,1],[0,1],ls='', marker='o', color=color))
+    plt.axhline(y=wer_data_base[1], color='black', linestyle='dashdot')
+    plt.legend(handles + [line, line1, line2], labels + ['double transcribed words', 'retranscribed words', 'total untranscribed words'])
+    plt.xlabel('minimum length for gap in sec.', fontsize=16)
+    plt.ylabel('words retranscribed', fontsize=16)
+    plt.show()
+
+
+    plt.figure(figsize=(6, 6), tight_layout=True)
+    handles = []
+    line1 = Line2D([0,1],[0,1],linestyle='dotted', color='black')  # total untranscribed
+    line2 = Line2D([0,1],[0,1],linestyle='dashdot', color='black')  # total untranscribed
+    base_trans = disf_data_base[0] # all untranscribed disf
+    for disf_dir, color in zip(disf_data, ['b', 'g', 'r', 'm', 'y']) :
+        disfluencies = [ trans for trans, untrans in disf_dir ]
+        plt.plot(min_lens, disfluencies, color=color)        
+        handles.append(Line2D([0,1],[0,1],ls='', marker='o', color=color))
+    plt.axhline(y=sum(disf_data_base), color='black', linestyle='dotted')
+    plt.axhline(y=base_trans, color='black', linestyle='dashdot')
+    plt.legend(handles + [line1, line2], labels + ['disfluencies total', 'already transcribed disfluencies'])
+    plt.xlabel('minimum length for gap in sec.', fontsize=16)
+    plt.ylabel('transcribed disfluencies', fontsize=16)
+    plt.ylim(bottom=0)
+    plt.show()
 
 
 # # #         general          # # #

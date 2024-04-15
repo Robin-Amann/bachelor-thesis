@@ -16,7 +16,7 @@ def transform_result(ratio, words, sample_rate) :
     decimals = 3
     for w in words :
         result.append( {
-            "transcript": w.label, 
+            "word": w.label, 
             "start": w.start * ratio / sample_rate, 
             "end": w.end * ratio / sample_rate, 
             "score": round(w.score, decimals)
@@ -37,7 +37,10 @@ def align(audio_file, transcript_file, sample_rate, wav2vec2_model, start=-1, en
     transcript = original_transcript.split()
     simple = [ word_utils.simplify(w) for w in transcript ]
     if not all(simple) : # if simple contains empty words
-        raise ValueError('transcript contains non words', transcript_file.stem)
+        print('transcript contains non words', transcript_file.stem, [ w for w in original_transcript.split() if not word_utils.simplify(w)])
+        original_transcript = ' '.join( [ w for w in original_transcript.split() if word_utils.simplify(w)])
+        transcript = original_transcript.split()
+        simple = [ word_utils.simplify(w) for w in transcript ]
     transcript = '|' + '|'.join(simple).upper() + '|'
     labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
     results = []
@@ -73,7 +76,7 @@ def align_file(audio_file, transcript_file, sample_rate, wav2vec2_model=None, st
                 words = []
                 for i, t in  enumerate(transcript):
                     words.append( {
-                        "transcript": t, 
+                        "word": t, 
                         "start": i/n * l, 
                         "end": (i+1)/n * l, 
                         "score": float('inf')
@@ -83,7 +86,7 @@ def align_file(audio_file, transcript_file, sample_rate, wav2vec2_model=None, st
         return [ [] for _ in range(len(whitespace_stay_default_value)) ]
 
 
-def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir: list, sample_rate, whitespace_stay_default_value : list) :
+def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir: list, sample_rate, whitespace_stay_default_values : list, start=0, end=100) :
     bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H
     model = bundle.get_model(dl_kwargs=model_args).to(device)
     wav2vec2_model = (bundle, model)
@@ -91,9 +94,10 @@ def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir: list, sa
     print('os:', os.name)
 
     files = utils.get_dir_tuples([ (segments_dir, lambda f : f.stem[2:7], lambda f : 'Speech' in f.stem), (audio_dir, lambda f : f.stem[3:8], None, 'wav'), (transcript_dir, lambda f : f.stem[2:7])] )
+
     grouped = utils.group_files(files, 3)
 
-    for p in [ k for k in grouped.keys() if 32 <= int(k) <= 49 ] :
+    for p in [ k for k in grouped.keys() if start <= int(k) <= end ] :
         print("Align dir", p)
         for segment_file, audio_file, transcript_files in ChargingBar("Align Transcript to Audio").iter(grouped[p]) :
             stem = segment_file.stem
@@ -102,9 +106,9 @@ def align_dir(segments_dir, audio_dir, transcript_dir, destination_dir: list, sa
                 index = int( transcript_file.stem[7:10] )
                 segment = segments[index]
                 destination_files = []
-                for value in whitespace_stay_default_value :
-                    destination_file = utils.repath(segment_file, segments_dir, destination_dir / str(-value), [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
+                for value in whitespace_stay_default_values :
+                    destination_file = utils.repath(segment_file, segments_dir, destination_dir / str(-value).replace('.', '_'), [stem[6]], stem=transcript_file.stem, suffix=transcript_file.suffix)
                     destination_files.append(destination_file)
-                results = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'], whitespace_stay_default_value=whitespace_stay_default_value)
+                results = align_file(audio_file, transcript_file, sample_rate, wav2vec2_model, start=segment['start'], end=segment['end'], whitespace_stay_default_value=whitespace_stay_default_values)
                 for destination_file, words in zip(destination_files, results) :
                     utils.write_dict(destination_file, words)

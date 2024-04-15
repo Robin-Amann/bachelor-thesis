@@ -6,6 +6,11 @@ sample_rate = 16000
 # preprocessing
 manual_annotation_patterns = ['<+[^<>]*>+', '``/``', "''/''"]
 
+# classification
+MIN_GAP = 0.1
+DATA_SPLIT = 3916
+min_lens=[ i / 10 for i in range(1, 11) ]
+
 # number of ignore-files:         102
 # number of controversial-files: 2484
 # dataset (16.12.23):	                    number of files   total             name                    object								                                
@@ -26,21 +31,22 @@ manual_annotation_patterns = ['<+[^<>]*>+', '``/``', "''/''"]
 #     └ wav2vec2_custom_LM_hesitations_new	8349                                                        word, start, end
 # files that are not in ignore_files or contoversial_files can be read with read_dict(path)
 
+import os
 
-# Home PC 
-data_base = Path("D:\\Robin_dataset\\Switchboard Computed")
+if os.name == 'nt' :
+    # Home PC 
+    data_base = Path("D:\\Robin_dataset\\Switchboard Computed")
 
-timing_dir = Path("D:\\Robin_dataset\\Switchboard\\Switchboard-1 Release 2 Transcripts\\word alignments")
-disfluencies_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd") 
-audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2") 
+    timing_dir = Path("D:\\Robin_dataset\\Switchboard\\Switchboard-1 Release 2 Transcripts\\word alignments")
+    disfluencies_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC99T42 Treebank 3\\treebank_3\\dysfl\\mgd\\swbd") 
+    audio_dir = Path("D:\\Robin_dataset\\Switchboard\\LDC97S62 Switchboard-1 Release 2") 
+else :
+    # Cluster
+    data_base = Path("/export/data3/bachelor_theses/ramann/data")
 
-
-# # Cluster
-# data_base = Path("/export/data3/bachelor_theses/ramann/data")
-
-# timing_dir = data_base / "Switchboard-1 Release 2 Transcripts"
-# disfluencies_dir = Path("/project/data_asr/LDC/LDC99T42/treebank_3/dysfl/mgd/swbd")
-# audio_dir = Path("/project/data_asr/LDC/LDC97S62")
+    timing_dir = data_base / "Switchboard-1 Release 2 Transcripts"
+    disfluencies_dir = Path("/project/data_asr/LDC/LDC99T42/treebank_3/dysfl/mgd/swbd")
+    audio_dir = Path("/project/data_asr/LDC/LDC97S62")
 
 
 # # General
@@ -59,3 +65,7 @@ hesitations_file = Path('data/data_preperation/hesitations/hesitations.txt')
 
 ignore_files = ignore.ignore_files
 controversial_files = ignore.controversial_files
+
+
+custom_ctc_dirs = [ automatic_align_dir / 'custom ctc' / d for d in [ '0_01', '0_1', '0_5' ] + [ str(i) for i in range(1, 6)] ]
+custom_ctc_labels = [ 'c = ' + str(i) for i in [ -0.01, -0.1, -0.5 ] + [ -i for i in range(1, 6)] ]
