@@ -24,11 +24,11 @@ some main files that can be executed.
 - each main file contains all comands necessary to execte the whole code.
 
 to execute the code create a conda enviroment and install the following dependencies:
-conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-  or (with cuda): conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-pip install cython
-conda install -c conda-forge pynini=2.1.5
-pip install nemo-text-processing
-pip install openai-whisper progress soundfile huggingface-hub matplotlib numpy transformers datasets librosa
-pip install pyctcdecode==0.3.0 https://github.com/kpu/kenlm/archive/master.zip
+>> conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+- or (with cuda): conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+>> pip install cython
+>> conda install -c conda-forge pynini=2.1.5
+>> pip install nemo-text-processing
+>> pip install openai-whisper progress soundfile huggingface-hub matplotlib numpy transformers datasets librosa
+>> pip install pyctcdecode==0.3.0 https://github.com/kpu/kenlm/archive/master.zip
 
