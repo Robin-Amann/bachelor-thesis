@@ -1,62 +1,21 @@
-import torch
-import torchaudio
-import utils.file as utils
-import tasks.audio_transcript_alignment.ctc as ctc
-from progress.bar import ChargingBar
-import os
-import utils.constants as constants
-import utils.transcript as word_utils
-from pathlib import Path
+import utils.constants as c
 
-import tasks.audio_transcript_alignment.visualization as visual
-
-# sw2749A018
-audio_file = Path('D:/Robin_dataset/Switchboard/LDC97S62 Switchboard-1 Release 2/09/SWB1/sw02749A.wav')
-sample_rate = 16000
-transcript_file = Path('D:/Robin_dataset/Switchboard Computed/manual/segmented/27/2749/A/sw2749A018.txt')
-start= int(414.627625 * sample_rate)
-end= int(417.817625 * sample_rate)
-
-SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
-transcript = "|I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT|"
-# transcript = "|I|HAD|THAT|CURIOSITY|AT|THIS|MOMENT|"
-
-with torch.inference_mode():
-    audio, _ = torchaudio.load(SPEECH_FILE)
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
-bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
-model = bundle.get_model(dl_kwargs=model_args).to(device)
-wav2vec2_model = (bundle, model)
+data = [(([129351, 101536, 88219, 76780, 67171, 57473, 47491, 39791, 33496, 28412], 1093249), ([101573, 99453, 95477, 89369, 83078, 77029, 71016, 65078, 59216, 53885], 121738), ([77480, 76198, 73032, 67766, 62301, 57064, 51866, 46769, 41711, 37188], 89799)), 
+ (([128322, 100761, 87567, 76177, 66614, 56956, 47025, 39400, 33184, 28119], 1093249), ([101211, 99091, 95140, 89061, 82768, 76716, 70729, 64836, 59017, 53689], 121738), ([77220, 75937, 72784, 67553, 62078, 56818, 51647, 46584, 41560, 37036], 89799)), 
+ (([124779, 98308, 85608, 74501, 65150, 55686, 45925, 38391, 32286, 27443],  1093249), ([100211, 98124, 94227, 88152, 81973, 75923, 70026, 64133, 58384, 53149], 121738), ([76535, 75268, 72128, 66928, 61538, 56274, 51182, 46098, 41118, 36666], 89799)), 
+ (([121096, 95884, 83503, 72694, 63665, 54356, 44810, 37469, 31512, 26753],  1093249), ([99107, 97063, 93204, 87184, 81049, 75085, 69308, 63567, 57840, 52657],  121738), ([75758, 74492, 71366, 66212, 60845, 55650, 50666, 45695, 40737, 36331], 89799)), 
+ (([114868, 91599, 79764, 69439, 60825, 51799, 42558, 35452, 29727, 25280],  1093249), ([96063, 94066, 90275, 84537, 78610, 72829, 67276, 61773, 56283, 51266],  121738), ([73432, 72163, 69092, 64175, 58951, 53895, 49095, 44339, 39598, 35342], 89799)), 
+ (([109667, 87786, 76413, 66504, 58177, 49524, 40552, 33672, 28188, 23883],  1093249), ([91933, 89974, 86329, 80897, 75259, 69797, 64523, 59225, 54006, 49154],  121738), ([70172, 68891, 65942, 61274, 56298, 51507, 46938, 42389, 37914, 33783], 89799)), 
+ (([105591, 84767, 73547, 64038, 55943, 47550, 38763, 32155, 26903, 22728],  1093249), ([87152, 85187, 81686, 76566, 71250, 66093, 61097, 56177, 51234, 46600],  121738), ([66347, 65041, 62202, 57823, 53135, 48645, 44327, 40114, 35854, 31900], 89799)), 
+ (([102379, 82311, 71194, 61874, 54047, 45809, 37194, 30756, 25597, 21548],  1093249), ([81942, 79945, 76574, 71772, 66787, 61911, 57220, 52608, 47876, 43543],  121738), ([62256, 60886, 58171, 54053, 49673, 45435, 41363, 37426, 33365, 29673], 89799))]
 
 
-# audio = utils.read_audio(audio_file, sample_rate)  # [ [...] ]
-# audio = audio[:, start : end]
+print(data[0][2][1])
+for y, (_, _, x) in zip(c.custom_ctc_labels, data) :
+    print(y, x[0])
 
-# import matplotlib.pyplot as plt
 
-# fig, ax = plt.subplots(tight_layout=True, figsize=(20, 3))
-# ax.plot(audio[0])
-# ax.set_xticks([])
-# secax = ax.secondary_xaxis('bottom', functions=(lambda x : x / sample_rate, lambda x : x * sample_rate))
-# secax.set_xlabel('time [second]')
+# for y, (x, _, _) in zip(c.custom_ctc_labels, data) :
+#     print(y, x[0])
 
-# ax.set_yticks([])
-# ax.set_ylim(-1.0, 1.0)
-# ax.set_xlim(0, audio.size(-1))
-# plt.show()
 
-# original_transcript = ' '.join([ w['word'] for w in utils.read_dict(transcript_file)])
-# transcript = original_transcript.split()
-# simple = [ word_utils.simplify(w) for w in transcript ]
-
-# transcript = '|' + '|'.join(simple).upper() + '|'
-
-labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
-words, trellis_width = ctc.ctc(emission, transcript, labels, whitespace_stay_default_value=-1)
-trellis, tokens = ctc.get_trellis(emission, transcript, labels, whitespace_stay_default_value=-1)
-
-# visual.plot_trellis(trellis)
-# visual.plot_trellis_with_path(trellis, path)
-visual.plot_alignments(trellis, words, audio[0], sample_rate)

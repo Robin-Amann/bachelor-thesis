@@ -128,6 +128,8 @@ def untranscribed_speech_disfluencies_percentage(manual_dir, automatic_dir, auto
     correct_transcribed_disf, incorrect_transcribed_disf, untranscribed_disf = 0, 0, 0
     
     for manual_f, automatic_f in ChargingBar('Unstranscribed Speech').iter(files) :
+        if int(manual_f.name[2:6]) < c.DATA_SPLIT :
+            continue
         manual = utils.read_dict(manual_f)
         if len(manual) < min_len :
             continue
@@ -506,6 +508,74 @@ def untranscribed_speech_labelling(manual_dir, automatic_dir, classification_dir
             data_labels[0][0] += len([ w for w in manual_not_in_gap if not w[2] ])
 
     return data_labels, data_gaps, data_hesitations
+
+
+def before_after_classification_comparison(manual_dir=c.manual_seg_dir, automatic_dir=c.automatic_align_dir / 'custom ctc' / '0_01', classification_dir=c.classification_dir / 'custom ctc', threashold=0.5, min_gap=c.MIN_GAP) :
+    files = utils.get_dir_tuples([
+        (manual_dir, lambda f: f.stem[2:7], lambda f: 'Speech' in f.stem), 
+        (manual_dir, lambda f: f.stem[2:7], lambda f: not 'Speech' in f.stem), 
+        (automatic_dir, lambda f: f.stem[2:7]), 
+        (classification_dir, lambda f: f.stem[2:7])
+    ])
+    # (fluent, not fluent) x (correct, incorrect, not) x (labelled, not labelled)
+    all_data = [ [ [ 0 for _ in range(2) ] for _ in range(3) ] for _ in range(2) ]
+
+    for segment_f, manual_files, automatic_files, classification_files in ChargingBar('before after').iter(files) :
+
+        if int(segment_f.name[2:6]) < c.DATA_SPLIT :
+            continue
+        segments = utils.read_dict(segment_f)
+        for index, segment in enumerate(segments) :
+            start, end = segment.values()
+            
+            manual_f = next( iter(f for f in manual_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)
+            automatic_f = next( iter(f for f in automatic_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)
+            classification_f = next( iter(f for f in classification_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)
+            if not (manual_f and automatic_f and classification_f) :
+                continue
+
+            manual = utils.read_dict(manual_f)
+            automatic = utils.read_dict(automatic_f)
+            classification = [ gap for gap in utils.read_dict(classification_f) if gap['score'] >= threashold and gap['end'] - gap['start'] >= min_gap ]
+
+            # correct, incorrect or not transcribed
+            manual_aligned, _, operations = alignment.align_words(manual, automatic, {'word' : ''})
+            manual_labeled = [ m | {'op' : op} for m, op in zip(manual_aligned, operations) if m['word'] ]
+
+            for word in manual_labeled :
+                labeled = any( word_utils.overlap( (gap['start'], gap['end']), word) > (word['end'] - word['start']) / 2 for gap in classification )
+                labeled = int(labeled)
+                trans = 0 if word['op'] == 'n' else 1 if word['op'] == 'r' else 2
+                fluent = int( bool( word['is_restart'] or word['pause_type'] ) )
+                all_data[fluent][trans][labeled] += 1
+
+
+    import utils.console as console
+
+    console.print_table([
+        ['', 'correct transcribed', 'incorrect transcribed',  'untranscribed'],
+        ['fluent', all_data[0][0][0], all_data[0][1][0], all_data[0][2][0]],
+        ['not fluent', all_data[1][0][0], all_data[1][1][0], all_data[1][2][0]],
+    ])
+    console.print_table([
+        ['', 'correct transcribed', 'incorrect transcribed',  'untranscribed'],
+        ['fluent', all_data[0][0][1], all_data[0][1][1], all_data[0][2][1]],
+        ['not fluent', all_data[1][0][1], all_data[1][1][1], all_data[1][2][1]],
+    ])
+    console.print_table([
+        ['', 'correct transcribed', 'incorrect transcribed',  'untranscribed'],
+        ['fluent', sum(all_data[0][0]), sum(all_data[0][1]), sum(all_data[0][2])],
+        ['not fluent', sum(all_data[1][0]), sum(all_data[1][1]), sum(all_data[1][2])],
+    ])
+    print(all_data)
+    return all_data  
+
+#                │   correct transcribed   incorrect transcribed   untranscribed
+#   ─────────────┼──────────────────────────────────────────────────────────────
+#   fluent       │               138,986                   5,814           4,219
+#   not fluent   │                21,464                   1,994          16,660
+
+
 
 
 # # #  after retranscription   # # #

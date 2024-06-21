@@ -18,7 +18,7 @@ labels = ['whisper', 'wav2vec2', 'libriSpeech LM', 'Switchboard LM', 'SB-hesitat
 
 # # #     after alignment      # # #
 # stat.gaps_containing_speech_automatic_time_distribution()
-stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
+# stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
 # stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / 'ctc', c.automatic_align_dir / 'custom ctc' / '0_01'], ['cross attention', 'ctc', 'ctc (c = -0.01)'])
 # stat.best_case_scenario(min_lens=[ i / 10 for i in range(1, 11)])
 
@@ -26,6 +26,7 @@ stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
 # stat.classification_model_statistics(threashold=0.9, min_gap=0.3)
 # stat.not_transcribed_speech_labelling_statistics(threashold=0.9, min_gap=0.3)
 
+data.before_after_classification_comparison(threashold=0.9, min_gap=0.3)
 # # #  after retranscription   # # #
 # stat.retranscription_models_comparison(retranscribe_dirs, labels, threshold=0.9)
 # stat.final_statistic(retranscribe_dirs, labels, threshold=0.9)
