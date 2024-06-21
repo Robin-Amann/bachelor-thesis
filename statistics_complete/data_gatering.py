@@ -649,12 +649,10 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
         if segment['end'] - segment['start'] < 3 or segment['end'] - segment['start'] > 5 :
             continue
         index = segments.index(segment)
-    
         manual_f = next( iter( f for f in manual_files if (segment_f.stem[2:7] + '{:03d}'.format(index)) in f.stem), None)
         if not manual_f : continue    # is a contraversial file
         manual = utils.read_dict(manual_f)
         speech = audio[int(c.sample_rate*segment['start']) : int(c.sample_rate*segment['end'])]
-    
         for automatic_files, hesitation_files in automatic_files_tuple :    
             automatic_f = next( f for f in automatic_files if (segment_f.stem[2:7] +  "{:03d}".format(index)) in f.stem )
             automatic = [ w | {'original' : True} for w in utils.read_dict(automatic_f) ]
@@ -666,7 +664,7 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
             alignment.append(automatic)
 
         alignments.append((manual, alignment, speech, manual_f.stem))
-
+        
         if len(alignments) >= n :
             if os.path.isdir(save_dir) :
                 shutil.rmtree(save_dir)
@@ -676,6 +674,7 @@ def collect_alignment_examples(manual_dir, automatic_dirs : list[tuple[Path, Pat
                 utils.write_audio( save_dir / (title + '_audio.wav'), audio, c.sample_rate)
                 for i, a in enumerate(automatic_files) :
                     utils.write_dict( save_dir / (title + '_automatic' + str(i) + '.txt'), a)
+
             return
         
 

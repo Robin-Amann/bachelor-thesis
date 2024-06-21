@@ -156,7 +156,8 @@ def ctc(emission, transcript, labels, whitespace_stay_default_value=0) :
     path = backtrack(trellis, emission, tokens, whitespace_stay_default_value=whitespace_stay_default_value)
     segments = merge_repeats(path, transcript)
     words = merge_words(segments)
-    # visual.plot_trellis_with_path(trellis, path)
+    visual.plot_trellis_with_path(trellis, path)
+    visual.plot_trellis_path_probabilities(trellis, path)
     return words, trellis.size(0)
 
 

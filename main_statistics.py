@@ -18,7 +18,7 @@ labels = ['whisper', 'wav2vec2', 'libriSpeech LM', 'Switchboard LM', 'SB-hesitat
 
 # # #     after alignment      # # #
 # stat.gaps_containing_speech_automatic_time_distribution()
-# stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
+stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
 # stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / 'ctc', c.automatic_align_dir / 'custom ctc' / '0_01'], ['cross attention', 'ctc', 'ctc (c = -0.01)'])
 # stat.best_case_scenario(min_lens=[ i / 10 for i in range(1, 11)])
 
@@ -28,11 +28,15 @@ labels = ['whisper', 'wav2vec2', 'libriSpeech LM', 'Switchboard LM', 'SB-hesitat
 
 # # #  after retranscription   # # #
 # stat.retranscription_models_comparison(retranscribe_dirs, labels, threshold=0.9)
-stat.final_statistic(retranscribe_dirs, labels, threshold=0.9)
+# stat.final_statistic(retranscribe_dirs, labels, threshold=0.9)
 # stat.transcript_comparison(retranscribe_dirs, labels)
 
 # # #         general          # # #
-# stat.alignment_visualisation([(c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2', 'automatic ctc'), (c.automatic_align_dir / '1', None, 'automatic ctc'), (c.automatic_align_dir / '10', None, 'automatic ctc')], 10)
+# stat.alignment_visualisation([
+#     (c.automatic_align_dir / '0', c.retranscibed_dir / 'wav2vec2', 'automatic ctc'), 
+#     (c.automatic_align_dir / '1', None, 'automatic ctc'), 
+#     (c.automatic_align_dir / '10', None, 'automatic ctc')
+#     ], 10)
 # stat.alignment_visualisation(
 #     [(c.automatic_align_dir / 'custom ctc' / '0_01', None, '-0.01'), 
 #      (c.automatic_align_dir / 'custom ctc' / '0_1', None, '-0.1'), 
@@ -40,7 +44,15 @@ stat.final_statistic(retranscribe_dirs, labels, threshold=0.9)
 #      (c.automatic_align_dir / 'custom ctc' / '1', None, '-1'), 
 #      (c.automatic_align_dir / 'ctc', None, 'base'), 
 #      ], 20)
+# stat.alignment_visualisation(
+#     [(c.automatic_align_dir / 'version3', None, 'cross attention'), 
+#      (c.automatic_align_dir / 'ctc', None, 'ctc'), 
+#      (c.automatic_align_dir / 'custom ctc' / '0_01', None, 'custom\n-0.01'), 
+#      (c.automatic_align_dir / 'custom ctc' / '0_01', c.retranscibed_dir / 'custom ctc' / 'wav2vec2_custom_LM', '-0.01 +\nsb 5-gram'), 
+#      ], 20)
 # visual.plot_alignment_examples( ['manual', 'automatic ctc', 'automatic\ncross attention' ] )
+# visual.plot_alignment_examples( ['manual', '0', '1', '2', '3', '4'] )
+# visual.plot_alignment_examples( ['manual', '0', '1', '2', '3', '4'] )
 
 
 # 0.5

@@ -1,22 +1,62 @@
-from pathlib import Path
-import os
-
-
+import torch
+import torchaudio
 import utils.file as utils
-import utils.constants as c
-import utils.console as console
+import tasks.audio_transcript_alignment.ctc as ctc
+from progress.bar import ChargingBar
+import os
+import utils.constants as constants
+import utils.transcript as word_utils
+from pathlib import Path
 
-import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
+import tasks.audio_transcript_alignment.visualization as visual
 
-from matplotlib.lines import Line2D
+# sw2749A018
+audio_file = Path('D:/Robin_dataset/Switchboard/LDC97S62 Switchboard-1 Release 2/09/SWB1/sw02749A.wav')
+sample_rate = 16000
+transcript_file = Path('D:/Robin_dataset/Switchboard Computed/manual/segmented/27/2749/A/sw2749A018.txt')
+start= int(414.627625 * sample_rate)
+end= int(417.817625 * sample_rate)
 
-reachable = [(([20796, 18547, 16486, 14753, 13493, 12369, 10979, 9057, 7469, 6371], 1091794), ([15378, 14634, 13844, 13131, 12603, 12018, 11490, 10808, 10021, 9328], 123193)), 
-             (([92236, 75135, 64184, 55365, 47973, 40383, 32281, 26327, 21687, 18023], 1093249), ([57874, 56121, 53126, 49240, 45294, 41666, 38017, 34470, 30846, 27565], 121738)), 
-             (([129351, 101536, 88219, 76780, 67171, 57473, 47491, 39791, 33496, 28412], 1093249), ([101573, 99453, 95477, 89369, 83078, 77029, 71016, 65078, 59216, 53885], 121738))]
+SPEECH_FILE = torchaudio.utils.download_asset("tutorial-assets/Lab41-SRI-VOiCES-src-sp0307-ch127535-sg0042.wav")
+transcript = "|I|HAD|THAT|CURIOSITY|BESIDE|ME|AT|THIS|MOMENT|"
+# transcript = "|I|HAD|THAT|CURIOSITY|AT|THIS|MOMENT|"
 
-import statistics_complete.visualization as visual
+with torch.inference_mode():
+    audio, _ = torchaudio.load(SPEECH_FILE)
 
-visual.plot_methods_reachable_comparison([ i / 10 for i in range(1, 11)], reachable, c.custom_ctc_labels)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model_args = {'model_dir' : str(constants.model_dir / 'wav2vec2')}
+bundle = torchaudio.pipelines.WAV2VEC2_ASR_BASE_960H                
+model = bundle.get_model(dl_kwargs=model_args).to(device)
+wav2vec2_model = (bundle, model)
+
+
+# audio = utils.read_audio(audio_file, sample_rate)  # [ [...] ]
+# audio = audio[:, start : end]
+
+# import matplotlib.pyplot as plt
+
+# fig, ax = plt.subplots(tight_layout=True, figsize=(20, 3))
+# ax.plot(audio[0])
+# ax.set_xticks([])
+# secax = ax.secondary_xaxis('bottom', functions=(lambda x : x / sample_rate, lambda x : x * sample_rate))
+# secax.set_xlabel('time [second]')
+
+# ax.set_yticks([])
+# ax.set_ylim(-1.0, 1.0)
+# ax.set_xlim(0, audio.size(-1))
+# plt.show()
+
+# original_transcript = ' '.join([ w['word'] for w in utils.read_dict(transcript_file)])
+# transcript = original_transcript.split()
+# simple = [ word_utils.simplify(w) for w in transcript ]
+
+# transcript = '|' + '|'.join(simple).upper() + '|'
+
+labels, emission = ctc.get_emission(audio, device, wav2vec2_model)
+words, trellis_width = ctc.ctc(emission, transcript, labels, whitespace_stay_default_value=-1)
+trellis, tokens = ctc.get_trellis(emission, transcript, labels, whitespace_stay_default_value=-1)
+
+# visual.plot_trellis(trellis)
+# visual.plot_trellis_with_path(trellis, path)
+visual.plot_alignments(trellis, words, audio[0], sample_rate)
