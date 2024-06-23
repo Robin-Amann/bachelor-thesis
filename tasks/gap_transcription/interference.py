@@ -10,7 +10,7 @@ from huggingface_hub import login
 # model = AutoModelForCTC.from_pretrained("Robin-Amann/wav2vec2-base-sb-finetune")
 # processor = Wav2Vec2Processor.from_pretrained("Robin-Amann/wav2vec2-base-sb-finetune")
 
-# login(token='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')
+# login(token='old token is invalid')
 #ds = load_dataset("Robin-Amann/gap_dataset")
 
 # for i in range(10) :
@@ -27,7 +27,7 @@ from huggingface_hub import login
 
 
 def load_model() :
-    login(token='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')
+    login(token='old token is invalid')
     model_id = 'Robin-Amann/wav2vec2-base-sb-finetune'
     model = AutoModelForCTC.from_pretrained(model_id)
     processor = Wav2Vec2Processor.from_pretrained(model_id) #, cache_dir='/export/data3/bachelor_theses/ramann/data')

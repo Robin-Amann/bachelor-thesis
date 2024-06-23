@@ -6,7 +6,7 @@ import evaluate
 import utils.constants as c
 
 def preprocess_dataset() :
-    login(token='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')
+    login(token='old token is invalid')
 
     ds = load_dataset("Robin-Amann/my_first_dataset")
     # label_column = [ 1 if x else 0 for x in ds['transcript']]

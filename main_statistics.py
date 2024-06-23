@@ -19,7 +19,7 @@ labels = ['whisper', 'wav2vec2', 'libriSpeech LM', 'Switchboard LM', 'SB-hesitat
 # # #     after alignment      # # #
 # stat.gaps_containing_speech_automatic_time_distribution()
 # stat.ctc_default_probability_comparison(c.custom_ctc_dirs, c.custom_ctc_labels)
-# stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / 'ctc', c.automatic_align_dir / 'custom ctc' / '0_01'], ['cross attention', 'ctc', 'ctc (c = -0.01)'])
+stat.alignment_method_comparison([c.automatic_v3_dir, c.automatic_align_dir / 'ctc', c.automatic_align_dir / 'custom ctc' / '0_01'], ['cross attention', 'ctc', 'ctc (c = -0.01)'])
 # stat.best_case_scenario(min_lens=[ i / 10 for i in range(1, 11)])
 
 # # # after gap classification # # #

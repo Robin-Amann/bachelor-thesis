@@ -66,7 +66,7 @@ def ds_generator() :
 
 
 def create_dataset(name='gap_dataset') :
-    login(token='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')
+    login(token='old token is invalid')
     
     # I hope there will be no memory problems
     ds = Dataset.from_generator(ds_generator, cache_dir=str(c.data_base))

@@ -30,7 +30,7 @@ def load_datset(name='gap_dataset') :
         batch["text"] = re.sub(chars_to_ignore_regex, '', batch["transcript"]).lower() + " "
         return batch
 
-    login(token='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')
+    login(token='old token is invalid')
 
     ds = load_dataset("Robin-Amann/" + name)
 
@@ -189,7 +189,7 @@ def finetune() :
 
     
 def evaluate_model() :
-    login(token='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')
+    login(token='old token is invalid')
     ds = load_dataset("Robin-Amann/gap_dataset")
 
     processor = Wav2Vec2Processor.from_pretrained("Robin-Amann/wav2vec2-base-sb-finetune")
